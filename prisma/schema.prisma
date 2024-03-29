@@ -1,0 +1,45 @@
+// prisma/schema.prisma
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/sinacofi-mvp"
+}
+
+model Schema {
+    id          Int          @id @default(autoincrement())
+    type        String       @unique @db.VarChar(255)
+    messages    String[]
+    parameters  Parameter[]
+    validations Validation[]
+}
+
+model Validation {
+    id      Int      @id @default(autoincrement())
+    name    String   @unique @db.VarChar(255)
+    schemas Schema[]
+}
+
+model Parameter {
+    id      Int      @id @default(autoincrement())
+    name    String   @unique @db.VarChar(255)
+    schemas Schema[]
+}
+
+model SchemaValidation {
+    schemaId     Int
+    validationId Int
+    assignedAt   DateTime @default(now())
+
+    @@id([schemaId, validationId])
+}
+
+model SchemaParameter {
+    schemaId    Int
+    parameterId Int
+    assignedAt  DateTime @default(now())
+
+    @@id([schemaId, parameterId])
+}
