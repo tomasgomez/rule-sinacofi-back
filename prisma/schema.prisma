@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
     provider = "postgresql"
-    url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/sinacofi-mvp"
+    url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
 }
 
 model Schema {

@@ -1,12 +1,13 @@
 import { MessageRepository } from '../../interfaces/messageRepository';
-import { PrismaMessageAdapter as PrismaAdapter } from '../../adapters/messageDatabase';
+import { PrismaMessageAdapter as PrismaAdapter } from '../../adapters/prisma/message';
+import { MessageSchema } from '../../entities/message';
 
 export class GetMessage {
     constructor(private readonly messageRepository: MessageRepository) {} 
   
-    async execute(messageId: string): Promise<Message | null> {
+    async execute(messageSchema: MessageSchema): Promise<MessageSchema[] | null> {
       try {
-        const message = await this.messageRepository.findById(messageId);
+        const message = await this.messageRepository.find(messageSchema, '0', '0');
         return message;
       } catch (error) {
         // Handle errors appropriately

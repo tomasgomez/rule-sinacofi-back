@@ -1,5 +1,5 @@
 
-class MessageSchema {
+export class MessageSchema {
     id: string;
     messageCode: string;
     description: string;
