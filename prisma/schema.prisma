@@ -8,27 +8,54 @@ datasource db {
     url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
 }
 
-model Schema {
+model MessageSchema {
     id          Int          @id @default(autoincrement())
-    type        String       @unique @db.VarChar(255)
-    messages    String[]
+    messageCode String       @unique @db.VarChar(255)
+    description String
     parameters  Parameter[]
     validations Validation[]
 }
 
-model Validation {
-    id      Int      @id @default(autoincrement())
-    name    String   @unique @db.VarChar(255)
-    schemas Schema[]
-}
-
 model Parameter {
-    id      Int      @id @default(autoincrement())
-    name    String   @unique @db.VarChar(255)
-    schemas Schema[]
+    id              Int            @id @default(autoincrement())
+    name            String
+    label           String
+    type            String
+    description     String
+    placeholder     String
+    value           String
+    defaultValue    String
+    validations     Validation     @relation(fields: [validationId], references: [id])
+    properties      Property[]
+    MessageSchema   MessageSchema? @relation(fields: [messageSchemaId], references: [id])
+    messageSchemaId Int?
+    validationId    Int
 }
 
-model SchemaValidation {
+model Validation {
+    id              Int            @id @default(autoincrement())
+    name            String
+    required        Boolean
+    maxLength       Int
+    minLength       Int
+    MessageSchema   MessageSchema? @relation(fields: [messageSchemaId], references: [id])
+    messageSchemaId Int?
+    Parameter       Parameter[]
+}
+
+model Property {
+    id          Int        @id @default(autoincrement())
+    name        String
+    columns     Int
+    rows        Int
+    multiple    Boolean
+    multiline   Boolean
+    options     String[]
+    Parameter   Parameter? @relation(fields: [parameterId], references: [id])
+    parameterId Int?
+}
+
+model MessageSchemaValidation {
     schemaId     Int
     validationId Int
     assignedAt   DateTime @default(now())

@@ -1,5 +1,5 @@
 import { IRepository } from '../interfaces/repository';
-import { MessageSchema } from '../entities/message';
+import { MessageSchema } from '../entities/messageSchema';
 import { PrismaWrapper } from './prismaWrapper';
 
 export class Repository implements IRepository {
