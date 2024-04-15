@@ -8,10 +8,13 @@ import { IEventUsecase } from "./usecase";
     EventUsecase class is responsible for handling the usecases.
 */
 
-export class EventUsecase implements IEventUsecase {
+class EventUsecase implements IEventUsecase {
     // constructor
     constructor(private readonly repository: IEventRepository) {}
 
 
     
 }
+
+// init type usecase
+export const initEventUsecase = (repository: IEventRepository): IEventUsecase => new EventUsecase(repository);

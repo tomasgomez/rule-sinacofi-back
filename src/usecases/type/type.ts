@@ -5,7 +5,7 @@ import { ITypeUsecase } from "./usecase";
     TypeUsecase class is responsible for handling the usecases.
 */
 
-export class TypeUsecase implements ITypeUsecase {
+class TypeUsecase implements ITypeUsecase {
     // constructor
     constructor(private readonly repository: ISchemaRepository) {}
     
@@ -14,3 +14,6 @@ export class TypeUsecase implements ITypeUsecase {
         return message;
     }
 }
+
+// init type usecase
+export const initTypeUsecase = (repository: ISchemaRepository): ITypeUsecase => new TypeUsecase(repository);

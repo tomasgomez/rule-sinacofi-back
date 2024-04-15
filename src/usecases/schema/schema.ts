@@ -1,7 +1,7 @@
 import { ISchemaRepository } from "../../repository/schema/interface";
 import { ISchemaUsecase } from "./usecase";
 
-export class SchemaUsecase implements ISchemaUsecase {
+class SchemaUsecase implements ISchemaUsecase {
     // constructor
     constructor(private readonly repository: ISchemaRepository) {}
     
@@ -15,3 +15,6 @@ export class SchemaUsecase implements ISchemaUsecase {
         return message;
     }
 }
+
+// init schema usecase
+export const initSchemaUsecase = (repository: ISchemaRepository): ISchemaUsecase => new SchemaUsecase(repository);

@@ -4,8 +4,8 @@ import { Handler, initHandler } from './handler/handler';
 import { initRouter } from './handler/router';
 import { Server } from './entities/server/server';
 import { logRequest, logResponse } from './utils/logger';
-import { ITypeUsecase, initTypeUsecase } from './usecases/type/usecase';
-import { ISchemaUsecase, initSchemaUsecase } from './usecases/schema/usecase';
+import { ITypeUsecase } from './usecases/type/usecase';
+import { ISchemaUsecase } from './usecases/schema/usecase';
 import { ICalls } from './entities/calls/interface';
 import { initTypeCalls } from './handler/type/api';
 import { initSchemaCalls } from './handler/schema/api';
@@ -15,6 +15,8 @@ import { IRuleRepository } from './repository/rule/interface';
 import { initRuleRepository } from './repository/rule/repository';
 import { IEventRepository } from './repository/event/interface';
 import { initEventRepository } from './repository/event/repository';
+import { initTypeUsecase } from './usecases/type/type';
+import { initSchemaUsecase } from './usecases/schema/schema';
 
 // init database
 const databaseClient = new PrismaWrapper(prisma)
