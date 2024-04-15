@@ -1,5 +1,6 @@
 import { IEvent } from "../event/interface";
 import { RuleTypes } from "./ruleTypes";
+import { InputValue } from "./ruleValidation";
 
 /*
  * Interface representing a validation rule.
@@ -19,6 +20,7 @@ interface IRule {
 
     // methods
     setEvent(event: IEvent): void;
+    executeRule(inputValue: InputValue): boolean | Error;
 }
 
 export { IRule };

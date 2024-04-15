@@ -1,21 +1,27 @@
 
 import express from 'express';
 import { Handler } from './handler';
+import { initTypeRouter } from './type/router';
+import { initSchemaRouter } from './schema/router';
+import { initRuleRouter } from './rule/router';
 
 // Init router 
 export const initRouter = (handler: Handler): express.Router => {
+    
+    // create router
     const router = express.Router();
 
-    // Define the routes
-    router.get('/type', handler.typeCalls.GET);
-    router.post('/type', handler.typeCalls.POST);
-    router.put('/type', handler.typeCalls.PUT);
-    router.delete('/type', handler.typeCalls.DELETE);
+    // init type router
+    const typeRouter = initTypeRouter(handler.typeCalls);
+    router.use('/types', typeRouter);
 
-    router.get('/schema', handler.schemaCalls.GET);
-    router.post('/schema', handler.schemaCalls.POST);
-    router.put('/schema', handler.schemaCalls.PUT);
-    router.delete('/schema', handler.schemaCalls.DELETE);
+    // init schema router
+    const schemaRouter = initSchemaRouter(handler.schemaCalls);
+    router.use('/schemas', schemaRouter);
 
+    // init rule router
+    const ruleRouter = initRuleRouter(handler.ruleCalls);
+    router.use('/rules', ruleRouter);
+    
     return router;
 }

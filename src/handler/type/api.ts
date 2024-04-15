@@ -7,10 +7,10 @@ import { ITypeUsecase } from "../../usecases/type/usecase";
     TypeAPI class is responsible for handling the requests and responses for the type API.
 */
 
-export class TypeCalls extends Calls implements ICalls {
+class TypeCalls extends Calls implements ICalls {
     // constructor
-    _usecase: any;
-    constructor(typeUsecase: any) {
+    _usecase: ITypeUsecase;
+    constructor(typeUsecase: ITypeUsecase) {
         super();
         this._usecase = typeUsecase;
     }

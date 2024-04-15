@@ -2,15 +2,16 @@ import { Calls } from "../../entities/calls/calls";
 import express from 'express';
 import { ICalls } from "../../entities/calls/interface";
 import { ISchemaUsecase } from "../../usecases/schema/usecase";
+import { ISchemaAPI } from "./interface";
 
 /*
     SchemaCalls class is responsible for handling the requests and responses for the type API.
 */
 
-export class SchemaCalls extends Calls implements ICalls {
+class SchemaCalls extends Calls implements ISchemaAPI {
     // constructor
-    _usecase: any;
-    constructor(typeUsecase: any) {
+    _usecase: ISchemaUsecase;
+    constructor(typeUsecase: ISchemaUsecase) {
         super();
         this._usecase = typeUsecase;
     }
@@ -30,4 +31,4 @@ export class SchemaCalls extends Calls implements ICalls {
     }
 }
 
-export const initSchemaCalls = (usecase: ISchemaUsecase): ICalls => new SchemaCalls(usecase);
+export const initSchemaCalls = (usecase: ISchemaUsecase): ISchemaAPI => new SchemaCalls(usecase);

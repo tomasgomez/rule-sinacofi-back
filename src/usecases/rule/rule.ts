@@ -1,4 +1,5 @@
 
+import { IRule } from "../../entities/rule/interface";
 import { IRuleRepository } from "../../repository/rule/interface";
 import { IRuleUsecase } from "./usecase";
 
@@ -10,6 +11,20 @@ import { IRuleUsecase } from "./usecase";
 class RuleUsecase implements IRuleUsecase {
     // constructor
     constructor(private readonly repository: IRuleRepository) {}
+
+    // validate rule
+    validateRule = async (rule: IRule): Promise<boolean> => {
+        // call repository to validate rule
+        
+        let value = rule.executeRule("12345678");
+
+        console.log(value);
+        if (value instanceof Error) {
+            console.log("Error validating rule");
+            return false;
+        }
+        return value;
+    }
     
 }
 
