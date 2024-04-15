@@ -1,12 +1,14 @@
-import { IRepository } from './interfaces/repository';
+import { IRepository } from './repository/interface';
 import { Repository } from './repository/repository';
 import { PrismaWrapper } from './repository/prismaWrapper';
 import { prisma }  from './repository/client';
 import { Usecase, initUsecase } from './usecases/usecases';
 import { Handler, initHandler } from './handler/handler';
 import { initRouter } from './handler/router';
-import { Server } from './entities/server';
+import { Server } from './entities/server/server';
 import { logRequest, logResponse } from './utils/logger';
+import { ITypeUsecase, initTypeUsecase } from './usecases/type/usecase';
+import { ISchemaUsecase, initSchemaUsecase } from './usecases/schema/usecase';
 
 // init database
 const databaseClient = new PrismaWrapper(prisma)
@@ -15,7 +17,9 @@ const databaseClient = new PrismaWrapper(prisma)
 const repository: IRepository = new Repository(databaseClient);
 
 // init usecases
-const usecases: Usecase = initUsecase(repository);
+const typeUsecase: ITypeUsecase = initTypeUsecase(repository);
+const schemaUsecase: ISchemaUsecase = initSchemaUsecase(repository);
+const usecases: Usecase = initUsecase(typeUsecase, schemaUsecase);
 
 // init handler
 const handler: Handler = initHandler(usecases);

@@ -1,4 +1,4 @@
-import { ICalls } from "../interfaces/calls";
+import { ICalls } from "./interface";
 import express from 'express';
 
 /* 

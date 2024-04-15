@@ -1,17 +1,16 @@
-import { IRepository } from "../interfaces/repository";
-import { SchemaUsecase } from "./schema/schema";
-import { TypeUsecase } from "./type/type";
+import { ISchemaUsecase } from "./schema/usecase";
+import { ITypeUsecase } from "./type/usecase";
 
 // Define the Usecase interface
 export interface Usecase  {
-    typeUsecase: TypeUsecase;
-    schemaUsecase: SchemaUsecase; //
+    typeUsecase: ITypeUsecase;
+    schemaUsecase: ISchemaUsecase; //
 }
 
 // init usecase
-export const initUsecase = (repository: IRepository): Usecase => {
+export const initUsecase = (typeUsecase: ITypeUsecase, schemaUsecase: ISchemaUsecase): Usecase => {
     return {
-        typeUsecase: new TypeUsecase(repository),
-        schemaUsecase: new SchemaUsecase(repository)
+        typeUsecase: typeUsecase,
+        schemaUsecase: schemaUsecase
     }
 }

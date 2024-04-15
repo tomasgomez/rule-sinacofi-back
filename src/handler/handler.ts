@@ -4,7 +4,7 @@ import { SchemaCalls } from "./schema/api";
 import { Usecase } from "../usecases/usecases";
 
 // Define the Handler Calls interface
-export type Handler = {
+export interface Handler {
     typeCalls: TypeCalls;
     schemaCalls: SchemaCalls;
 }

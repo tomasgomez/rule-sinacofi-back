@@ -1,5 +1,5 @@
-import { IRepository } from "../../interfaces/repository";
-import ITypeUsecase from "../../interfaces/typeUsecase";
+import { IRepository } from "../../repository/interface";
+import { ITypeUsecase } from "./usecase";
 
 /*
     TypeUsecase class is responsible for handling the usecases.

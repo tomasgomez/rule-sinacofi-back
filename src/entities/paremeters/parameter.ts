@@ -1,4 +1,8 @@
-class Parameter {
+import { IProperty } from "../property/interface";
+import { IValidation } from "../validation/interface";
+import { IParameter } from "./interface";
+
+export class Parameter implements IParameter {
     id: string;
     name: string;
     label: string;
@@ -7,10 +11,10 @@ class Parameter {
     placeholder: string;
     value: string;
     defaultValue: string;
-    validations: Validation;
-    properties: Property;
+    validations: IValidation;
+    properties: IProperty;
 
-    constructor(id: string, name: string, label: string, type: string, description: string, defaultValue: string, placeholder: string, value: string, validations: Validation, properties: Property) {
+    constructor(id: string, name: string, label: string, type: string, description: string, defaultValue: string, placeholder: string, value: string, validations: IValidation, properties: IProperty) {
         this.id = id;
         this.name = name;
         this.label = label;
@@ -22,4 +26,6 @@ class Parameter {
         this.validations = validations;
         this.properties = properties;
     }
+
 }
+

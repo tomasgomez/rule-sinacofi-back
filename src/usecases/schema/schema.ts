@@ -1,5 +1,5 @@
-import { IRepository } from "../../interfaces/repository";
-import ISchemaUsecase from "../../interfaces/schemaUsecase";
+import { IRepository } from "../../repository/interface";
+import { ISchemaUsecase } from "./usecase";
 
 export class SchemaUsecase implements ISchemaUsecase {
     // constructor

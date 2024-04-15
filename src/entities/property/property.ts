@@ -1,4 +1,6 @@
-class Property {
+import { IProperty } from "./interface";
+
+class Property implements IProperty {
     name: string;
     columns: number;
     rows: number;

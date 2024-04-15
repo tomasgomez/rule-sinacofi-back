@@ -1,5 +1,6 @@
+import { IValidation } from "./interface";
 
-class Validation {
+class Validation implements IValidation {
     required: boolean;
     maxLength: number;
     minLength: number;
