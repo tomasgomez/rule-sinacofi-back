@@ -12,6 +12,7 @@ export class Rule implements IRule {
     schemaId: number;           // Associated schema Id
     priority: number;           // Priority of the rule
     event?: IEvent | null;      // Rule object
+    eventId?: number;           // Event Id
 
     // constructor
     constructor(id: number, name: string, description: string, fieldName: string, condition: string, value: string, schemaId: number, priority: number) {

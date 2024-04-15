@@ -2,7 +2,7 @@ import { ISchemaRepository } from "../../repository/schema/interface";
 import { ITypeUsecase } from "./usecase";
 
 /*
-    TypeUsecase class is responsible for handling the usecases.
+    TypeUsecase class is responsible for handling the type usecases.
 */
 
 class TypeUsecase implements ITypeUsecase {

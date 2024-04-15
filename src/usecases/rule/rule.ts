@@ -4,7 +4,7 @@ import { IRuleUsecase } from "./usecase";
 
 
 /*
-    RuleUsecase class is responsible for handling the usecases.
+    RuleUsecase class is responsible for handling the rule usecases.
 */
 
 class RuleUsecase implements IRuleUsecase {

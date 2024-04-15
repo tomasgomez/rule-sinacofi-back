@@ -5,7 +5,7 @@ import { IEventUsecase } from "./usecase";
 
 
 /*
-    EventUsecase class is responsible for handling the usecases.
+    EventUsecase class is responsible for handling the event usecases.
 */
 
 class EventUsecase implements IEventUsecase {

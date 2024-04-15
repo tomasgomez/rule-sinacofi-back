@@ -1,6 +1,10 @@
 import { ISchemaRepository } from "../../repository/schema/interface";
 import { ISchemaUsecase } from "./usecase";
 
+/*
+    SchemaUsecase class is responsible for handling the schema usecases.
+*/
+
 class SchemaUsecase implements ISchemaUsecase {
     // constructor
     constructor(private readonly repository: ISchemaRepository) {}

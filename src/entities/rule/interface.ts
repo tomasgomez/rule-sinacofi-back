@@ -13,5 +13,6 @@ export interface IRule {
     value: string;              // Expected value for the validation
     schemaId: number;           // Associated schema Id
     priority: number;           // Priority of the rule
-    event?: IEvent | null;       // Rule object
+    event?: IEvent | null;      // Rule object
+    eventId?: number;            // Event Id
   }
