@@ -1,6 +1,6 @@
-import { Calls } from "../../entities/calls";
+import { Calls } from "../../entities/calls/calls";
 import express from 'express';
-import { ICalls } from "../../interfaces/calls";
+import { ICalls } from "../../entities/calls/interface";
 
 /*
     SchemaCalls class is responsible for handling the requests and responses for the type API.

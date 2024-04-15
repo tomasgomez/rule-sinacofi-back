@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-import IServer from '../../interfaces/server';
+import IServer from './interface';
 
 /*
     Server class is responsible for setting up the express server and starting it.
