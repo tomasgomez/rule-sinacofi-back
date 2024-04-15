@@ -11,9 +11,9 @@ export interface Handler {
 }
 
 // init handler
-export const initHandler = (typeUecase: ITypeUsecase, schemaUsecase: ISchemaUsecase): Handler => {
+export const initHandler = (typeCalls: ICalls, schemaCalls: ICalls): Handler => {
     return {
-        typeCalls: new TypeCalls(typeUecase),
-        schemaCalls: new SchemaCalls(schemaUsecase)
+        typeCalls: typeCalls,
+        schemaCalls: schemaCalls
     }
 }

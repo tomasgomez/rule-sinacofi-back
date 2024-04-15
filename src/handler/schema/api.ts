@@ -1,6 +1,7 @@
 import { Calls } from "../../entities/calls/calls";
 import express from 'express';
 import { ICalls } from "../../entities/calls/interface";
+import { ISchemaUsecase } from "../../usecases/schema/usecase";
 
 /*
     SchemaCalls class is responsible for handling the requests and responses for the type API.
@@ -29,3 +30,4 @@ export class SchemaCalls extends Calls implements ICalls {
     }
 }
 
+export const initSchemaCalls = (usecase: ISchemaUsecase): ICalls => new SchemaCalls(usecase);
