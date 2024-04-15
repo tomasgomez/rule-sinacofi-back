@@ -1,5 +1,3 @@
-import { IRepository } from './repository/interface';
-import { Repository } from './repository/repository';
 import { PrismaWrapper } from './repository/prismaWrapper';
 import { prisma }  from './repository/client';
 import { Handler, initHandler } from './handler/handler';
@@ -11,16 +9,24 @@ import { ISchemaUsecase, initSchemaUsecase } from './usecases/schema/usecase';
 import { ICalls } from './entities/calls/interface';
 import { initTypeCalls } from './handler/type/api';
 import { initSchemaCalls } from './handler/schema/api';
+import { ISchemaRepository } from './repository/schema/interface';
+import { initSchemaRepository } from './repository/schema/repository';
+import { IRuleRepository } from './repository/rule/interface';
+import { initRuleRepository } from './repository/rule/repository';
+import { IEventRepository } from './repository/event/interface';
+import { initEventRepository } from './repository/event/repository';
 
 // init database
 const databaseClient = new PrismaWrapper(prisma)
 
-// init repository
-const repository: IRepository = new Repository(databaseClient);
+// init repositories
+const schemaRepository: ISchemaRepository = initSchemaRepository(databaseClient);
+const ruleRepository: IRuleRepository = initRuleRepository(databaseClient);
+const eventRepository: IEventRepository = initEventRepository(databaseClient);
 
 // init usecases
-const typeUsecase: ITypeUsecase = initTypeUsecase(repository);
-const schemaUsecase: ISchemaUsecase = initSchemaUsecase(repository);
+const typeUsecase: ITypeUsecase = initTypeUsecase(schemaRepository);
+const schemaUsecase: ISchemaUsecase = initSchemaUsecase(schemaRepository);
 
 // init APIs
 const typeAPI: ICalls = initTypeCalls(typeUsecase);

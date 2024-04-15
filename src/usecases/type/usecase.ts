@@ -1,4 +1,4 @@
-import { IRepository } from "../../repository/interface";
+import { ISchemaRepository } from "../../repository/schema/interface";
 import { TypeUsecase } from "./type";
 
 /* 
@@ -10,4 +10,4 @@ export interface ITypeUsecase {
 }
 
 // init type usecase
-export const initTypeUsecase = (repository: IRepository): ITypeUsecase => new TypeUsecase(repository);
+export const initTypeUsecase = (repository: ISchemaRepository): ITypeUsecase => new TypeUsecase(repository);

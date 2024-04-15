@@ -1,4 +1,4 @@
-import { IRepository } from "../../repository/interface";
+import { ISchemaRepository } from "../../repository/schema/interface";
 import { ITypeUsecase } from "./usecase";
 
 /*
@@ -7,7 +7,7 @@ import { ITypeUsecase } from "./usecase";
 
 export class TypeUsecase implements ITypeUsecase {
     // constructor
-    constructor(private readonly repository: IRepository) {}
+    constructor(private readonly repository: ISchemaRepository) {}
     
     // get mesasge type
     getMessageType = async (message: any): Promise<any | null> => {

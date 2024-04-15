@@ -1,9 +1,9 @@
-import { IRepository } from "../../repository/interface";
+import { ISchemaRepository } from "../../repository/schema/interface";
 import { ISchemaUsecase } from "./usecase";
 
 export class SchemaUsecase implements ISchemaUsecase {
     // constructor
-    constructor(private readonly repository: IRepository) {}
+    constructor(private readonly repository: ISchemaRepository) {}
     
     // get mesasge type
     getSchema = async (message: any): Promise<any | null> => {

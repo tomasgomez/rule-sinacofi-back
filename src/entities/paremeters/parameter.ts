@@ -26,6 +26,5 @@ export class Parameter implements IParameter {
         this.validations = validations;
         this.properties = properties;
     }
-
 }
 
