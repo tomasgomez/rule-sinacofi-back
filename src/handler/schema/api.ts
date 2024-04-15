@@ -17,4 +17,14 @@ export class SchemaCalls extends Calls implements ICalls {
     async GET(req: express.Request, res: express.Response) {
         res.status(200).json({ message: 'GET method' });
     }
+
+    async POST(req: express.Request, res: express.Response) {
+        let response = await this._usecase.createSchema(req.body);
+
+        if ( response instanceof Error ) {
+            res.status(500).json({ message: response.message }); // Handle error
+        }
+
+        res.status(200).json(response);
+    }
 }

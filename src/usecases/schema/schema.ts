@@ -9,4 +9,9 @@ export class SchemaUsecase implements ISchemaUsecase {
     getSchema = async (message: any): Promise<any | null> => {
         return message;
     }
+
+    // create message type
+    createSchema = async (message: any): Promise<any | null> => {
+        return message;
+    }
 }

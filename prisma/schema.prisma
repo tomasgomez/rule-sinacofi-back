@@ -8,65 +8,61 @@ datasource db {
     url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
 }
 
-model MessageSchema {
-    id          Int          @id @default(autoincrement())
-    messageCode String       @unique @db.VarChar(255)
+model Schema {
+    id          Int         @id @default(autoincrement())
+    messageCode String
     description String
-    parameters  Parameter[]
-    validations Validation[]
+    name        String
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+    Parameter   Parameter[]
 }
 
 model Parameter {
-    id              Int            @id @default(autoincrement())
-    name            String
-    label           String
-    type            String
-    description     String
-    placeholder     String
-    value           String
-    defaultValue    String
-    validations     Validation     @relation(fields: [validationId], references: [id])
-    properties      Property[]
-    MessageSchema   MessageSchema? @relation(fields: [messageSchemaId], references: [id])
-    messageSchemaId Int?
-    validationId    Int
+    id               Int                @id @default(autoincrement())
+    schemaId         Int
+    description      String
+    row              Int?
+    column           Int?
+    defaultValue     String?
+    validationRule   Json
+    priority         Int
+    schema           Schema             @relation(fields: [schemaId], references: [id])
+    ParameterOption  ParameterOption[]
+    MessageParameter MessageParameter[]
 }
 
-model Validation {
-    id              Int            @id @default(autoincrement())
-    name            String
-    required        Boolean
-    maxLength       Int
-    minLength       Int
-    MessageSchema   MessageSchema? @relation(fields: [messageSchemaId], references: [id])
-    messageSchemaId Int?
-    Parameter       Parameter[]
+model Field {
+    id          Int    @id @default(autoincrement())
+    label       String
+    description String
+    type        String
+    placeholder String
 }
 
-model Property {
-    id          Int        @id @default(autoincrement())
-    name        String
-    columns     Int
-    rows        Int
-    multiple    Boolean
-    multiline   Boolean
-    options     String[]
-    Parameter   Parameter? @relation(fields: [parameterId], references: [id])
-    parameterId Int?
-}
-
-model MessageSchemaValidation {
-    schemaId     Int
-    validationId Int
-    assignedAt   DateTime @default(now())
-
-    @@id([schemaId, validationId])
-}
-
-model SchemaParameter {
-    schemaId    Int
+model ParameterOption {
+    id          Int       @id @default(autoincrement())
     parameterId Int
-    assignedAt  DateTime @default(now())
+    description String
+    value       String
+    label       String
+    parameter   Parameter @relation(fields: [parameterId], references: [id])
+}
 
-    @@id([schemaId, parameterId])
+model MessageParameter {
+    messageId   String
+    parameter   Parameter @relation(fields: [parameterId], references: [id])
+    parameterId Int
+    value       String
+
+    @@id([messageId, parameterId])
+}
+
+model Status {
+    id        Int      @id @default(autoincrement())
+    messageId String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    userId    String
+    value     String
 }
