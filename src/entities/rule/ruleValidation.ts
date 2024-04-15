@@ -5,13 +5,7 @@ import { RuleTypes } from "./ruleTypes";
 /* 
 *   Actions object a list of actions that can be performed on the validation rules
 */
-type Validations = {
-    MIN_LENGTH: typeof minLength,
-    MAX_LENGTH: typeof maxLength,
-    EMAIL_VALIDATION: typeof emailValidation, 
-    REQUIRED: typeof isRequired,
-    VALIDATE_SCHEMA: typeof validateSchema,
-}
+
 
 // Define the value type to be validated
 type InputValue = string | number | IMessageSchema | boolean;
@@ -19,6 +13,14 @@ type InputValue = string | number | IMessageSchema | boolean;
 // Define the validate function type
 type Validate = (value: InputValue, ruleValue?: string) => boolean 
 
+// Define the validations object type
+type Validations = {
+    MIN_LENGTH: Validate,
+    MAX_LENGTH: Validate,
+    EMAIL_VALIDATION: Validate, 
+    REQUIRED: Validate,
+    VALIDATE_SCHEMA: Validate,
+}
 // Export the actions object
 const validations: Validations = {
     MIN_LENGTH: minLength,

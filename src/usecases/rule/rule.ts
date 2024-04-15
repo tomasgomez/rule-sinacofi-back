@@ -16,7 +16,7 @@ class RuleUsecase implements IRuleUsecase {
     validateRule = async (rule: IRule): Promise<boolean> => {
         // call repository to validate rule
         
-        let value = rule.executeRule("12345678");
+        let value = rule.executeRule("fgarciac@gmail.com");
 
         console.log(value);
         if (value instanceof Error) {
