@@ -1,6 +1,6 @@
 import { InputValue, Validate } from "../ruleValidation";
 
-/*
+/** 
 *   this function is used to check if the value is not empty
 *   @params: value: string - the value to be validated [required]
 *   @returns: boolean - returns a boolean value

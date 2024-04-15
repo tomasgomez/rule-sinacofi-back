@@ -15,7 +15,7 @@ class Event implements IEvent {
         public description: string, 
         public actionType: ActionTypes, 
         public parameters: Record<string, any> | null,
-        public  eventChildId?: number,                 
+        public eventChildId?: number,                 
         public childEvent?: IEvent | null,            
     ) {}
 

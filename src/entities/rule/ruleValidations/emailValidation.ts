@@ -1,7 +1,7 @@
 import { InternalError } from "../../internalError/error";
 import { InputValue, Validate } from "../ruleValidation";
 
-/*
+/** 
 * This function is used to validate the email
 * @param {string} value - the value to be validated
 * @returns {boolean} - returns a boolean value

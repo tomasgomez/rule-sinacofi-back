@@ -4,7 +4,9 @@ import { IRule } from "./interface";
 import { RuleTypes } from "./ruleTypes";
 import { InputValue, validate } from "./ruleValidation";
 
-
+/**
+ * Rule class is responsible for handling the rule entity. 
+ */
 class Rule implements IRule {
 
     // constructor

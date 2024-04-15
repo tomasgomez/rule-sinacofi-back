@@ -3,11 +3,6 @@ import { minLength, maxLength, emailValidation, isRequired, validateSchema } fro
 import { RuleTypes } from "./ruleTypes";
 import { InternalError, ErrorCode } from "../internalError";
 
-/* 
-*   Actions object a list of actions that can be performed on the validation rules
-*/
-
-
 // Define the value type to be validated
 type InputValue = string | number | IMessageSchema | boolean;
 
@@ -22,7 +17,9 @@ type Validations = {
     REQUIRED: Validate,
     VALIDATE_SCHEMA: Validate,
 }
-// Export the actions object
+/**
+ * Define the validations object
+ */
 const validations: Validations = {
     MIN_LENGTH: minLength,
     MAX_LENGTH: maxLength,
@@ -31,6 +28,13 @@ const validations: Validations = {
     VALIDATE_SCHEMA: validateSchema,
 }
 
+/** Define the validate function
+*  This function takes a rule, value, and ruleValue as arguments
+    @param {RuleTypes} rule - the rule to be applied
+    @param {InputValue} value - the value to be validated
+    @param {string} ruleValue - the value to be validated against
+    @returns {boolean | InternalError} - returns a boolean value or an InternalError object
+*/
 const validate = (rule: RuleTypes, value: InputValue, ruleValue?: string): boolean | InternalError => {
     
     // Get the validation function from the actions object

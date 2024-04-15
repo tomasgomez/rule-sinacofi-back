@@ -1,6 +1,6 @@
 import { InputValue, Validate } from "../ruleValidation";
 
-/*
+/** 
     * compare two lengths of strings and return true if the value is less than or equal to the ruleValue
     * @params: value: string - the value to be validated [required] 
     * @params: ruleValue: string - the value to be compared
