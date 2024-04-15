@@ -1,8 +1,10 @@
 import { IEvent } from "../event/interface";
 import { IRule } from "./interface";
+import { RuleTypes } from "./ruleTypes";
+import { InputValue, validate } from "./ruleValidation";
 
 
-export class Rule implements IRule {
+class Rule implements IRule {
 
     // constructor
     constructor(
@@ -10,7 +12,7 @@ export class Rule implements IRule {
         public name: string, 
         public description: string, 
         public fieldName: string, 
-        public condition: string, 
+        public condition: RuleTypes, 
         public value: string, 
         public schemaId: number, 
         public priority: number,
@@ -18,8 +20,12 @@ export class Rule implements IRule {
         public eventId?: number
     ) {}
 
-    // setEvents
-    setEvent(event: IEvent) {
-        this.event = event;
-    }
+    // setEvent
+    setEvent = (event: IEvent) => this.event = event;
+    // validate the rule based on the condition
+    executeRule = (inputValue: InputValue): boolean | Error => validate(this.condition, inputValue, this.value)
+    
+
 }
+
+export { Rule };
