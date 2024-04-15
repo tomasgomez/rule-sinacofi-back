@@ -4,15 +4,12 @@
     validation method to call.
 */
 
-const MAX_LENGTH = 'MAX_LENGTH';
-const MIN_LENGTH = 'MIN_LENGTH';
-const EMAIL_VALIDATION = 'EMAIL_VALIDATION';
-const REQUIRED = 'REQUIRED';
-const VALIDATE_SCHEMA = 'VALIDATE_SCHEMA';
-
-export type RuleTypes =
-    | typeof MAX_LENGTH
-    | typeof MIN_LENGTH
-    | typeof EMAIL_VALIDATION
-    | typeof REQUIRED
-    | typeof VALIDATE_SCHEMA;
+enum ruleType {
+    MAX_LENGTH = 'MAX_LENGTH',
+    MIN_LENGTH = 'MIN_LENGTH',
+    EMAIL_VALIDATION = 'EMAIL_VALIDATION',
+    REQUIRED = 'REQUIRED',
+    VALIDATE_SCHEMA = 'VALIDATE_SCHEMA',
+  }
+  
+export type RuleTypes = ruleType; 

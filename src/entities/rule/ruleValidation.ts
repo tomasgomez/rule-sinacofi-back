@@ -1,6 +1,8 @@
 import { IMessageSchema } from "../schema/interface";
 import { minLength, maxLength, emailValidation, isRequired, validateSchema } from "./ruleValidations";
 import { RuleTypes } from "./ruleTypes";
+import { InternalError } from "../Error/error";
+import { ErrorCode } from "../Error/errorCode";
 
 /* 
 *   Actions object a list of actions that can be performed on the validation rules
@@ -11,7 +13,7 @@ import { RuleTypes } from "./ruleTypes";
 type InputValue = string | number | IMessageSchema | boolean;
 
 // Define the validate function type
-type Validate = (value: InputValue, ruleValue?: string) => boolean 
+type Validate = (value: InputValue, ruleValue?: string) => boolean | InternalError;
 
 // Define the validations object type
 type Validations = {
@@ -30,7 +32,7 @@ const validations: Validations = {
     VALIDATE_SCHEMA: validateSchema,
 }
 
-const validate = (rule: RuleTypes, value: InputValue, ruleValue?: string): boolean | Error => {
+const validate = (rule: RuleTypes, value: InputValue, ruleValue?: string): boolean | InternalError => {
     
     // Get the validation function from the actions object
     const validationFunction = validations[rule];
@@ -40,7 +42,7 @@ const validate = (rule: RuleTypes, value: InputValue, ruleValue?: string): boole
         // Call the validation function with the value and ruleValue
         return validationFunction(value, ruleValue);
     } else {
-        throw new Error(`Rule ${rule} does not exist`);
+        throw new InternalError(`Rule ${rule} does not exist`, ErrorCode.NOT_FOUND);
     }
 };
 

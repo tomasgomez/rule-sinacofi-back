@@ -1,3 +1,4 @@
+import { InternalError } from "../../Error/error";
 import { InputValue, Validate } from "../ruleValidation";
 
 /*
@@ -6,7 +7,7 @@ import { InputValue, Validate } from "../ruleValidation";
 * @returns {boolean} - returns a boolean value
 */
 
-export const emailValidation: Validate = (value: InputValue): boolean => {
+export const emailValidation: Validate = (value: InputValue): boolean | InternalError => {
     
     // check if the value is a string
     if (typeof value !== "string") {

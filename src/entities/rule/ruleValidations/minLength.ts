@@ -6,6 +6,7 @@ import { InputValue, Validate } from "../ruleValidation";
     * @params: ruleValue: string - the value to be compared
     * @returns: boolean - returns a boolean value
 */
+
 export const minLength: Validate = (value: InputValue, ruleValue?: string): boolean => {
     // check if the value is a number
     if (typeof value === "number") {
