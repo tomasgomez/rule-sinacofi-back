@@ -22,5 +22,4 @@ export class Rule implements IRule {
     setEvent(event: IEvent) {
         this.event = event;
     }
-    
 }
