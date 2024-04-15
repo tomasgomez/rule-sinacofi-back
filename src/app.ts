@@ -19,10 +19,9 @@ const repository: IRepository = new Repository(databaseClient);
 // init usecases
 const typeUsecase: ITypeUsecase = initTypeUsecase(repository);
 const schemaUsecase: ISchemaUsecase = initSchemaUsecase(repository);
-const usecases: Usecase = initUsecase(typeUsecase, schemaUsecase);
 
 // init handler
-const handler: Handler = initHandler(usecases);
+const handler: Handler = initHandler(typeUsecase, schemaUsecase);
 
 // init router
 const router = initRouter(handler);

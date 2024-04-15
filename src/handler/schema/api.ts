@@ -28,3 +28,4 @@ export class SchemaCalls extends Calls implements ICalls {
         res.status(200).json(response);
     }
 }
+

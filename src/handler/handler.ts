@@ -1,18 +1,19 @@
-import { Schema } from "@prisma/client";
-import { TypeCalls } from "./type/api";
 import { SchemaCalls } from "./schema/api";
-import { Usecase } from "../usecases/usecases";
+import { ITypeUsecase } from "../usecases/type/usecase";
+import { ISchemaUsecase } from "../usecases/schema/usecase";
+import { ICalls } from "../entities/calls/interface";
+import { TypeCalls } from "./type/api";
 
 // Define the Handler Calls interface
 export interface Handler {
-    typeCalls: TypeCalls;
-    schemaCalls: SchemaCalls;
+    typeCalls: ICalls;
+    schemaCalls: ICalls;
 }
 
 // init handler
-export const initHandler = (usecases: Usecase): Handler => {
+export const initHandler = (typeUecase: ITypeUsecase, schemaUsecase: ISchemaUsecase): Handler => {
     return {
-        typeCalls: new TypeCalls(usecases.typeUsecase),
-        schemaCalls: new SchemaCalls(usecases.schemaUsecase)
+        typeCalls: new TypeCalls(typeUecase),
+        schemaCalls: new SchemaCalls(schemaUsecase)
     }
 }
