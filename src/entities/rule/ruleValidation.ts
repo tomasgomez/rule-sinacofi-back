@@ -1,8 +1,7 @@
 import { IMessageSchema } from "../schema/interface";
 import { minLength, maxLength, emailValidation, isRequired, validateSchema } from "./ruleValidations";
 import { RuleTypes } from "./ruleTypes";
-import { InternalError } from "../Error/error";
-import { ErrorCode } from "../Error/errorCode";
+import { InternalError, ErrorCode } from "../internalError";
 
 /* 
 *   Actions object a list of actions that can be performed on the validation rules

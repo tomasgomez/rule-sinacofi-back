@@ -1,3 +1,4 @@
+import { InternalError } from "../internalError/error";
 import { IEvent } from "../event/interface";
 import { IRule } from "./interface";
 import { RuleTypes } from "./ruleTypes";
@@ -23,7 +24,7 @@ class Rule implements IRule {
     // setEvent
     setEvent = (event: IEvent) => this.event = event;
     // validate the rule based on the condition
-    executeRule = (inputValue: InputValue): boolean | Error => validate(this.condition, inputValue, this.value)
+    executeRule = (inputValue: InputValue): boolean | InternalError => validate(this.condition, inputValue, this.value)
     
 
 }

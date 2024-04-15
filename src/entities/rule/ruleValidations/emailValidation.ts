@@ -1,4 +1,4 @@
-import { InternalError } from "../../Error/error";
+import { InternalError } from "../../internalError/error";
 import { InputValue, Validate } from "../ruleValidation";
 
 /*
