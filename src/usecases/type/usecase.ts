@@ -1,5 +1,3 @@
-
-
 import { IRepository } from "../../repository/interface";
 import { TypeUsecase } from "./type";
 
