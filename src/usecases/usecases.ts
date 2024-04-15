@@ -3,9 +3,9 @@ import { SchemaUsecase } from "./schema/schema";
 import { TypeUsecase } from "./type/type";
 
 // Define the Usecase interface
-export type Usecase = {
+export interface Usecase  {
     typeUsecase: TypeUsecase;
-    schemaUsecase: SchemaUsecase;
+    schemaUsecase: SchemaUsecase; //
 }
 
 // init usecase
