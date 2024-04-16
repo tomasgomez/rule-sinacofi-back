@@ -12,6 +12,7 @@ type Actions = {
   [key in ActionTypes]: Action;
 };
 
+// action action
 const actionFunction: Action = async (fn: Function, payload: Payload) => {
   return fn(payload);
 }
