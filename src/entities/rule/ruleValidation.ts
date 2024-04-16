@@ -11,11 +11,7 @@ type Validate = (value: InputValue, ruleValue?: string) => boolean | InternalErr
 
 // Define the validations object type
 type Validations = {
-    MIN_LENGTH: Validate,
-    MAX_LENGTH: Validate,
-    EMAIL_VALIDATION: Validate, 
-    REQUIRED: Validate,
-    VALIDATE_SCHEMA: Validate,
+    [key in RuleTypes]: Validate;
 }
 /**
  * Define the validations object

@@ -5,7 +5,6 @@ import { IEvent } from "./interface";
 /*
 * Event entity
 */
-
 class Event implements IEvent {
     // constructor
     constructor(
@@ -22,6 +21,11 @@ class Event implements IEvent {
     // setChildEvent
     setChildEvent(childEvent: IEvent) {
         this.childEvent = childEvent;
+    }
+
+    // executeEvent
+    executeEvent() {
+        console.log('Event executed:', this);
     }
 
 }

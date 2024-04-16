@@ -22,6 +22,10 @@ import { initRuleUsecase } from './usecases/rule/rule';
 import { ISchemaAPI } from './handler/schema/interface';
 import { IRuleAPI } from './handler/rule/interface';
 import { ITypeAPI } from './handler/type/interface';
+import { initMessageUsecase } from './usecases/message/message';
+import { IMessageUsecase } from './usecases/message/usecase';
+import { IEventUsecase } from './usecases/event/usecase';
+import { initEventUsecase } from './usecases/event/event';
 
 // init database
 const databaseClient = new PrismaWrapper(prisma)
@@ -34,7 +38,11 @@ const eventRepository: IEventRepository = initEventRepository(databaseClient);
 // init usecases
 const typeUsecase: ITypeUsecase = initTypeUsecase(schemaRepository);
 const schemaUsecase: ISchemaUsecase = initSchemaUsecase(schemaRepository);
+const messageUsecase: IMessageUsecase = initMessageUsecase()
+
+const eventUsecase: IEventUsecase = initEventUsecase(eventRepository, messageUsecase);
 const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository);
+
 
 // init APIs
 const typeAPI: ITypeAPI = initTypeCalls(typeUsecase);

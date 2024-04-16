@@ -13,6 +13,10 @@ interface IEvent {
     parameters: Record<string, any> | null;  // Parameters required for the action (in JSON format)
     eventChildId?: number;                   // Child event (hasOne relationship)
     childEvent?: IEvent | null;              // Child event (hasOne relationship)
+
+    // methods
+    setChildEvent(childEvent: IEvent): void;
+    executeEvent(): void;
 }
 
 export { IEvent };

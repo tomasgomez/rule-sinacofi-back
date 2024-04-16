@@ -1,7 +1,7 @@
 import { IEvent } from "../../../entities/event/interface";
 import { IEventRepository } from "../../../repository/event/interface";
 
-/*
+/** 
     getEvent method is responsible for getting the event by id.
     @param repository: IEventRepository
 
