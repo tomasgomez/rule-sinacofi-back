@@ -35,10 +35,14 @@ const schemaRepository: ISchemaRepository = initSchemaRepository(databaseClient)
 const ruleRepository: IRuleRepository = initRuleRepository(databaseClient);
 const eventRepository: IEventRepository = initEventRepository(databaseClient);
 
+console.log('schemaRepository', schemaRepository)
+
 // init usecases
 const typeUsecase: ITypeUsecase = initTypeUsecase(schemaRepository);
 const schemaUsecase: ISchemaUsecase = initSchemaUsecase(schemaRepository);
 const messageUsecase: IMessageUsecase = initMessageUsecase()
+
+console.log('schemaUsecase', schemaUsecase)
 
 const eventUsecase: IEventUsecase = initEventUsecase(eventRepository, messageUsecase);
 const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository);
@@ -49,11 +53,16 @@ const typeAPI: ITypeAPI = initTypeCalls(typeUsecase);
 const schemaAPI: ISchemaAPI = initSchemaCalls(schemaUsecase);
 const ruleAPI: IRuleAPI = initRuleCalls(ruleUsecase);
 
+console.log('schemaAPI', schemaAPI)
+
 // init handler
 const handler: Handler = initHandler(typeAPI, schemaAPI, ruleAPI);
 
+console.log('handler', handler.schemaCalls)
+
 // init router
 const router = initRouter(handler);
+
 
 // create server
 const server = new Server();
