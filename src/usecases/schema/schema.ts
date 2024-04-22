@@ -13,8 +13,6 @@ class SchemaUsecase implements ISchemaUsecase {
     
     // get mesasge type
     getSchema = async (schema: MessageSchema): Promise<any | InternalError> => {
-
-        console.log('schema', schema)
         
         let schemas = await this.repository.find(schema, '0', '');
 
