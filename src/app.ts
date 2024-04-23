@@ -43,7 +43,6 @@ const messageUsecase: IMessageUsecase = initMessageUsecase()
 const eventUsecase: IEventUsecase = initEventUsecase(eventRepository, messageUsecase);
 const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository);
 
-
 // init APIs
 const typeAPI: ITypeAPI = initTypeCalls(typeUsecase);
 const schemaAPI: ISchemaAPI = initSchemaCalls(schemaUsecase);
@@ -68,5 +67,5 @@ server.setRoutes(router);
 server.setLogger(logResponse);
 
 // start server
-server.start(3000);
+server.start(3002);
 

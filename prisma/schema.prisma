@@ -9,18 +9,18 @@ datasource db {
 }
 
 model Schema {
-    id          Int         @id @default(autoincrement())
+    id          String      @id @default(uuid())
     messageCode String
     description String
     name        String
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
-    Parameter   Parameter[]
+    Parameters  Parameter[]
 }
 
 model Parameter {
     id               Int                @id @default(autoincrement())
-    schemaId         Int
+    schemaId         String
     description      String
     row              Int?
     column           Int?
