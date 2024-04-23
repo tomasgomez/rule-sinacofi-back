@@ -14,7 +14,7 @@ RUN npm install
 RUN npm install -g ts-node
 
 # Build your Prisma client during the build
-RUN npx prisma generate
+RUN npx prisma generate --schema=./prisma/schema.prisma
 
 # Copy the rest of the application code
 COPY . .
