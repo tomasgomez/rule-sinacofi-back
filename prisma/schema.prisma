@@ -10,72 +10,72 @@ datasource db {
 
 model Schema {
     id          String      @id @default(uuid())
-    messageCode String
+    messageCode String      @unique
     description String
     name        String
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
     Parameters  Parameter[]
+    Rules       Rules[]
 }
 
 model Parameter {
     id               String             @id @default(uuid())
-    schemaId         String
+    name             String             @unique
+    schemaName       String
     description      String
     row              Int?
     column           Int?
     defaultValue     String?
-    validationRule   Json
     priority         Int
-    schema           Schema             @relation(fields: [schemaId], references: [id])
+    fieldName        String
+    Field            Field              @relation(fields: [fieldName], references: [name])
+    schema           Schema             @relation(fields: [schemaName], references: [messageCode])
     ParameterOption  ParameterOption[]
-    MessageParameter MessageParameter[]
     Rules            Rules[]
 }
 
 model Field {
     id          String @id @default(uuid())
+    name        String @unique
     label       String
     description String
     type        String
     placeholder String
+    Parameters  Parameter[]
 }
 
 model ParameterOption {
-    id          String    @id @default(uuid())
-    parameterId String
-    description String
-    value       String
-    label       String
-    parameter   Parameter @relation(fields: [parameterId], references: [id])
-}
-
-model MessageParameter {
-    messageId   String
-    parameter   Parameter @relation(fields: [parameterId], references: [id])
-    parameterId String
-    value       String
-
-    @@id([messageId, parameterId])
-}
-
-model Status {
-    id        String   @id @default(uuid())
-    messageId String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    userId    String
-    value     String
+    id            String    @id @default(uuid())
+    name          String    @unique
+    parameterName String
+    description   String
+    value         String
+    label         String
+    parameter     Parameter[]
 }
 
 model Rules {
-    id          String    @id @default(uuid())
-    name        String
-    description String
-    fieldName   String
-    condition   String
-    value       String
-    priority    Int
-    parameterId String
-    Parameter   Parameter @relation(fields: [parameterId], references: [id])
+    id            String    @id @default(uuid())
+    name          String    @unique
+    type          String
+    description   String
+    condition     String
+    value         String
+    priority      Int
+    messageCode   String
+    Parameter     Parameter[] 
+    Schema        Schema?    @relation(fields: [messageCode], references: [messageCode])
+}
+
+model ParameterParameterOption {
+    parameterName String
+    optionName    String
+    @@id([parameterName, optionName])
+}
+
+model RulesParameter {
+    rulesName     String
+    parameterName String
+    @@id([rulesName, parameterName])
 }
