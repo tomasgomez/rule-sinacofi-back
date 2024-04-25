@@ -3,6 +3,7 @@ import { IEvent } from "../event/interface";
 import { IRule } from "./interface";
 import { RuleTypes } from "./ruleTypes";
 import { InputValue, validate } from "./ruleValidation";
+import { Parameter } from "../paremeters/parameter";
 
 /**
  * Rule class is responsible for handling the rule entity. 
@@ -11,16 +12,17 @@ class Rule implements IRule {
 
     // constructor
     constructor(
-        public id: number, 
+        public id: string, 
         public name: string, 
         public description: string, 
         public fieldName: string, 
         public condition: RuleTypes, 
         public value: string, 
-        public schemaId: number, 
+        public parameterId: string,
         public priority: number,
+        public parameter?: Parameter,
         public event?: IEvent | null,
-        public eventId?: number
+        public eventId?: string
     ) {}
 
     // setEvent

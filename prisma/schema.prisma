@@ -19,7 +19,7 @@ model Schema {
 }
 
 model Parameter {
-    id               Int                @id @default(autoincrement())
+    id               String             @id @default(uuid())
     schemaId         String
     description      String
     row              Int?
@@ -30,10 +30,11 @@ model Parameter {
     schema           Schema             @relation(fields: [schemaId], references: [id])
     ParameterOption  ParameterOption[]
     MessageParameter MessageParameter[]
+    Rules            Rules[]
 }
 
 model Field {
-    id          Int    @id @default(autoincrement())
+    id          String @id @default(uuid())
     label       String
     description String
     type        String
@@ -41,8 +42,8 @@ model Field {
 }
 
 model ParameterOption {
-    id          Int       @id @default(autoincrement())
-    parameterId Int
+    id          String    @id @default(uuid())
+    parameterId String
     description String
     value       String
     label       String
@@ -52,17 +53,29 @@ model ParameterOption {
 model MessageParameter {
     messageId   String
     parameter   Parameter @relation(fields: [parameterId], references: [id])
-    parameterId Int
+    parameterId String
     value       String
 
     @@id([messageId, parameterId])
 }
 
 model Status {
-    id        Int      @id @default(autoincrement())
+    id        String   @id @default(uuid())
     messageId String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     userId    String
     value     String
+}
+
+model Rules {
+    id          String    @id @default(uuid())
+    name        String
+    description String
+    fieldName   String
+    condition   String
+    value       String
+    priority    Int
+    parameterId String
+    Parameter   Parameter @relation(fields: [parameterId], references: [id])
 }
