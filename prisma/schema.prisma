@@ -31,7 +31,7 @@ model Parameter {
     fieldName        String
     Field            Field              @relation(fields: [fieldName], references: [name])
     schema           Schema             @relation(fields: [schemaName], references: [messageCode])
-    ParameterOption  ParameterOption[]
+    OptionValue      OptionValue[]
     Rules            Rules[]
 }
 
@@ -45,9 +45,10 @@ model Field {
     Parameters  Parameter[]
 }
 
-model ParameterOption {
+model OptionValue {
     id            String    @id @default(uuid())
     name          String    @unique
+    type          String
     parameterName String
     description   String
     value         String
@@ -68,10 +69,10 @@ model Rules {
     Schema        Schema?    @relation(fields: [messageCode], references: [messageCode])
 }
 
-model ParameterParameterOption {
-    parameterName String
-    optionName    String
-    @@id([parameterName, optionName])
+model ParameterOption {
+    parameterName String 
+    optionType    String 
+    @@id([parameterName, optionType])
 }
 
 model RulesParameter {
