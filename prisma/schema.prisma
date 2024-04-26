@@ -20,24 +20,25 @@ model Schema {
 }
 
 model Parameter {
-    id               String             @id @default(uuid())
-    name             String             @unique
-    schemaName       String
-    description      String
-    row              Int?
-    column           Int?
-    defaultValue     String?
-    priority         Int
-    fieldName        String
-    Field            Field              @relation(fields: [fieldName], references: [name])
-    schema           Schema             @relation(fields: [schemaName], references: [messageCode])
-    OptionValue      OptionValue[]
-    Rules            Rules[]
+    id              String            @id @default(uuid())
+    name            String            @unique
+    schemaName      String
+    description     String
+    row             Int?
+    column          Int?
+    defaultValue    String?
+    priority        Int
+    fieldName       String
+    Field           Field             @relation(fields: [fieldName], references: [name])
+    schema          Schema            @relation(fields: [schemaName], references: [messageCode])
+    OptionValue     OptionValue[]
+    Rules           Rules[]
+    ParameterOption ParameterOption[]
 }
 
 model Field {
-    id          String @id @default(uuid())
-    name        String @unique
+    id          String      @id @default(uuid())
+    name        String      @unique
     label       String
     description String
     type        String
@@ -46,37 +47,45 @@ model Field {
 }
 
 model OptionValue {
-    id            String    @id @default(uuid())
-    name          String    @unique
-    type          String
-    parameterName String
-    description   String
-    value         String
-    label         String
-    parameter     Parameter[]
+    id              String            @id @default(uuid())
+    name            String            @unique
+    type            String
+    parameterName   String
+    description     String
+    value           String
+    label           String
+    parameter       Parameter[]
+    ParameterOption ParameterOption[]
+
+    @@unique([name, type])
 }
 
 model Rules {
-    id            String    @id @default(uuid())
-    name          String    @unique
-    type          String
-    description   String
-    condition     String
-    value         String
-    priority      Int
-    messageCode   String
-    Parameter     Parameter[] 
-    Schema        Schema?    @relation(fields: [messageCode], references: [messageCode])
+    id          String      @id @default(uuid())
+    name        String      @unique
+    type        String
+    description String
+    condition   String
+    value       String
+    priority    Int
+    messageCode String
+    Parameter   Parameter[]
+    Schema      Schema?     @relation(fields: [messageCode], references: [messageCode])
 }
 
 model ParameterOption {
-    parameterName String 
-    optionType    String 
-    @@id([parameterName, optionType])
+    id            String @id @default(uuid())
+    parameterName String
+    optionName    String
+    optionType    String
+
+    OptionValue OptionValue @relation(fields: [optionName, optionType], references: [name, type])
+    Parameter   Parameter   @relation(fields: [parameterName], references: [name])
 }
 
 model RulesParameter {
     rulesName     String
     parameterName String
+
     @@id([rulesName, parameterName])
 }
