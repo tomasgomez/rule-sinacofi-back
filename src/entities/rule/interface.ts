@@ -19,20 +19,20 @@ import {
  */
 
 interface IRule {
-    id: string;                 // Unique identifier for the rule
-    name: string;               // Name of the validation rule
-    description: string;        // Description of the validation rule
-    fieldName: string;          // Name of the field to be validated
-    condition: RuleTypes;       // Type of validation condition (e.g., 'MAX_LENGTH', 'EMAIL_VALIDATION')
-    value: string;              // Expected value for the validation
-    parameterId: string;        // Associated parameter
-    parameter ? : Parameter;    // Associated parameter
-    priority: number;           // Priority of the rule
-    event ? : IEvent | null;    // Rule object
-    eventId ? : string;         // Event Id
+    id: string; // Unique identifier for the rule
+    name: string; // Name of the rule
+    type: string; // Type of the rule
+    description: string; // Description of the rule
+    condition: RuleTypes; // Condition of the rule
+    value: string; // Value of the rule
+    priority: number; // Priority of the rule
+    createdAt: Date; // Date and time when the rule was created
+    updatedAt: Date; // Date and time when the rule was last updated
+    event ? : IEvent | null; // Event object
+    eventId ? : string; // Event Id
 
     // methods
-    setEvent(event: IEvent): void;
+    setEvent(event: IEvent): IEvent;
     executeRule(inputValue: InputValue): boolean | InternalError;
 }
 
