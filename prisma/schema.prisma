@@ -1,91 +1,84 @@
 // prisma/schema.prisma
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
+  provider = "postgresql"
+  url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
 }
 
 model Schema {
-    id          String      @id @default(uuid())
-    messageCode String      @unique
-    description String
-    name        String
-    createdAt   DateTime    @default(now())
-    updatedAt   DateTime    @updatedAt
-    Parameters  Parameter[]
-    Rules       Rules[]
+  id          String      @id @default(uuid())
+  messageCode String      @unique
+  description String
+  name        String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  parameters  Parameter[]
+  rules       Rule[]
 }
 
 model Parameter {
-    id              String            @id @default(uuid())
-    name            String            @unique
-    schemaName      String
-    description     String
-    row             Int?
-    column          Int?
-    defaultValue    String?
-    priority        Int
-    fieldName       String
-    Field           Field             @relation(fields: [fieldName], references: [name])
-    schema          Schema            @relation(fields: [schemaName], references: [messageCode])
-    OptionValue     OptionValue[]
-    Rules           Rules[]
-    ParameterOption ParameterOption[]
-}
-
-model Field {
-    id          String      @id @default(uuid())
-    name        String      @unique
-    label       String
-    description String
-    type        String
-    placeholder String
-    Parameters  Parameter[]
+  id           String            @id @default(uuid())
+  name         String            @unique
+  schemaName   String
+  label        String
+  type         String
+  placeholder  String
+  description  String
+  row          Int?
+  column       Int?
+  defaultValue String?
+  priority     Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  schema       Schema     @relation(fields: [schemaName], references: [messageCode])
+  rules        Rule[]
+  optionValues ParameterOption[]
 }
 
 model OptionValue {
-    id              String            @id @default(uuid())
-    name            String            @unique
-    type            String
-    parameterName   String
-    description     String
-    value           String
-    label           String
-    parameter       Parameter[]
-    ParameterOption ParameterOption[]
+  id          String            @id @default(uuid())
+  name        String            
+  type        String
+  description String
+  value       String
+  label       String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  parameters  ParameterOption[]
 
-    @@unique([name, type])
+  @@unique([name, type])
+  @@index([name, type])
 }
 
-model Rules {
-    id          String      @id @default(uuid())
-    name        String      @unique
-    type        String
-    description String
-    condition   String
-    value       String
-    priority    Int
-    messageCode String
-    Parameter   Parameter[]
-    Schema      Schema?     @relation(fields: [messageCode], references: [messageCode])
+model Rule {
+  id          String      @id @default(uuid())
+  name        String      
+  type        String
+  description String
+  condition   String
+  value       String
+  priority    Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  parameters  Parameter[]
+  schema      Schema[]
+
+  @@unique([name, type])
+  @@index([name, type])
 }
 
 model ParameterOption {
-    id            String @id @default(uuid())
-    parameterName String
-    optionName    String
-    optionType    String
+  parameterName String
+  optionName    String
+  optionType    String
 
-    OptionValue OptionValue @relation(fields: [optionName, optionType], references: [name, type])
-    Parameter   Parameter   @relation(fields: [parameterName], references: [name])
+  optionValue OptionValue @relation(fields: [optionName, optionType], references: [name, type])
+  parameter   Parameter   @relation(fields: [parameterName], references: [name])
+
+  @@id([parameterName, optionName, optionType])
+  @@index([parameterName, optionName, optionType])
 }
 
-model RulesParameter {
-    rulesName     String
-    parameterName String
-
-    @@id([rulesName, parameterName])
-}
