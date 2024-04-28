@@ -18,8 +18,8 @@ export interface IParameter {
     priority: number; // Priority of the schema
     createdAt: Date; // Date and time when the schema was created
     updatedAt: Date; // Date and time when the schema was last updated
-    rules: IRule[]; // Array of related Rule objects
-    optionValues: IOptionValue[]; // Array of related ParameterOption objects
+    rules?: IRule[]; // Array of related Rule objects
+    optionValues?: IOptionValue[]; // Array of related ParameterOption objects
 }
 
 export interface IOptionValue {

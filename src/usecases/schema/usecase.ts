@@ -1,11 +1,13 @@
 /* 
     schemaUsecase interface
 */
+import { IRequest } from "../../entities/calls/pagination/interface";
+import { InternalError } from "../../entities/internalError";
+import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
 import { ISchemaRepository } from "../../repository/schema/interface";
 
 export interface ISchemaUsecase {
     repository: ISchemaRepository;
 
-    // getSchema(message: any): Promise<any | null>;
-    createSchema(message: any): Promise<any | null>
+    findSchema(request: IRequest<IOptionalSchema, any>): Promise < ISchema | InternalError >;
 }
