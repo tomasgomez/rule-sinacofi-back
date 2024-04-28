@@ -14,3 +14,32 @@ interface ISchema {
     parameters: IParameter[];  // Array of related Parameter objects
     rules: IRule[];             // Array of related Rule objects
 }
+
+// Define ISChemaFilter interface
+type ISchemaFilter = {
+    [Parameter in keyof ISchema]: boolean;
+};
+
+// Define IOptionalSchema interface
+type IOptionalSchema = {
+    [key in keyof ISchema]?: ISchema[key];
+};
+
+// Define Schema class
+class Schema implements ISchema {
+    constructor(
+        public id: string,
+        public messageCode: string,
+        public description: string,
+        public name: string,
+        public createdAt: Date,
+        public updatedAt: Date,
+        public parameters: IParameter[],
+        public rules: IRule[]
+    ) {}
+    
+}
+
+
+export { ISchema, ISchemaFilter, Schema, IOptionalSchema };
+

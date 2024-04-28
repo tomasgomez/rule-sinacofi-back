@@ -26,7 +26,6 @@ const validateRule = async (rule: IRule, value: InputValue): Promise<boolean | I
         console.log("Rule validation failed");
         let data = {
             "rule": rule.name,
-            "field": rule.fieldName,
             "condition": rule.condition,
             "condition_value": rule.value,
             "value": value

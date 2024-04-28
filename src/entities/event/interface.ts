@@ -6,7 +6,6 @@ import { ActionTypes } from "./actionTypes";
 
 interface IEvent {
     id: string;                              // Unique identifier for the event
-    ruleId: string;                          // Associated rule (belongsTo relationship)
     name: string;                            // Name of the event
     description: string;                     // Description of the event
     actionType: ActionTypes;                 // Type of action to be performed (e.g., 'UPDATE_STATUS')

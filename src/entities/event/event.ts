@@ -8,8 +8,7 @@ import { IEvent } from "./interface";
 class Event implements IEvent {
     // constructor
     constructor(
-        public id: number, 
-        public ruleId: number, 
+        public id: string, 
         public name: string, 
         public description: string, 
         public actionType: ActionTypes, 

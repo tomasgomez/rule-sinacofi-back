@@ -13,15 +13,15 @@ export const initRouter = (handler: Handler): express.Router => {
 
     // init type router
     const typeRouter = initTypeRouter(handler.typeCalls);
-    router.use('/types', typeRouter);
+    router.use('/schemaTypes', typeRouter);
 
     // init schema router
     const schemaRouter = initSchemaRouter(handler.schemaCalls);
-    router.use('/schemas', schemaRouter);
+    router.use('/schema', schemaRouter);
 
     // init rule router
     const ruleRouter = initRuleRouter(handler.ruleCalls);
-    router.use('/rules', ruleRouter);
+    router.use('/rule', ruleRouter);
     
     return router;
 }

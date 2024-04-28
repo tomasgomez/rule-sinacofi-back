@@ -9,3 +9,4 @@ export interface IMessageSchema {
     updatedAt: Date;
     parameters?: IParameter[];
 }
+

@@ -1,8 +1,11 @@
 import { InternalError } from "../../entities/internalError";
-import { MessageSchema } from "../../entities/schema/messageSchema";
+import { ISchema, IOptionalSchema, ISchemaFilter } from "../../entities/schema/schema";
+import { PrismaWrapper } from "../prismaWrapper";
 
 export interface ISchemaRepository {
-  find(schema: MessageSchema, count: string, offset: string): Promise < MessageSchema[] | InternalError > ;
-  findSchemaTypes(): Promise < MessageSchema[] | InternalError > ;
-  findSchemaDetails(messageCode: string): Promise < MessageSchema | InternalError > ;
+  repository: PrismaWrapper;
+
+  // find(schema: MessageSchema, count: string, offset: string): Promise < MessageSchema[] | InternalError >;
+  
+  findSchemaTypes(schema: IOptionalSchema, count: number, offset: number, select: ISchemaFilter): Promise <{ schemas: ISchema[], total: number } | InternalError >;
 }

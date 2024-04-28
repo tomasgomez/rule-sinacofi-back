@@ -1,4 +1,8 @@
+import { IRequest } from "../../entities/calls/pagination/interface";
+import { InternalError } from "../../entities/internalError";
+import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
 import { ISchemaRepository } from "../../repository/schema/interface";
+import { getSchemaTypes } from "./methods/getSchemaTypes";
 import { ITypeUsecase } from "./usecase";
 
 /*
@@ -7,12 +11,16 @@ import { ITypeUsecase } from "./usecase";
 
 class TypeUsecase implements ITypeUsecase {
     // constructor
-    constructor(private readonly repository: ISchemaRepository) {}
+    constructor(readonly repository: ISchemaRepository) {}
     
     // get mesasge type
     getMessageType = async (message: any): Promise<any | null> => {
         return message;
     }
+
+    // get shcema types
+    getSchemaTypes = async (request: IRequest<IOptionalSchema, ISchemaFilter>): Promise <{ schemas: ISchema[], total: number } | InternalError > => 
+        getSchemaTypes(this, request);
 }
 
 // init type usecase

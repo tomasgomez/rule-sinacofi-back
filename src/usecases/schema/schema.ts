@@ -1,6 +1,8 @@
+import { IRequest } from "../../entities/calls/pagination/interface";
 import { InternalError } from "../../entities/internalError";
-import { MessageSchema } from "../../entities/schema/messageSchema";
+import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
 import { ISchemaRepository } from "../../repository/schema/interface";
+import { getSchemaTypes } from "../type/methods/getSchemaTypes";
 import { ISchemaUsecase } from "./usecase";
 
 /*
@@ -8,16 +10,17 @@ import { ISchemaUsecase } from "./usecase";
 */
 
 class SchemaUsecase implements ISchemaUsecase {
+    
     // constructor
-    constructor(private readonly repository: ISchemaRepository) {}
+    constructor(readonly repository: ISchemaRepository) {}
     
     // get mesasge type
-    getSchema = async (schema: MessageSchema): Promise<any | InternalError> => {
+    // getSchema = async (schema: MessageSchema): Promise<any | InternalError> => {
         
-        let schemas = await this.repository.find(schema, '0', '');
+    //     let schemas = await this.repository.find(schema, '0', '');
 
-        return schemas;
-    }
+    //     return schemas;
+    // }
 
     // create message type
     createSchema = async (message: any): Promise<any | null> => {

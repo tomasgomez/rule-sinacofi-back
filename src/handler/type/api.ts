@@ -1,22 +1,21 @@
 import { Calls } from "../../entities/calls/calls";
 import express from 'express';
-import { ICalls } from "../../entities/calls/interface";
 import { ITypeUsecase } from "../../usecases/type/usecase";
+import { getSchemaTypes } from "./methods/getSchemaTypes";
+import { ITypeAPI } from "./interface";
 
 /*
     TypeAPI class is responsible for handling the requests and responses for the type API.
 */
 
-class TypeCalls extends Calls implements ICalls {
+class TypeCalls extends Calls implements ITypeAPI {
     // constructor
-    _usecase: ITypeUsecase;
+    usecase: ITypeUsecase;
     constructor(typeUsecase: ITypeUsecase) {
         super();
-        this._usecase = typeUsecase;
+        this.usecase = typeUsecase;
     }
-    async GET(req: express.Request, res: express.Response) {
-        res.status(200).json({ message: 'GET method' });
-    }
+    GET = async (req: express.Request, res: express.Response): Promise<void> => await getSchemaTypes(this, req, res);
 }
 
-export const initTypeCalls = (usecase: ITypeUsecase): ICalls => new TypeCalls(usecase);
+export const initTypeCalls = (usecase: ITypeUsecase): ITypeAPI => new TypeCalls(usecase);
