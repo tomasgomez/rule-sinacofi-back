@@ -15,7 +15,7 @@ class TypeCalls extends Calls implements ITypeAPI {
         super();
         this.usecase = typeUsecase;
     }
-    GET = async (req: express.Request, res: express.Response): Promise<void> => await getSchemaTypes(this, req, res);
+    GET = async (req: express.Request, res: express.Response): Promise<void> => getSchemaTypes(this, req, res);
 }
 
 export const initTypeCalls = (usecase: ITypeUsecase): ITypeAPI => new TypeCalls(usecase);

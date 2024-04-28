@@ -7,7 +7,7 @@ import { IOptionalSchema, ISchema, ISchemaFilter } from "../../../entities/schem
 import { ITypeAPI } from "../interface";
 import { getSchemaTypeResponse } from "../presenter/getSchemaTypeResponse";
 
-const getSchemaTypes = async (context: ITypeAPI, req: Request, res: Response) => {
+const getSchemaTypes = async (context: ITypeAPI, req: Request, res: Response): Promise<void> => {
     try {
 
         const requestAdapted = getSchemaTypesRequest(req);
@@ -15,6 +15,7 @@ const getSchemaTypes = async (context: ITypeAPI, req: Request, res: Response) =>
             res.status(requestAdapted.statusCode).json(requestAdapted);
         } else if (requestAdapted instanceof InternalError) {
             res.status(500).json(requestAdapted);
+            return;
         }
 
         /* Get schema types */
@@ -23,22 +24,25 @@ const getSchemaTypes = async (context: ITypeAPI, req: Request, res: Response) =>
         /* If response is an instance of InternalError, return the error */
         if (response instanceof InternalError && response.statusCode) {
             res.status(response.statusCode).json(response); 
+            return;
         } else if (response instanceof InternalError) {
             res.status(500).json(response);
+            return;
         }
 
         /* handling response */
         if ('schemas' in response && 'total' in response) {
             const responseAdapted = getSchemaTypeResponse(response.schemas as ISchema[], response.total, requestAdapted as IRequest<IOptionalSchema, ISchemaFilter>);
             res.status(200).json(responseAdapted);
+            return;
         }
 
-        /* If response is not an instance of InternalError, return the response */
-        res.status(500).json(new InternalError("", ErrorCode.INTERNAL_SERVER_ERROR, "", 500));
+       return;
         
     } catch (error: any) {
         console.log(error);
         res.status(500).json(new InternalError(error.message, ErrorCode.INTERNAL_SERVER_ERROR, error, 500));
+        return;
     }
 } 
 
