@@ -1,8 +1,8 @@
+import { InternalError } from "../../entities/internalError";
+import { IMessage } from "../../entities/message/interface";
 
 interface IMessageUsecase {
-    createMessage(message: string): void;
-    updateMessage(message: string): void;
-    deleteMessage(message: string): void;
+    // validateMessage(message: any): Promise < IMessage | InternalError >;
 }
 
 export { IMessageUsecase };

@@ -2,7 +2,7 @@ import { ErrorCode, InternalError } from "../../../entities/internalError";
 import { IOptionValue } from "../../../entities/paremeters/interface";
 import { Parameter } from "../../../entities/paremeters/parameter";
 import { Rule } from "../../../entities/rule/rule";
-import { IOptionalSchema, ISchema, ISchemaFilter, Schema } from "../../../entities/schema/schema";
+import { IOptionalSchema, ISchema, Schema } from "../../../entities/schema/schema";
 import { ISchemaRepository } from "../interface";
 
 

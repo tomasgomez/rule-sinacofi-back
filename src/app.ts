@@ -41,7 +41,7 @@ const schemaUsecase: ISchemaUsecase = initSchemaUsecase(schemaRepository);
 const messageUsecase: IMessageUsecase = initMessageUsecase()
 
 const eventUsecase: IEventUsecase = initEventUsecase(eventRepository, messageUsecase);
-const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository);
+const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository, schemaUsecase);
 
 // init APIs
 const typeAPI: ITypeAPI = initTypeCalls(typeUsecase);

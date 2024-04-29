@@ -5,6 +5,7 @@ import { ICalls } from "../../entities/calls/interface";
 
 interface IRuleAPI extends ICalls {
     VALIDATE_RULE(req: express.Request, res: express.Response): Promise<void>
+    VALIDATE_MESSAGE(req: express.Request, res: express.Response): Promise<void>
 }
 
 export { IRuleAPI };
