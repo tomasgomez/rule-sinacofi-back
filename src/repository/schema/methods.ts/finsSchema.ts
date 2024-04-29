@@ -1,7 +1,7 @@
 import { ErrorCode, InternalError } from "../../../entities/internalError";
-import { IParameter } from "../../../entities/paremeters/interface";
+import { IOptionValue } from "../../../entities/paremeters/interface";
 import { Parameter } from "../../../entities/paremeters/parameter";
-import { IRule } from "../../../entities/rule/interface";
+import { Rule } from "../../../entities/rule/rule";
 import { IOptionalSchema, ISchema, ISchemaFilter, Schema } from "../../../entities/schema/schema";
 import { ISchemaRepository } from "../interface";
 
@@ -16,7 +16,7 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
         const where = { messageCode: schema.messageCode }
 
     
-        const schemaFetched = await client.schema.findUnique({ where, select });
+        const schemaFetched: any = await client.schema.findFirst({ where: where, select: select });
         
         /* If the schema is not found, return an error */
         if (!schemaFetched) {
@@ -24,32 +24,34 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
             return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
         }
 
-        const parmeters: IParameter[] = schemaFetched.parameters.map((parameter) => {
-            // const rules = parameter.rules?.map((rule: any) => {});
-            return new Parameter(
-            parameter.id, 
-            parameter.name,
-            parameter.schemaName,
-            parameter.label,
-            parameter.type,
-            parameter.placeholder,
-            parameter.description,
-            parameter.priority,
-            parameter.createdAt,
-            parameter.updatedAt,
-            [],
-            [],
-            parameter.row? parameter.row : 3,
-            parameter.column? parameter.column : 1,
-            parameter.defaultValue? parameter.defaultValue : ''
-            );
-        });
-        // todo: add rules
-        const rules: IRule[] = [];
 
-        const result = new Schema(schemaFetched.id, schemaFetched.messageCode, schemaFetched.description, schemaFetched.name, schemaFetched.createdAt, schemaFetched.updatedAt, parmeters , rules);
+        // rules
+        const rulesAdated: any[] = schemaFetched.rules.map((rule: any) => new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt));
 
-        return result;
+        // parameters
+        const parametersAdapted: any[] = schemaFetched.parameters.map((parameter:any) => {
+            const { name, schemaName, label, type, placeholder, description, priority, rules, row, column, defaultValue, optionValues } = parameter;
+                const rulesAdapted = rules.map((rule: any) => new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt));
+                const optionValuesAdapted = optionValues.map((optionValue: any) => {
+                const opt: IOptionValue  ={
+                    id: optionValue.optionValue.id,
+                    name: optionValue.optionValue.name,
+                    type: optionValue.optionValue.type,
+                    description: optionValue.optionValue.description,
+                    value: optionValue.optionValue.value,
+                    label: optionValue.optionValue.label,
+                    createdAt: optionValue.optionValue.createdAt,
+                    updatedAt: optionValue.optionValue.updatedAt   
+                }
+                return opt;
+            })
+
+            return new Parameter(parameter.id, name, schemaName, label, type, placeholder, description, priority, parameter.createdAt, parameter.updatedAt, rulesAdapted, optionValuesAdapted, row, column, defaultValue);
+        })
+
+
+        
+        return new Schema(schemaFetched.id, schemaFetched.messageCode, schemaFetched.description, schemaFetched.name, schemaFetched.createdAt, schemaFetched.updatedAt, parametersAdapted, rulesAdated);
 
 
     } catch (error: any) {

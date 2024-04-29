@@ -36,6 +36,4 @@ interface IRule {
     executeRule(inputValue: InputValue): boolean | InternalError;
 }
 
-export {
-    IRule
-};
+export { IRule };

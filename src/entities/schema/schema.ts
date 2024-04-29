@@ -18,7 +18,8 @@ interface ISchema {
 // Define ISChemaFilter interface
 type ISchemaFilter = {
     [Parameter in keyof ISchema]: boolean;
-};
+}
+
 
 // Define IOptionalSchema interface
 type IOptionalSchema = {
@@ -27,16 +28,25 @@ type IOptionalSchema = {
 
 // Define Schema class
 class Schema implements ISchema {
-    constructor(
-        public id: string,
-        public messageCode: string,
-        public description: string,
-        public name: string,
-        public createdAt: Date,
-        public updatedAt: Date,
-        public parameters: IParameter[],
-        public rules: IRule[]
-    ) {}
+    id: string;
+    messageCode: string;
+    description: string;
+    name: string;
+    createdAt: Date;
+    updatedAt: Date;
+    parameters: IParameter[];
+    rules: IRule[];
+
+    constructor(id: string, messageCode: string, description: string, name: string, createdAt: Date, updatedAt: Date, parameters: IParameter[], rules: IRule[]) {
+        this.id = id;
+        this.messageCode = messageCode;
+        this.description = description;
+        this.name = name;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.parameters = parameters;
+        this.rules = rules;
+    }
     
 }
 
