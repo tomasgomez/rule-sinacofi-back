@@ -16,12 +16,12 @@ const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSche
         updatedAt: true, 
         rules: {select: { 
             name: true,
-            description: true,
-            createdAt: true,
-            updatedAt: true,
+            // description: true,
+            // createdAt: true,
+            // updatedAt: true,
             condition: true,
             value: true,
-            type: true,
+            // type: true,
             priority: true, 
         }},
         parameters: {
@@ -35,10 +35,10 @@ const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSche
             priority: true, 
             rules: {select :{
                 name: true,
-                description: true,
+                // description: true,
                 condition: true,
                 value: true,
-                type: true,
+                // type: true,
                 priority: true,
             }}, 
             row: true, 
@@ -46,9 +46,9 @@ const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSche
             defaultValue: true,
             optionValues:{select: {
                 optionValue: { select: {
-                    name: true,  
-                    type: true,
-                    description: true,
+                    // name: true,  
+                    // type: true,
+                    // description: true,
                     value: true,
                     label: true,       
                 }}
