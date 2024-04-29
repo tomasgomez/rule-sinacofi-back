@@ -27,7 +27,7 @@ const validateMessage = async (context: IRuleUsecase ,message: IMessage): Promis
             // get rules
             const rules = schemaParameter.rules;
             // check the rules
-            const ruleErrors = rules?.forEach((rule) => {
+            rules?.forEach((rule) => {
                 const ruleValidation = context.validateRule(rule, parameter.value);
                 if (ruleValidation instanceof InternalError) {
                     messageErrors.push(ruleValidation);
