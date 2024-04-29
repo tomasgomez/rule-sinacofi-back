@@ -1,7 +1,13 @@
 
 interface IMessage {
-    message: string;
-    timestamp: Date;
+    messageCode: string;
+    parameters: IMessageParams[];
+
 }
 
-export { IMessage };
+interface IMessageParams {
+    name: string;
+    value: string;
+}
+
+export { IMessage, IMessageParams };

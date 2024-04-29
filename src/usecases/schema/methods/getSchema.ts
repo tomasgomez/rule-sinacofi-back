@@ -57,12 +57,8 @@ const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSche
     };
     
     // set filters
-
-    
-    // get the schemas
-    const schemasFetched = await context.repository.findSchema(request.data, select);
-    
-    return schemasFetched
+   
+    return  await context.repository.findSchema(request.data, select);
     
 };
 
