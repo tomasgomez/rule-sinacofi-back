@@ -16,7 +16,7 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
         const where = { messageCode: schema.messageCode }
 
     
-        const schemaFetched: any = await client.schema.findFirst({ where: where, select: select });
+        const schemaFetched: any = await client.schema.findUnique({ where: where, include: { parameters: { include: {optionValues: true, rules: true }} } });
         
         /* If the schema is not found, return an error */
         if (!schemaFetched) {
@@ -24,24 +24,19 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
             return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
         }
 
-
-        // rules
-        const rulesAdated: any[] = schemaFetched.rules.map((rule: any) => new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt));
-
         // parameters
         const parametersAdapted: any[] = schemaFetched.parameters.map((parameter:any) => {
             const { name, schemaName, label, type, placeholder, description, priority, rules, row, column, defaultValue, optionValues } = parameter;
                 const rulesAdapted = rules.map((rule: any) => new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt));
                 const optionValuesAdapted = optionValues.map((optionValue: any) => {
-                const opt: IOptionValue  ={
-                    id: optionValue.optionValue.id,
-                    name: optionValue.optionValue.name,
-                    type: optionValue.optionValue.type,
-                    description: optionValue.optionValue.description,
-                    value: optionValue.optionValue.value,
-                    label: optionValue.optionValue.label,
-                    createdAt: optionValue.optionValue.createdAt,
-                    updatedAt: optionValue.optionValue.updatedAt   
+                const opt: IOptionValue  = {
+                    name: optionValue.name,
+                    type: optionValue.type,
+                    description: optionValue.description,
+                    value: optionValue.value,
+                    label: optionValue.label,
+                    createdAt: optionValue.createdAt,
+                    updatedAt: optionValue.updatedAt   
                 }
                 return opt;
             })
@@ -51,7 +46,7 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
 
 
         
-        return new Schema(schemaFetched.id, schemaFetched.messageCode, schemaFetched.description, schemaFetched.name, schemaFetched.createdAt, schemaFetched.updatedAt, parametersAdapted, rulesAdated);
+        return new Schema(schemaFetched.id, schemaFetched.messageCode, schemaFetched.description, schemaFetched.name, schemaFetched.createdAt, schemaFetched.updatedAt, parametersAdapted, []);
 
 
     } catch (error: any) {

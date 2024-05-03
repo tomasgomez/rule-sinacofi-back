@@ -16,9 +16,13 @@ interface ISchema {
 }
 
 // Define ISChemaFilter interface
+// type ISchemaFilter = {
+//     [Parameter in keyof ISchema]: boolean;
+// }
+// Define ISChemaFilter interface with nested filtering for parameters
 type ISchemaFilter = {
-    [Parameter in keyof ISchema]: boolean;
-}
+    [key in keyof ISchema]?: boolean; // Base structure
+};
 
 
 // Define IOptionalSchema interface

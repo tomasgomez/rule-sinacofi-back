@@ -1,9 +1,9 @@
 import { ISchemaRepository } from "./interface";
 import { PrismaWrapper } from "../prismaWrapper";
 import { InternalError } from "../../entities/internalError";
-import { findSchemaTypes } from "./methods.ts/findSchemaTypes";
+import { findSchemaTypes } from "./methods/findSchemaTypes";
 import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
-import { findSchema } from "./methods.ts/finsSchema";
+import { findSchema } from "./methods/findSchema";
 
 class SchemaRepository implements ISchemaRepository {
   repository: PrismaWrapper;

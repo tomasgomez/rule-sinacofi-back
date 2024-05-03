@@ -23,7 +23,6 @@ export interface IParameter {
 }
 
 export interface IOptionValue {
-    id: string; // Unique identifier for the option value
     name: string; // Name of the option value
     type: string; // Type of the option value
     description: string; // Description of the option value

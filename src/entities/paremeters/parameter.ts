@@ -4,7 +4,7 @@ import { IParameter, IOptionValue } from "./interface";
 export class Parameter implements IParameter {
     id: string; // Unique identifier for the schema
     name: string; // Unique name of the schema
-    schemaName: string; // Name of the schema
+    messageCode: string; // Name of the schema
     label: string; // Label for the schema
     type: string; // Type of the schema
     placeholder: string; // Placeholder for the schema
@@ -21,7 +21,7 @@ export class Parameter implements IParameter {
     constructor(
         id: string,
         name: string,
-        schemaName: string,
+        messageCode: string,
         label: string,
         type: string,
         placeholder: string,
@@ -37,7 +37,7 @@ export class Parameter implements IParameter {
     ) {
         this.id = id;
         this.name = name;
-        this.schemaName = schemaName;
+        this.messageCode = messageCode;
         this.label = label;
         this.type = type;
         this.placeholder = placeholder;
