@@ -15,13 +15,10 @@ const getSchemaTypesRequest = (req: express.Request): IRequest<IOptionalSchema, 
     const offset = req.query.offset ? Number(req.query.offset) : 0;
 
     // get params from query parameters, if messageCode is not provided set a default value
-    const messageCode = req.query.messageCode ? req.query.messageCode : undefined;
-
-    // get params from query fields, if parameters is not provided set a default value
-    const parameters = req.query.fields ? req.query.fields : undefined;
+    const messageCode = req.query.messageCode ?? "";
 
     // Set values
-    const schema: IOptionalSchema = messageCode ? { messageCode: messageCode.toString() } : {} as IOptionalSchema;
+    const schema: IOptionalSchema = typeof messageCode === 'object' ? {} : { messageCode: messageCode.toString() };
 
     // Set Request
     const IRequest: IRequest<IOptionalSchema, ISchemaFilter> = {

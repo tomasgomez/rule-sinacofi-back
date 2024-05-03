@@ -1,6 +1,5 @@
 import express from "express";
 import { Calls } from "../../entities/calls/calls";
-import { ICalls } from "../../entities/calls/interface";
 import { IRuleUsecase } from "../../usecases/rule/usecase";
 import { IRuleAPI } from "./interface";
 import { validateRule } from "./methods/validateRule";

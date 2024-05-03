@@ -5,11 +5,11 @@ const { combine, timestamp, json } = winston.format;
 
 // Create a Winston logger instance
 export const winstonLogger = winston.createLogger({
-    level: process.env.LOG_LEVEL || 'info',
+    level: process.env.LOG_LEVEL ?? 'info',
     format: combine(timestamp(), json()),
     transports: [
         new winston.transports.File({
-            filename: process.env.LOG_FILENAME || '/var/log/rules-sinacofi-back.log',
+            filename: process.env.LOG_FILENAME ?? '/var/log/rules-sinacofi-back.log',
             maxsize: 5242880
         }),
     ],
@@ -38,7 +38,7 @@ export const logRequest: express.Handler = (
     req: express.Request, 
     res: express.Response, 
     next: express.NextFunction) => {
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] ?? req.socket.remoteAddress;
     const logData = formatLogData('Request', undefined, ip as string);
     winstonLogger.info('Request', logData);
     next();
@@ -49,7 +49,7 @@ export const logResponse: express.Handler = (
     req: express.Request, 
     res: express.Response, 
     next: express.NextFunction) => {
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] ?? req.socket.remoteAddress;
     const logData = formatLogData('Error', res.json, ip as string);
     winstonLogger.error('Error', logData);
     next();

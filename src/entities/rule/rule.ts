@@ -3,7 +3,6 @@ import { IEvent } from "../event/interface";
 import { IRule } from "./interface";
 import { RuleTypes } from "./ruleTypes";
 import { InputValue, validate } from "./ruleValidation";
-import { Parameter } from "../paremeters/parameter";
 
 /**
  * Rule class is responsible for handling the rule entity. 

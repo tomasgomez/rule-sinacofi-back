@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import { InternalError } from "../../../entities/internalError";
-import { ErrorCode } from "../../../entities/internalError";
+import { InternalError, ErrorCode } from "../../../entities/internalError";
 import { getSchemaTypesRequest } from "../presenter/getSchemaTypesRequest";
 import { IRequest } from "../../../entities/calls/pagination/interface";
-import { IOptionalSchema, ISchema, ISchemaFilter } from "../../../entities/schema/schema";
+import { IOptionalSchema, ISchemaFilter } from "../../../entities/schema/schema";
 import { ITypeAPI } from "../interface";
 import { getSchemaTypeResponse } from "../presenter/getSchemaTypeResponse";
 
@@ -32,7 +31,7 @@ const getSchemaTypes = async (context: ITypeAPI, req: Request, res: Response): P
 
         /* handling response */
         if ('schemas' in response && 'total' in response) {
-            const responseAdapted = getSchemaTypeResponse(response.schemas as ISchema[], response.total, requestAdapted as IRequest<IOptionalSchema, ISchemaFilter>);
+            const responseAdapted = getSchemaTypeResponse(response.schemas, response.total, requestAdapted as IRequest<IOptionalSchema, ISchemaFilter>);
             res.status(200).json(responseAdapted);
             return;
         }

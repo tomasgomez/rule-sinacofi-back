@@ -2,7 +2,7 @@ import { IEvent } from "../../../entities/event/interface";
 
 
 // execute event
-const executeEvent = async (event: IEvent): Promise<any | Error> => {
+const executeEvent = async (event: IEvent): Promise<void | Error> => {
     try {
         return event.executeEvent();
     } catch (error: any) {

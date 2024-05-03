@@ -10,9 +10,6 @@ import {
 import {
     InputValue
 } from "./ruleValidation";
-import {
-    Parameter
-} from "../paremeters/parameter";
 
 /** 
  * Interface representing a validation rule.

@@ -1,4 +1,3 @@
-import { ICalls } from "../entities/calls/interface";
 import { IRuleAPI } from "./rule/interface";
 import { ISchemaAPI } from "./schema/interface";
 import { ITypeAPI } from "./type/interface";

@@ -77,19 +77,11 @@ export async function find(repository: PrismaWrapper, messageSchema: MessageSche
             return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
         }
 
-        for (let i = 0; i < schemasFetched.length; i++) {
-            const {
-                id,
-                messageCode,
-                description,
-                name,
-                createdAt,
-                updatedAt
-            } = schemasFetched[i];
-
+        for (const schema of schemasFetched) {
+            const { id, messageCode, description, name, createdAt, updatedAt } = schema;
             schemas.push(new MessageSchema(id, messageCode, description, name, createdAt, updatedAt));
         }
-
+        
         return schemas;
 
     } catch (error: any) {

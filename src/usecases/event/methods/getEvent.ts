@@ -6,7 +6,7 @@ import { IEventRepository } from "../../../repository/event/interface";
     @param repository: IEventRepository
 
 */
-export async function getEvent(repository: IEventRepository, event: IEvent): Promise<IEvent | Error> {
+export async function getEvent(repository: IEventRepository, event: void): Promise<void | Error> {
     try {
     //   return repository.find(message, "0", "0")
         return event;

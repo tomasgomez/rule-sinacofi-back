@@ -1,6 +1,6 @@
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { InternalError } from "../../../entities/internalError";
-import { IOptionalSchema, ISchema, ISchemaFilter } from "../../../entities/schema/schema";
+import { IOptionalSchema, ISchema } from "../../../entities/schema/schema";
 import { ISchemaUsecase } from "../usecase";
 
 
