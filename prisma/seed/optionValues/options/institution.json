@@ -1,0 +1,107 @@
+[
+  {
+    "name": "HipotecariaSecurityPrincipal",
+    "type": "institution",
+    "description": "Nombre del banco HIPOTECARIA SECURITY PRINCIPAL S.A",
+    "value": "HipotecariaSecurityPrincipal",
+    "label": "HIPOTECARIA SECURITY PRINCIPAL S.A"
+  },
+  {
+    "name": "SociedadEmisoraDeTarjetasLosHeroes",
+    "type": "institution",
+    "description": "Nombre del banco SOCIEDAD EMISORA DE TARJETAS LOS HEROES S.A.",
+    "value": "SociedadEmisoraDeTarjetasLosHeroes",
+    "label": "SOCIEDAD EMISORA DE TARJETAS LOS HEROES S.A."
+  },
+  {
+    "name": "InkasTransporteDeValores",
+    "type": "institution",
+    "description": "Nombre del banco INKAS TRANSPORTE DE VALORES SPA",
+    "value": "InkasTransporteDeValores",
+    "label": "INKAS TRANSPORTE DE VALORES SPA"
+  },
+  {
+    "name": "LosAndesTarjetasDePrepago",
+    "type": "institution",
+    "description": "Nombre del banco LOS ANDES TARJETAS DE PREPAGO S.A.",
+    "value": "LosAndesTarjetasDePrepago",
+    "label": "LOS ANDES TARJETAS DE PREPAGO S.A."
+  },
+  {
+    "name": "TenpoPrepago",
+    "type": "institution",
+    "description": "Nombre del banco TENPO PREPAGO S.A.",
+    "value": "TenpoPrepago",
+    "label": "TENPO PREPAGO S.A."
+  },
+  {
+    "name": "DepositoCentralDeValores",
+    "type": "institution",
+    "description": "Nombre del banco DEPOSITO CENTRAL DE VALORES",
+    "value": "DepositoCentralDeValores",
+    "label": "DEPOSITO CENTRAL DE VALORES"
+  },
+  {
+    "name": "BrinksChile",
+    "type": "institution",
+    "description": "Nombre del banco BRINK'S CHILE S.A.",
+    "value": "BrinksChile",
+    "label": "BRINK'S CHILE S.A."
+  },
+  {
+    "name": "Bci",
+    "type": "institution",
+    "description": "Nombre del banco BANCO DE CREDITO E INVERSIONES",
+    "value": "Bci",
+    "label": "BANCO DE CREDITO E INVERSIONES"
+  },
+  {
+    "name": "BancoSantander",
+    "type": "institution",
+    "description": "Nombre del banco BANCO SANTANDER-CHILE",
+    "value": "BancoSantander",
+    "label": "BANCO SANTANDER-CHILE"
+  },
+  {
+    "name": "HsbcBank",
+    "type": "institution",
+    "description": "Nombre del banco HSBC BANK (CHILE)",
+    "value": "HsbcBank",
+    "label": "HSBC BANK (CHILE)"
+  },
+  {
+    "name": "ItauCorpbanca",
+    "type": "institution",
+    "description": "Nombre del banco ITAÚ CORPBANCA",
+    "value": "ItauCorpbanca",
+    "label": "ITAÚ CORPBANCA"
+  },
+  {
+    "name": "CorpBanca",
+    "type": "institution",
+    "description": "Nombre del banco CORP BANCA",
+    "value": "CorpBanca",
+    "label": "CORP BANCA"
+  },
+  {
+    "name": "JpmorganChaseBank",
+    "type": "institution",
+    "description": "Nombre del banco JPMORGAN CHASE BANK, N.A.",
+    "value": "JpmorganChaseBank",
+    "label": "JPMORGAN CHASE BANK, N.A."
+  },
+  {
+    "name": "BancoSecurity",
+    "type": "institution",
+    "description": "Nombre del banco BANCO SECURITY",
+    "value": "BancoSecurity",
+    "label": "BANCO SECURITY"
+  },
+  {
+    "name": "BancoFalabella",
+    "type": "institution",
+    "description": "Nombre del banco BANCO FALABELLA",
+    "value": "BancoFalabella",
+    "label": "BANCO FALABELLA"
+  }
+]

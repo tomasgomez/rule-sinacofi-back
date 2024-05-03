@@ -12,49 +12,43 @@ const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSche
         messageCode: true, 
         description: true, 
         name: true, 
-        createdAt: true, 
-        updatedAt: true, 
-        rules: {select: { 
+        rules: {
+          select: { 
             name: true,
-            description: true,
-            createdAt: true,
-            updatedAt: true,
             condition: true,
-            value: true,
             type: true,
-            priority: true, 
-        }},
+            value: true,
+          }
+        },
         parameters: {
-            select:{ 
-            name: true, 
-            schemaName: true, 
+          select: {
+            name: true,  // Corrected, was select
+            messageCode: true, 
             label: true, 
             type: true, 
             placeholder: true, 
-            description: true, 
-            priority: true, 
-            rules: {select :{
+            priority: true,
+            rules: {
+              select: {
                 name: true,
-                description: true,
                 condition: true,
-                value: true,
                 type: true,
-                priority: true,
-            }}, 
+                value: true,
+              }
+            }, 
             row: true, 
             column: true, 
             defaultValue: true,
-            optionValues:{select: {
-                optionValue: { select: {
-                    name: true,  
-                    type: true,
-                    description: true,
-                    value: true,
-                    label: true,       
-                }}
-            }}
-         }}
-    };
+            optionValues: {
+              select: {
+                value: true,
+                label: true,
+              }
+            }
+          }
+        }
+      };
+      
     
     // set filters
    

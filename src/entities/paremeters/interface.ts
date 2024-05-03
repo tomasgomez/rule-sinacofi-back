@@ -7,7 +7,7 @@ import { IRule } from "../rule/interface";
 export interface IParameter {
     id: string; // Unique identifier for the schema
     name: string; // Unique name of the schema
-    schemaName: string; // Name of the schema
+    messageCode: string; // Name of the schema
     label: string; // Label for the schema
     type: string; // Type of the schema
     placeholder: string; // Placeholder for the schema

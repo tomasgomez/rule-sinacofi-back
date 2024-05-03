@@ -1,0 +1,16 @@
+[
+  {
+    "name": "si",
+    "type": "condition",
+    "description": "Si",
+    "value": "SI",
+    "label": "Si"
+  },
+  {
+    "name": "no",
+    "type": "condition",
+    "description": "No",
+    "value": "NO",
+    "label": "No"
+  }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "name": "arica",
+        "type": "region",
+        "description": "Región de Arica y Parinacota",
+        "value": "arica",
+        "label": "Región de Arica y Parinacota"
+      },
+      {
+        "name": "tarapaca",
+        "type": "region",
+        "description": "Región de Tarapacá",
+        "value": "tarapaca",
+        "label": "Región de Tarapacá"
+      },
+      {
+        "name": "antofagasta",
+        "type": "region",
+        "description": "Región de Antofagasta",
+        "value": "antofagasta",
+        "label": "Región de Antofagasta"
+      },
+      {
+        "name": "atacama",
+        "type": "region",
+        "description": "Región de Atacama",
+        "value": "atacama",
+        "label": "Región de Atacama"
+      },
+      {
+        "name": "coquimbo",
+        "type": "region",
+        "description": "Región de Coquimbo",
+        "value": "coquimbo",
+        "label": "Región de Coquimbo"
+      },
+      {
+        "name": "valparaiso",
+        "type": "region",
+        "description": "Región de Valparaíso",
+        "value": "valparaiso",
+        "label": "Región de Valparaíso"
+      },
+      {
+        "name": "metropolitana",
+        "type": "region",
+        "description": "Región Metropolitana",
+        "value": "metropolitana",
+        "label": "Región Metropolitana"
+      },
+      {
+        "name": "oHiggins",
+        "type": "region",
+        "description": "Región del Libertador General Bernardo O'Higgins",
+        "value": "oHiggins",
+        "label": "Región del Libertador General Bernardo O'Higgins"
+      },
+      {
+        "name": "maule",
+        "type": "region",
+        "description": "Región del Maule",
+        "value": "maule",
+        "label": "Región del Maule"
+      },
+      {
+        "name": "nuble",
+        "type": "region",
+        "description": "Región de Ñuble",
+        "value": "nuble",
+        "label": "Región de Ñuble"
+      },
+      {
+        "name": "biobio",
+        "type": "region",
+        "description": "Región del Biobío",
+        "value": "biobio",
+        "label": "Región del Biobío"
+      },
+      {
+        "name": "araucania",
+        "type": "region",
+        "description": "Región de La Araucanía",
+        "value": "araucania",
+        "label": "Región de La Araucanía"
+      },
+      {
+        "name": "losRios",
+        "type": "region",
+        "description": "Región de Los Ríos",
+        "value": "losRios",
+        "label": "Región de Los Ríos"
+      },
+      {
+        "name": "losLagos",
+        "type": "region",
+        "description": "Región de Los Lagos",
+        "value": "losLagos",
+        "label": "Región de Los Lagos"
+      },
+      {
+        "name": "aysen",
+        "type": "region",
+        "description": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "value": "aysen",
+        "label": "Región de Aysén del General Carlos Ibáñez del Campo"
+      },
+      {
+        "name": "magallanes",
+        "type": "region",
+        "description": "Región de Magallanes y de la Antártica Chilena",
+        "value": "magallanes",
+        "label": "Región de Magallanes y de la Antártica Chilena"
+      }
+]

@@ -1,6 +1,5 @@
 import { IMessageSchema } from "../schema/interface";
-import { minLength, maxLength, emailValidation, isRequired, validateSchema } from "./ruleValidations";
-import { RuleTypes } from "./ruleTypes";
+import { RuleTypes, validations } from "./ruleTypes";
 import { InternalError, ErrorCode } from "../internalError";
 
 // Define the value type to be validated
@@ -12,16 +11,6 @@ type Validate = (value: InputValue, ruleValue?: string) => boolean | InternalErr
 // Define the validations object type
 type Validations = {
     [key in RuleTypes]: Validate;
-}
-/**
- * Define the validations object
- */
-const validations: Validations = {
-    MIN_LENGTH: minLength,
-    MAX_LENGTH: maxLength,
-    EMAIL_VALIDATION: emailValidation,
-    REQUIRED: isRequired,
-    VALIDATE_SCHEMA: validateSchema,
 }
 
 /** Define the validate function
