@@ -5,26 +5,20 @@ import { IEvent } from "../../entities/event/interface";
 
 // methods
 import { getEvent } from "./methods";
-import { IMessageUsecase } from "../message/usecase";
-import { Actions } from "../../entities/event/action";
-import { initActions } from "./methods/initActions";
-
 /*
     EventUsecase class is responsible for handling the event usecases.
 */
 
 class EventUsecase implements IEventUsecase {
-    _actions: Actions;
     // constructor
-    constructor(private readonly repository: IEventRepository, private messageUsecases: IMessageUsecase) {
-        this._actions = initActions(this.messageUsecases);
+    constructor(private readonly repository: IEventRepository) {
     }
 
     // get event
-    getEvent = async (event: IEvent): Promise<any | Error> => getEvent(this.repository, event);
+    getEvent = async (event: IEvent): Promise<void | Error> => getEvent(this.repository, void 0);
 
     // execute event
-    executeEvent = async (event: IEvent): Promise<any | Error> => {
+    executeEvent = async (event: IEvent): Promise<void | Error> => {
         try {
             return event.executeEvent();
         } catch (error: any) {
@@ -37,4 +31,4 @@ class EventUsecase implements IEventUsecase {
 }
 
 // init type usecase
-export const initEventUsecase = (repository: IEventRepository,  messageUsecases: IMessageUsecase): IEventUsecase => new EventUsecase(repository, messageUsecases);
+export const initEventUsecase = (repository: IEventRepository): IEventUsecase => new EventUsecase(repository);

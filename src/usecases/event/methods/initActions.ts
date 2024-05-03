@@ -1,4 +1,3 @@
-import { Actions, Payload } from "../../../entities/event/action";
 import { IMessageUsecase } from "../../message/usecase";
 
 const initActions = (messageUscase: IMessageUsecase): any => {
