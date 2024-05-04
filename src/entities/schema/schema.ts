@@ -26,9 +26,7 @@ type ISchemaFilter = {
 
 
 // Define IOptionalSchema interface
-type IOptionalSchema = {
-    [key in keyof ISchema]?: ISchema[key];
-};
+type IOptionalSchema = Partial<ISchema>
 
 // Define Schema class
 class Schema implements ISchema {

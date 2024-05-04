@@ -1,108 +1,54 @@
+import { Prisma } from "@prisma/client";
 import { ErrorCode, InternalError } from "../../../entities/internalError";
-import { IOptionValue } from "../../../entities/paremeters/interface";
-import { Parameter } from "../../../entities/paremeters/parameter";
+import { IOptionValue, IParameter } from "../../../entities/paremeters/interface";
 import { Rule } from "../../../entities/rule/rule";
 import { IOptionalSchema, ISchema, Schema } from "../../../entities/schema/schema";
 import { ISchemaRepository } from "../interface";
+import { IRule } from "../../../entities/rule/interface";
 
+const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, select: Prisma.SchemaSelect): Promise < ISchema | InternalError >  => {
+    
 
-
-const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, select: any): Promise < ISchema | InternalError >  => {
     try {
         
         const client = context.repository.getClient();
         
         /* Initialize the where object with the possible attributes to search with if schema is empty return all schemas */
-        const where = { messageCode: schema.messageCode }
-        const select = {
-            id: true,
-            messageCode: true,
-            description: true,
-            name: true,
-            parameters: {
-                select: {
-                    name: true,
-                    messageCode: true, 
-                    label: true, 
-                    type: true, 
-                    placeholder: true, 
-                    priority: true,
-                    row: true, 
-                    column: true, 
-                    defaultValue: true,
-                    rules: {
-                        select: {
-                            rule: {
-                                select: {
-                                    name: true,
-                                    condition: true,
-                                    type: true,
-                                    value: true,
-                                }
-                            }
-                        }
-                    },
-                    optionValues: {
-                        select: {
-                            optionValue: {
-                                select: {
-                                    value: true,
-                                    label: true,
-                                }
-                             }
-                        }
-                    },
-                },
-            } 
-        };
+        const where: Prisma.SchemaWhereUniqueInput = { messageCode: schema.messageCode }
         const schemaFetched = await client.schema.findUnique({ where, select });
-    
-        // const schemaFetched = await client.schema.findFirst({ where }).parameters(
-        //     {
-        //         include: {
-        //             rules: {
-        //                 include: {
-        //                     rule: true
-        //                 }
-        //             },
-        //             optionValues: {
-        //                 include: {
-        //                     optionValue: true
-        //                 }
-        //         }
-        //     }
-        // }
-        // );
-        
-        
+
         /* If the schema is not found, return an error */
         if (!schemaFetched) {
             console.error('Message not found');
             return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
         }
-
+        const { id, messageCode, description, name, createdAt, updatedAt, parameters } = schemaFetched;
         // parameters
-        const parametersAdapted: any[] = schemaFetched.parameters.map((parameter:any) => {
-            const { name, schemaName, label, type, placeholder, description, priority, rules, row, column, defaultValue, optionValues } = parameter;
-                const rulesAdapted = rules.map((rule: any) => new Rule(rule.rule.id, rule.rule.name,rule.rule.type,rule.rule.description,rule.rule.condition,rule.rule.value,rule.rule.priority,rule.rule.createdAt,rule.rule.updatedAt));
-                const optionValuesAdapted = optionValues.map((optionValue: any) => {
+        const parametersAdapted: IParameter[] = parameters.map((parameter: any) => {
+            const { id, name, messageCode, label, type, placeholder, description, priority, createdAt, updatedAt, rules, row, column, defaultValue, optionValues } = parameter;
+                const rulesAdapted = rules?.map((r: any) => {
+                    const rule: IRule = r.rule;
+                    new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt)
+                });
+                const optionValuesAdapted = optionValues?.map((values: any) => {
+                    const optionValue = values.optionValue;
                     const opt: IOptionValue  = {
-                    name: optionValue.optionValue.name,
-                    type: optionValue.optionValue.type,
-                    description: optionValue.optionValue.description,
-                    value: optionValue.optionValue.value,
-                    label: optionValue.optionValue.label,
-                    createdAt: optionValue.optionValue.createdAt,
-                    updatedAt: optionValue.optionValue.updatedAt   
+                    name: optionValue.name,
+                    type: optionValue.type,
+                    description: optionValue.description,
+                    value: optionValue.value,
+                    label: optionValue.label,
+                    createdAt: optionValue.createdAt,
+                    updatedAt: optionValue.updatedAt   
                 }
                 return opt;
             })
 
-            return new Parameter(parameter.id, name, schemaName, label, type, placeholder, description, priority, parameter.createdAt, parameter.updatedAt, rulesAdapted, optionValuesAdapted, row, column, defaultValue);
+            const r: IParameter = {id, name, messageCode, label, type, placeholder, description, priority, rules: rulesAdapted, optionValues: optionValuesAdapted, row, column, defaultValue, createdAt, updatedAt};
+            return r;
         })
 
-
-        return new Schema(schemaFetched.id, schemaFetched.messageCode, schemaFetched.description, schemaFetched.name, new Date(), new Date(), parametersAdapted, []);
+        return new Schema(id, messageCode, description, name, new Date(), new Date(), parametersAdapted, []);
 
 
     } catch (error: any) {

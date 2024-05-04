@@ -1,7 +1,7 @@
 // prisma/schema.prisma
 generator client {
-  provider = "prisma-client-js"
-  previewFeatures = ["views"]
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins", "views"]
 }
 
 datasource db {
@@ -10,21 +10,21 @@ datasource db {
 }
 
 model Schema {
-  id          String      @id @default(uuid())
-  messageCode String      @unique
+  id          String         @id @default(uuid())
+  messageCode String         @unique
   description String
   name        String
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  parameters  Parameter[] 
-  rules       RulesSchemas[] 
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  parameters  Parameter[]
+  rules       RulesSchemas[]
 
   @@index([messageCode])
 }
 
 model Parameter {
-  id           String            @id @default(uuid())
-  name         String            
+  id           String              @id @default(uuid())
+  name         String
   messageCode  String
   label        String
   type         String
@@ -34,26 +34,25 @@ model Parameter {
   column       Int?
   defaultValue String?
   priority     Int
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  schema       Schema     @relation(fields: [messageCode], references: [messageCode])
-  rules        RulesParameters[]    
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+  schema       Schema              @relation(fields: [messageCode], references: [messageCode])
+  rules        RulesParameters[]
   optionValues ParametersOptions[]
-  
-  @@index([name])
 
   @@unique([name, messageCode])
+  @@index([name])
 }
 
 model OptionValue {
-  id          String            @id @default(uuid())
-  name        String            
+  id          String              @id @default(uuid())
+  name        String
   type        String
   description String
   value       String
   label       String
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
   parameters  ParametersOptions[]
 
   @@unique([name, type])
@@ -61,26 +60,26 @@ model OptionValue {
 }
 
 model Rule {
-  id          String      @id @default(uuid())
-  name        String      
+  id          String            @id @default(uuid())
+  name        String
   type        String
   description String
   condition   String
   value       String
   priority    Int
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  parameters  RulesParameters[] 
-  schemas     RulesSchemas[]   
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  parameters  RulesParameters[]
+  schemas     RulesSchemas[]
 
   @@unique([name, type])
   @@index([name, type])
 }
 
 model RulesSchemas {
-  ruleName          String
-  ruleType          String
-  messageCode       String
+  ruleName    String
+  ruleType    String
+  messageCode String
 
   rule   Rule   @relation(fields: [ruleName, ruleType], references: [name, type])
   schema Schema @relation(fields: [messageCode], references: [messageCode])
@@ -95,8 +94,8 @@ model RulesParameters {
   parameterName        String
   parameterMessageCode String
 
-  rule       Rule      @relation(fields: [ruleName, ruleType], references: [name, type])
-  parameter  Parameter @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
+  rule      Rule      @relation(fields: [ruleName, ruleType], references: [name, type])
+  parameter Parameter @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
 
   @@id([ruleName, ruleType, parameterName, parameterMessageCode])
   @@index([ruleName, ruleType, parameterName, parameterMessageCode])
@@ -114,4 +113,3 @@ model ParametersOptions {
   @@id([parameterName, parameterMessageCode, optionName, optionType])
   @@index([parameterName, parameterMessageCode, optionName, optionType])
 }
-
