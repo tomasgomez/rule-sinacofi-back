@@ -9,6 +9,6 @@
     "skipLibCheck": true,
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "prisma/schema/**/*.ts", "src/repository/schema/methods"],
+  "include": ["src/**/*.ts", "src/repository/schema/database"],
   "exclude": ["node_modules"]
 }

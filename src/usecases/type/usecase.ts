@@ -3,7 +3,7 @@
 import { IRequest } from "../../entities/calls/pagination/interface";
 import { InternalError } from "../../entities/internalError";
 import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
-import { ISchemaRepository } from "../../repository/schema/interface";
+import { ISchemaRepository } from "../../repository/schema/entities/repository";
 
 /* 
     TypeUsecase interface

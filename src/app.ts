@@ -8,7 +8,7 @@ import { ITypeUsecase } from './usecases/type/usecase';
 import { ISchemaUsecase } from './usecases/schema/usecase';
 import { initTypeCalls } from './handler/type/api';
 import { initSchemaCalls } from './handler/schema/api';
-import { ISchemaRepository } from './repository/schema/interface';
+import { ISchemaRepository } from './repository/schema/repository';
 import { initSchemaRepository } from './repository/schema/repository';
 import { IRuleRepository } from './repository/rule/interface';
 import { initRuleRepository } from './repository/rule/repository';

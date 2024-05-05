@@ -1,6 +1,8 @@
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { InternalError } from "../../../entities/internalError";
 import { IOptionalSchema, ISchema } from "../../../entities/schema/schema";
+import { ISchemaSelect } from "../../../repository/schema/entities/schema";
+import { createFindSchemaSelect } from "../../../repository/schema/select/findSchema";
 import { ISchemaUsecase } from "../usecase";
 
 
@@ -8,50 +10,13 @@ import { ISchemaUsecase } from "../usecase";
 const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSchema, any>): Promise < ISchema | InternalError > => {
 
     // check if request has filters and if is empty set a default value
-    const select = {
-        id: true,
-        messageCode: true,
-        description: true,
-        name: true,
-        parameters: {
-            select: {
-                name: true,
-                messageCode: true, 
-                label: true, 
-                type: true, 
-                placeholder: true, 
-                priority: true,
-                row: true, 
-                column: true, 
-                defaultValue: true,
-                rules: {
-                    select: {
-                        rule: {
-                            select: {
-                                name: true,
-                                condition: true,
-                                type: true,
-                                value: true,
-                            }
-                        }
-                    }
-                },
-                optionValues: {
-                    select: {
-                        optionValue: {
-                            select: {
-                                value: true,
-                                label: true,
-                            }
-                         }
-                    }
-                },
-            },
-        } 
-    };
-    
-    // set filters
-   
+    // define select Filter
+    const select: ISchemaSelect = createFindSchemaSelect(
+        ['id', 'messageCode', 'description', 'name', 'createdAt', 'updatedAt', 'parameters', 'rules'] as const,
+        ['name', 'messageCode', 'label', 'type', 'placeholder', 'priority', 'row', 'column', 'defaultValue', 'rules', 'optionValues'] as const,
+        ['name', 'condition', 'type', 'value'] as const,
+        ['value', 'label'] as const
+    )
     return  await context.repository.findSchema(request.data, select);
     
 };
