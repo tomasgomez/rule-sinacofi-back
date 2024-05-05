@@ -1,4 +1,6 @@
 import { Prisma } from "@prisma/client";
+import { IParameterSelect } from "./parameter";
+import { IRuleSelect } from "./rule";
 
 /*
   Schema interface for the Prisma ORM
@@ -6,7 +8,7 @@ import { Prisma } from "@prisma/client";
 */
 
 // type for the schemaSelect
-type ISchemaSelect = Partial<Prisma.SchemaSelect>;
+type ISchemaSelect = Partial<Prisma.SchemaSelect> & { parameters?: IParameterSelect, rules?: IRuleSelect };
 type SchemaSelect<T extends ReadonlyArray<unknown>> = T[number];
 
 // type for the schemaArgs

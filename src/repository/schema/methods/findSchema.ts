@@ -7,6 +7,9 @@ import { IRule } from "../../../entities/rule/interface";
 import { ISchemaRepository } from "../interface";
 import { ISchemaArgs, ISchemaResponse, ISchemaSelect } from "../entities/schema";
 import { IParameterResponse } from "../entities/parameter";
+import { IRuleResponse } from "../entities/rule";
+import { IParamterRuleResponse } from "../entities/manyToMany";
+import { parameterToEntity } from "../adapters/parameterToEntity";
 
 const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, select: ISchemaSelect): Promise < ISchema | InternalError >  => {
     
@@ -15,6 +18,7 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
         
         /* Initialize the where object with the possible attributes to search with if schema is empty return all schemas */
         const where: Prisma.SchemaWhereUniqueInput = { messageCode: schema.messageCode }
+        
         const query: ISchemaArgs <Prisma.SchemaFindUniqueArgs>= { where, select };
         const schemaFetched: ISchemaResponse<Prisma.SchemaFindUniqueArgs> | null = await client.schema.findUnique(query);
 
@@ -23,32 +27,31 @@ const findSchema = async(context: ISchemaRepository, schema: IOptionalSchema, se
             console.error('Message not found');
             return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
         }
-        const { id, messageCode, description, name, parameters } = schemaFetched;
-        // parameters
         
-        const parametersAdapted = parameters.map((parameter: any) => {
-            const { id, name, messageCode, label, type, placeholder, description, priority, createdAt, updatedAt, rules, row, column, defaultValue, optionValues } = parameter;
-                const rulesAdapted = rules?.map((r: any) => {
-                    const rule: IRule = r.rule;
-                    new Rule(rule.id, rule.name,rule.type,rule.description,rule.condition,rule.value,rule.priority,rule.createdAt,rule.updatedAt)
-                });
-                const optionValuesAdapted = optionValues?.map((values: any) => {
-                    const optionValue = values.optionValue;
-                    const opt: IOptionValue  = {
-                    name: optionValue.name,
-                    type: optionValue.type,
-                    description: optionValue.description,
-                    value: optionValue.value,
-                    label: optionValue.label,
-                    createdAt: optionValue.createdAt,
-                    updatedAt: optionValue.updatedAt   
-                }
-                return opt;
-            })
+        const { id, messageCode, description, name, parameters } = schemaFetched;
 
-            const r: IParameter = {id, name, messageCode, label, type, placeholder, description, priority, rules: rulesAdapted, optionValues: optionValuesAdapted, row, column, defaultValue, createdAt, updatedAt};
-            return r;
-        })
+        // check values
+        if (!id || !messageCode || !description || !name || !parameters) {
+            console.error('Message not found');
+            return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
+        }
+
+        // check type of values
+        if (typeof id !== 'string' || typeof messageCode !== 'string' || typeof description !== 'string' || typeof name !== 'string' || !Array.isArray(parameters)) {
+            console.error('Message not found');
+            return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
+        }
+
+        // check if parameters is empty
+        if (parameters.length === 0) {
+            console.error('Message not found');
+            return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
+        }
+
+        // cast parameters to IParameterResponse and check if all values are present
+        const parametersCasted = parameters as IParameterResponse[];
+
+        const parametersAdapted = parameterToEntity(parametersCasted);
 
         return new Schema(id, messageCode, description, name, new Date(), new Date(), parametersAdapted, []);
 

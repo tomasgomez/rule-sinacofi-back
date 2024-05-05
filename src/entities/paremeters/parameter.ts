@@ -9,9 +9,9 @@ export class Parameter implements IParameter {
     type: string; // Type of the schema
     placeholder: string; // Placeholder for the schema
     description: string; // Description of the schema
-    row?: number; // Row number for the schema (optional)
-    column?: number; // Column number for the schema (optional)
-    defaultValue?: string; // Default value for the schema (optional)
+    row?: number | null; // Row number for the schema (optional)
+    column?: number | null; // Column number for the schema (optional)
+    defaultValue?: string | null; // Default value for the schema (optional)
     priority: number; // Priority of the schema
     createdAt: Date; // Date and time when the schema was created
     updatedAt: Date; // Date and time when the schema was last updated

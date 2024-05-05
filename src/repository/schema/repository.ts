@@ -1,4 +1,3 @@
-
 import { PrismaWrapper } from "../prismaWrapper";
 import { InternalError } from "../../entities/internalError";
 import { findSchemaTypes } from "./methods/findSchemaTypes";

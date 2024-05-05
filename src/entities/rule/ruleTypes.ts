@@ -1,3 +1,4 @@
+import { InternalError } from "../internalError";
 import { InputValue, Validations } from "./interface";
 import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni } from "./ruleValidations";
 
@@ -18,6 +19,9 @@ enum ruleType {
     isNumber             = 'isNumber',
     CUK                  = 'CUK',
     isString             = 'isString',
+    disabled             = 'disabled',
+    currentDate          = 'currentDate',
+    checkUserChannel     = 'checkUserChannel',
 }
 
 type RuleTypes = ruleType; 
@@ -36,6 +40,17 @@ const validations: Validations = {
   isNumber: isNumber,
   CUK: cuk,
   isString: isString,
+  disabled: () => true,
+  currentDate: () => true,
+  checkUserChannel: () => true,
 }
 
-export { RuleTypes, validations };
+function getRuleType(value: string): ruleType {
+  if (Object.values(ruleType).includes(value as ruleType)) {
+    return value as ruleType;
+  } else {
+    throw new Error("Invalid rule type provided.");
+  }
+}
+
+export { RuleTypes, validations, getRuleType };
