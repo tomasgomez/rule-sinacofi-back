@@ -4,8 +4,7 @@ import { InternalError } from "../../entities/internalError";
 import { findSchemaTypes } from "./methods/findSchemaTypes";
 import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
 import { findSchema } from "./methods/findSchema";
-import { ISchemaRepository } from "./entities/repository";
-
+import { ISchemaRepository } from "./interface";
 
 class SchemaRepository implements ISchemaRepository {
   repository: PrismaWrapper;
@@ -21,4 +20,6 @@ class SchemaRepository implements ISchemaRepository {
 }
 
 // init repository
-export const initSchemaRepository = (connection: PrismaWrapper): ISchemaRepository => new SchemaRepository(connection);
+const initSchemaRepository = (connection: PrismaWrapper): ISchemaRepository => new SchemaRepository(connection);
+
+export { initSchemaRepository }

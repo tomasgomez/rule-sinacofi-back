@@ -1,6 +1,6 @@
 import { ErrorCode, InternalError } from "../../../entities/internalError";
 import { IOptionalSchema, ISchema, ISchemaFilter, Schema } from "../../../entities/schema/schema";
-import { ISchemaRepository } from "../entities/repository";
+import { ISchemaRepository } from "../interface";
 
 /**
  * Find a message by its attributes

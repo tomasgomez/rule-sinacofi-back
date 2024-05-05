@@ -4,7 +4,7 @@ import { IOptionValue, IParameter } from "../../../entities/paremeters/interface
 import { Rule } from "../../../entities/rule/rule";
 import { IOptionalSchema, ISchema, Schema } from "../../../entities/schema/schema";
 import { IRule } from "../../../entities/rule/interface";
-import { ISchemaRepository } from "../entities/repository";
+import { ISchemaRepository } from "../interface";
 import { ISchemaArgs, ISchemaResponse, ISchemaSelect } from "../entities/schema";
 import { IParameterResponse } from "../entities/parameter";
 
