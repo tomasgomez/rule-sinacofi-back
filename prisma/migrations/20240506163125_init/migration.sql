@@ -1,37 +1,62 @@
-/*
-  Warnings:
+-- CreateTable
+CREATE TABLE "Schema" (
+    "id" TEXT NOT NULL,
+    "messageCode" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
-  - You are about to drop the `ParameterOption` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `RuleParameter` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `RuleSchema` table. If the table is not empty, all the data it contains will be lost.
+    CONSTRAINT "Schema_pkey" PRIMARY KEY ("id")
+);
 
-*/
--- DropForeignKey
-ALTER TABLE "ParameterOption" DROP CONSTRAINT "ParameterOption_optionName_optionType_fkey";
+-- CreateTable
+CREATE TABLE "Parameter" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "messageCode" TEXT NOT NULL,
+    "label" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "placeholder" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "row" INTEGER,
+    "column" INTEGER,
+    "defaultValue" TEXT,
+    "priority" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
--- DropForeignKey
-ALTER TABLE "ParameterOption" DROP CONSTRAINT "ParameterOption_parameterName_parameterMessageCode_fkey";
+    CONSTRAINT "Parameter_pkey" PRIMARY KEY ("id")
+);
 
--- DropForeignKey
-ALTER TABLE "RuleParameter" DROP CONSTRAINT "RuleParameter_parameterName_parameterMessageCode_fkey";
+-- CreateTable
+CREATE TABLE "OptionValue" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "value" TEXT NOT NULL,
+    "label" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
--- DropForeignKey
-ALTER TABLE "RuleParameter" DROP CONSTRAINT "RuleParameter_ruleName_ruleType_fkey";
+    CONSTRAINT "OptionValue_pkey" PRIMARY KEY ("id")
+);
 
--- DropForeignKey
-ALTER TABLE "RuleSchema" DROP CONSTRAINT "RuleSchema_messageCode_fkey";
+-- CreateTable
+CREATE TABLE "Rule" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "condition" TEXT NOT NULL,
+    "value" TEXT NOT NULL,
+    "priority" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
--- DropForeignKey
-ALTER TABLE "RuleSchema" DROP CONSTRAINT "RuleSchema_ruleName_ruleType_fkey";
-
--- DropTable
-DROP TABLE "ParameterOption";
-
--- DropTable
-DROP TABLE "RuleParameter";
-
--- DropTable
-DROP TABLE "RuleSchema";
+    CONSTRAINT "Rule_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "RulesSchemas" (
@@ -63,6 +88,30 @@ CREATE TABLE "ParametersOptions" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Schema_messageCode_key" ON "Schema"("messageCode");
+
+-- CreateIndex
+CREATE INDEX "Schema_messageCode_idx" ON "Schema"("messageCode");
+
+-- CreateIndex
+CREATE INDEX "Parameter_name_idx" ON "Parameter"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Parameter_name_messageCode_key" ON "Parameter"("name", "messageCode");
+
+-- CreateIndex
+CREATE INDEX "OptionValue_name_type_idx" ON "OptionValue"("name", "type");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "OptionValue_name_type_key" ON "OptionValue"("name", "type");
+
+-- CreateIndex
+CREATE INDEX "Rule_name_type_idx" ON "Rule"("name", "type");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Rule_name_type_key" ON "Rule"("name", "type");
+
+-- CreateIndex
 CREATE INDEX "RulesSchemas_ruleName_ruleType_messageCode_idx" ON "RulesSchemas"("ruleName", "ruleType", "messageCode");
 
 -- CreateIndex
@@ -70,6 +119,9 @@ CREATE INDEX "RulesParameters_ruleName_ruleType_parameterName_parameterMe_idx" O
 
 -- CreateIndex
 CREATE INDEX "ParametersOptions_parameterName_parameterMessageCode_option_idx" ON "ParametersOptions"("parameterName", "parameterMessageCode", "optionName", "optionType");
+
+-- AddForeignKey
+ALTER TABLE "Parameter" ADD CONSTRAINT "Parameter_messageCode_fkey" FOREIGN KEY ("messageCode") REFERENCES "Schema"("messageCode") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "RulesSchemas" ADD CONSTRAINT "RulesSchemas_ruleName_ruleType_fkey" FOREIGN KEY ("ruleName", "ruleType") REFERENCES "Rule"("name", "type") ON DELETE RESTRICT ON UPDATE CASCADE;

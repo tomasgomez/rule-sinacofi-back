@@ -1,5 +1,3 @@
-import { PrismaClient } from "@prisma/client/extension";
-
 export const seedParams = async (prisma, params) => {
   if (params.length === 0) {
     throw new Error("schemas is empty");
@@ -10,7 +8,7 @@ export const seedParams = async (prisma, params) => {
             name         : params[i].name,      
             messageCode  : params[i].messageCode,
             label        : params[i].label,
-            type         : params[i].type,
+            type         : params[i].fieldtype,
             placeholder  : params[i].placeholder,
             description  : params[i].description,
             row          : params[i].row,
