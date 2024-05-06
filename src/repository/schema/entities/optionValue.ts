@@ -11,7 +11,9 @@ type IOptionValueSelect = Partial<Prisma.OptionValueSelect>;
 type OptionValueSelect<T extends ReadonlyArray<unknown>> = T[number];
 
 // type for the optionValueArgs
-type IOptionValueArgs<TArgs = Prisma.OptionValueDefaultArgs> = Omit<TArgs, 'select'> & { select: IOptionValueSelect };
+type IOptionValueArgs<TArgs = Prisma.OptionValueDefaultArgs> = Omit<TArgs, 'select'> & { 
+  select: IOptionValueSelect 
+};
 // type for the optionValueResponse
 type IOptionValueResponse<TArgs> = Prisma.OptionValueGetPayload<IOptionValueArgs<TArgs>>;
 

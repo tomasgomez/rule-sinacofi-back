@@ -9,11 +9,15 @@ import { IParameterOptionValueSelect, IParemterRuleSelect } from "./manyToMany";
 */
 
 // type for the parametersSelect
-
-type IParameterSelect = Partial<Prisma.ParameterSelect> & { optionValues?: IParameterOptionValueSelect, rules?: IParemterRuleSelect };
+type IParameterSelect = Partial<Prisma.ParameterSelect> & { 
+  optionValues?: IParameterOptionValueSelect, 
+  rules?: IParemterRuleSelect 
+};
 type ParameterSelect<T extends ReadonlyArray<unknown>> = T[number];
 // type for the parametersArgs
-type IParameterArgs<TArgs = Prisma.ParameterDefaultArgs> = Omit<TArgs, 'select'> & { select: IParameterSelect };
+type IParameterArgs<TArgs = Prisma.ParameterDefaultArgs> = Omit<TArgs, 'select'> & { 
+  select: IParameterSelect 
+};
 // type for the parametersResponse
 type IParameterResponse<TArgs = Prisma.ParameterDefaultArgs> = Prisma.ParameterGetPayload<IParameterArgs<TArgs>>;
 

@@ -1,6 +1,5 @@
 
 
-import { SchemaSelect } from "./schema";
 /*
     This function is used to set select values.
     @param optionValues: readonly string[]

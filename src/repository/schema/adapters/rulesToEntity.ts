@@ -3,7 +3,6 @@ import { IRule } from "../../../entities/rule/interface";
 import { Rule } from "../../../entities/rule/rule";
 import { getRuleType, RuleTypes } from "../../../entities/rule/ruleTypes";
 import { IParamterRuleResponse } from "../entities/manyToMany";
-import { IRuleResponse } from "../entities/rule";
 
 
 const rulesToEntity = (rules: IParamterRuleResponse[]): IRule[] => {

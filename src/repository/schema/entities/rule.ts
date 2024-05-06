@@ -9,7 +9,9 @@ import { Prisma } from "@prisma/client";
 type IRuleSelect = Partial<Prisma.RuleSelect>;
 type RuleSelect<T extends ReadonlyArray<unknown>> = T[number];
 // type for the ruleArgs
-type IRuleArgs<TArgs = Prisma.RuleDefaultArgs> = Omit<TArgs, 'select'> & { select: IRuleSelect };
+type IRuleArgs<TArgs = Prisma.RuleDefaultArgs> = Omit<TArgs, 'select'> & { 
+  select: IRuleSelect 
+};
 // type for the ruleResponse
 type IRuleResponse = Prisma.RuleGetPayload<IRuleArgs>;
 

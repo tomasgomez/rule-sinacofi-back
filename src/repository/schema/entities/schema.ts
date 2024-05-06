@@ -8,11 +8,16 @@ import { IRuleSelect } from "./rule";
 */
 
 // type for the schemaSelect
-type ISchemaSelect = Partial<Prisma.SchemaSelect> & { parameters?: IParameterSelect, rules?: IRuleSelect };
+type ISchemaSelect = Partial<Prisma.SchemaSelect> & { 
+  parameters?: IParameterSelect, 
+  rules?: IRuleSelect 
+};
 type SchemaSelect<T extends ReadonlyArray<unknown>> = T[number];
 
 // type for the schemaArgs
-type ISchemaArgs<TArgs = Prisma.SchemaDefaultArgs> = Omit<TArgs, 'select'> & { select: ISchemaSelect };
+type ISchemaArgs<TArgs = Prisma.SchemaDefaultArgs> = Omit<TArgs, 'select'> & { 
+  select: ISchemaSelect 
+};
 // type for the schemaResponse
 type ISchemaResponse<TArgs = Prisma.SchemaDefaultArgs> = Prisma.SchemaGetPayload<ISchemaArgs<TArgs>>;
 
