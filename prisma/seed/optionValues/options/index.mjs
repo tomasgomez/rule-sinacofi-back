@@ -7,5 +7,6 @@ import notary  from './notary.json' assert { type: 'json' };
 import optType from './operationType.json' assert { type: 'json' };
 import priority from './priority.json' assert { type: 'json' };
 import region from './region.json' assert { type: 'json' };
+import rejectionReason from './rejectionReason.json' assert { type: 'json' };
 
-export { channel, commune, condition, format, institution, notary, optType, priority, region }
+export { channel, commune, condition, format, institution, notary, optType, priority, region, rejectionReason }

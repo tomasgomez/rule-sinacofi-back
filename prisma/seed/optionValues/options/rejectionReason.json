@@ -1,0 +1,52 @@
+[
+    {
+      "name": "insufficientFunds",
+      "type": "rejectionReason",
+      "description": "Monto Insuficiente",
+      "value": "insufficientFunds",
+      "label": "Monto Insuficiente"
+    },
+    {
+      "name": "breach",
+      "type": "rejectionReason",
+      "description": "Incumplimiento Plan de Alzamiento (Para Inmobiliarias)",
+      "value": "breach",
+      "label": "Incumplimiento Plan de Alzamiento (Para Inmobiliarias)"
+    },
+    {
+      "name": "missingGP",
+      "type": "rejectionReason",
+      "description": "Falta GP/Inscripción/GP Vencido (Excede los 120 Días)",
+      "value": "missingGP",
+      "label": "Falta GP/Inscripción/GP Vencido (Excede los 120 Días)"
+    },
+    {
+      "name": "invalidData",
+      "type": "rejectionReason",
+      "description": "Datos de AH Erróneos (Deudor, No Deudor, Direc. o Canal)",
+      "value": "invalidData",
+      "label": "Datos de AH Erróneos (Deudor, No Deudor, Direc. o Canal)"
+    },
+    {
+      "name": "legalIssue",
+      "type": "rejectionReason",
+      "description": "Reparo Legal, Cláusula de Escritura",
+      "value": "legalIssue",
+      "label": "Reparo Legal, Cláusula de Escritura"
+    },
+    {
+      "name": "notarialIssue",
+      "type": "rejectionReason",
+      "description": "Reparo Instrucciones Notariales",
+      "value": "notarialIssue",
+      "label": "Reparo Instrucciones Notariales"
+    },
+    {
+      "name": "mismatchedDocuments",
+      "type": "rejectionReason",
+      "description": "Documentos adjuntos no corresponden o dañados",
+      "value": "mismatchedDocuments",
+      "label": "Documentos adjuntos no corresponden o dañados"
+    }
+  ]
+  
