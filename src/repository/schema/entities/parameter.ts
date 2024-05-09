@@ -1,6 +1,4 @@
 import { Prisma } from "@prisma/client";
-import { IOptionValueSelect } from "./optionValue";
-import { IRuleSelect } from "./rule";
 import { IParameterOptionValueSelect, IParemterRuleSelect } from "./manyToMany";
 
 /*

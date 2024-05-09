@@ -2,9 +2,9 @@
     Parameter entity interface
 */
 
-import { IRule } from "../rule/interface";
+import { Rule } from "../rule/interface";
 
-export interface IParameter {
+export interface Parameter {
     id: string; // Unique identifier for the schema
     name: string; // Unique name of the schema
     messageCode: string; // Name of the schema
@@ -18,11 +18,11 @@ export interface IParameter {
     priority: number; // Priority of the schema
     createdAt: Date; // Date and time when the schema was created
     updatedAt: Date; // Date and time when the schema was last updated
-    rules?: IRule[]; // Array of related Rule objects
-    optionValues?: IOptionValue[]; // Array of related ParameterOption objects
+    rules?: Rule[]; // Array of related Rule objects
+    optionValues?: OptionValue[]; // Array of related ParameterOption objects
 }
 
-export interface IOptionValue {
+export interface OptionValue {
     name: string; // Name of the option value
     type: string; // Type of the option value
     description: string; // Description of the option value

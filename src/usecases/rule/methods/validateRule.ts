@@ -1,22 +1,22 @@
-import { InternalError, ErrorCode } from "../../../entities/internalError";
-import { IRule } from "../../../entities/rule/interface";
+import { InternalError, ErrorCode, isInternalError } from "../../../entities/internalError";
+import { executeRule, Rule } from "../../../entities/rule/interface";
 import { InputValue } from "../../../entities/rule/ruleValidation";
 
 
 // validate rule
-const validateRule = async (rule: IRule, value: InputValue): Promise<boolean | InternalError> => {
+const validateRule = async (rule: Rule, value: InputValue): Promise<boolean | InternalError> => {
     
     // check if the rule is null
     if (!rule) {
         console.log("Rule is null");
-        return new InternalError("Rule is null", ErrorCode.NOT_FOUND);
+        return { message: "Rule is null", code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 };
     }
 
     // validate the rule
-    let response = rule.executeRule(value);
+    let response = executeRule(rule,value);
 
     // call repository to validate rule
-    if (response instanceof InternalError) {
+    if (isInternalError(response)) {
         console.log("Error validating rule");
         return response;
     }
@@ -30,7 +30,7 @@ const validateRule = async (rule: IRule, value: InputValue): Promise<boolean | I
             "condition_value": rule.value,
             "value": value
         }
-        return new InternalError("Rule validation failed", ErrorCode.VALIDATION_ERROR, data, 400);
+        return { message: "Rule validation failed", code: ErrorCode.VALIDATION_ERROR, data: data, statusCode: 400 };
     }
 
     return response;

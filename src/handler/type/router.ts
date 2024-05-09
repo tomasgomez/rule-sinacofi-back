@@ -1,8 +1,8 @@
 import express from 'express';
-import { ITypeAPI } from './interface';
+import { TypeAPI } from './interface';
 
 // Init router 
-export const initTypeRouter = (calls: ITypeAPI): express.Router => {
+export const initTypeRouter = (calls: TypeAPI): express.Router => {
     const router = express.Router();
     // Define the routes
     router.get('/', calls.GET);

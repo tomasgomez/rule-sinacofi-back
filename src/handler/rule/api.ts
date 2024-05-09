@@ -1,7 +1,7 @@
 import express from "express";
 import { Calls } from "../../entities/calls/calls";
 import { IRuleUsecase } from "../../usecases/rule/usecase";
-import { IRuleAPI } from "./interface";
+import { RuleAPI } from "./interface";
 import { validateRule } from "./methods/validateRule";
 import { validateMessage } from "./methods/validateMessage";
 
@@ -9,7 +9,7 @@ import { validateMessage } from "./methods/validateMessage";
     RuleAPI class is responsible for handling the requests and responses for the rule API.
 */
 
-class RuleCalls extends Calls implements IRuleAPI {
+class RuleCalls extends Calls implements RuleAPI {
     // constructor
     _usecase: IRuleUsecase;
     constructor(typeUsecase: IRuleUsecase) {
@@ -26,4 +26,4 @@ class RuleCalls extends Calls implements IRuleAPI {
     
 }
 
-export const initRuleCalls = (usecase: IRuleUsecase): IRuleAPI => new RuleCalls(usecase);
+export const initRuleCalls = (usecase: IRuleUsecase): RuleAPI => new RuleCalls(usecase);

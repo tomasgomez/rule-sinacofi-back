@@ -10,14 +10,15 @@ datasource db {
 }
 
 model Schema {
-  id          String         @id @default(uuid())
-  messageCode String         @unique
-  description String
-  name        String
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
-  parameters  Parameter[]
-  rules       RulesSchemas[]
+  id             String         @id @default(uuid())
+  messageCode    String         @unique
+  description    String
+  name           String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  parameters     Parameter[]
+  rules          RulesSchemas[]
+  // allowedActions SchemasActions[]
 
   @@index([messageCode])
 }
@@ -59,22 +60,63 @@ model OptionValue {
   @@index([name, type])
 }
 
+// TODO: destroy type field 
+
 model Rule {
-  id          String            @id @default(uuid())
-  name        String
-  type        String
-  description String
-  condition   String
-  value       String
-  priority    Int
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
-  parameters  RulesParameters[]
-  schemas     RulesSchemas[]
+  id             String            @id @default(uuid())
+  name           String
+  type           String
+  description    String
+  condition      String
+  value          String
+  priority       Int
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  parameters     RulesParameters[]
+  schemas        RulesSchemas[]
+  // allowedActions RulesActions[]
 
   @@unique([name, type])
   @@index([name, type])
 }
+
+// model Action {
+//   id          String @id @default(uuid())
+//   name        String
+//   description String
+//   values      Json?
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @updatedAt
+//   schemas     SchemasActions[]
+//   rules       RulesActions[]
+
+//   @@unique([name])
+//   @@index([name])
+// }
+
+// model RulesActions {
+//   ruleName String
+//   ruleType String
+//   actionName String
+
+//   rule   Rule   @relation(fields: [ruleName, ruleType], references: [name, type])
+//   action Action @relation(fields: [actionName], references: [name])
+
+//   @@id([ruleName, actionName])
+//   @@index([ruleName, actionName])
+// }
+
+// model SchemasActions {
+//   schemaMessageCode String
+//   allowedActionName String
+
+//   schema       Schema         @relation(fields: [schemaMessageCode], references: [messageCode])
+//   action       Action         @relation(fields: [allowedActionName], references: [name])
+
+//   @@id([schemaMessageCode, allowedActionName])
+//   @@index([schemaMessageCode, allowedActionName])
+// }
+
 
 model RulesSchemas {
   ruleName    String

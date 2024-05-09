@@ -1,8 +1,8 @@
 import express from 'express';
-import { IRuleAPI } from './interface';
+import { RuleAPI } from './interface';
 
 // Init router 
-export const initRuleRouter = (calls: IRuleAPI): express.Router => {
+export const initRuleRouter = (calls: RuleAPI): express.Router => {
     const router = express.Router();
     // Define the routes
     router.post('/validate/rule', calls.VALIDATE_RULE);

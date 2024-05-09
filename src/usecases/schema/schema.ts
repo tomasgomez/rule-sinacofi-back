@@ -1,6 +1,6 @@
 import { IRequest } from "../../entities/calls/pagination/interface";
 import { InternalError } from "../../entities/internalError";
-import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
+import { OptionalSchema, Schema, SchemaFilter } from "../../entities/schema/interface";
 import { ISchemaRepository } from "../../repository/schema/interface";
 import { getSchema } from "./methods/getSchema";
 import { ISchemaUsecase } from "./usecase";
@@ -15,7 +15,7 @@ class SchemaUsecase implements ISchemaUsecase {
     constructor(readonly repository: ISchemaRepository) {}
     
     // get mesasge type
-    findSchema = async (request: IRequest<IOptionalSchema, ISchemaFilter>): Promise < ISchema | InternalError > =>
+    findSchema = async (request: IRequest<OptionalSchema, SchemaFilter>): Promise < Schema | InternalError > =>
         getSchema(this, request); 
 }
 

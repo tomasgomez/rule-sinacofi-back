@@ -1,5 +1,5 @@
 import { InternalError } from "../internalError";
-import { InputValue, Validations } from "./interface";
+import { InputValue, Validations,  } from "./interface";
 import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni } from "./ruleValidations";
 
 /* 

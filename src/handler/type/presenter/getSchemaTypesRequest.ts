@@ -1,11 +1,11 @@
 import express from "express";
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { ErrorCode, InternalError } from "../../../entities/internalError";
-import { IOptionalSchema, ISchemaFilter } from "../../../entities/schema/schema";
+import { OptionalSchema, SchemaFilter } from "../../../entities/schema/interface";
 
 // Get schema types request
 
-const getSchemaTypesRequest = (req: express.Request): IRequest<IOptionalSchema, ISchemaFilter> | InternalError => {
+const getSchemaTypesRequest = (req: express.Request): IRequest<OptionalSchema, SchemaFilter> | InternalError => {
 
     try {    
     // get params from query parameters, if count is not provided set a default value
@@ -18,10 +18,10 @@ const getSchemaTypesRequest = (req: express.Request): IRequest<IOptionalSchema, 
     const messageCode = req.query.messageCode ?? "";
 
     // Set values
-    const schema: IOptionalSchema = typeof messageCode === 'object' ? {} : { messageCode: messageCode.toString() };
+    const schema: OptionalSchema = typeof messageCode === 'object' ? {} : { messageCode: messageCode.toString() };
 
     // Set Request
-    const IRequest: IRequest<IOptionalSchema, ISchemaFilter> = {
+    const IRequest: IRequest<OptionalSchema, SchemaFilter> = {
         data: schema,
         count: count,
         offset: offset,
@@ -32,7 +32,7 @@ const getSchemaTypesRequest = (req: express.Request): IRequest<IOptionalSchema, 
 
     } catch (error) {
         console.log('Error checking values from request', error)
-        return new InternalError('Error creating Rule from request', ErrorCode.INTERNAL_SERVER_ERROR, null ,500);
+        return { message: 'Error checking values from request', code: ErrorCode.INTERNAL_SERVER_ERROR, data: null, statusCode: 500 };
     }
 };
 

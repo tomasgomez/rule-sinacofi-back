@@ -1,6 +1,6 @@
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { InternalError } from "../../../entities/internalError";
-import { ISchema, IOptionalSchema, ISchemaFilter } from "../../../entities/schema/schema";
+import { Schema, OptionalSchema } from "../../../entities/schema/interface";
 import { ITypeUsecase } from "../usecase";
 
 
@@ -12,13 +12,13 @@ import { ITypeUsecase } from "../usecase";
 
 
 */
-const getSchemaTypes = async(context: ITypeUsecase, request: IRequest<IOptionalSchema, ISchemaFilter>): Promise <{ schemas: ISchema[], total: number } | InternalError > => {
+const getSchemaTypes = async(context: ITypeUsecase, request: IRequest<OptionalSchema, any>): Promise <{ schemas: Schema[], total: number } | InternalError > => {
 
     // check if request has filters and if is empty set a default value
     if (!request.filter) request.filter = { id: true, messageCode: true, description: true, name: true, createdAt: true, updatedAt: true, rules: false, parameters: false }
     
     // set filters
-    const select: ISchemaFilter = request.filter;
+    const select: any = request.filter;
     
     // get the schemas
     const schemasFetched = await context.repository.findSchemaTypes(request.data, request.count, request.offset, select);

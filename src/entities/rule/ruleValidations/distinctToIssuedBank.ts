@@ -1,5 +1,6 @@
 import { InternalError } from "../../internalError";
-import { InputValue, Validate } from "../ruleValidation";
+import { InputValue, Validate } from "../interface";
+
 
 /*
 * This function is used to validate the distinctToIssuedBank

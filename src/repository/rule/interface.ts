@@ -1,5 +1,5 @@
-import { MessageSchema } from "../../entities/schema/messageSchema";
+import { Schema } from "../../entities/schema/interface";
 
 export interface IRuleRepository {
-  find(message: MessageSchema, count: string, offset: string): Promise < MessageSchema[] | null > ;
+  find(message: Schema, count: string, offset: string): Promise < Schema[] | null > ;
 }

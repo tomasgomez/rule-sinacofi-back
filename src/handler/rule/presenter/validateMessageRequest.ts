@@ -1,34 +1,36 @@
 import express from "express";
-import { IMessage, IMessageParams } from "../../../entities/message/interface";
+import { Message, MessageParameter } from "../../../entities/message/interface";
 import { ErrorCode, InternalError } from "../../../entities/internalError";
 
 
-const validateMessageRequest  = (req: express.Request): IMessage | InternalError => {
+const validateMessageRequest  = (req: express.Request): Message | InternalError => {
     try {
       // Ensure required properties exist in req.body
       const { messageCode, parameters } = req.body;
 
       if (!messageCode) {
-        throw new InternalError('Missing messageCode', ErrorCode.BAD_REQUEST, null, 400);
+        console.error('Missing messageCode');
+        throw { message: 'Missing messageCode',statusCode: ErrorCode.BAD_REQUEST}
       }
 
       if (!parameters || parameters.length === 0) {
-        throw new InternalError('Missing parameters', ErrorCode.BAD_REQUEST, null, 400);
+        console.error('Missing parameters');
+        throw { message: 'Missing parameters', statusCode: ErrorCode.BAD_REQUEST}
       }
 
-      const paramtersAdapted: IMessageParams[] = parameters.map((param: any) => {
+      const paramtersAdapted: MessageParameter[] = parameters.map((param: MessageParameter) => {
         const { name, value } = param;
         if (!name || !value) {
-          throw new InternalError('Missing parameter name or value', ErrorCode.BAD_REQUEST, null, 400);
+          console.error('Missing parameter name or value');
+          throw { message: 'Missing parameter name or value', code: ErrorCode.BAD_REQUEST}
         }
         return { name, value };
       });
-
       return { messageCode, parameters: paramtersAdapted };
 
     } catch (error) {
       console.error('Error creating Message from request:', error);
-      return new InternalError('Error creating Message from request', ErrorCode.INTERNAL_SERVER_ERROR, null ,500);
+      return { message: 'Error creating Message form request', code: ErrorCode.BAD_REQUEST};
     }
     
 }

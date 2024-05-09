@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-import IServer from './interface';
+import Server from './interface';
 
 /*
     Server class is responsible for setting up the express server and starting it.
@@ -8,7 +8,7 @@ import IServer from './interface';
     @param router: express.Router - router object to use
 */
 
-export class Server implements IServer {
+export class App implements Server {
     private _server: express.Application;
     constructor(){
         this._server = express();

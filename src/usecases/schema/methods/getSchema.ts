@@ -1,13 +1,13 @@
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { InternalError } from "../../../entities/internalError";
-import { IOptionalSchema, ISchema } from "../../../entities/schema/schema";
+import { OptionalSchema, Schema } from "../../../entities/schema/interface";
 import { ISchemaSelect } from "../../../repository/schema/entities/schema";
 import { createFindSchemaSelect } from "../../../repository/schema/select/findSchema";
 import { ISchemaUsecase } from "../usecase";
 
 
 
-const getSchema = async(context: ISchemaUsecase, request: IRequest<IOptionalSchema, any>): Promise < ISchema | InternalError > => {
+const getSchema = async(context: ISchemaUsecase, request: IRequest<OptionalSchema, any>): Promise < Schema | InternalError > => {
 
     // check if request has filters and if is empty set a default value
     // define select Filter

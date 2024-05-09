@@ -2,7 +2,7 @@ import { PrismaWrapper } from './repository/prismaWrapper';
 import { prisma }  from './repository/client';
 import { Handler, initHandler } from './handler/handler';
 import { initRouter } from './handler/router';
-import { Server } from './entities/server/server';
+import { App } from './entities/server/server';
 import { logRequest, logResponse } from './utils/logger';
 import { ITypeUsecase } from './usecases/type/usecase';
 import { ISchemaUsecase } from './usecases/schema/usecase';
@@ -17,9 +17,9 @@ import { initSchemaUsecase } from './usecases/schema/schema';
 import { initRuleCalls } from './handler/rule/api';
 import { IRuleUsecase } from './usecases/rule/usecase';
 import { initRuleUsecase } from './usecases/rule/rule';
-import { ISchemaAPI } from './handler/schema/interface';
-import { IRuleAPI } from './handler/rule/interface';
-import { ITypeAPI } from './handler/type/interface';
+import { SchemaAPI } from './handler/schema/interface';
+import { RuleAPI } from './handler/rule/interface';
+import { TypeAPI } from './handler/type/interface';
 
 // init database
 const databaseClient = new PrismaWrapper(prisma)
@@ -35,9 +35,9 @@ const schemaUsecase: ISchemaUsecase = initSchemaUsecase(schemaRepository);
 const ruleUsecase: IRuleUsecase = initRuleUsecase(ruleRepository, schemaUsecase);
 
 // init APIs
-const typeAPI: ITypeAPI = initTypeCalls(typeUsecase);
-const schemaAPI: ISchemaAPI = initSchemaCalls(schemaUsecase);
-const ruleAPI: IRuleAPI = initRuleCalls(ruleUsecase);
+const typeAPI: TypeAPI = initTypeCalls(typeUsecase);
+const schemaAPI: SchemaAPI = initSchemaCalls(schemaUsecase);
+const ruleAPI: RuleAPI = initRuleCalls(ruleUsecase);
 
 // init handler
 const handler: Handler = initHandler(typeAPI, schemaAPI, ruleAPI);
@@ -46,7 +46,7 @@ const handler: Handler = initHandler(typeAPI, schemaAPI, ruleAPI);
 const router = initRouter(handler);
 
 // create server
-const server = new Server();
+const server = new App();
 
 // set request logger
 server.setLogger(logRequest);

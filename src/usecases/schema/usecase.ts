@@ -3,12 +3,12 @@
 */
 import { IRequest } from "../../entities/calls/pagination/interface";
 import { InternalError } from "../../entities/internalError";
-import { IOptionalSchema, ISchema } from "../../entities/schema/schema";
+import { OptionalSchema, Schema } from "../../entities/schema/interface";
 import { ISchemaRepository } from "../../repository/schema/interface";
 
 
 export interface ISchemaUsecase {
     repository: ISchemaRepository;
 
-    findSchema(request: IRequest<IOptionalSchema, any>): Promise < ISchema | InternalError >;
+    findSchema(request: IRequest<OptionalSchema, any>): Promise < Schema | InternalError >;
 }

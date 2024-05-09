@@ -1,6 +1,6 @@
 import { IRequest } from "../../entities/calls/pagination/interface";
 import { InternalError } from "../../entities/internalError";
-import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
+import { OptionalSchema, Schema, SchemaFilter } from "../../entities/schema/interface";
 import { ISchemaRepository } from "../../repository/schema/interface";
 import { getSchemaTypes } from "./methods/getSchemaTypes";
 import { ITypeUsecase } from "./usecase";
@@ -19,7 +19,7 @@ class TypeUsecase implements ITypeUsecase {
     }
 
     // get shcema types
-    getSchemaTypes = async (request: IRequest<IOptionalSchema, ISchemaFilter>): Promise <{ schemas: ISchema[], total: number } | InternalError > => 
+    getSchemaTypes = async (request: IRequest<OptionalSchema, SchemaFilter>): Promise <{ schemas: Schema[], total: number } | InternalError > => 
         getSchemaTypes(this, request);
 }
 

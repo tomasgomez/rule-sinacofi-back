@@ -1,5 +1,5 @@
 import { IEventRepository } from "./interface";
-import { MessageSchema } from "../../entities/schema/messageSchema";
+import { Schema } from "../../entities/schema/interface";
 import { PrismaWrapper } from "../prismaWrapper";
 
 class EventRepository implements IEventRepository {
@@ -7,7 +7,7 @@ class EventRepository implements IEventRepository {
   constructor(repository: PrismaWrapper){
     this._repository = repository;
   }
-  find = async (message: MessageSchema, count: string, offset: string): Promise<MessageSchema[] | null> => 
+  find = async (message: Schema, count: string, offset: string): Promise<Schema[] | null> => 
     null;
 }
 

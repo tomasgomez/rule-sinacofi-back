@@ -17,10 +17,10 @@ const prisma = new PrismaClient();
 async function main() {
 
     // load schemas
-    // const schemas = [schema671,schema670, schema199, schema136];
+    const schemas = [schema670, schema671,schema672, schema673, schema199, schema136];
 
-    // seed schemas
-    // await seedSchema(prisma, [schema673]);
+    // // seed schemas
+    await seedSchema(prisma, [schema673]);
 
     // // seed rules
     // await seedRules(prisma, rules);
@@ -38,6 +38,9 @@ async function main() {
     // await seedOptionValues(prisma, rejectionReason);
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason }
 
+    // seed670(prisma, rules, options);
+    // seed671(prisma, rules, options);
+    // seed672(prisma, rules, options);
     seed673(prisma, rules, options);
 
 }

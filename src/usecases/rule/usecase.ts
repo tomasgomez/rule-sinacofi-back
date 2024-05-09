@@ -1,6 +1,6 @@
 import { InternalError } from "../../entities/internalError/error";
-import { IMessage } from "../../entities/message/interface";
-import { IRule } from "../../entities/rule/interface";
+import { Message } from "../../entities/message/interface";
+import { Rule } from "../../entities/rule/interface";
 import { InputValue } from "../../entities/rule/ruleValidation";
 import { IRuleRepository } from "../../repository/rule/interface";
 import { ISchemaUsecase } from "../schema/usecase";
@@ -12,7 +12,6 @@ export interface IRuleUsecase {
    repository: IRuleRepository;
    schemaUsecase: ISchemaUsecase;
 
-   validateRule(rule: IRule, inputValue: InputValue): Promise<boolean | InternalError>;
-   validateMessage(message: IMessage): Promise<boolean | InternalError>;
+   validateRule(rule: Rule, inputValue: InputValue): Promise<boolean | InternalError>;
+   validateMessage(message: Message): Promise<boolean | InternalError>;
 }
-

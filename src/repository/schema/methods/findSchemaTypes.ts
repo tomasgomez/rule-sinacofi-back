@@ -1,5 +1,5 @@
 import { ErrorCode, InternalError } from "../../../entities/internalError";
-import { IOptionalSchema, ISchema, ISchemaFilter, Schema } from "../../../entities/schema/schema";
+import { OptionalSchema, Schema, SchemaFilter } from "../../../entities/schema/interface";
 import { ISchemaRepository } from "../interface";
 
 /**
@@ -10,7 +10,7 @@ import { ISchemaRepository } from "../interface";
  * @param offset string
  * @returns Promise < MessageSchema[] | Error >
  */
- const findSchemaTypes = async(context: ISchemaRepository, schema: IOptionalSchema, count: number | undefined, offset: number | undefined, select: ISchemaFilter): Promise <{ schemas: ISchema[], total: number } | InternalError >  => {
+ const findSchemaTypes = async(context: ISchemaRepository, schema: OptionalSchema, count: number | undefined, offset: number | undefined, select: SchemaFilter): Promise <{ schemas: Schema[], total: number } | InternalError >  => {
     try {
         
         const client = context.repository.getClient();
@@ -28,17 +28,20 @@ import { ISchemaRepository } from "../interface";
         /* If the messages is not found, return an error */
         if (schemasFetched.length === 0) {
             console.error('Message not found');
-            return new InternalError('Message not found', ErrorCode.NOT_FOUND, undefined, 404);
+            return {message: 'Message not found', code: ErrorCode.NOT_FOUND, data: undefined, statusCode: 404};
         }
 
         // Map the fetched messages to the Message entity
-        const schemas: ISchema[] = schemasFetched.map((response: any) => new Schema(response.id, response.messageCode, response.description, response.name, response.createdAt, response.updatedAt, [], []));
-
+        const schemas: Schema[] = schemasFetched.map((response: any) => {
+            const s: Schema = { id: response.id, messageCode: response.messageCode, description: response.description, name: response.name, createdAt: response.createdAt, updatedAt: response.updatedAt, parameters: [], rules: [] };
+            return s;
+        });
+    
         return { schemas, total };
 
     } catch (error: any) {
         console.error(error);
-        return new InternalError('Internal Server Error', ErrorCode.INTERNAL_SERVER_ERROR, error, 500);
+        return { message: 'Internal Server Error', code: ErrorCode.INTERNAL_SERVER_ERROR, data: error, statusCode: 500 };
     }
 }
 

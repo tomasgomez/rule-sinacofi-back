@@ -1,5 +1,5 @@
 import { InternalError } from "../../internalError/error";
-import { InputValue, Validate } from "../ruleValidation";
+import { InputValue, Validate } from "../interface";
 
 /** 
 * This function is used to validate the email

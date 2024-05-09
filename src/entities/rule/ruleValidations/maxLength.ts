@@ -1,4 +1,4 @@
-import { InputValue, Validate } from "../ruleValidation";
+import { InputValue, Validate } from "../interface";
 
 /** 
     * compare two lengths of strings and return true if the value is less than or equal to the ruleValue

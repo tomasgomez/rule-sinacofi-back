@@ -1,7 +1,7 @@
 
 import { InternalError } from "../../entities/internalError/error";
-import { IMessage } from "../../entities/message/interface";
-import { IRule } from "../../entities/rule/interface";
+import { Message } from "../../entities/message/interface";
+import { Rule } from "../../entities/rule/interface";
 import { InputValue } from "../../entities/rule/ruleValidation";
 import { IRuleRepository } from "../../repository/rule/interface";
 import { ISchemaUsecase } from "../schema/usecase";
@@ -22,9 +22,9 @@ class RuleUsecase implements IRuleUsecase {
     }
 
     // validate rule
-    validateRule = async (rule: IRule, inputValue: InputValue): Promise<boolean | InternalError> => validateRule(rule, inputValue);
+    validateRule = async (rule: Rule, inputValue: InputValue): Promise<boolean | InternalError> => validateRule(rule, inputValue);
     // validate message
-    validateMessage = async (message: IMessage): Promise<boolean | InternalError> => validateMessage(this, message);
+    validateMessage = async (message: Message): Promise<boolean | InternalError> => validateMessage(this, message);
     
 }
 

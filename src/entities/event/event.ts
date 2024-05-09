@@ -1,5 +1,5 @@
 
-import { ActionTypes } from "./actionTypes";
+import { ActionTypes } from "../actions/actionTypes";
 import { IEvent } from "./interface";
 
 /*

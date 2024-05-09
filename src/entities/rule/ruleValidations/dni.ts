@@ -1,5 +1,5 @@
 import { InternalError } from "../../internalError";
-import { InputValue, Validate } from "../ruleValidation";
+import { InputValue, Validate } from "../interface";
 
 /**
  * Validate a Chilean RUT (Rol Único Tributario) number.

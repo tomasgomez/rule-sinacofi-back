@@ -1,5 +1,5 @@
 import { IRuleRepository } from "./interface";
-import { MessageSchema } from "../../entities/schema/messageSchema";
+import { Schema } from "../../entities/schema/interface";
 import { PrismaWrapper } from "../prismaWrapper";
 
 class RuleRepository implements IRuleRepository {
@@ -7,8 +7,7 @@ class RuleRepository implements IRuleRepository {
   constructor(repository: PrismaWrapper){
     this._repository = repository;
   }
-  find = async (message: MessageSchema, count: string, offset: string): Promise<MessageSchema[] | null> => 
-    null;
+  find = async (message: Schema, count: string, offset: string): Promise<Schema[] | null> => null;
 }
 
 // init repository

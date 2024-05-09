@@ -1,8 +1,6 @@
 import { Prisma } from "@prisma/client";
-import { IRuleArgs, IRuleSelect } from "./rule";
-import { IOptionValueArgs, IOptionValueSelect } from "./optionValue";
-import { IParameterSelect } from "./parameter";
-
+import { IRuleArgs } from "./rule";
+import { IOptionValueArgs } from "./optionValue";
 
 type IParameterOptionValueSelect = Omit<Prisma.ParametersOptionsSelect, 'optionValue'> & { 
     optionValue?: IOptionValueArgs 

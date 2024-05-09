@@ -1,107 +1,107 @@
 [
   {
-    "name": "HipotecariaSecurityPrincipal",
+    "name": "350",
     "type": "institution",
     "description": "Nombre del banco HIPOTECARIA SECURITY PRINCIPAL S.A",
-    "value": "HipotecariaSecurityPrincipal",
+    "value": "350",
     "label": "HIPOTECARIA SECURITY PRINCIPAL S.A"
   },
   {
-    "name": "SociedadEmisoraDeTarjetasLosHeroes",
+    "name": "729",
     "type": "institution",
     "description": "Nombre del banco SOCIEDAD EMISORA DE TARJETAS LOS HEROES S.A.",
-    "value": "SociedadEmisoraDeTarjetasLosHeroes",
+    "value": "729",
     "label": "SOCIEDAD EMISORA DE TARJETAS LOS HEROES S.A."
   },
   {
-    "name": "InkasTransporteDeValores",
+    "name": "600",
     "type": "institution",
     "description": "Nombre del banco INKAS TRANSPORTE DE VALORES SPA",
-    "value": "InkasTransporteDeValores",
+    "value": "600",
     "label": "INKAS TRANSPORTE DE VALORES SPA"
   },
   {
-    "name": "LosAndesTarjetasDePrepago",
+    "name": "732",
     "type": "institution",
     "description": "Nombre del banco LOS ANDES TARJETAS DE PREPAGO S.A.",
-    "value": "LosAndesTarjetasDePrepago",
+    "value": "732",
     "label": "LOS ANDES TARJETAS DE PREPAGO S.A."
   },
   {
-    "name": "TenpoPrepago",
+    "name": "730",
     "type": "institution",
     "description": "Nombre del banco TENPO PREPAGO S.A.",
-    "value": "TenpoPrepago",
+    "value": "730",
     "label": "TENPO PREPAGO S.A."
   },
   {
-    "name": "DepositoCentralDeValores",
+    "name": "265",
     "type": "institution",
     "description": "Nombre del banco DEPOSITO CENTRAL DE VALORES",
-    "value": "DepositoCentralDeValores",
+    "value": "265",
     "label": "DEPOSITO CENTRAL DE VALORES"
   },
   {
-    "name": "BrinksChile",
+    "name": "601",
     "type": "institution",
     "description": "Nombre del banco BRINK'S CHILE S.A.",
-    "value": "BrinksChile",
+    "value": "601",
     "label": "BRINK'S CHILE S.A."
   },
   {
-    "name": "Bci",
+    "name": "0016",
     "type": "institution",
     "description": "Nombre del banco BANCO DE CREDITO E INVERSIONES",
-    "value": "Bci",
+    "value": "0016",
     "label": "BANCO DE CREDITO E INVERSIONES"
   },
   {
-    "name": "BancoSantander",
+    "name": "0037",
     "type": "institution",
     "description": "Nombre del banco BANCO SANTANDER-CHILE",
-    "value": "BancoSantander",
+    "value": "0037",
     "label": "BANCO SANTANDER-CHILE"
   },
   {
-    "name": "HsbcBank",
+    "name": "0031",
     "type": "institution",
     "description": "Nombre del banco HSBC BANK (CHILE)",
-    "value": "HsbcBank",
+    "value": "0031",
     "label": "HSBC BANK (CHILE)"
   },
   {
-    "name": "ItauCorpbanca",
+    "name": "0039",
     "type": "institution",
     "description": "Nombre del banco ITAÚ CORPBANCA",
-    "value": "ItauCorpbanca",
+    "value": "0039",
     "label": "ITAÚ CORPBANCA"
   },
   {
-    "name": "CorpBanca",
+    "name": "0027",
     "type": "institution",
     "description": "Nombre del banco CORP BANCA",
-    "value": "CorpBanca",
+    "value": "0027",
     "label": "CORP BANCA"
   },
   {
-    "name": "JpmorganChaseBank",
+    "name": "0041",
     "type": "institution",
     "description": "Nombre del banco JPMORGAN CHASE BANK, N.A.",
-    "value": "JpmorganChaseBank",
+    "value": "0041",
     "label": "JPMORGAN CHASE BANK, N.A."
   },
   {
-    "name": "BancoSecurity",
+    "name": "0049",
     "type": "institution",
     "description": "Nombre del banco BANCO SECURITY",
-    "value": "BancoSecurity",
+    "value": "0049",
     "label": "BANCO SECURITY"
   },
   {
-    "name": "BancoFalabella",
+    "name": "0051",
     "type": "institution",
     "description": "Nombre del banco BANCO FALABELLA",
-    "value": "BancoFalabella",
+    "value": "0051",
     "label": "BANCO FALABELLA"
   }
 ]

@@ -1,5 +1,5 @@
 import { InternalError } from "../../entities/internalError";
-import { IOptionalSchema, ISchema, ISchemaFilter } from "../../entities/schema/schema";
+import { OptionalSchema, Schema, SchemaFilter } from "../../entities/schema/interface";
 import { PrismaWrapper } from "../prismaWrapper";
 
 
@@ -8,8 +8,8 @@ interface ISchemaRepository {
   
     // find(schema: MessageSchema, count: string, offset: string): Promise < MessageSchema[] | InternalError >;
     
-    findSchemaTypes(schema: IOptionalSchema, count: number, offset: number, select: ISchemaFilter): Promise <{ schemas: ISchema[], total: number } | InternalError >;
-    findSchema(schema: IOptionalSchema, select: any): Promise < ISchema | InternalError >;
+    findSchemaTypes(schema: OptionalSchema, count: number, offset: number, select: SchemaFilter): Promise <{ schemas: Schema[], total: number } | InternalError >;
+    findSchema(schema: OptionalSchema, select: any): Promise < Schema | InternalError >;
 }
 
 export { ISchemaRepository }

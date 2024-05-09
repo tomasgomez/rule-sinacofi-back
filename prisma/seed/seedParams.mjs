@@ -17,6 +17,8 @@ export const seedParams = async (prisma, params) => {
             priority     : params[i].priority,
         }
 
+        console.log(param)
+
         await prisma.parameter.create({ data: param });
     }
   

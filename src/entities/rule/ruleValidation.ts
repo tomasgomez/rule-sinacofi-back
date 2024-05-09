@@ -1,17 +1,7 @@
-import { IMessageSchema } from "../schema/interface";
 import { RuleTypes, validations } from "./ruleTypes";
 import { InternalError, ErrorCode } from "../internalError";
+import { InputValue } from "./interface";
 
-// Define the value type to be validated
-type InputValue = string | number | IMessageSchema | boolean;
-
-// Define the validate function type
-type Validate = (value: InputValue, ruleValue?: string) => boolean | InternalError;
-
-// Define the validations object type
-type Validations = {
-    [key in RuleTypes]: Validate;
-}
 
 /** Define the validate function
 *  This function takes a rule, value, and ruleValue as arguments
@@ -30,9 +20,10 @@ const validate = (rule: RuleTypes, value: InputValue, ruleValue?: string): boole
         // Call the validation function with the value and ruleValue
         return validationFunction(value, ruleValue);
     } else {
-        throw new InternalError(`Rule ${rule} does not exist`, ErrorCode.NOT_FOUND);
+        const error: InternalError = { message: `Rule ${rule} does not exist`, code: ErrorCode.NOT_FOUND };
+        throw error;
     }
 };
 
 // Export the validate function and the InputValue and Validate types
-export { validate, InputValue, Validate };
+export { validate, InputValue };

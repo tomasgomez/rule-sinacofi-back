@@ -1,11 +1,11 @@
-import { ICalls } from "./interface";
+import { DefaultCalls } from "./interface";
 import express from 'express';
 
 /* 
     Handler class is responsible for handling the requests and responses.
 */
 
-export abstract class Calls implements ICalls {
+export abstract class Calls implements DefaultCalls {
     // Get
     async GET(req: express.Request, res: express.Response){
         res.status(405).end(`Method GET Not implemented`);

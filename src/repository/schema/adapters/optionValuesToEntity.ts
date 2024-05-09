@@ -1,11 +1,11 @@
-import { IOptionValue } from "../../../entities/paremeters/interface";
+import { OptionValue } from "../../../entities/paremeters/interface";
 import { IParameterOptionResponse } from "../entities/manyToMany";
 
 
-const optionValuesToEntity = (optionValues: IParameterOptionResponse[]): IOptionValue[] => {
+const optionValuesToEntity = (optionValues: IParameterOptionResponse[]): OptionValue[] => {
     return optionValues?.map((values: IParameterOptionResponse) => {
         const optionValue = values.optionValue;
-        const opt: IOptionValue  = {
+        const opt: OptionValue  = {
         name: optionValue.name,
         type: optionValue.type,
         description: optionValue.description,

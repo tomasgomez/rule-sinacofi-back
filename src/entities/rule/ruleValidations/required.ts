@@ -1,4 +1,4 @@
-import { InputValue, Validate } from "../ruleValidation";
+import { InputValue, Validate } from "../interface";
 
 /** 
 *   this function is used to check if the value is not empty
