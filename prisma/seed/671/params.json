@@ -42,12 +42,12 @@
       "priority": 3,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "institution"
     },
     {
       "name": "priority",
       "type": "priority",
-      "fieldtype": "texfield",
+      "fieldtype": "select",
       "label": "Prioridad",
       "placeholder": "Selecciona la prioridad del mensaje",
       "description": "Todas las prioridades posibles para seleccionar la prioridad del mensaje",
@@ -57,12 +57,12 @@
       "priority": 4,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "priority"
     },
     {
       "name": "auth",
       "type": "auth",
-      "fieldtype": "textField",
+      "fieldtype": "select",
       "label": "Autenticación",
       "placeholder": "Selecciona si require autenticación",
       "description": "Requiere autenticación, selecciona si require autenticación",
@@ -72,7 +72,7 @@
       "priority": 5,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "condition"
     },
     {
       "name": "label_1",
@@ -107,7 +107,7 @@
     {
       "name": "channel",
       "type": "channel",
-      "fieldtype": "textField",
+      "fieldtype": "select",
       "label": "SGA: Canal",
       "placeholder": "Selecciona el canal",
       "description": "Canal, selecciona el canal de envío del mensaje",
@@ -117,12 +117,12 @@
       "priority": 8,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "channel"
     },
     {
       "name": "operationtype",
       "type": "operationtype",
-      "fieldtype": "texfield",
+      "fieldtype": "select",
       "label": "CW7: Tipo de Operación",
       "placeholder": "Selecciona tipo de operación",
       "description": "Tipo de operación, selecciona tipo de operación relacionada",
@@ -132,12 +132,12 @@
       "priority": 9,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "operationType"
     },
     {
       "name": "notary",
       "type": "notary",
-      "fieldtype": "textField",
+      "fieldtype": "select",
       "label": "SGC: Notaría Repertorio",
       "placeholder": "Notaría de repertorio",
       "description": "Notaría de repertorio, selecciona la notaría de repertorio",
@@ -147,7 +147,7 @@
       "priority": 10,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "notary"
     },
     {
       "name": "registrationDate",
@@ -182,7 +182,7 @@
     {
       "name": "beneficiaryBank",
       "type": "beneficiaryBank",
-      "fieldtype": "texfield",
+      "fieldtype": "select",
       "label": "CSO: Señores Institución",
       "placeholder": "Banco receptor",
       "description": "Banco receptor del mensaje",
@@ -192,7 +192,7 @@
       "priority": 13,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "institution"
     },
     {
       "name": "owner",
@@ -317,7 +317,7 @@
     {
       "name": "commune",
       "type": "commune",
-      "fieldtype": "textField",
+      "fieldtype": "select",
       "label": "CS7: Comuna de",
       "placeholder": "Selecciona la comuna",
       "description": "Comuna del inmueble, selecciona la comuna",
@@ -327,12 +327,12 @@
       "priority": 22,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "commune"
     },
     {
       "name": "region",
       "type": "region",
-      "fieldtype": "textField",
+      "fieldtype": "select",
       "label": "CS8: Región de",
       "placeholder": "Selecciona la región",
       "description": "Región del inmueble, selecciona la región",
@@ -342,7 +342,7 @@
       "priority": 23,
       "messageCode": "671",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "region"
     },
     {
       "name": "linebreak_2",

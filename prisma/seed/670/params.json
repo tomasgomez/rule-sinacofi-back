@@ -80,7 +80,7 @@
       "fieldtype": "label",
       "label": "Datos de Hipoteca",
       "placeholder": "",
-      "description": "Título del mensaje \"Datos de Hipoteca\"",
+      "description": "Título del mensaje Datos de Hipoteca",
       "column": 12,
       "row": 1,
       "defaultValue": "Datos de Hipoteca",

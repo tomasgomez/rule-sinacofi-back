@@ -16,11 +16,11 @@ const prisma = new PrismaClient();
 
 async function main() {
 
-    // load schemas
-    const schemas = [schema670, schema671,schema672, schema673, schema199, schema136];
+    // // load schemas
+    // const schemas = [schema670, schema671,schema672, schema673, schema199, schema136];
 
-    // // seed schemas
-    await seedSchema(prisma, [schema673]);
+    // // // seed schemas
+    // await seedSchema(prisma, schemas);
 
     // // seed rules
     // await seedRules(prisma, rules);
