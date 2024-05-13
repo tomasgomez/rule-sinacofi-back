@@ -212,7 +212,7 @@
     {
       "name": "ownerDni",
       "type": "ownerDni",
-      "fieldtype": "textField",
+      "fieldtype": "dni",
       "label": "SGG: RUT del Vendedor (Si corresponde)",
       "placeholder": "ej: 10.203.411-2",
       "description": "RUT del propietario/vendedor (si corresponde)",
@@ -257,7 +257,7 @@
     {
       "name": "buyerDni",
       "type": "buyerDni",
-      "fieldtype": "textField",
+      "fieldtype": "dni",
       "label": "SGI: RUT del Comprador o Mutuario",
       "placeholder": "",
       "description": "RUT del comprador o mutuario",
@@ -324,7 +324,7 @@
       "column": 4,
       "row": 1,
       "defaultValue": "",
-      "priority": 22,
+      "priority": 23,
       "messageCode": "670",
       "rules": "required,maxLength25",
       "parameterOptions": "commune"
@@ -339,7 +339,7 @@
       "column": 4,
       "row": 1,
       "defaultValue": "",
-      "priority": 23,
+      "priority": 22,
       "messageCode": "670",
       "rules": "required,maxLength25",
       "parameterOptions": "region"
@@ -476,7 +476,7 @@
       "defaultValue": "SGL: Nombre del Deudor",
       "priority": 32,
       "messageCode": "670",
-      "rules": "",
+      "rules": "required",
       "parameterOptions": ""
     },
     {
@@ -497,7 +497,7 @@
     {
       "name": "borrowerDni",
       "type": "borrowerDni",
-      "fieldtype": "textField",
+      "fieldtype": "dni",
       "label": "CW3: RUT del Deudor",
       "placeholder": "",
       "description": "RUT del deudor",
@@ -518,10 +518,10 @@
       "description": "Monto retenido por el banco",
       "column": 4,
       "row": 1,
-      "defaultValue": "-",
+      "defaultValue": "",
       "priority": 35,
       "messageCode": "670",
-      "rules": "required,ufFormat",
+      "rules": "required,ufFormat,number",
       "parameterOptions": ""
     },
     {
@@ -566,7 +566,7 @@
       "defaultValue": "",
       "priority": 38,
       "messageCode": "670",
-      "rules": "pesosFormat, number",
+      "rules": "pesosFormat,number,required",
       "parameterOptions": ""
     },
     {
@@ -602,7 +602,7 @@
     {
       "name": "sign",
       "type": "sign",
-      "fieldtype": "password",
+      "fieldtype": "textField",
       "label": "SGU: Apoderado Nombre, RUT",
       "placeholder": "",
       "description": "",
@@ -611,7 +611,7 @@
       "defaultValue": "",
       "priority": 41,
       "messageCode": "670",
-      "rules": "required",
+      "rules": "disabled",
       "parameterOptions": ""
     },
     {
