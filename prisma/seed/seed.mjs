@@ -39,6 +39,7 @@ async function main() {
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason }
 
     // seed670(prisma, rules, options);
+    console.log("seed673")
     // seed671(prisma, rules, options);
     // seed672(prisma, rules, options);
     seed673(prisma, rules, options);

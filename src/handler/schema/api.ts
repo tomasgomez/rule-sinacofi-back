@@ -16,8 +16,9 @@ class SchemaCalls extends Calls implements SchemaAPI {
         this.usecase = schemaUsecase;
     }
 
-    // get default schema value
+    // Get default schema value
     GET_DEFAULT_SCHEMA = async (req: express.Request, res: express.Response): Promise<void> => getDefaultSchema(this, req, res);
+    // Get Schema 
     GET_SCHEMA = async (req: express.Request, res: express.Response): Promise<void> => getDefaultSchema(this, req, res);
 
 }
