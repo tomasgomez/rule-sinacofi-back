@@ -16,7 +16,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install && npm update && npm install -g ts-node
+RUN npm install && npm install -g ts-node
 
 RUN ls -la
 
