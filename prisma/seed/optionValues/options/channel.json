@@ -1,0 +1,16 @@
+[
+  {
+    "name": "personas",
+    "type": "channel",
+    "description": "Si es para personas",
+    "value": "Personas",
+    "label": "Personas"
+  },
+  {
+    "name": "inmobiliarias",
+    "type": "channel",
+    "description": "Si es para inmobiliarias",
+    "value": "Inmobiliarias",
+    "label": "Inmobiliarias"
+  }
+]

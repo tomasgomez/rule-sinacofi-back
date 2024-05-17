@@ -1,0 +1,31 @@
+[
+    {
+        "name": "priorityHighWithoutNotfication",
+        "type": "priority",
+        "description": "Urgente sin aviso de entrega",
+        "value": "priorityHighWithoutNotfication",
+        "label": "Urgente sin aviso de entrega"
+    },
+    {
+        "name": "priorityNormalWithoutNotfication",
+        "type": "priority",
+        "description": "Normal sin aviso de entrega",
+        "value": "priorityNormalWithoutNotfication",
+        "label": "Normal sin Aviso de Entrega"
+    },
+    {
+        "name": "priorityHigh",
+        "type": "priority",
+        "description": "Normal con aviso de entrega",
+        "value": "priorityHigh",
+        "label": "Urgente con aviso de entrega"
+    },
+    {
+        "name": "priorityNormal",
+        "type": "priority",
+        "description": "Normal sin aviso de entrega",
+        "value": "priorityNormal",
+        "label": "Normal con aviso de entrega"
+    }
+
+]

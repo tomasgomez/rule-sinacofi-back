@@ -1,0 +1,16 @@
+[
+  {
+    "name": "h6",
+    "type": "format",
+    "description": "Título de nivel 6",
+    "value": "h6",
+    "label": "Título 6"
+  },
+  {
+    "name": "body2",
+    "type": "format",
+    "description": "body 2",
+    "value": "body2",
+    "label": "body2"
+  }
+]

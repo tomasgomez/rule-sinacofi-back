@@ -1,0 +1,138 @@
+[
+    {
+      "name": "disabled",
+      "type": "parameter",
+      "description": "Campo desactivado",
+      "condition": "disabled",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "required",
+      "type": "parameter",
+      "description": "Campo requerido",
+      "condition": "required",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "maxLength3",
+      "type": "parameter",
+      "description": "Largo max 3",
+      "condition": "maxLength",
+      "value": "3",
+      "priority": 0
+    },
+    {
+      "name": "maxLength45",
+      "type": "parameter",
+      "description": "Largo max 45",
+      "condition": "maxLength",
+      "value": "45",
+      "priority": 0
+    },
+    {
+      "name": "maxLength25",
+      "type": "parameter",
+      "description": "Largo max 50",
+      "condition": "maxLength",
+      "value": "25",
+      "priority": 0
+    },
+    {
+      "name": "maxLength420",
+      "type": "paremeter",
+      "description": "Largo max 420",
+      "condition": "maxLength",
+      "value": "420",
+      "priority": 0
+    },
+    {
+      "name": "distinctIssuedBank",
+      "type": "parameter",
+      "description": "El banco receptor debe ser diferente al banco emisor",
+      "condition": "distinctToIssuedBank",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "currentDate",
+      "type": "parameter",
+      "description": "Fecha actual",
+      "condition": "currentDate",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "dateFormat",
+      "type": "paremeter",
+      "description": "formato de fecha",
+      "condition": "regex",
+      "value": "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$",
+      "priority": 0
+    },
+    {
+      "name": "checkUserChannel",
+      "type": "parameter",
+      "description": "Valida el canal del tipo de usuario",
+      "condition": "checkUserChannel",
+      "value": "",
+      "priority": 0
+    },
+    {
+      "name": "dniFormat",
+      "type": "parameter",
+      "description": "formato rut",
+      "condition": "regex",
+      "value": "^[0-9]{1,2}\\.[0-9]{3}\\.[0-9]{3}-[0-9kK]$",
+      "priority": 0
+    },
+    {
+      "name": "checkDigitDni",
+      "type": "parameter",
+      "description": "Valida digito verificador",
+      "condition": "dni",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "ufFormat",
+      "type": "parameter",
+      "description": "formato de la UF (6 decimales)",
+      "condition": "regex",
+      "value": "^\\d+\\.\\d{6}$",
+      "priority": 0
+    },
+    {
+      "name": "pesosFormat",
+      "type": "parameter",
+      "description": "Formato de pesos",
+      "condition": "regex",
+      "value": "^\\$\\d{1,3}(\\.\\d{3})*$",
+      "priority": 0
+    },
+    {
+      "name": "cuk",
+      "type": "parameter",
+      "description": "Formato del CUK (AH + institutionCode + corr)",
+      "condition": "CUK",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "string",
+      "type": "parameter",
+      "description": "Valida si es string",
+      "condition": "isString",
+      "value": "true",
+      "priority": 0
+    },
+    {
+      "name": "number",
+      "type": "parameter",
+      "description": "Valida si es número",
+      "condition": "isNumber",
+      "value": "true",
+      "priority": 0
+    }
+   ]

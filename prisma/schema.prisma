@@ -1,0 +1,157 @@
+// prisma/schema.prisma
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins", "views"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+model Schema {
+  id             String         @id @default(uuid())
+  messageCode    String         @unique
+  description    String
+  name           String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  parameters     Parameter[]
+  rules          RulesSchemas[]
+  // allowedActions SchemasActions[]
+
+  @@index([messageCode])
+}
+
+model Parameter {
+  id           String              @id @default(uuid())
+  name         String
+  messageCode  String
+  label        String
+  type         String
+  placeholder  String
+  description  String
+  row          Int?
+  column       Int?
+  defaultValue String?
+  priority     Int
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+  schema       Schema              @relation(fields: [messageCode], references: [messageCode])
+  rules        RulesParameters[]
+  optionValues ParametersOptions[]
+
+  @@unique([name, messageCode])
+  @@index([name])
+}
+
+model OptionValue {
+  id          String              @id @default(uuid())
+  name        String
+  type        String
+  description String
+  value       String
+  label       String
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  parameters  ParametersOptions[]
+
+  @@unique([name, type])
+  @@index([name, type])
+}
+
+// TODO: destroy type field 
+
+model Rule {
+  id             String            @id @default(uuid())
+  name           String
+  type           String
+  description    String
+  condition      String
+  value          String
+  priority       Int
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  parameters     RulesParameters[]
+  schemas        RulesSchemas[]
+  // allowedActions RulesActions[]
+
+  @@unique([name, type])
+  @@index([name, type])
+}
+
+// model Action {
+//   id          String @id @default(uuid())
+//   name        String
+//   description String
+//   values      Json?
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @updatedAt
+//   schemas     SchemasActions[]
+//   rules       RulesActions[]
+
+//   @@unique([name])
+//   @@index([name])
+// }
+
+// model RulesActions {
+//   ruleName String
+//   ruleType String
+//   actionName String
+
+//   rule   Rule   @relation(fields: [ruleName, ruleType], references: [name, type])
+//   action Action @relation(fields: [actionName], references: [name])
+
+//   @@id([ruleName, actionName])
+//   @@index([ruleName, actionName])
+// }
+
+// model SchemasActions {
+//   schemaMessageCode String
+//   allowedActionName String
+
+//   schema       Schema         @relation(fields: [schemaMessageCode], references: [messageCode])
+//   action       Action         @relation(fields: [allowedActionName], references: [name])
+
+//   @@id([schemaMessageCode, allowedActionName])
+//   @@index([schemaMessageCode, allowedActionName])
+// }
+
+
+model RulesSchemas {
+  ruleName    String
+  ruleType    String
+  messageCode String
+
+  rule   Rule   @relation(fields: [ruleName, ruleType], references: [name, type])
+  schema Schema @relation(fields: [messageCode], references: [messageCode])
+
+  @@id([ruleName, ruleType, messageCode])
+  @@index([ruleName, ruleType, messageCode])
+}
+
+model RulesParameters {
+  ruleName             String
+  ruleType             String
+  parameterName        String
+  parameterMessageCode String
+
+  rule      Rule      @relation(fields: [ruleName, ruleType], references: [name, type])
+  parameter Parameter @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
+
+  @@id([ruleName, ruleType, parameterName, parameterMessageCode])
+  @@index([ruleName, ruleType, parameterName, parameterMessageCode])
+}
+
+model ParametersOptions {
+  parameterName        String
+  parameterMessageCode String
+  optionName           String
+  optionType           String
+
+  optionValue OptionValue @relation(fields: [optionName, optionType], references: [name, type])
+  parameter   Parameter   @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
+
+  @@id([parameterName, parameterMessageCode, optionName, optionType])
+  @@index([parameterName, parameterMessageCode, optionName, optionType])
+}

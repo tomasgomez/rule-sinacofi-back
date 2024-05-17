@@ -1,0 +1,2445 @@
+[
+  {
+    "name": "aisen",
+    "type": "Commune",
+    "description": "Aisén",
+    "value": "aisen",
+    "label": "Aisén"
+  },
+  {
+    "name": "algarrobo",
+    "type": "Commune",
+    "description": "Algarrobo",
+    "value": "algarrobo",
+    "label": "Algarrobo"
+  },
+  {
+    "name": "alhue",
+    "type": "Commune",
+    "description": "Alhué",
+    "value": "alhue",
+    "label": "Alhué"
+  },
+  {
+    "name": "altoBiobio",
+    "type": "Commune",
+    "description": "Alto Biobío",
+    "value": "altoBiobio",
+    "label": "Alto Biobío"
+  },
+  {
+    "name": "altoDelCarmen",
+    "type": "Commune",
+    "description": "Alto Del Carmen",
+    "value": "altoDelCarmen",
+    "label": "Alto Del Carmen"
+  },
+  {
+    "name": "altoHospicio",
+    "type": "Commune",
+    "description": "Alto Hospicio",
+    "value": "altoHospicio",
+    "label": "Alto Hospicio"
+  },
+  {
+    "name": "ancud",
+    "type": "Commune",
+    "description": "Ancud",
+    "value": "ancud",
+    "label": "Ancud"
+  },
+  {
+    "name": "andacollo",
+    "type": "Commune",
+    "description": "Andacollo",
+    "value": "andacollo",
+    "label": "Andacollo"
+  },
+  {
+    "name": "angol",
+    "type": "Commune",
+    "description": "Angol",
+    "value": "angol",
+    "label": "Angol"
+  },
+  {
+    "name": "antofagasta",
+    "type": "Commune",
+    "description": "Antofagasta",
+    "value": "antofagasta",
+    "label": "Antofagasta"
+  },
+  {
+    "name": "antuco",
+    "type": "Commune",
+    "description": "Antuco",
+    "value": "antuco",
+    "label": "Antuco"
+  },
+  {
+    "name": "antartica",
+    "type": "Commune",
+    "description": "Antártica",
+    "value": "antartica",
+    "label": "Antártica"
+  },
+  {
+    "name": "arauco",
+    "type": "Commune",
+    "description": "Arauco",
+    "value": "arauco",
+    "label": "Arauco"
+  },
+  {
+    "name": "arica",
+    "type": "Commune",
+    "description": "Arica",
+    "value": "arica",
+    "label": "Arica"
+  },
+  {
+    "name": "buin",
+    "type": "Commune",
+    "description": "Buin",
+    "value": "buin",
+    "label": "Buin"
+  },
+  {
+    "name": "bulnes",
+    "type": "Commune",
+    "description": "Bulnes",
+    "value": "bulnes",
+    "label": "Bulnes"
+  },
+  {
+    "name": "cabildo",
+    "type": "Commune",
+    "description": "Cabildo",
+    "value": "cabildo",
+    "label": "Cabildo"
+  },
+  {
+    "name": "cabodeHornos",
+    "type": "Commune",
+    "description": "Cabo De Hornos",
+    "value": "cabodeHornos",
+    "label": "Cabo De Hornos"
+  },
+  {
+    "name": "cabrero",
+    "type": "Commune",
+    "description": "Cabrero",
+    "value": "cabrero",
+    "label": "Cabrero"
+  },
+  {
+    "name": "calama",
+    "type": "Commune",
+    "description": "Calama",
+    "value": "calama",
+    "label": "Calama"
+  },
+  {
+    "name": "calbuco",
+    "type": "Commune",
+    "description": "Calbuco",
+    "value": "calbuco",
+    "label": "Calbuco"
+  },
+  {
+    "name": "caldera",
+    "type": "Commune",
+    "description": "Caldera",
+    "value": "caldera",
+    "label": "Caldera"
+  },
+  {
+    "name": "calera",
+    "type": "Commune",
+    "description": "Calera",
+    "value": "calera",
+    "label": "Calera"
+  },
+  {
+    "name": "caleradeTango",
+    "type": "Commune",
+    "description": "Calera De Tango",
+    "value": "caleradeTango",
+    "label": "Calera De Tango"
+  },
+  {
+    "name": "calleLarga",
+    "type": "Commune",
+    "description": "Calle Larga",
+    "value": "calleLarga",
+    "label": "Calle Larga"
+  },
+  {
+    "name": "camarones",
+    "type": "Commune",
+    "description": "Camarones",
+    "value": "camarones",
+    "label": "Camarones"
+  },
+  {
+    "name": "camina",
+    "type": "Commune",
+    "description": "Camiña",
+    "value": "camina",
+    "label": "Camiña"
+  },
+  {
+    "name": "canela",
+    "type": "Commune",
+    "description": "Canela",
+    "value": "canela",
+    "label": "Canela"
+  },
+  {
+    "name": "carahue",
+    "type": "Commune",
+    "description": "Carahue",
+    "value": "carahue",
+    "label": "Carahue"
+  },
+  {
+    "name": "cartagena",
+    "type": "Commune",
+    "description": "Cartagena",
+    "value": "cartagena",
+    "label": "Cartagena"
+  },
+  {
+    "name": "casablanca",
+    "type": "Commune",
+    "description": "Casablanca",
+    "value": "casablanca",
+    "label": "Casablanca"
+  },
+  {
+    "name": "castro",
+    "type": "Commune",
+    "description": "Castro",
+    "value": "castro",
+    "label": "Castro"
+  },
+  {
+    "name": "catemu",
+    "type": "Commune",
+    "description": "Catemu",
+    "value": "catemu",
+    "label": "Catemu"
+  },
+  {
+    "name": "cauquenes",
+    "type": "Commune",
+    "description": "Cauquenes",
+    "value": "cauquenes",
+    "label": "Cauquenes"
+  },
+  {
+    "name": "canete",
+    "type": "Commune",
+    "description": "Cañete",
+    "value": "canete",
+    "label": "Cañete"
+  },
+  {
+    "name": "cerrillos",
+    "type": "Commune",
+    "description": "Cerrillos",
+    "value": "cerrillos",
+    "label": "Cerrillos"
+  },
+  {
+    "name": "cerroNavia",
+    "type": "Commune",
+    "description": "Cerro Navia",
+    "value": "cerroNavia",
+    "label": "Cerro Navia"
+  },
+  {
+    "name": "chaiten",
+    "type": "Commune",
+    "description": "Chaitén",
+    "value": "chaiten",
+    "label": "Chaitén"
+  },
+  {
+    "name": "chanco",
+    "type": "Commune",
+    "description": "Chanco",
+    "value": "chanco",
+    "label": "Chanco"
+  },
+  {
+    "name": "chanaral",
+    "type": "Commune",
+    "description": "Chañaral",
+    "value": "chanaral",
+    "label": "Chañaral"
+  },
+  {
+    "name": "chiguayante",
+    "type": "Commune",
+    "description": "Chiguayante",
+    "value": "chiguayante",
+    "label": "Chiguayante"
+  },
+  {
+    "name": "chileChico",
+    "type": "Commune",
+    "description": "Chile Chico",
+    "value": "chileChico",
+    "label": "Chile Chico"
+  },
+  {
+    "name": "chillan",
+    "type": "Commune",
+    "description": "Chillán",
+    "value": "chillan",
+    "label": "Chillán"
+  },
+  {
+    "name": "chillanViejo",
+    "type": "Commune",
+    "description": "Chillán Viejo",
+    "value": "chillanViejo",
+    "label": "Chillán Viejo"
+  },
+  {
+    "name": "chimbarongo",
+    "type": "Commune",
+    "description": "Chimbarongo",
+    "value": "chimbarongo",
+    "label": "Chimbarongo"
+  },
+  {
+    "name": "cholchol",
+    "type": "Commune",
+    "description": "Cholchol",
+    "value": "cholchol",
+    "label": "Cholchol"
+  },
+  {
+    "name": "chonchi",
+    "type": "Commune",
+    "description": "Chonchi",
+    "value": "chonchi",
+    "label": "Chonchi"
+  },
+  {
+    "name": "chepica",
+    "type": "Commune",
+    "description": "Chépica",
+    "value": "chepica",
+    "label": "Chépica"
+  },
+  {
+    "name": "cisnes",
+    "type": "Commune",
+    "description": "Cisnes",
+    "value": "cisnes",
+    "label": "Cisnes"
+  },
+  {
+    "name": "cobquecura",
+    "type": "Commune",
+    "description": "Cobquecura",
+    "value": "cobquecura",
+    "label": "Cobquecura"
+  },
+  {
+    "name": "cochamo",
+    "type": "Commune",
+    "description": "Cochamó",
+    "value": "cochamo",
+    "label": "Cochamó"
+  },
+  {
+    "name": "cochrane",
+    "type": "Commune",
+    "description": "Cochrane",
+    "value": "cochrane",
+    "label": "Cochrane"
+  },
+  {
+    "name": "codegua",
+    "type": "Commune",
+    "description": "Codegua",
+    "value": "codegua",
+    "label": "Codegua"
+  },
+  {
+    "name": "coelemu",
+    "type": "Commune",
+    "description": "Coelemu",
+    "value": "coelemu",
+    "label": "Coelemu"
+  },
+  {
+    "name": "coihaique",
+    "type": "Commune",
+    "description": "Coihaique",
+    "value": "coihaique",
+    "label": "Coihaique"
+  },
+  {
+    "name": "coihueco",
+    "type": "Commune",
+    "description": "Coihueco",
+    "value": "coihueco",
+    "label": "Coihueco"
+  },
+  {
+    "name": "coinco",
+    "type": "Commune",
+    "description": "Coinco",
+    "value": "coinco",
+    "label": "Coinco"
+  },
+  {
+    "name": "colbun",
+    "type": "Commune",
+    "description": "Colbún",
+    "value": "colbun",
+    "label": "Colbún"
+  },
+  {
+    "name": "colchane",
+    "type": "Commune",
+    "description": "Colchane",
+    "value": "colchane",
+    "label": "Colchane"
+  },
+  {
+    "name": "colina",
+    "type": "Commune",
+    "description": "Colina",
+    "value": "colina",
+    "label": "Colina"
+  },
+  {
+    "name": "collipulli",
+    "type": "Commune",
+    "description": "Collipulli",
+    "value": "collipulli",
+    "label": "Collipulli"
+  },
+  {
+    "name": "coltauco",
+    "type": "Commune",
+    "description": "Coltauco",
+    "value": "coltauco",
+    "label": "Coltauco"
+  },
+  {
+    "name": "combarbala",
+    "type": "Commune",
+    "description": "Combarbalá",
+    "value": "combarbala",
+    "label": "Combarbalá"
+  },
+  {
+    "name": "concepcion",
+    "type": "Commune",
+    "description": "Concepción",
+    "value": "concepcion",
+    "label": "Concepción"
+  },
+  {
+    "name": "conchali",
+    "type": "Commune",
+    "description": "Conchalí",
+    "value": "conchali",
+    "label": "Conchalí"
+  },
+  {
+    "name": "concon",
+    "type": "Commune",
+    "description": "Concón",
+    "value": "concon",
+    "label": "Concón"
+  },
+  {
+    "name": "constitucion",
+    "type": "Commune",
+    "description": "Constitución",
+    "value": "constitucion",
+    "label": "Constitución"
+  },
+  {
+    "name": "contulmo",
+    "type": "Commune",
+    "description": "Contulmo",
+    "value": "contulmo",
+    "label": "Contulmo"
+  },
+  {
+    "name": "copiapo",
+    "type": "Commune",
+    "description": "Copiapó",
+    "value": "copiapo",
+    "label": "Copiapó"
+  },
+  {
+    "name": "coquimbo",
+    "type": "Commune",
+    "description": "Coquimbo",
+    "value": "coquimbo",
+    "label": "Coquimbo"
+  },
+  {
+    "name": "coronel",
+    "type": "Commune",
+    "description": "Coronel",
+    "value": "coronel",
+    "label": "Coronel"
+  },
+  {
+    "name": "corral",
+    "type": "Commune",
+    "description": "Corral",
+    "value": "corral",
+    "label": "Corral"
+  },
+  {
+    "name": "cunco",
+    "type": "Commune",
+    "description": "Cunco",
+    "value": "cunco",
+    "label": "Cunco"
+  },
+  {
+    "name": "curacautin",
+    "type": "Commune",
+    "description": "Curacautín",
+    "value": "curacautin",
+    "label": "Curacautín"
+  },
+  {
+    "name": "curacavi",
+    "type": "Commune",
+    "description": "Curacaví",
+    "value": "curacavi",
+    "label": "Curacaví"
+  },
+  {
+    "name": "curacodeVelez",
+    "type": "Commune",
+    "description": "Curaco De Vélez",
+    "value": "curacodeVelez",
+    "label": "Curaco De Vélez"
+  },
+  {
+    "name": "curanilahue",
+    "type": "Commune",
+    "description": "Curanilahue",
+    "value": "curanilahue",
+    "label": "Curanilahue"
+  },
+  {
+    "name": "curarrehue",
+    "type": "Commune",
+    "description": "Curarrehue",
+    "value": "curarrehue",
+    "label": "Curarrehue"
+  },
+  {
+    "name": "curepto",
+    "type": "Commune",
+    "description": "Curepto",
+    "value": "curepto",
+    "label": "Curepto"
+  },
+  {
+    "name": "curico",
+    "type": "Commune",
+    "description": "Curicó",
+    "value": "curico",
+    "label": "Curicó"
+  },
+  {
+    "name": "dalcahue",
+    "type": "Commune",
+    "description": "Dalcahue",
+    "value": "dalcahue",
+    "label": "Dalcahue"
+  },
+  {
+    "name": "diegodeAlmagro",
+    "type": "Commune",
+    "description": "Diego De Almagro",
+    "value": "diegodeAlmagro",
+    "label": "Diego De Almagro"
+  },
+  {
+    "name": "donihue",
+    "type": "Commune",
+    "description": "Doñihue",
+    "value": "donihue",
+    "label": "Doñihue"
+  },
+  {
+    "name": "elBosque",
+    "type": "Commune",
+    "description": "El Bosque",
+    "value": "elBosque",
+    "label": "El Bosque"
+  },
+  {
+    "name": "elCarmen",
+    "type": "Commune",
+    "description": "El Carmen",
+    "value": "elCarmen",
+    "label": "El Carmen"
+  },
+  {
+    "name": "elMonte",
+    "type": "Commune",
+    "description": "El Monte",
+    "value": "elMonte",
+    "label": "El Monte"
+  },
+  {
+    "name": "elQuisco",
+    "type": "Commune",
+    "description": "El Quisco",
+    "value": "elQuisco",
+    "label": "El Quisco"
+  },
+  {
+    "name": "elTabo",
+    "type": "Commune",
+    "description": "El Tabo",
+    "value": "elTabo",
+    "label": "El Tabo"
+  },
+  {
+    "name": "empedrado",
+    "type": "Commune",
+    "description": "Empedrado",
+    "value": "empedrado",
+    "label": "Empedrado"
+  },
+  {
+    "name": "ercilla",
+    "type": "Commune",
+    "description": "Ercilla",
+    "value": "ercilla",
+    "label": "Ercilla"
+  },
+  {
+    "name": "estacionCentral",
+    "type": "Commune",
+    "description": "Estación Central",
+    "value": "estacionCentral",
+    "label": "Estación Central"
+  },
+  {
+    "name": "florida",
+    "type": "Commune",
+    "description": "Florida",
+    "value": "florida",
+    "label": "Florida"
+  },
+  {
+    "name": "freire",
+    "type": "Commune",
+    "description": "Freire",
+    "value": "freire",
+    "label": "Freire"
+  },
+  {
+    "name": "freirina",
+    "type": "Commune",
+    "description": "Freirina",
+    "value": "freirina",
+    "label": "Freirina"
+  },
+  {
+    "name": "fresia",
+    "type": "Commune",
+    "description": "Fresia",
+    "value": "fresia",
+    "label": "Fresia"
+  },
+  {
+    "name": "frutillar",
+    "type": "Commune",
+    "description": "Frutillar",
+    "value": "frutillar",
+    "label": "Frutillar"
+  },
+  {
+    "name": "futaleufu",
+    "type": "Commune",
+    "description": "Futaleufú",
+    "value": "futaleufu",
+    "label": "Futaleufú"
+  },
+  {
+    "name": "futrono",
+    "type": "Commune",
+    "description": "Futrono",
+    "value": "futrono",
+    "label": "Futrono"
+  },
+  {
+    "name": "galvarino",
+    "type": "Commune",
+    "description": "Galvarino",
+    "value": "galvarino",
+    "label": "Galvarino"
+  },
+  {
+    "name": "generalLagos",
+    "type": "Commune",
+    "description": "General Lagos",
+    "value": "generalLagos",
+    "label": "General Lagos"
+  },
+  {
+    "name": "gorbea",
+    "type": "Commune",
+    "description": "Gorbea",
+    "value": "gorbea",
+    "label": "Gorbea"
+  },
+  {
+    "name": "graneros",
+    "type": "Commune",
+    "description": "Graneros",
+    "value": "graneros",
+    "label": "Graneros"
+  },
+  {
+    "name": "guaitecas",
+    "type": "Commune",
+    "description": "Guaitecas",
+    "value": "guaitecas",
+    "label": "Guaitecas"
+  },
+  {
+    "name": "hijuelas",
+    "type": "Commune",
+    "description": "Hijuelas",
+    "value": "hijuelas",
+    "label": "Hijuelas"
+  },
+  {
+    "name": "hualaihue",
+    "type": "Commune",
+    "description": "Hualaihué",
+    "value": "hualaihue",
+    "label": "Hualaihué"
+  },
+  {
+    "name": "hualane",
+    "type": "Commune",
+    "description": "Hualañé",
+    "value": "hualane",
+    "label": "Hualañé"
+  },
+  {
+    "name": "hualpen",
+    "type": "Commune",
+    "description": "Hualpén",
+    "value": "hualpen",
+    "label": "Hualpén"
+  },
+  {
+    "name": "hualqui",
+    "type": "Commune",
+    "description": "Hualqui",
+    "value": "hualqui",
+    "label": "Hualqui"
+  },
+  {
+    "name": "huara",
+    "type": "Commune",
+    "description": "Huara",
+    "value": "huara",
+    "label": "Huara"
+  },
+  {
+    "name": "huasco",
+    "type": "Commune",
+    "description": "Huasco",
+    "value": "huasco",
+    "label": "Huasco"
+  },
+  {
+    "name": "huechuraba",
+    "type": "Commune",
+    "description": "Huechuraba",
+    "value": "huechuraba",
+    "label": "Huechuraba"
+  },
+  {
+    "name": "illapel",
+    "type": "Commune",
+    "description": "Illapel",
+    "value": "illapel",
+    "label": "Illapel"
+  },
+  {
+    "name": "independencia",
+    "type": "Commune",
+    "description": "Independencia",
+    "value": "independencia",
+    "label": "Independencia"
+  },
+  {
+    "name": "iquique",
+    "type": "Commune",
+    "description": "Iquique",
+    "value": "iquique",
+    "label": "Iquique"
+  },
+  {
+    "name": "islaDeMaipo",
+    "type": "Commune",
+    "description": "Isla De Maipo",
+    "value": "islaDeMaipo",
+    "label": "Isla De Maipo"
+  },
+  {
+    "name": "islaDePascua",
+    "type": "Commune",
+    "description": "Isla De Pascua",
+    "value": "islaDePascua",
+    "label": "Isla De Pascua"
+  },
+  {
+    "name": "juanFernandez",
+    "type": "Commune",
+    "description": "Juan Fernández",
+    "value": "juanFernandez",
+    "label": "Juan Fernández"
+  },
+  {
+    "name": "laCisterna",
+    "type": "Commune",
+    "description": "La Cisterna",
+    "value": "laCisterna",
+    "label": "La Cisterna"
+  },
+  {
+    "name": "laCruz",
+    "type": "Commune",
+    "description": "La Cruz",
+    "value": "laCruz",
+    "label": "La Cruz"
+  },
+  {
+    "name": "laEstrella",
+    "type": "Commune",
+    "description": "La Estrella",
+    "value": "laEstrella",
+    "label": "La Estrella"
+  },
+  {
+    "name": "laFlorida",
+    "type": "Commune",
+    "description": "La Florida",
+    "value": "laFlorida",
+    "label": "La Florida"
+  },
+  {
+    "name": "laGranja",
+    "type": "Commune",
+    "description": "La Granja",
+    "value": "laGranja",
+    "label": "La Granja"
+  },
+  {
+    "name": "laHiguera",
+    "type": "Commune",
+    "description": "La Higuera",
+    "value": "laHiguera",
+    "label": "La Higuera"
+  },
+  {
+    "name": "laLigua",
+    "type": "Commune",
+    "description": "La Ligua",
+    "value": "laLigua",
+    "label": "La Ligua"
+  },
+  {
+    "name": "laPintana",
+    "type": "Commune",
+    "description": "La Pintana",
+    "value": "laPintana",
+    "label": "La Pintana"
+  },
+  {
+    "name": "laReina",
+    "type": "Commune",
+    "description": "La Reina",
+    "value": "laReina",
+    "label": "La Reina"
+  },
+  {
+    "name": "laSerena",
+    "type": "Commune",
+    "description": "La Serena",
+    "value": "laSerena",
+    "label": "La Serena"
+  },
+  {
+    "name": "laUnion",
+    "type": "Commune",
+    "description": "La Unión",
+    "value": "laUnion",
+    "label": "La Unión"
+  },
+  {
+    "name": "lagoRanco",
+    "type": "Commune",
+    "description": "Lago Ranco",
+    "value": "lagoRanco",
+    "label": "Lago Ranco"
+  },
+  {
+    "name": "lagoVerde",
+    "type": "Commune",
+    "description": "Lago Verde",
+    "value": "lagoVerde",
+    "label": "Lago Verde"
+  },
+  {
+    "name": "lagunaBlanca",
+    "type": "Commune",
+    "description": "Laguna Blanca",
+    "value": "lagunaBlanca",
+    "label": "Laguna Blanca"
+  },
+  {
+    "name": "laja",
+    "type": "Commune",
+    "description": "Laja",
+    "value": "laja",
+    "label": "Laja"
+  },
+  {
+    "name": "lampa",
+    "type": "Commune",
+    "description": "Lampa",
+    "value": "lampa",
+    "label": "Lampa"
+  },
+  {
+    "name": "lanco",
+    "type": "Commune",
+    "description": "Lanco",
+    "value": "lanco",
+    "label": "Lanco"
+  },
+  {
+    "name": "lasCabras",
+    "type": "Commune",
+    "description": "Las Cabras",
+    "value": "lasCabras",
+    "label": "Las Cabras"
+  },
+  {
+    "name": "lasCondes",
+    "type": "Commune",
+    "description": "Las Condes",
+    "value": "lasCondes",
+    "label": "Las Condes"
+  },
+  {
+    "name": "lautaro",
+    "type": "Commune",
+    "description": "Lautaro",
+    "value": "lautaro",
+    "label": "Lautaro"
+  },
+  {
+    "name": "lebu",
+    "type": "Commune",
+    "description": "Lebu",
+    "value": "lebu",
+    "label": "Lebu"
+  },
+  {
+    "name": "licanten",
+    "type": "Commune",
+    "description": "Licantén",
+    "value": "licanten",
+    "label": "Licantén"
+  },
+  {
+    "name": "limache",
+    "type": "Commune",
+    "description": "Limache",
+    "value": "limache",
+    "label": "Limache"
+  },
+  {
+    "name": "linares",
+    "type": "Commune",
+    "description": "Linares",
+    "value": "linares",
+    "label": "Linares"
+  },
+  {
+    "name": "litueche",
+    "type": "Commune",
+    "description": "Litueche",
+    "value": "litueche",
+    "label": "Litueche"
+  },
+  {
+    "name": "llaillay",
+    "type": "Commune",
+    "description": "Llaillay",
+    "value": "llaillay",
+    "label": "Llaillay"
+  },
+  {
+    "name": "llanquihue",
+    "type": "Commune",
+    "description": "Llanquihue",
+    "value": "llanquihue",
+    "label": "Llanquihue"
+  },
+  {
+    "name": "loBarnechea",
+    "type": "Commune",
+    "description": "Lo Barnechea",
+    "value": "loBarnechea",
+    "label": "Lo Barnechea"
+  },
+  {
+    "name": "loEspejo",
+    "type": "Commune",
+    "description": "Lo Espejo",
+    "value": "loEspejo",
+    "label": "Lo Espejo"
+  },
+  {
+    "name": "loPrado",
+    "type": "Commune",
+    "description": "Lo Prado",
+    "value": "loPrado",
+    "label": "Lo Prado"
+  },
+  {
+    "name": "lolol",
+    "type": "Commune",
+    "description": "Lolol",
+    "value": "lolol",
+    "label": "Lolol"
+  },
+  {
+    "name": "loncoche",
+    "type": "Commune",
+    "description": "Loncoche",
+    "value": "loncoche",
+    "label": "Loncoche"
+  },
+  {
+    "name": "longavi",
+    "type": "Commune",
+    "description": "Longaví",
+    "value": "longavi",
+    "label": "Longaví"
+  },
+  {
+    "name": "lonquimay",
+    "type": "Commune",
+    "description": "Lonquimay",
+    "value": "lonquimay",
+    "label": "Lonquimay"
+  },
+  {
+    "name": "losAndes",
+    "type": "Commune",
+    "description": "Los Andes",
+    "value": "losAndes",
+    "label": "Los Andes"
+  },
+  {
+    "name": "losLagos",
+    "type": "Commune",
+    "description": "Los Lagos",
+    "value": "losLagos",
+    "label": "Los Lagos"
+  },
+  {
+    "name": "losMuermos",
+    "type": "Commune",
+    "description": "Los Muermos",
+    "value": "losMuermos",
+    "label": "Los Muermos"
+  },
+  {
+    "name": "losSauces",
+    "type": "Commune",
+    "description": "Los Sauces",
+    "value": "losSauces",
+    "label": "Los Sauces"
+  },
+  {
+    "name": "losVilos",
+    "type": "Commune",
+    "description": "Los Vilos",
+    "value": "losVilos",
+    "label": "Los Vilos"
+  },
+  {
+    "name": "losAlamos",
+    "type": "Commune",
+    "description": "Los Álamos",
+    "value": "losAlamos",
+    "label": "Los Álamos"
+  },
+  {
+    "name": "losAngeles",
+    "type": "Commune",
+    "description": "Los Ángeles",
+    "value": "losAngeles",
+    "label": "Los Ángeles"
+  },
+  {
+    "name": "lota",
+    "type": "Commune",
+    "description": "Lota",
+    "value": "lota",
+    "label": "Lota"
+  },
+  {
+    "name": "lumaco",
+    "type": "Commune",
+    "description": "Lumaco",
+    "value": "lumaco",
+    "label": "Lumaco"
+  },
+  {
+    "name": "machali",
+    "type": "Commune",
+    "description": "Machalí",
+    "value": "machali",
+    "label": "Machalí"
+  },
+  {
+    "name": "macul",
+    "type": "Commune",
+    "description": "Macul",
+    "value": "macul",
+    "label": "Macul"
+  },
+  {
+    "name": "maipu",
+    "type": "Commune",
+    "description": "Maipú",
+    "value": "maipu",
+    "label": "Maipú"
+  },
+  {
+    "name": "malloa",
+    "type": "Commune",
+    "description": "Malloa",
+    "value": "malloa",
+    "label": "Malloa"
+  },
+  {
+    "name": "marchihue",
+    "type": "Commune",
+    "description": "Marchihue",
+    "value": "marchihue",
+    "label": "Marchihue"
+  },
+  {
+    "name": "mariquina",
+    "type": "Commune",
+    "description": "Mariquina",
+    "value": "mariquina",
+    "label": "Mariquina"
+  },
+  {
+    "name": "mariaElena",
+    "type": "Commune",
+    "description": "María Elena",
+    "value": "mariaElena",
+    "label": "María Elena"
+  },
+  {
+    "name": "mariaPinto",
+    "type": "Commune",
+    "description": "María Pinto",
+    "value": "mariaPinto",
+    "label": "María Pinto"
+  },
+  {
+    "name": "maule",
+    "type": "Commune",
+    "description": "Maule",
+    "value": "maule",
+    "label": "Maule"
+  },
+  {
+    "name": "maullin",
+    "type": "Commune",
+    "description": "Maullín",
+    "value": "maullin",
+    "label": "Maullín"
+  },
+  {
+    "name": "mejillones",
+    "type": "Commune",
+    "description": "Mejillones",
+    "value": "mejillones",
+    "label": "Mejillones"
+  },
+  {
+    "name": "melipeuco",
+    "type": "Commune",
+    "description": "Melipeuco",
+    "value": "melipeuco",
+    "label": "Melipeuco"
+  },
+  {
+    "name": "melipilla",
+    "type": "Commune",
+    "description": "Melipilla",
+    "value": "melipilla",
+    "label": "Melipilla"
+  },
+  {
+    "name": "molina",
+    "type": "Commune",
+    "description": "Molina",
+    "value": "molina",
+    "label": "Molina"
+  },
+  {
+    "name": "montePatria",
+    "type": "Commune",
+    "description": "Monte Patria",
+    "value": "montePatria",
+    "label": "Monte Patria"
+  },
+  {
+    "name": "mostazal",
+    "type": "Commune",
+    "description": "Mostazal",
+    "value": "mostazal",
+    "label": "Mostazal"
+  },
+  {
+    "name": "mulchen",
+    "type": "Commune",
+    "description": "Mulchén",
+    "value": "mulchen",
+    "label": "Mulchén"
+  },
+  {
+    "name": "mafil",
+    "type": "Commune",
+    "description": "Máfil",
+    "value": "mafil",
+    "label": "Máfil"
+  },
+  {
+    "name": "nacimiento",
+    "type": "Commune",
+    "description": "Nacimiento",
+    "value": "nacimiento",
+    "label": "Nacimiento"
+  },
+  {
+    "name": "nancagua",
+    "type": "Commune",
+    "description": "Nancagua",
+    "value": "nancagua",
+    "label": "Nancagua"
+  },
+  {
+    "name": "natales",
+    "type": "Commune",
+    "description": "Natales",
+    "value": "natales",
+    "label": "Natales"
+  },
+  {
+    "name": "navidad",
+    "type": "Commune",
+    "description": "Navidad",
+    "value": "navidad",
+    "label": "Navidad"
+  },
+  {
+    "name": "negrete",
+    "type": "Commune",
+    "description": "Negrete",
+    "value": "negrete",
+    "label": "Negrete"
+  },
+  {
+    "name": "ninhue",
+    "type": "Commune",
+    "description": "Ninhue",
+    "value": "ninhue",
+    "label": "Ninhue"
+  },
+  {
+    "name": "nogales",
+    "type": "Commune",
+    "description": "Nogales",
+    "value": "nogales",
+    "label": "Nogales"
+  },
+  {
+    "name": "nuevaImperial",
+    "type": "Commune",
+    "description": "Nueva Imperial",
+    "value": "nuevaImperial",
+    "label": "Nueva Imperial"
+  },
+  {
+    "name": "olivar",
+    "type": "Commune",
+    "description": "Olivar",
+    "value": "olivar",
+    "label": "Olivar"
+  },
+  {
+    "name": "ollague",
+    "type": "Commune",
+    "description": "Ollagüe",
+    "value": "ollague",
+    "label": "Ollagüe"
+  },
+  {
+    "name": "olmue",
+    "type": "Commune",
+    "description": "Olmué",
+    "value": "olmue",
+    "label": "Olmué"
+  },
+  {
+    "name": "osorno",
+    "type": "Commune",
+    "description": "Osorno",
+    "value": "osorno",
+    "label": "Osorno"
+  },
+  {
+    "name": "ovalle",
+    "type": "Commune",
+    "description": "Ovalle",
+    "value": "ovalle",
+    "label": "Ovalle"
+  },
+  {
+    "name": "oHiggins",
+    "type": "Commune",
+    "description": "O'Higgins",
+    "value": "oHiggins",
+    "label": "O'Higgins"
+  },
+  {
+    "name": "padreHurtado",
+    "type": "Commune",
+    "description": "Padre Hurtado",
+    "value": "padreHurtado",
+    "label": "Padre Hurtado"
+  },
+  {
+    "name": "padreLasCasas",
+    "type": "Commune",
+    "description": "Padre Las Casas",
+    "value": "padreLasCasas",
+    "label": "Padre Las Casas"
+  },
+  {
+    "name": "paihuano",
+    "type": "Commune",
+    "description": "Paihuano",
+    "value": "paihuano",
+    "label": "Paihuano"
+  },
+  {
+    "name": "paillaco",
+    "type": "Commune",
+    "description": "Paillaco",
+    "value": "paillaco",
+    "label": "Paillaco"
+  },
+  {
+    "name": "paine",
+    "type": "Commune",
+    "description": "Paine",
+    "value": "paine",
+    "label": "Paine"
+  },
+  {
+    "name": "palena",
+    "type": "Commune",
+    "description": "Palena",
+    "value": "palena",
+    "label": "Palena"
+  },
+  {
+    "name": "palmilla",
+    "type": "Commune",
+    "description": "Palmilla",
+    "value": "palmilla",
+    "label": "Palmilla"
+  },
+  {
+    "name": "panguipulli",
+    "type": "Commune",
+    "description": "Panguipulli",
+    "value": "panguipulli",
+    "label": "Panguipulli"
+  },
+  {
+    "name": "panquehue",
+    "type": "Commune",
+    "description": "Panquehue",
+    "value": "panquehue",
+    "label": "Panquehue"
+  },
+  {
+    "name": "papudo",
+    "type": "Commune",
+    "description": "Papudo",
+    "value": "papudo",
+    "label": "Papudo"
+  },
+  {
+    "name": "paredones",
+    "type": "Commune",
+    "description": "Paredones",
+    "value": "paredones",
+    "label": "Paredones"
+  },
+  {
+    "name": "parral",
+    "type": "Commune",
+    "description": "Parral",
+    "value": "parral",
+    "label": "Parral"
+  },
+  {
+    "name": "pedroAguirreCerda",
+    "type": "Commune",
+    "description": "Pedro Aguirre Cerda",
+    "value": "pedroAguirreCerda",
+    "label": "Pedro Aguirre Cerda"
+  },
+  {
+    "name": "pelarco",
+    "type": "Commune",
+    "description": "Pelarco",
+    "value": "pelarco",
+    "label": "Pelarco"
+  },
+  {
+    "name": "pelluhue",
+    "type": "Commune",
+    "description": "Pelluhue",
+    "value": "pelluhue",
+    "label": "Pelluhue"
+  },
+  {
+    "name": "pemuco",
+    "type": "Commune",
+    "description": "Pemuco",
+    "value": "pemuco",
+    "label": "Pemuco"
+  },
+  {
+    "name": "pencahue",
+    "type": "Commune",
+    "description": "Pencahue",
+    "value": "pencahue",
+    "label": "Pencahue"
+  },
+  {
+    "name": "penco",
+    "type": "Commune",
+    "description": "Penco",
+    "value": "penco",
+    "label": "Penco"
+  },
+  {
+    "name": "peralillo",
+    "type": "Commune",
+    "description": "Peralillo",
+    "value": "peralillo",
+    "label": "Peralillo"
+  },
+  {
+    "name": "perquenco",
+    "type": "Commune",
+    "description": "Perquenco",
+    "value": "perquenco",
+    "label": "Perquenco"
+  },
+  {
+    "name": "petorca",
+    "type": "Commune",
+    "description": "Petorca",
+    "value": "petorca",
+    "label": "Petorca"
+  },
+  {
+    "name": "peumo",
+    "type": "Commune",
+    "description": "Peumo",
+    "value": "peumo",
+    "label": "Peumo"
+  },
+  {
+    "name": "penaflor",
+    "type": "Commune",
+    "description": "Peñaflor",
+    "value": "penaflor",
+    "label": "Peñaflor"
+  },
+  {
+    "name": "penalolen",
+    "type": "Commune",
+    "description": "Peñalolén",
+    "value": "penalolen",
+    "label": "Peñalolén"
+  },
+  {
+    "name": "pica",
+    "type": "Commune",
+    "description": "Pica",
+    "value": "pica",
+    "label": "Pica"
+  },
+  {
+    "name": "pichidegua",
+    "type": "Commune",
+    "description": "Pichidegua",
+    "value": "pichidegua",
+    "label": "Pichidegua"
+  },
+  {
+    "name": "pichilemu",
+    "type": "Commune",
+    "description": "Pichilemu",
+    "value": "pichilemu",
+    "label": "Pichilemu"
+  },
+  {
+    "name": "pinto",
+    "type": "Commune",
+    "description": "Pinto",
+    "value": "pinto",
+    "label": "Pinto"
+  },
+  {
+    "name": "pirque",
+    "type": "Commune",
+    "description": "Pirque",
+    "value": "pirque",
+    "label": "Pirque"
+  },
+  {
+    "name": "pitrufquen",
+    "type": "Commune",
+    "description": "Pitrufquén",
+    "value": "pitrufquen",
+    "label": "Pitrufquén"
+  },
+  {
+    "name": "placilla",
+    "type": "Commune",
+    "description": "Placilla",
+    "value": "placilla",
+    "label": "Placilla"
+  },
+  {
+    "name": "portezuelo",
+    "type": "Commune",
+    "description": "Portezuelo",
+    "value": "portezuelo",
+    "label": "Portezuelo"
+  },
+  {
+    "name": "porvenir",
+    "type": "Commune",
+    "description": "Porvenir",
+    "value": "porvenir",
+    "label": "Porvenir"
+  },
+  {
+    "name": "pozoAlmonte",
+    "type": "Commune",
+    "description": "Pozo Almonte",
+    "value": "pozoAlmonte",
+    "label": "Pozo Almonte"
+  },
+  {
+    "name": "primavera",
+    "type": "Commune",
+    "description": "Primavera",
+    "value": "primavera",
+    "label": "Primavera"
+  },
+  {
+    "name": "providencia",
+    "type": "Commune",
+    "description": "Providencia",
+    "value": "providencia",
+    "label": "Providencia"
+  },
+  {
+    "name": "puchuncavi",
+    "type": "Commune",
+    "description": "Puchuncaví",
+    "value": "puchuncavi",
+    "label": "Puchuncaví"
+  },
+  {
+    "name": "pucon",
+    "type": "Commune",
+    "description": "Pucón",
+    "value": "pucon",
+    "label": "Pucón"
+  },
+  {
+    "name": "pudahuel",
+    "type": "Commune",
+    "description": "Pudahuel",
+    "value": "pudahuel",
+    "label": "Pudahuel"
+  },
+  {
+    "name": "puenteAlto",
+    "type": "Commune",
+    "description": "Puente Alto",
+    "value": "puenteAlto",
+    "label": "Puente Alto"
+  },
+  {
+    "name": "puertoMontt",
+    "type": "Commune",
+    "description": "Puerto Montt",
+    "value": "puertoMontt",
+    "label": "Puerto Montt"
+  },
+  {
+    "name": "puertoOctay",
+    "type": "Commune",
+    "description": "Puerto Octay",
+    "value": "puertoOctay",
+    "label": "Puerto Octay"
+  },
+  {
+    "name": "puertoVaras",
+    "type": "Commune",
+    "description": "Puerto Varas",
+    "value": "puertoVaras",
+    "label": "Puerto Varas"
+  },
+  {
+    "name": "pumanque",
+    "type": "Commune",
+    "description": "Pumanque",
+    "value": "pumanque",
+    "label": "Pumanque"
+  },
+  {
+    "name": "punitaqui",
+    "type": "Commune",
+    "description": "Punitaqui",
+    "value": "punitaqui",
+    "label": "Punitaqui"
+  },
+  {
+    "name": "puntaArenas",
+    "type": "Commune",
+    "description": "Punta Arenas",
+    "value": "puntaArenas",
+    "label": "Punta Arenas"
+  },
+  {
+    "name": "puqueldon",
+    "type": "Commune",
+    "description": "Puqueldón",
+    "value": "puqueldon",
+    "label": "Puqueldón"
+  },
+  {
+    "name": "purranque",
+    "type": "Commune",
+    "description": "Purranque",
+    "value": "purranque",
+    "label": "Purranque"
+  },
+  {
+    "name": "puren",
+    "type": "Commune",
+    "description": "Purén",
+    "value": "puren",
+    "label": "Purén"
+  },
+  {
+    "name": "putaendo",
+    "type": "Commune",
+    "description": "Putaendo",
+    "value": "putaendo",
+    "label": "Putaendo"
+  },
+  {
+    "name": "putre",
+    "type": "Commune",
+    "description": "Putre",
+    "value": "putre",
+    "label": "Putre"
+  },
+  {
+    "name": "puyehue",
+    "type": "Commune",
+    "description": "Puyehue",
+    "value": "puyehue",
+    "label": "Puyehue"
+  },
+  {
+    "name": "queilen",
+    "type": "Commune",
+    "description": "Queilén",
+    "value": "queilen",
+    "label": "Queilén"
+  },
+  {
+    "name": "quellon",
+    "type": "Commune",
+    "description": "Quellón",
+    "value": "quellon",
+    "label": "Quellón"
+  },
+  {
+    "name": "quemchi",
+    "type": "Commune",
+    "description": "Quemchi",
+    "value": "quemchi",
+    "label": "Quemchi"
+  },
+  {
+    "name": "quilaco",
+    "type": "Commune",
+    "description": "Quilaco",
+    "value": "quilaco",
+    "label": "Quilaco"
+  },
+  {
+    "name": "quilicura",
+    "type": "Commune",
+    "description": "Quilicura",
+    "value": "quilicura",
+    "label": "Quilicura"
+  },
+  {
+    "name": "quilleco",
+    "type": "Commune",
+    "description": "Quilleco",
+    "value": "quilleco",
+    "label": "Quilleco"
+  },
+  {
+    "name": "quillota",
+    "type": "Commune",
+    "description": "Quillota",
+    "value": "quillota",
+    "label": "Quillota"
+  },
+  {
+    "name": "quillon",
+    "type": "Commune",
+    "description": "Quillón",
+    "value": "quillon",
+    "label": "Quillón"
+  },
+  {
+    "name": "quilpue",
+    "type": "Commune",
+    "description": "Quilpué",
+    "value": "quilpue",
+    "label": "Quilpué"
+  },
+  {
+    "name": "quinchao",
+    "type": "Commune",
+    "description": "Quinchao",
+    "value": "quinchao",
+    "label": "Quinchao"
+  },
+  {
+    "name": "quintadeTilcoco",
+    "type": "Commune",
+    "description": "Quinta De Tilcoco",
+    "value": "quintadeTilcoco",
+    "label": "Quinta De Tilcoco"
+  },
+  {
+    "name": "quintanormal",
+    "type": "Commune",
+    "description": "Quinta Normal",
+    "value": "quintanormal",
+    "label": "Quinta Normal"
+  },
+  {
+    "name": "quintero",
+    "type": "Commune",
+    "description": "Quintero",
+    "value": "quintero",
+    "label": "Quintero"
+  },
+  {
+    "name": "quirihue",
+    "type": "Commune",
+    "description": "Quirihue",
+    "value": "quirihue",
+    "label": "Quirihue"
+  },
+  {
+    "name": "rancagua",
+    "type": "Commune",
+    "description": "Rancagua",
+    "value": "rancagua",
+    "label": "Rancagua"
+  },
+  {
+    "name": "ranquil",
+    "type": "Commune",
+    "description": "Ranquil",
+    "value": "ranquil",
+    "label": "Ranquil"
+  },
+  {
+    "name": "rauco",
+    "type": "Commune",
+    "description": "Rauco",
+    "value": "rauco",
+    "label": "Rauco"
+  },
+  {
+    "name": "recoleta",
+    "type": "Commune",
+    "description": "Recoleta",
+    "value": "recoleta",
+    "label": "Recoleta"
+  },
+  {
+    "name": "renaico",
+    "type": "Commune",
+    "description": "Renaico",
+    "value": "renaico",
+    "label": "Renaico"
+  },
+  {
+    "name": "renca",
+    "type": "Commune",
+    "description": "Renca",
+    "value": "renca",
+    "label": "Renca"
+  },
+  {
+    "name": "rengo",
+    "type": "Commune",
+    "description": "Rengo",
+    "value": "rengo",
+    "label": "Rengo"
+  },
+  {
+    "name": "requinoa",
+    "type": "Commune",
+    "description": "Requínoa",
+    "value": "requinoa",
+    "label": "Requínoa"
+  },
+  {
+    "name": "retiro",
+    "type": "Commune",
+    "description": "Retiro",
+    "value": "retiro",
+    "label": "Retiro"
+  },
+  {
+    "name": "rinconada",
+    "type": "Commune",
+    "description": "Rinconada",
+    "value": "rinconada",
+    "label": "Rinconada"
+  },
+  {
+    "name": "rioHurtado",
+    "type": "Commune",
+    "description": "Río Hurtado",
+    "value": "rioHurtado",
+    "label": "Río Hurtado"
+  },
+  {
+    "name": "romeral",
+    "type": "Commune",
+    "description": "Romeral",
+    "value": "romeral",
+    "label": "Romeral"
+  },
+  {
+    "name": "rioBueno",
+    "type": "Commune",
+    "description": "Río Bueno",
+    "value": "rioBueno",
+    "label": "Río Bueno"
+  },
+  {
+    "name": "rioClaro",
+    "type": "Commune",
+    "description": "Río Claro",
+    "value": "rioClaro",
+    "label": "Río Claro"
+  },
+  {
+    "name": "rioIbanez",
+    "type": "Commune",
+    "description": "Río Ibáñez",
+    "value": "rioIbanez",
+    "label": "Río Ibáñez"
+  },
+  {
+    "name": "rioNegro",
+    "type": "Commune",
+    "description": "Río Negro",
+    "value": "rioNegro",
+    "label": "Río Negro"
+  },
+  {
+    "name": "rioVerde",
+    "type": "Commune",
+    "description": "Río Verde",
+    "value": "rioVerde",
+    "label": "Río Verde"
+  },
+  {
+    "name": "saavedra",
+    "type": "Commune",
+    "description": "Saavedra",
+    "value": "saavedra",
+    "label": "Saavedra"
+  },
+  {
+    "name": "sagradaFamilia",
+    "type": "Commune",
+    "description": "Sagrada Familia",
+    "value": "sagradaFamilia",
+    "label": "Sagrada Familia"
+  },
+  {
+    "name": "salamanca",
+    "type": "Commune",
+    "description": "Salamanca",
+    "value": "salamanca",
+    "label": "Salamanca"
+  },
+  {
+    "name": "sanAntonio",
+    "type": "Commune",
+    "description": "San Antonio",
+    "value": "sanAntonio",
+    "label": "San Antonio"
+  },
+  {
+    "name": "sanBernardo",
+    "type": "Commune",
+    "description": "San Bernardo",
+    "value": "sanBernardo",
+    "label": "San Bernardo"
+  },
+  {
+    "name": "sanCarlos",
+    "type": "Commune",
+    "description": "San Carlos",
+    "value": "sanCarlos",
+    "label": "San Carlos"
+  },
+  {
+    "name": "sanClemente",
+    "type": "Commune",
+    "description": "San Clemente",
+    "value": "sanClemente",
+    "label": "San Clemente"
+  },
+  {
+    "name": "sanEsteban",
+    "type": "Commune",
+    "description": "San Esteban",
+    "value": "sanEsteban",
+    "label": "San Esteban"
+  },
+  {
+    "name": "sanFabian",
+    "type": "Commune",
+    "description": "San Fabián",
+    "value": "sanFabian",
+    "label": "San Fabián"
+  },
+  {
+    "name": "sanFelipe",
+    "type": "Commune",
+    "description": "San Felipe",
+    "value": "sanFelipe",
+    "label": "San Felipe"
+  },
+  {
+    "name": "sanFernando",
+    "type": "Commune",
+    "description": "San Fernando",
+    "value": "sanFernando",
+    "label": "San Fernando"
+  },
+  {
+    "name": "sanGregorio",
+    "type": "Commune",
+    "description": "San Gregorio",
+    "value": "sanGregorio",
+    "label": "San Gregorio"
+  },
+  {
+    "name": "sanIgnacio",
+    "type": "Commune",
+    "description": "San Ignacio",
+    "value": "sanIgnacio",
+    "label": "San Ignacio"
+  },
+  {
+    "name": "sanJavier",
+    "type": "Commune",
+    "description": "San Javier",
+    "value": "sanJavier",
+    "label": "San Javier"
+  },
+  {
+    "name": "sanJoaquin",
+    "type": "Commune",
+    "description": "San Joaquín",
+    "value": "sanJoaquin",
+    "label": "San Joaquín"
+  },
+  {
+    "name": "sanJoseMaipo",
+    "type": "Commune",
+    "description": "San José Maipo",
+    "value": "sanJoseMaipo",
+    "label": "San José Maipo"
+  },
+  {
+    "name": "sanJuandelacosta",
+    "type": "Commune",
+    "description": "San Juan De La Costa",
+    "value": "sanJuandelacosta",
+    "label": "San Juan De La Costa"
+  },
+  {
+    "name": "sanMiguel",
+    "type": "Commune",
+    "description": "San Miguel",
+    "value": "sanMiguel",
+    "label": "San Miguel"
+  },
+  {
+    "name": "sanNicolas",
+    "type": "Commune",
+    "description": "San Nicolás",
+    "value": "sanNicolas",
+    "label": "San Nicolás"
+  },
+  {
+    "name": "sanPablo",
+    "type": "Commune",
+    "description": "San Pablo",
+    "value": "sanPablo",
+    "label": "San Pablo"
+  },
+  {
+    "name": "sanPedro",
+    "type": "Commune",
+    "description": "San Pedro",
+    "value": "sanPedro",
+    "label": "San Pedro"
+  },
+  {
+    "name": "sanPedroAtacama",
+    "type": "Commune",
+    "description": "San Pedro Atacama",
+    "value": "sanPedroAtacama",
+    "label": "San Pedro Atacama"
+  },
+  {
+    "name": "sanPedrodelapaz",
+    "type": "Commune",
+    "description": "San Pedro De La Paz",
+    "value": "sanPedrodelapaz",
+    "label": "San Pedro De La Paz"
+  },
+  {
+    "name": "sanRafael",
+    "type": "Commune",
+    "description": "San Rafael",
+    "value": "sanRafael",
+    "label": "San Rafael"
+  },
+  {
+    "name": "sanRamon",
+    "type": "Commune",
+    "description": "San Ramón",
+    "value": "sanRamon",
+    "label": "San Ramón"
+  },
+  {
+    "name": "sanRosendo",
+    "type": "Commune",
+    "description": "San Rosendo",
+    "value": "sanRosendo",
+    "label": "San Rosendo"
+  },
+  {
+    "name": "sanVicente",
+    "type": "Commune",
+    "description": "San Vicente",
+    "value": "sanVicente",
+    "label": "San Vicente"
+  },
+  {
+    "name": "santaBarbara",
+    "type": "Commune",
+    "description": "Santa Bárbara",
+    "value": "santaBarbara",
+    "label": "Santa Bárbara"
+  },
+  {
+    "name": "santaCruz",
+    "type": "Commune",
+    "description": "Santa Cruz",
+    "value": "santaCruz",
+    "label": "Santa Cruz"
+  },
+  {
+    "name": "santaJuana",
+    "type": "Commune",
+    "description": "Santa Juana",
+    "value": "santaJuana",
+    "label": "Santa Juana"
+  },
+  {
+    "name": "santaMaria",
+    "type": "Commune",
+    "description": "Santa María",
+    "value": "santaMaria",
+    "label": "Santa María"
+  },
+  {
+    "name": "santiago",
+    "type": "Commune",
+    "description": "Santiago",
+    "value": "santiago",
+    "label": "Santiago"
+  },
+  {
+    "name": "santiagoNorte",
+    "type": "Commune",
+    "description": "Santiago Norte",
+    "value": "santiagoNorte",
+    "label": "Santiago Norte"
+  },
+  {
+    "name": "santiagoOeste",
+    "type": "Commune",
+    "description": "Santiago Oeste",
+    "value": "santiagoOeste",
+    "label": "Santiago Oeste"
+  },
+  {
+    "name": "santiagoSur",
+    "type": "Commune",
+    "description": "Santiago Sur",
+    "value": "santiagoSur",
+    "label": "Santiago Sur"
+  },
+  {
+    "name": "santoDomingo",
+    "type": "Commune",
+    "description": "Santo Domingo",
+    "value": "santoDomingo",
+    "label": "Santo Domingo"
+  },
+  {
+    "name": "sierraGorda",
+    "type": "Commune",
+    "description": "Sierra Gorda",
+    "value": "sierraGorda",
+    "label": "Sierra Gorda"
+  },
+  {
+    "name": "talagante",
+    "type": "Commune",
+    "description": "Talagante",
+    "value": "talagante",
+    "label": "Talagante"
+  },
+  {
+    "name": "talca",
+    "type": "Commune",
+    "description": "Talca",
+    "value": "talca",
+    "label": "Talca"
+  },
+  {
+    "name": "talcahuano",
+    "type": "Commune",
+    "description": "Talcahuano",
+    "value": "talcahuano",
+    "label": "Talcahuano"
+  },
+  {
+    "name": "taltal",
+    "type": "Commune",
+    "description": "Taltal",
+    "value": "taltal",
+    "label": "Taltal"
+  },
+  {
+    "name": "temuco",
+    "type": "Commune",
+    "description": "Temuco",
+    "value": "temuco",
+    "label": "Temuco"
+  },
+  {
+    "name": "teno",
+    "type": "Commune",
+    "description": "Teno",
+    "value": "teno",
+    "label": "Teno"
+  },
+  {
+    "name": "teodoroSchmidt",
+    "type": "Commune",
+    "description": "Teodoro Schmidt",
+    "value": "teodoroSchmidt",
+    "label": "Teodoro Schmidt"
+  },
+  {
+    "name": "tierraAmarilla",
+    "type": "Commune",
+    "description": "Tierra Amarilla",
+    "value": "tierraAmarilla",
+    "label": "Tierra Amarilla"
+  },
+  {
+    "name": "tiltil",
+    "type": "Commune",
+    "description": "Tiltil",
+    "value": "tiltil",
+    "label": "Tiltil"
+  },
+  {
+    "name": "timaukel",
+    "type": "Commune",
+    "description": "Timaukel",
+    "value": "timaukel",
+    "label": "Timaukel"
+  },
+  {
+    "name": "tirua",
+    "type": "Commune",
+    "description": "Tirúa",
+    "value": "tirua",
+    "label": "Tirúa"
+  },
+  {
+    "name": "tocopilla",
+    "type": "Commune",
+    "description": "Tocopilla",
+    "value": "tocopilla",
+    "label": "Tocopilla"
+  },
+  {
+    "name": "tolten",
+    "type": "Commune",
+    "description": "Toltén",
+    "value": "tolten",
+    "label": "Toltén"
+  },
+  {
+    "name": "tome",
+    "type": "Commune",
+    "description": "Tomé",
+    "value": "tome",
+    "label": "Tomé"
+  },
+  {
+    "name": "torresdelPaine",
+    "type": "Commune",
+    "description": "Torres Del Paine",
+    "value": "torresdelPaine",
+    "label": "Torres Del Paine"
+  },
+  {
+    "name": "tortel",
+    "type": "Commune",
+    "description": "Tortel",
+    "value": "tortel",
+    "label": "Tortel"
+  },
+  {
+    "name": "traiguen",
+    "type": "Commune",
+    "description": "Traiguén",
+    "value": "traiguen",
+    "label": "Traiguén"
+  },
+  {
+    "name": "treguaco",
+    "type": "Commune",
+    "description": "Treguaco",
+    "value": "treguaco",
+    "label": "Treguaco"
+  },
+  {
+    "name": "tucapel",
+    "type": "Commune",
+    "description": "Tucapel",
+    "value": "tucapel",
+    "label": "Tucapel"
+  },
+  {
+    "name": "valdivia",
+    "type": "Commune",
+    "description": "Valdivia",
+    "value": "valdivia",
+    "label": "Valdivia"
+  },
+  {
+    "name": "vallenar",
+    "type": "Commune",
+    "description": "Vallenar",
+    "value": "vallenar",
+    "label": "Vallenar"
+  },
+  {
+    "name": "valparaiso",
+    "type": "Commune",
+    "description": "Valparaíso",
+    "value": "valparaiso",
+    "label": "Valparaíso"
+  },
+  {
+    "name": "vichuquen",
+    "type": "Commune",
+    "description": "Vichuquén",
+    "value": "vichuquen",
+    "label": "Vichuquén"
+  },
+  {
+    "name": "victoria",
+    "type": "Commune",
+    "description": "Victoria",
+    "value": "victoria",
+    "label": "Victoria"
+  },
+  {
+    "name": "vicuna",
+    "type": "Commune",
+    "description": "Vicuña",
+    "value": "vicuna",
+    "label": "Vicuña"
+  },
+  {
+    "name": "vilcun",
+    "type": "Commune",
+    "description": "Vilcún",
+    "value": "vilcun",
+    "label": "Vilcún"
+  },
+  {
+    "name": "villaAlegre",
+    "type": "Commune",
+    "description": "Villa Alegre",
+    "value": "villaAlegre",
+    "label": "Villa Alegre"
+  },
+  {
+    "name": "villaAlemana",
+    "type": "Commune",
+    "description": "Villa Alemana",
+    "value": "villaAlemana",
+    "label": "Villa Alemana"
+  },
+  {
+    "name": "villarrica",
+    "type": "Commune",
+    "description": "Villarrica",
+    "value": "villarrica",
+    "label": "Villarrica"
+  },
+  {
+    "name": "vitacura",
+    "type": "Commune",
+    "description": "Vitacura",
+    "value": "vitacura",
+    "label": "Vitacura"
+  },
+  {
+    "name": "vinadelMar",
+    "type": "Commune",
+    "description": "Viña Del Mar",
+    "value": "vinadelMar",
+    "label": "Viña Del Mar"
+  },
+  {
+    "name": "yerbasBuenas",
+    "type": "Commune",
+    "description": "Yerbas Buenas",
+    "value": "yerbasBuenas",
+    "label": "Yerbas Buenas"
+  },
+  {
+    "name": "yumbel",
+    "type": "Commune",
+    "description": "Yumbel",
+    "value": "yumbel",
+    "label": "Yumbel"
+  },
+  {
+    "name": "yungay",
+    "type": "Commune",
+    "description": "Yungay",
+    "value": "yungay",
+    "label": "Yungay"
+  },
+  {
+    "name": "zapallar",
+    "type": "Commune",
+    "description": "Zapallar",
+    "value": "zapallar",
+    "label": "Zapallar"
+  },
+  {
+    "name": "niquen",
+    "type": "Commune",
+    "description": "Ñiquén",
+    "value": "niquen",
+    "label": "Ñiquén"
+  },
+  {
+    "name": "nunoa",
+    "type": "Commune",
+    "description": "Ñuñoa",
+    "value": "nunoa",
+    "label": "Ñuñoa"
+  }
+]

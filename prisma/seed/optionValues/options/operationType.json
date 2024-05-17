@@ -1,0 +1,30 @@
+[
+    {
+        "name": "mutuoConCompraVenta",
+        "type": "operationtype",
+        "description": "Mutuo con compraventa",
+        "value": "mutuoConCompraVenta",
+        "label": "Mutuo con compraventa"
+      },
+      {
+        "name": "mutuoSinCompraVenta",
+        "type": "operationtype",
+        "description": "Mutuo sin compraventa",
+        "value": "mutuoSinCompraVenta",
+        "label": "Mutuo sin compraventa"
+      },
+      {
+        "name": "letraHipotecariaConCompraVenta",
+        "type": "operationtype",
+        "description": "Letra Hipotecaria con compraventa",
+        "value": "letraHipotecariaConCompraVenta",
+        "label": "Letra Hipotecaria con compraventa"
+      },
+      {
+        "name": "letraHipotecariaSinCompraVenta",
+        "type": "operationtype",
+        "description": "Letra Hipotecaria sin compraventa",
+        "value": "letraHipotecariaSinCompraVenta",
+        "label": "Letra Hipotecaria sin compraventa"
+      }
+]
