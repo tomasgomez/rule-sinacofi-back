@@ -4,7 +4,7 @@ import { Rule } from "../rule/interface";
 /*
     Schema entity interface
 */
-interface Schema {
+type Schema = {
     id: string;                 // Unique identifier for the form
     messageCode: string;        // Message code associated with the form
     description: string;        // Description of the form schema

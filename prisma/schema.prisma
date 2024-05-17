@@ -6,7 +6,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
+  url = env("DATABASE_URL")
 }
 
 model Schema {

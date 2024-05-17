@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  messages:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DB_USER: ${DB_USER}
+        DB_PASS: ${DB_PASS}
+        DB_HOST: ${DB_HOST}
+        DB_NAME: ${DB_NAME}
+        LOG_FILENAME: ${LOG_FILENAME}
+        PORT: ${PORT}
+    image: rules:latest
+    container_name: rules
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASS}@${DB_HOST}:5432/${DB_NAME}
+      - FILES_PATH=${FILES_PATH}
+      - LOG_FILENAME=${LOG_FILENAME}
+      - PORT=${PORT}
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ${LOG_FILENAME}:/logs
+    command: ["npm", "start"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${PORT}"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3

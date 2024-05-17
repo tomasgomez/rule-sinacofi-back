@@ -1,5 +1,13 @@
-# Use Node.js 14 as base image
-FROM node:20-alpine
+FROM node:alpine AS builder
+
+# Define build arguments
+ARG DB_USER
+ARG DB_PASS
+ARG DB_HOST
+ARG DB_NAME
+ARG LOG_FILENAME
+ARG PORT
+
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -8,10 +16,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
-
-# Install dependencies
-RUN npm install -g ts-node
+RUN npm install && npm update && npm install -g ts-node
 
 RUN ls -la
 
@@ -24,8 +29,15 @@ RUN npx prisma generate
 # Build TypeScript source code
 RUN npm run build
 
-# Expose the port your app runs on
-EXPOSE 3002
+# Set the DATABASE_URL environment variable
+ENV DATABASE_URL=postgresql://$DB_USER:$DB_PASS@$DB_HOST:5432/$DB_NAME
+# Set LOGS_PATH environment variable
+ENV LOG_FILENAME=$LOG_FILENAME
+# Set PORT enviroment variable
+ENV PORT=$PORT
+
+# Expose port
+EXPOSE $PORT
 
 # Command to run the application
 CMD ["npm", "start"]

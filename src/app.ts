@@ -57,6 +57,7 @@ server.setRoutes(router);
 // set response logger
 server.setLogger(logResponse);
 
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 // start server
-server.start(3002);
+server.start(PORT);
 
