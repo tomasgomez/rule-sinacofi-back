@@ -26,9 +26,15 @@ services:
       - "${PORT}:${PORT}"
     volumes:
       - ${LOG_FILENAME}:/logs
-    command: ["npm", "start"]
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${PORT}"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
+    command: ["node", "dist/app.js"]
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:${PORT}"]
+    #   interval: 1m30s
+    #   timeout: 10s
+    #   retries: 3
+    networks:
+      - messages-rules
+
+networks:
+  messages-rules:
+    external: true
