@@ -10,6 +10,7 @@ import { schema671,seed671 } from "./671/index.mjs";
 import { schema672, seed672 } from "./672/index.mjs";
 import { schema673, seed673 } from "./673/index.mjs";
 import { schema674, seed674 } from "./674/index.mjs";
+import { schema675, seed675 } from "./675/index.mjs";
 
 
 
@@ -18,10 +19,10 @@ const prisma = new PrismaClient();
 async function main() {
 
     // // load schemas
-    // const schemas = [schema670, schema671,schema672, schema673, schema674, schema199, schema136];
+    // const schemas = [schema670, schema671,schema672, schema673, schema674, schema675 schema199, schema136];
 
     // // // seed schemas
-    // await seedSchema(prisma, [schema674]);
+    // await seedSchema(prisma, [schema674, schema675]);
 
     // // seed rules
     // await seedRules(prisma, rules);
@@ -40,11 +41,13 @@ async function main() {
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason }
 
     // seed670(prisma, rules, options);
-    console.log("seed674")
     // seed671(prisma, rules, options);
     // seed672(prisma, rules, options);
     // seed673(prisma, rules, options);
     seed674(prisma, rules, options);
+    console.log("seed674")
+    seed675(prisma, rules, options);
+    console.log("seed675")
 }
 
 main()
