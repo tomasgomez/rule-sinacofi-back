@@ -134,5 +134,13 @@
       "condition": "isNumber",
       "value": "true",
       "priority": 0
+    },
+    {
+      "name": "accordion",
+      "type": "parameter",
+      "description": "Panel con parametros de contenido",
+      "condition": "",
+      "value": "defaultValue",
+      "priority": 0
     }
    ]

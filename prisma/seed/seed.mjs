@@ -22,7 +22,6 @@ async function main() {
     // const schemas = [schema670, schema671,schema672, schema673, schema674, schema675 schema199, schema136];
 
     // // // seed schemas
-    // await seedSchema(prisma, [schema674, schema675]);
 
     // // seed rules
     // await seedRules(prisma, rules);
@@ -38,16 +37,22 @@ async function main() {
     // await seedOptionValues(prisma, priority);
     // await seedOptionValues(prisma, region);
     // await seedOptionValues(prisma, rejectionReason);
-    const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason }
 
-    // seed670(prisma, rules, options);
-    // seed671(prisma, rules, options);
-    // seed672(prisma, rules, options);
-    // seed673(prisma, rules, options);
-    seed674(prisma, rules, options);
-    console.log("seed674")
-    seed675(prisma, rules, options);
+    await seedSchema(prisma, [schema675]);
+    
+    const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason }
+    console.log("finished adding option values");
+    
+
+    // await seed670(prisma, rules, options);
+    // await seed671(prisma, rules, options);
+    // await seed672(prisma, rules, options);
+    await seed675(prisma, rules, options);
+    // await seed674(prisma, rules, options);
+    // console.log("seed674")
+    // seed675(prisma, rules, options);
     console.log("seed675")
+    console.log("finished adding schemas");
 }
 
 main()
