@@ -19,24 +19,24 @@ const prisma = new PrismaClient();
 async function main() {
 
     // // load schemas
-    // const schemas = [schema670, schema671,schema672, schema673, schema674, schema675 schema199, schema136];
+    const schemas = [schema670, schema671,schema672, schema673, schema674, schema675];
 
-    // // // seed schemas
+    // // seed schemas
 
-    // // seed rules
-    // await seedRules(prisma, rules);
+    // seed rules
+    await seedRules(prisma, rules);
 
     // seed option values
-    // await seedOptionValues(prisma, channel);
-    // await seedOptionValues(prisma, commune);
-    // await seedOptionValues(prisma, condition);
-    // await seedOptionValues(prisma, format);
-    // await seedOptionValues(prisma, institution);
-    // await seedOptionValues(prisma, optType);
-    // await seedOptionValues(prisma, notary);
-    // await seedOptionValues(prisma, priority);
-    // await seedOptionValues(prisma, region);
-    // await seedOptionValues(prisma, rejectionReason);
+    await seedOptionValues(prisma, channel);
+    await seedOptionValues(prisma, commune);
+    await seedOptionValues(prisma, condition);
+    await seedOptionValues(prisma, format);
+    await seedOptionValues(prisma, institution);
+    await seedOptionValues(prisma, optType);
+    await seedOptionValues(prisma, notary);
+    await seedOptionValues(prisma, priority);
+    await seedOptionValues(prisma, region);
+    await seedOptionValues(prisma, rejectionReason);
 
     await seedSchema(prisma, [schema675]);
     
@@ -47,7 +47,7 @@ async function main() {
     // await seed670(prisma, rules, options);
     // await seed671(prisma, rules, options);
     // await seed672(prisma, rules, options);
-    await seed675(prisma, rules, options);
+    // await seed675(prisma, rules, options);
     // await seed674(prisma, rules, options);
     // console.log("seed674")
     // seed675(prisma, rules, options);
