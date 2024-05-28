@@ -192,7 +192,7 @@
       "priority": 13,
       "messageCode": "678",
       "rules": "disabled",
-      "parameterOptions": "operationType"
+      "parameterOptions": "operationtype"
     },
     {
       "name": "channel",
@@ -401,7 +401,7 @@
       "defaultValue": "",
       "priority": 27,
       "messageCode": "678",
-      "rules": "disabled",
+      "rules": "",
       "parameterOptions": ""
     },
     {
@@ -416,12 +416,12 @@
       "defaultValue": "",
       "priority": 28,
       "messageCode": "678",
-      "rules": "disabled",
-      "parameterOptions": "rejectionReason"
+      "rules": "",
+      "parameterOptions": "messageRejectionReason"
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_2",
+      "type": "E32_2",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -461,7 +461,7 @@
       "defaultValue": "",
       "priority": 31,
       "messageCode": "678",
-      "rules": "disabled",
+      "rules": "",
       "parameterOptions": ""
     },
     {
@@ -480,8 +480,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_3",
+      "type": "E32_3",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -491,7 +491,7 @@
       "defaultValue": "",
       "priority": 33,
       "messageCode": "678",
-      "rules": "",
+      "rules": "maxLength45",
       "parameterOptions": ""
     }
 

@@ -192,7 +192,7 @@
       "priority": 13,
       "messageCode": "679",
       "rules": "disabled",
-      "parameterOptions": "operationType"
+      "parameterOptions": "operationtype"
     },
     {
       "name": "channel",
@@ -285,8 +285,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "OSN_675",
-      "type": "OSN_675",
+      "name": "OSN",
+      "type": "OSN",
       "fieldtype": "textField",
       "label": "# CVJ: OSN Liquidación de Prepago",
       "placeholder": "OSN Mensaje Liquidación de Prepago",
@@ -405,8 +405,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_2",
+      "type": "E32_2",
       "fieldtype": "textArea",
       "label": "* SHA:",
       "placeholder": "A través de este mensaje se confirma pago de alzamiento",
@@ -420,8 +420,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_3",
+      "type": "E32_3",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -461,7 +461,7 @@
       "defaultValue": "",
       "priority": 31,
       "messageCode": "679",
-      "rules": "disabled",
+      "rules": "",
       "parameterOptions": ""
     },
     {
@@ -480,8 +480,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_4",
+      "type": "E32_4",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -491,7 +491,7 @@
       "defaultValue": "",
       "priority": 33,
       "messageCode": "679",
-      "rules": "",
+      "rules": "maxLength45",
       "parameterOptions": ""
     }
 ]

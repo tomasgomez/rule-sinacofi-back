@@ -36,6 +36,9 @@ export const seed678 = async (prisma, rules, options) => {
         const optionsArray = parameter.parameterOptions ? parameter.parameterOptions.replace(" ","").split(",").map(option => option.trim()) : [];
         // find options that match the optionsArray
         optionsArray.forEach(option => {
+            if (option && option === 'operationtype')
+                option = 'operationType';
+
             const optionGroup = options[option];
             optionGroup.forEach(option => {
                 const value = { parameterName: parameter.name, parameterMessageCode: parameter.messageCode, optionName: option.name, optionType: option.type };

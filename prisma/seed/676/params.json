@@ -207,7 +207,7 @@
       "priority": 14,
       "messageCode": "676",
       "rules": "disabled",
-      "parameterOptions": "operationType"
+      "parameterOptions": "operationtype"
     },
     {
       "name": "notary",
@@ -435,8 +435,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_2",
+      "type": "E32_2",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",

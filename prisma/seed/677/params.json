@@ -207,7 +207,7 @@
       "priority": 14,
       "messageCode": "677",
       "rules": "disabled",
-      "parameterOptions": "operationType"
+      "parameterOptions": "operationtype"
     },
     {
       "name": "notary",
@@ -461,7 +461,7 @@
       "defaultValue": "",
       "priority": 31,
       "messageCode": "677",
-      "rules": "",
+      "rules": "maxLength45",
       "parameterOptions": ""
     },
     {
@@ -476,7 +476,7 @@
       "defaultValue": "Transferencias",
       "priority": 32,
       "messageCode": "677",
-      "rules": "",
+      "rules": "maxLength45",
       "parameterOptions": ""
     },
     {
@@ -491,12 +491,12 @@
       "defaultValue": "",
       "priority": 33,
       "messageCode": "677",
-      "rules": "",
+      "rules": "maxLength420",
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "E32_2",
+      "type": "E32_2",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -506,7 +506,7 @@
       "defaultValue": "Liquidación Lista",
       "priority": 34,
       "messageCode": "677",
-      "rules": "",
+      "rules": "maxLength45",
       "parameterOptions": ""
     }
 
