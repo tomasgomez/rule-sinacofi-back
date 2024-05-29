@@ -1,0 +1,23 @@
+[
+    {
+      "name": "amountError",
+      "type": "messageRejectionReason",
+      "description": "Error en el monto",
+      "value": "amountError",
+      "label": "Error en el monto"
+    },
+    {
+      "name": "wrongOperation",
+      "type": "messageRejectionReason",
+      "description": "Operación no corresponde",
+      "value": "wrongOperation",
+      "label": "Operación no corresponde"
+    },
+    {
+      "name": "commercialConditions",
+      "type": "messageRejectionReason",
+      "description": "Incumplimiento de condiciones comerciales",
+      "value": "commercialConditions",
+      "label": "Incumplimiento de condiciones comerciales"
+    }
+  ]
