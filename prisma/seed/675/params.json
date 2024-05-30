@@ -75,15 +75,15 @@
     "parameterOptions": ""
   },
   {
-    "name": "accordion_1",
-    "type": "accordion_1",
+    "name": "accordion",
+    "type": "accordion",
     "fieldtype": "accordion",
     "label": "Datos de Hipoteca",
     "placeholder": "",
     "description": "Título del mensaje Datos de Hipoteca",
     "column": 12,
     "row": 1,
-    "defaultValue": "issuedDate,channel,operationtype,notary,registrationDate,registrationNumber,beneficiaryBank_2,owner,ownerDni,linebreak,buyer,buyerDni,propertyInfo,E32,location,commune,region,linebreak_2,currentBank,linebreak,borrower,loan,loanTerm,addLoan,CUK,linebreak,E32,borrowerDni,ufAmount,label_2,bank_2,amountHeldByTheBank,label,linebreak,sign,E32,observations",
+    "defaultValue": "issuedDate,channel,operationtype,notary,registrationDate,registrationNumber,beneficiaryBank,owner,ownerDni,linebreak,buyer,buyerDni,propertyInfo,E32,location,commune,region,linebreak,currentBank,linebreak,borrower,loan,loanTerm,addLoan,CUK,linebreak,E32,borrowerDni,ufAmount,label,bank,amountHeldByTheBank,label,linebreak,sign,E32,observations",
     "priority": 6,
     "messageCode": "675",
     "rules": "",
@@ -180,8 +180,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "beneficiaryBank_2",
-    "type": "beneficiaryBank_2",
+    "name": "beneficiaryBank",
+    "type": "beneficiaryBank",
     "fieldtype": "select",
     "label": "CSO: Señores Institución",
     "placeholder": "Banco receptor",
@@ -225,7 +225,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "linebreak_1",
+    "name": "linebreak",
     "type": "linebreak",
     "fieldtype": "linebreak",
     "label": "Ha vendido a",
@@ -345,8 +345,8 @@
     "parameterOptions": "region"
   },
   {
-    "name": "linebreak_2",
-    "type": "linebreak_2",
+    "name": "linebreak",
+    "type": "linebreak",
     "fieldtype": "linebreak",
     "label": "SGJ: Para pagar parte del precio de la compraventa, si corresponde",
     "placeholder": "",
@@ -375,7 +375,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "linebreak_3",
+    "name": "linebreak",
     "type": "linebreak",
     "fieldtype": "linebreak",
     "label": "CSB: Ha otorgado a",
@@ -465,7 +465,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "linebreak_5",
+    "name": "linebreak",
     "type": "linebreak",
     "fieldtype": "linebreak",
     "label": "SGL: Nombre del Deudor",
@@ -480,7 +480,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "E32_2",
+    "name": "E32",
     "type": "E32",
     "fieldtype": "textField",
     "label": "E32",
@@ -525,8 +525,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "label_2",
-    "type": "label_2",
+    "name": "label",
+    "type": "label",
     "fieldtype": "label",
     "label": "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
     "placeholder": "",
@@ -540,8 +540,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "bank_2",
-    "type": "bank_2",
+    "name": "bank",
+    "type": "bank",
     "fieldtype": "textField",
     "label": "SGN: Tiene con ustedes, les señalamos que el Banco",
     "placeholder": "",
@@ -570,7 +570,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "label_3",
+    "name": "label",
     "type": "label",
     "fieldtype": "label",
     "label": "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
@@ -585,7 +585,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "linebreak_4",
+    "name": "linebreak",
     "type": "linebreak",
     "fieldtype": "linebreak",
     "label": "SGT: Firma Electrónica, Enviador",
@@ -615,7 +615,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "E32_3",
+    "name": "E32",
     "type": "E32",
     "fieldtype": "textField",
     "label": "E32",
@@ -645,15 +645,15 @@
     "parameterOptions": ""
   },
   {
-    "name": "accordion_2",
-    "type": "accordion_2",
+    "name": "accordion",
+    "type": "accordion",
     "fieldtype": "accordion",
     "label": "Detalle Credito Hipotecario",
     "placeholder": "",
     "description": "Título del mensaje Detalle Credito Hipotecario",
     "column": 12,
     "row": 1,
-    "defaultValue": "loanNumber,typeOfObligation,typeOfDebt,typeOfCurrency,capital,interest,mora,amortization,prepaidCost,liftingExpenses,typeOfCurrency_2,collection,judicial,loanSubtotal,dividendAmount,totalAmount,collectionExpenses",
+    "defaultValue": "loanNumber,typeOfObligation,typeOfDebt,typeOfCurrency,capital,interest,mora,amortization,prepaidCost,liftingExpenses,typeOfCurrency,collection,judicial,loanSubtotal,dividendAmount,totalAmount,collectionExpenses",
     "priority": 44,
     "messageCode": "675",
     "rules": "",
@@ -810,8 +810,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "typeOfCurrency_2",
-    "type": "typeOfCurrency_2",
+    "name": "typeOfCurrency",
+    "type": "typeOfCurrency",
     "fieldtype": "select",
     "label": "CV9: Moneda(s)",
     "placeholder": "Selecciona el tipo de moneda",
@@ -915,8 +915,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "accordion_3",
-    "type": "accordion_3",
+    "name": "accordion",
+    "type": "accordion",
     "fieldtype": "accordion",
     "label": "Detalle Otros Créditos",
     "placeholder": "",
@@ -932,8 +932,8 @@
 
   
   {
-    "name": "loanNumber_3",
-    "type": "loanNumber_3",
+    "name": "loanNumber",
+    "type": "loanNumber",
     "fieldtype": "number",
     "label": "CV8: N° de Préstamo",
     "placeholder": "Número de Préstamo",
@@ -947,8 +947,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "typeOfObligation_3",
-    "type": "typeOfObligation_3",
+    "name": "typeOfObligation",
+    "type": "typeOfObligation",
     "fieldtype": "select",
     "label": "CV8: Tipo de Obligación",
     "placeholder": "Selecciona el tipo de obligación",
@@ -1037,8 +1037,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "typeOfCurrency_2",
-    "type": "typeOfCurrency_2",
+    "name": "typeOfCurrency",
+    "type": "typeOfCurrency",
     "fieldtype": "select",
     "label": "CV9: Moneda(s)",
     "placeholder": "Selecciona el tipo de moneda",
@@ -1098,11 +1098,11 @@
   },
   
   {
-    "name": "accordion_4",
-    "type": "accordion_4",
+    "name": "accordion",
+    "type": "accordion",
     "fieldtype": "accordion",
     "label": "Total a Pagar",
-    "placeholder": "totalToPay,observations,E32_4",
+    "placeholder": "totalToPay,observations,E32",
     "description": "Título del mensaje Total a Pagar",
     "column": 12,
     "row": 1, 
@@ -1128,8 +1128,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "observations_2",
-    "type": "observations_2",
+    "name": "observations",
+    "type": "observations",
     "fieldtype": "textArea",
     "label": "79: Observaciones",
     "placeholder": "",
@@ -1143,8 +1143,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "E32_4",
-    "type": "E32_4",
+    "name": "E32",
+    "type": "E32",
     "fieldtype": "textField",
     "label": "E32",
     "placeholder": "",

@@ -10,20 +10,21 @@ export const seed678 = async (prisma, rules, options) => {
     const params = await seedParams(prisma, params678); 
 
     // connect schemaToParameter
-    await connectSchemaToParameter(prisma, [{ messageCode: schema678.messageCode, parameters: params678 }]);
+    await connectSchemaToParameter(prisma, [{ messageCode: schema678.messageCode, parameters: params }]);
 
     // connect parameterToSchema
-    const paramsToSchema = params678.map((param) => ({ name: param.name, messageCode: param.messageCode, schemas: [schema678] }))
+    const paramsToSchema = params.map((param) => ({ name: param.name, messageCode: param.messageCode, priority: param.priority, schemas: [schema678] }))
+
     await connectParamsToSchema(prisma, paramsToSchema);
 
     // create many-to-many relationship between parameters and rules
     const ruleToParameter = [];
-    params678.forEach((parameter) => {
+    params.forEach((parameter) => {
         const rulesArray = parameter.rules ? parameter.rules.replace(" ","").split(",").map(rule => rule.trim()) : [];
         // find rules that match the rulesArray
         rulesArray.forEach((rule) => {
             const rFiltered = rules.find((r) => r.name === rule);
-            const value = { ruleName: rFiltered.name, ruleType: rFiltered.type, parameterName: parameter.name, parameterMessageCode: parameter.messageCode };
+            const value = { ruleName: rFiltered.name, ruleType: rFiltered.type, parameterName: parameter.name, parameterMessageCode: parameter.messageCode, parameterPriority: parameter.priority };
             ruleToParameter.push(value);
         })
     });
@@ -32,16 +33,13 @@ export const seed678 = async (prisma, rules, options) => {
 
     // create many-to-many relationship between parameters and options
     const parameterToOptions = [];
-    params678.forEach((parameter) => {
+    params.forEach((parameter) => {
         const optionsArray = parameter.parameterOptions ? parameter.parameterOptions.replace(" ","").split(",").map(option => option.trim()) : [];
         // find options that match the optionsArray
         optionsArray.forEach(option => {
-            if (option && option === 'operationtype')
-                option = 'operationType';
-
             const optionGroup = options[option];
             optionGroup.forEach(option => {
-                const value = { parameterName: parameter.name, parameterMessageCode: parameter.messageCode, optionName: option.name, optionType: option.type };
+                const value = { parameterName: parameter.name, parameterMessageCode: parameter.messageCode, parameterPriority: parameter.priority ,optionName: option.name, optionType: option.type };
                 parameterToOptions.push(value);
             });
         });  

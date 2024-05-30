@@ -1,5 +1,4 @@
 
-
 export const seedRuleParameterTable = async (prisma, ruleParameter) => {
 
     if (ruleParameter.length === 0) {
@@ -10,11 +9,12 @@ export const seedRuleParameterTable = async (prisma, ruleParameter) => {
         const rparam = ruleParameter[i];
         await prisma.rulesParameters.upsert({
             where: { 
-                ruleName_ruleType_parameterName_parameterMessageCode: { 
+                ruleName_ruleType_parameterName_parameterMessageCode_parameterPriority: { 
                     ruleName: rparam.ruleName, 
                     ruleType: rparam.ruleType,
                     parameterName: rparam.parameterName,
-                    parameterMessageCode: rparam.parameterMessageCode
+                    parameterMessageCode: rparam.parameterMessageCode,
+                    parameterPriority: rparam.parameterPriority
                 } 
             },
             update: {},
@@ -29,9 +29,10 @@ export const seedRuleParameterTable = async (prisma, ruleParameter) => {
                 },
                 parameter: {
                     connect: { 
-                        name_messageCode: {
+                        name_messageCode_priority: {
                             name: rparam.parameterName, 
-                            messageCode: rparam.parameterMessageCode
+                            messageCode: rparam.parameterMessageCode,
+                            priority: rparam.parameterPriority
                         } 
                     }
                 }
@@ -51,9 +52,10 @@ export const seedParameterOptionTable = async (prisma, parameterOption) => {
     
             await prisma.parametersOptions.upsert({
                 where: { 
-                    parameterName_parameterMessageCode_optionName_optionType: { 
+                    parameterName_parameterMessageCode_parameterPriority_optionName_optionType: { 
                         parameterName: paramOpt.parameterName,
                         parameterMessageCode: paramOpt.parameterMessageCode, 
+                        parameterPriority: paramOpt.parameterPriority,
                         optionName: paramOpt.optionName,
                         optionType: paramOpt.optionType
                     } 
@@ -62,9 +64,10 @@ export const seedParameterOptionTable = async (prisma, parameterOption) => {
                 create: {
                     parameter: {
                         connect: { 
-                            name_messageCode: {
+                            name_messageCode_priority: {
                                 name: paramOpt.parameterName, 
-                                messageCode: paramOpt.parameterMessageCode
+                                messageCode: paramOpt.parameterMessageCode,
+                                priority: paramOpt.parameterPriority
                             }
                         },
                     },

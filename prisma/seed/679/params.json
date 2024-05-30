@@ -270,7 +270,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "issuedDate_2",
+      "name": "issuedDate",
       "type": "issuedDate",
       "fieldtype": "textField",
       "label": "# SH8: Asociado a Alzamiento Hipotecario de Fecha/NSE:",
@@ -405,8 +405,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32_2",
-      "type": "E32_2",
+      "name": "E32",
+      "type": "E32",
       "fieldtype": "textArea",
       "label": "* SHA:",
       "placeholder": "A través de este mensaje se confirma pago de alzamiento",
@@ -420,8 +420,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32_3",
-      "type": "E32_3",
+      "name": "E32",
+      "type": "E32",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -435,7 +435,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "linebreak_1",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "* SGT: Firma Electrónica, Receptora",
@@ -480,8 +480,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32_4",
-      "type": "E32_4",
+      "name": "E32",
+      "type": "E32",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",

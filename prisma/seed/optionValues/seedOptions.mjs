@@ -54,7 +54,7 @@ export const connectOptionValuesToParameter = async (prismaClient, optionValuesP
             where: { name_type: {name: optionValue.name, type: optionValue.type }},
             data: {
                 parameters: {
-                    connect: optionValue.parameters.map((parameter) => ({ name_messageCode: { name: parameter.name, messageCode: parameter.messageCode } }) )
+                    connect: optionValue.parameters.map((parameter) => ({ name_messageCode_priority: { name: parameter.name, messageCode: parameter.messageCode, priority: parameter.priority } }) )
                 }
             }
         });

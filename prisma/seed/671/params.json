@@ -75,7 +75,7 @@
       "parameterOptions": "condition"
     },
     {
-      "name": "label_1",
+      "name": "label",
       "type": "label",
       "fieldtype": "label",
       "label": "Datos de Hipoteca",
@@ -225,7 +225,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "linebreak_1",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "Ha vendido a",
@@ -345,7 +345,7 @@
       "parameterOptions": "region"
     },
     {
-      "name": "linebreak_2",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "SGJ: Para pagar parte del precio de la compraventa, si corresponde",
@@ -360,7 +360,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "bank_2",
+      "name": "bank",
       "type": "bank",
       "fieldtype": "textField",
       "label": "SGK: El Banco",
@@ -375,7 +375,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "linebreak_3",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "CSB: Ha otorgado a",
@@ -465,7 +465,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "linebreak_5",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "SGL: Nombre del Deudor",
@@ -480,7 +480,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32_2",
+      "name": "E32",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
@@ -525,7 +525,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "label_2",
+      "name": "label",
       "type": "label",
       "fieldtype": "label",
       "label": "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
@@ -540,7 +540,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "bank_3",
+      "name": "bank",
       "type": "bank",
       "fieldtype": "textField",
       "label": "SGN: Tiene con ustedes, les señalamos que el Banco",
@@ -570,7 +570,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "label_3",
+      "name": "label",
       "type": "label",
       "fieldtype": "label",
       "label": "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
@@ -585,7 +585,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "linebreak_4",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "SGT: Firma Electrónica, Enviador",
@@ -615,7 +615,7 @@
       "parameterOptions": ""
     },
     {
-      "name": "E32_3",
+      "name": "E32",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
@@ -659,7 +659,7 @@
       "rules": "required",
       "parameterOptions": "condition"
     },{
-      "name": "linebreak_6",
+      "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
       "label": "SGT: Firma Electrónica, Receptor",
@@ -673,7 +673,7 @@
       "rules": "",
       "parameterOptions": ""
     },{
-      "name": "sign_2",
+      "name": "sign",
       "type": "sign",
       "fieldtype": "password",
       "label": "SGU: Apoderado Nombre, RUT",

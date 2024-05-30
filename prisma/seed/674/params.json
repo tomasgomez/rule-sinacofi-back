@@ -210,7 +210,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "label_1",
+    "name": "label",
     "type": "label",
     "fieldtype": "label",
     "label": "CSP: Solicitamos a usted liquidación de pre-pago consolidada de",
@@ -330,7 +330,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "issuedDate_2",
+    "name": "issuedDate",
     "type": "issuedDate",
     "fieldtype": "textField",
     "label": "# SH8: Asociado a Alzamiento Hipotecario de Fecha/NSE:",
@@ -420,8 +420,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "E32_674",
-    "type": "E32_674",
+    "name": "E32",
+    "type": "E32",
     "fieldtype": "textArea",
     "label": "E32",
     "placeholder": "",

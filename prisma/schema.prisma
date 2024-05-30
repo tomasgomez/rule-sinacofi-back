@@ -6,7 +6,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  // url = env("DATABASE_URL")
+  url = "postgresql://felipegarcia:@localhost:5432/rules"
 }
 
 model Schema {
@@ -41,8 +42,8 @@ model Parameter {
   rules        RulesParameters[]
   optionValues ParametersOptions[]
 
-  @@unique([name, messageCode])
-  @@index([name])
+  @@unique([name, messageCode, priority])
+  @@index([name, messageCode, priority])
 }
 
 model OptionValue {
@@ -135,23 +136,25 @@ model RulesParameters {
   ruleType             String
   parameterName        String
   parameterMessageCode String
+  parameterPriority    Int
 
   rule      Rule      @relation(fields: [ruleName, ruleType], references: [name, type])
-  parameter Parameter @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
+  parameter Parameter @relation(fields: [parameterName, parameterMessageCode, parameterPriority], references: [name, messageCode, priority])
 
-  @@id([ruleName, ruleType, parameterName, parameterMessageCode])
-  @@index([ruleName, ruleType, parameterName, parameterMessageCode])
+  @@id([ruleName, ruleType, parameterName, parameterMessageCode, parameterPriority])
+  @@index([ruleName, ruleType, parameterName, parameterMessageCode, parameterPriority])
 }
 
 model ParametersOptions {
   parameterName        String
   parameterMessageCode String
+  parameterPriority    Int
   optionName           String
   optionType           String
 
   optionValue OptionValue @relation(fields: [optionName, optionType], references: [name, type])
-  parameter   Parameter   @relation(fields: [parameterName, parameterMessageCode], references: [name, messageCode])
+  parameter   Parameter   @relation(fields: [parameterName, parameterMessageCode, parameterPriority], references: [name, messageCode, priority])
 
-  @@id([parameterName, parameterMessageCode, optionName, optionType])
-  @@index([parameterName, parameterMessageCode, optionName, optionType])
+  @@id([parameterName, parameterMessageCode, parameterPriority, optionName, optionType])
+  @@index([parameterName, parameterMessageCode, parameterPriority, optionName, optionType])
 }

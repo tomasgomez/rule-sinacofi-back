@@ -37,11 +37,12 @@ export const connectSchemaToParameter = async (prisma, schemaParameters) => {
 
     for (let i= 0; i < schemaParameters.length; i++) {
         const schemaParameter = schemaParameters[i];
+        console.log(schemaParameter)
         await prisma.schema.update({
             where: { messageCode: schemaParameter.messageCode },
             data: {
                 parameters: {
-                    connect: schemaParameter.parameters.map((parameter) => ({ name_messageCode: { name: parameter.name, messageCode: parameter.messageCode } }) )
+                    connect: schemaParameter.parameters.map((parameter, index) => ({ name_messageCode_priority: { name: parameter.name, messageCode: parameter.messageCode, priority: parameter.priority } }) )
                 }
             }
         });

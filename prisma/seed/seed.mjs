@@ -10,6 +10,7 @@ import { schema671,seed671 } from "./671/index.mjs";
 import { schema672, seed672 } from "./672/index.mjs";
 import { schema673, seed673 } from "./673/index.mjs";
 import { schema674, seed674 } from "./674/index.mjs";
+import { schema675, seed675 } from "./675/index.mjs";
 import { schema676, seed676 } from "./676/index.mjs";
 import { schema677, seed677 } from "./677/index.mjs";
 import { schema678, seed678 } from "./678/index.mjs";
@@ -19,16 +20,16 @@ const prisma = new PrismaClient();
 
 async function main() {
 
-    // load schemas
-    const schemas = [schema670, schema671,schema672, schema673, schema674,schema674,schema674,schema674,schema674, schema199, schema136];
+    // // load schemas
+    // const schemas = [schema670, schema671,schema672, schema673, schema674,schema675,schema676,schema677,schema678, schema679];
 
-    // seed schemas (you can load all or only the ones you need)
-    // await seedSchema(prisma, [schema676,schema677,schema678,schema679]);
+    // // seed schemas (you can load all or only the ones you need)
+    // await seedSchema(prisma, schemas);
 
-    // seed rules, if has new rules uncomment this, first delete all
+    // // seed rules, if has new rules uncomment this, first delete all
     // await seedRules(prisma, rules);
 
-    // seed option values , add the one you need if is not loaded
+    // // seed option values , add the one you need if is not loaded
     // await seedOptionValues(prisma, channel);
     // await seedOptionValues(prisma, commune);
     // await seedOptionValues(prisma, condition);
@@ -42,14 +43,7 @@ async function main() {
     // await seedOptionValues(prisma, messageRejectionReason);
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason, messageRejectionReason}
 
-    // seed670(prisma, rules, options);
-    // seed671(prisma, rules, options);
-    // seed672(prisma, rules, options);
-    // seed673(prisma, rules, options);
-    seed676(prisma, rules, options);
-    // seed677(prisma, rules, options);
-    // seed678(prisma, rules, options);
-    // seed679(prisma, rules, options);
+    seed675(prisma, rules, options);
 }
 
 main()

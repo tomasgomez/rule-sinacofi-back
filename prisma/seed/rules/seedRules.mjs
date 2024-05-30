@@ -81,7 +81,7 @@ export const connectRulesToParameters = async (prismaClient, rulesParameters) =>
             where: { name_type: { name: rule.name, type: rule.type } },
             data: {
                 parameters: {
-                    connect: rule.params?.map((parameter) => ({ name_messageCode: {name: parameter.name, messageCode: parameter.messageCode }}) )
+                    connect: rule.params?.map((parameter) => ({ name_messageCode_priority: {name: parameter.name, messageCode: parameter.messageCode, priority: parameter.priority }}) )
                 }
             }
         });
