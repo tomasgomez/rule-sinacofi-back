@@ -7,6 +7,7 @@ import { seedRuleParameterTable, seedParameterOptionTable } from "../manyToMany.
 export const seed676 = async (prisma, rules, options) => {
   
     // seed params
+    const params = await seedParams(prisma, params676); 
     // connect schemaToParameter
     await connectSchemaToParameter(prisma, [{ messageCode: schema676.messageCode, parameters: params }]);
 

@@ -207,7 +207,7 @@
       "priority": 14,
       "messageCode": "677",
       "rules": "disabled",
-      "parameterOptions": "operationtype"
+      "parameterOptions": "operationType"
     },
     {
       "name": "notary",

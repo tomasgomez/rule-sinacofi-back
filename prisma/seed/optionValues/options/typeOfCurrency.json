@@ -1,0 +1,30 @@
+[
+    {
+        "name": "uf",
+        "type": "typeOfCurrency",
+        "description": "uf",
+        "value": "uf",
+        "label": "uf"
+    },
+    {
+        "name": "dollar",
+        "type": "typeOfCurrency",
+        "description": "dolar",
+        "value": "dollar",
+        "label": "US $"
+    },
+    {
+        "name": "pesos",
+        "type": "typeOfCurrency",
+        "description": "pesos",
+        "value": "pesos",
+        "label": "Pesos"
+    },
+    {
+        "name": "IVP",
+        "type": "typeOfCurrency",
+        "description": "IVP - Capital",
+        "value": "IVP",
+        "label": "IVP - Capital"
+    }    
+]

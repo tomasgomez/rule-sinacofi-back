@@ -1,0 +1,16 @@
+[
+    {
+        "name": "direct",
+        "type": "typeOfDebt",
+        "description": "Directo",
+        "value": "direct",
+        "label": "Directo"
+    },
+    {
+        "name": "indirect",
+        "type": "typeOfDebt",
+        "description": "Indirecto",
+        "value": "indrect",
+        "label": "Indirecto"
+    }
+]

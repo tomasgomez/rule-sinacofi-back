@@ -192,7 +192,7 @@
       "priority": 13,
       "messageCode": "679",
       "rules": "disabled",
-      "parameterOptions": "operationtype"
+      "parameterOptions": "operationType"
     },
     {
       "name": "channel",

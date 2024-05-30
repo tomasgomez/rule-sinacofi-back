@@ -1,0 +1,37 @@
+[
+    {
+        "name": "addLoan",
+        "type": "typeOfObligations",
+        "description": "Crédito complementario",
+        "value": "addLoan",
+        "label": "Crédito complementario"
+    },
+    {
+        "name": "creditLine",
+        "type": "typeOfObligations",
+        "description": "Línea de crédito",
+        "value": "creditLine",
+        "label": "Línea de crédito"
+    },
+    {
+        "name": "creditCard",
+        "type": "typeOfObligations",
+        "description": "Tarjeta de crédito",
+        "value": "creditCard",
+        "label": "Tarjeta de crédito"
+    },
+    {
+        "name": "consumerCredit",
+        "type": "typeOfObligations",
+        "description": "Crédito de consumo",
+        "value": "consumerCredit",
+        "label": "Crédito de consumo"
+    },
+    {
+        "name": "leasing",
+        "type": "typeOfObligations",
+        "description": "Crédito comercial leasing",
+        "value": "leasing",
+        "label": "Crédito comercial leasing"
+    }
+]
