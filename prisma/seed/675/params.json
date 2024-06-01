@@ -75,7 +75,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "accordion",
+    "name": "morgageData",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Datos de Hipoteca",
@@ -83,7 +83,7 @@
     "description": "Título del mensaje Datos de Hipoteca",
     "column": 12,
     "row": 1,
-    "defaultValue": "issuedDate,channel,operationtype,notary,registrationDate,registrationNumber,beneficiaryBank,owner,ownerDni,linebreak,buyer,buyerDni,propertyInfo,E32,location,commune,region,linebreak,currentBank,linebreak,borrower,loan,loanTerm,addLoan,CUK,linebreak,E32,borrowerDni,ufAmount,label,bank,amountHeldByTheBank,label,linebreak,sign,E32,observations",
+    "defaultValue": "",
     "priority": 6,
     "messageCode": "675",
     "rules": "",
@@ -101,7 +101,7 @@
     "defaultValue": "Current Date",
     "priority": 7,
     "messageCode": "675",
-    "rules": "disabled, currentDate",
+    "rules": "disabled,currentDate,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -116,7 +116,7 @@
     "defaultValue": "Personas",
     "priority": 8,
     "messageCode": "675",
-    "rules": "checkUserChannel",
+    "rules": "checkUserChannel,accordionMortageData",
     "parameterOptions": "channel"
   },
   {
@@ -131,7 +131,7 @@
     "defaultValue": "mutuoConCompraVenta",
     "priority": 9,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": "operationType"
   },
   {
@@ -146,7 +146,7 @@
     "defaultValue": "",
     "priority": 10,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageData",
     "parameterOptions": "notary"
   },
   {
@@ -161,7 +161,7 @@
     "defaultValue": "",
     "priority": 11,
     "messageCode": "675",
-    "rules": "required, dateFormat",
+    "rules": "required,dateFormat,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -176,7 +176,7 @@
     "defaultValue": "",
     "priority": 12,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -191,7 +191,7 @@
     "defaultValue": "receiverId",
     "priority": 13,
     "messageCode": "675",
-    "rules": "required,distinctIssuedBank",
+    "rules": "required,distinctIssuedBank,accordionMortageData",
     "parameterOptions": "institution"
   },
   {
@@ -206,7 +206,7 @@
     "defaultValue": "",
     "priority": 14,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -221,7 +221,7 @@
     "defaultValue": "",
     "priority": 15,
     "messageCode": "675",
-    "rules": "required,dniFormat,checkDigitDni",
+    "rules": "required,dniFormat,checkDigitDni,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -236,7 +236,7 @@
     "defaultValue": "",
     "priority": 16,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -251,7 +251,7 @@
     "defaultValue": "",
     "priority": 17,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -266,7 +266,7 @@
     "defaultValue": "",
     "priority": 18,
     "messageCode": "675",
-    "rules": "required,dniFormat,checkDigitDni",
+    "rules": "required,dniFormat,checkDigitDni,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -281,7 +281,7 @@
     "defaultValue": "",
     "priority": 19,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -296,7 +296,7 @@
     "defaultValue": "",
     "priority": 20,
     "messageCode": "675",
-    "rules": "required,maxLength420",
+    "rules": "required,maxLength420,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -311,7 +311,7 @@
     "defaultValue": "",
     "priority": 21,
     "messageCode": "675",
-    "rules": "required,maxLength45",
+    "rules": "required,maxLength45,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -326,7 +326,7 @@
     "defaultValue": "",
     "priority": 23,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": "commune"
   },
   {
@@ -341,7 +341,7 @@
     "defaultValue": "",
     "priority": 22,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": "region"
   },
   {
@@ -356,7 +356,7 @@
     "defaultValue": "SGJ: Para pagar parte del precio de la compraventa, si corresponde",
     "priority": 24,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -371,7 +371,7 @@
     "defaultValue": "userInstitution",
     "priority": 25,
     "messageCode": "675",
-    "rules": "required,disabled",
+    "rules": "required,disabled,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -386,7 +386,7 @@
     "defaultValue": "",
     "priority": 26,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -401,7 +401,7 @@
     "defaultValue": "",
     "priority": 27,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -416,7 +416,7 @@
     "defaultValue": "",
     "priority": 28,
     "messageCode": "675",
-    "rules": "required,ufFormat,number",
+    "rules": "required,ufFormat,number,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -431,7 +431,7 @@
     "defaultValue": "",
     "priority": 29,
     "messageCode": "675",
-    "rules": "required,maxLength3",
+    "rules": "required,maxLength3,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -446,7 +446,7 @@
     "defaultValue": "",
     "priority": 30,
     "messageCode": "675",
-    "rules": "required,ufFormat,number",
+    "rules": "required,ufFormat,number,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -461,7 +461,7 @@
     "defaultValue": "",
     "priority": 31,
     "messageCode": "675",
-    "rules": "disabled,cuk",
+    "rules": "disabled,cuk,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -476,7 +476,7 @@
     "defaultValue": "SGL: Nombre del Deudor",
     "priority": 32,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -491,7 +491,7 @@
     "defaultValue": "",
     "priority": 33,
     "messageCode": "675",
-    "rules": "required,maxLength25",
+    "rules": "required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -506,7 +506,7 @@
     "defaultValue": "",
     "priority": 34,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -521,7 +521,7 @@
     "defaultValue": "",
     "priority": 35,
     "messageCode": "675",
-    "rules": "required,ufFormat,number",
+    "rules": "required,ufFormat,number,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -536,7 +536,7 @@
     "defaultValue": "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
     "priority": 36,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -551,7 +551,7 @@
     "defaultValue": "userInstitution",
     "priority": 37,
     "messageCode": "675",
-    "rules": "disabled,required,maxLength25",
+    "rules": "disabled,required,maxLength25,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -566,7 +566,7 @@
     "defaultValue": "",
     "priority": 38,
     "messageCode": "675",
-    "rules": "pesosFormat,number,required",
+    "rules": "pesosFormat,number,required,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -581,7 +581,7 @@
     "defaultValue": "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
     "priority": 39,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -596,7 +596,7 @@
     "defaultValue": "SGT: Firma Electrónica, Enviador",
     "priority": 40,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -611,7 +611,7 @@
     "defaultValue": "",
     "priority": 41,
     "messageCode": "675",
-    "rules": "disabled",
+    "rules": "disabled,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -626,7 +626,7 @@
     "defaultValue": "",
     "priority": 42,
     "messageCode": "675",
-    "rules": "disabled",
+    "rules": "disabled,accordionMortageData",
     "parameterOptions": ""
   },
   {
@@ -641,11 +641,11 @@
     "defaultValue": "",
     "priority": 43,
     "messageCode": "675",
-    "rules": "maxLength420",
+    "rules": "maxLength420,accordionMortageData",
     "parameterOptions": ""
   },
   {
-    "name": "accordion",
+    "name": "mortageDetails",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Detalle Credito Hipotecario",
@@ -653,7 +653,7 @@
     "description": "Título del mensaje Detalle Credito Hipotecario",
     "column": 12,
     "row": 1,
-    "defaultValue": "loanNumber,typeOfObligation,typeOfDebt,typeOfCurrency,capital,interest,mora,amortization,prepaidCost,liftingExpenses,typeOfCurrency,collection,judicial,loanSubtotal,dividendAmount,totalAmount,collectionExpenses",
+    "defaultValue": "",
     "priority": 44,
     "messageCode": "675",
     "rules": "",
@@ -671,7 +671,7 @@
     "defaultValue": "",
     "priority": 45,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -686,7 +686,7 @@
     "defaultValue": "",
     "priority": 46,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageDetails",
     "parameterOptions": "typeOfObligations"
   },
   {
@@ -701,7 +701,7 @@
     "defaultValue": "",
     "priority": 47,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageDetails",
     "parameterOptions": "typeOfDebts"
   },
   {
@@ -716,7 +716,7 @@
     "defaultValue": "",
     "priority": 48,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageDetails",
     "parameterOptions": "typeOfCurrency"
   },
   {
@@ -731,7 +731,7 @@
     "defaultValue": "",
     "priority": 49,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -746,7 +746,7 @@
     "defaultValue": "",
     "priority": 50,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -761,7 +761,7 @@
     "defaultValue": "",
     "priority": 51,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -776,7 +776,7 @@
     "defaultValue": "",
     "priority": 52,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -791,7 +791,7 @@
     "defaultValue": "",
     "priority": 53,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -806,7 +806,7 @@
     "defaultValue": "",
     "priority": 54,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -821,7 +821,7 @@
     "defaultValue": "",
     "priority": 55,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionMortageDetails",
     "parameterOptions": "typeOfDebts"
   },
   {
@@ -836,7 +836,7 @@
     "defaultValue": "",
     "priority": 56,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -851,7 +851,7 @@
     "defaultValue": "",
     "priority": 57,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -866,7 +866,7 @@
     "defaultValue": "0",
     "priority": 58,
     "messageCode": "675",
-    "rules": "required,disabled,maxLength25",
+    "rules": "required,disabled,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -881,7 +881,7 @@
     "defaultValue": "",
     "priority": 59,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -896,7 +896,7 @@
     "defaultValue": "",
     "priority": 60,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
@@ -911,11 +911,11 @@
     "defaultValue": "",
     "priority": 61,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionMortageDetails",
     "parameterOptions": ""
   },
   {
-    "name": "accordion",
+    "name": "extraCredits",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Detalle Otros Créditos",
@@ -930,18 +930,183 @@
     "parameterOptions": ""
   },
   {
-    "name": "accordion",
+    "name": "loanNumber_3",
+    "type": "loanNumber_3",
+    "fieldtype": "number",
+    "label": "CV8: N° de Préstamo",
+    "placeholder": "Número de Préstamo",
+    "description": "Número de Préstamo, contiene alguna referencia al mensaje",
+    "column": 4,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 63,
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "typeOfObligation_3",
+    "type": "typeOfObligation_3",
+    "fieldtype": "select",
+    "label": "CV8: Tipo de Obligación",
+    "placeholder": "Selecciona el tipo de obligación",
+    "description": "Todas las obligaciones posibles para seleccionar el tipo de obligacion",
+    "column": 4,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 64,
+    "messageCode": "675",
+    "rules": "required,accordionExtraCredits",
+    "parameterOptions": "typeOfObligations"
+  },
+  {
+    "name": "typeOfDebt",
+    "type": "typeOfDebt",
+    "fieldtype": "select",
+    "label": "CV8: Tipo de Deuda",
+    "placeholder": "Selecciona el tipo de deuda",
+    "description": "Todas las deudas posibles para seleccionar el tipo de deuda",
+    "column": 4,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 65,
+    "messageCode": "675",
+    "rules": "required,accordionExtraCredits",
+    "parameterOptions": "typeOfDebts"
+  },
+  {
+    "name": "typeOfCurrency",
+    "type": "typeOfCurrency",
+    "fieldtype": "select",
+    "label": "CV9: Moneda",
+    "placeholder": "Selecciona el tipo de moneda",
+    "description": "Todas las monedas posibles para seleccionar el tipo de monedas",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 66,
+    "messageCode": "675",
+    "rules": "required,accordionExtraCredits",
+    "parameterOptions": "typeOfDebts"
+  },
+  {
+    "name": "capital",
+    "type": "capital",
+    "fieldtype": "amount",
+    "label": "CV9: Capital",
+    "placeholder": "",
+    "description": "Cantidad de capital de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 67,
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "interest",
+    "type": "interest",
+    "fieldtype": "amount",
+    "label": "CV9: Intereses",
+    "placeholder": "",
+    "description": "Intereses de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 68,
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "mora",
+    "type": "mora",
+    "fieldtype": "amount",
+    "label": "CV9: Mora",
+    "placeholder": "",
+    "description": "Mora de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 69,
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "typeOfCurrency_2",
+    "type": "typeOfCurrency_2",
+    "fieldtype": "select",
+    "label": "CV9: Moneda(s)",
+    "placeholder": "Selecciona el tipo de moneda",
+    "description": "Todas las monedas posibles para seleccionar el tipo de monedas",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 18,
+    "messageCode": "675",
+    "rules": "required,accordionExtraCredits",
+    "parameterOptions": "typeOfDebts"
+  },
+  {
+    "name": "collection",
+    "type": "collection",
+    "fieldtype": "amount",
+    "label": "CVB: Cobranza",
+    "placeholder": "",
+    "description": "Cobranza de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 70,
+    "messageCode": "675,accordionExtraCredits",
+    "rules": "required,number,maxLength25",
+    "parameterOptions": ""
+  },
+  {
+    "name": "judicial2",
+    "type": "judicial2",
+    "fieldtype": "amount",
+    "label": "CVB: G. Judiciales",
+    "placeholder": "",
+    "description": "G. Judiciales de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 71,
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "loanSubtotal2",
+    "type": "loanSubtotal2",
+    "fieldtype": "amount",
+    "label": "CVB: Subtotal Préstamo",
+    "placeholder": "",
+    "description": "Subtotal Préstamo de credito hipotecario",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "0",
+    "priority": 72,
+    "messageCode": "675",
+    "rules": "required,disabled,maxLength25,accordionExtraCredits",
+    "parameterOptions": ""
+  },
+  {
+    "name": "resumeTotalAmount",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Total a Pagar",
-    "placeholder": "totalToPay,observations,E32",
+    "placeholder": "",
     "description": "Título del mensaje Total a Pagar",
     "column": 12,
     "row": 1, 
     "defaultValue": "",
     "priority": 73,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionresumeTotalAmount",
     "parameterOptions": ""
   },
   {
@@ -956,7 +1121,7 @@
     "defaultValue": "0",
     "priority": 74,
     "messageCode": "675",
-    "rules": "required,disabled,maxLength25",
+    "rules": "required,disabled,maxLength25,accordionresumeTotalAmount",
     "parameterOptions": ""
   },
   {
@@ -971,7 +1136,7 @@
     "defaultValue": "",
     "priority": 75,
     "messageCode": "675",
-    "rules": "maxLength420",
+    "rules": "maxLength420,accordionresumeTotalAmount",
     "parameterOptions": ""
   },
   {
@@ -986,7 +1151,7 @@
     "defaultValue": "",
     "priority": 76,
     "messageCode": "675",
-    "rules": "",
+    "rules": "accordionresumeTotalAmount",
     "parameterOptions": ""
   }
 ]
