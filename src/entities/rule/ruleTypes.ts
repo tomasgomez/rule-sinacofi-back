@@ -22,6 +22,8 @@ enum ruleType {
     disabled             = 'disabled',
     currentDate          = 'currentDate',
     checkUserChannel     = 'checkUserChannel',
+    accordion            = 'accordion'
+
 }
 
 type RuleTypes = ruleType; 
@@ -43,9 +45,11 @@ const validations: Validations = {
   disabled: () => true,
   currentDate: () => true,
   checkUserChannel: () => true,
+  accordion: () => true
 }
 
 function getRuleType(value: string): ruleType {
+  console.log(value);
   if (Object.values(ruleType).includes(value as ruleType)) {
     return value as ruleType;
   } else {

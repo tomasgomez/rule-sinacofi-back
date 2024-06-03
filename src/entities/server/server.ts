@@ -12,8 +12,7 @@ export class App implements Server {
     private _server: express.Application;
     constructor(){
         this._server = express();
-        this._server.use(bodyParser.json());
-        this._server.use(express.urlencoded());
+        this._server.use(bodyParser.urlencoded({ extended: true }));
     }
     // Set Routes
     setRoutes(router: express.Router) {

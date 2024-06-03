@@ -139,7 +139,7 @@
       "name": "accordionMortageData",
       "type": "parameter",
       "description": "Panel de formulario Datos de hipoteca",
-      "condition": "",
+      "condition": "accordion",
       "value": "mortageData",
       "priority": 0
     },
@@ -147,7 +147,7 @@
       "name": "accordionMortageDetails",
       "type": "parameter",
       "description": "Panel de detalles de hipoteca",
-      "condition": "",
+      "condition": "accordion",
       "value": "mortageDetails",
       "priority": 0
     },
@@ -155,7 +155,7 @@
       "name": "accordionresumeTotalAmount",
       "type": "parameter",
       "description": "Panel de Total a pagar",
-      "condition": "",
+      "condition": "accordion",
       "value": "resumeTotalAmount",
       "priority": 0
     },
@@ -163,7 +163,7 @@
       "name": "accordionExtraCredits",
       "type": "parameter",
       "description": "Panel de otros créditos",
-      "condition": "",
+      "condition": "accordion",
       "value": "extraCredits",
       "priority": 0
     }
