@@ -31,3 +31,11 @@ export interface OptionValue {
     createdAt: Date; // Date and time when the option value was created
     updatedAt: Date; // Date and time when the option value was last updated
 }
+
+// Define OptionalParameter interface
+export type OptionalParameter = Partial<Parameter>
+
+// define FilledParameter interface
+export type FilledParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules'> & {
+    value: string // message parameter value
+}

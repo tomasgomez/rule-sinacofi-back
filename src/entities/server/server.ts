@@ -13,6 +13,7 @@ export class App implements Server {
     constructor(){
         this._server = express();
         this._server.use(bodyParser.json());
+        this._server.use(express.urlencoded());
     }
     // Set Routes
     setRoutes(router: express.Router) {

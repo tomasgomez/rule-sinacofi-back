@@ -11,7 +11,7 @@
     "defaultValue": "",
     "priority": 63,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
@@ -26,7 +26,7 @@
     "defaultValue": "",
     "priority": 64,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionExtraCredits",
     "parameterOptions": "typeOfObligations"
   },
   {
@@ -41,7 +41,7 @@
     "defaultValue": "",
     "priority": 65,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionExtraCredits",
     "parameterOptions": "typeOfDebts"
   },
   {
@@ -56,7 +56,7 @@
     "defaultValue": "",
     "priority": 66,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionExtraCredits",
     "parameterOptions": "typeOfDebts"
   },
   {
@@ -71,7 +71,7 @@
     "defaultValue": "",
     "priority": 67,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
@@ -86,7 +86,7 @@
     "defaultValue": "",
     "priority": 68,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
@@ -101,7 +101,7 @@
     "defaultValue": "",
     "priority": 69,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
@@ -116,7 +116,7 @@
     "defaultValue": "",
     "priority": 18,
     "messageCode": "675",
-    "rules": "required",
+    "rules": "required,accordionExtraCredits",
     "parameterOptions": "typeOfDebts"
   },
   {
@@ -130,7 +130,7 @@
     "row": 1,
     "defaultValue": "",
     "priority": 70,
-    "messageCode": "675",
+    "messageCode": "675,accordionExtraCredits",
     "rules": "required,number,maxLength25",
     "parameterOptions": ""
   },
@@ -146,7 +146,7 @@
     "defaultValue": "",
     "priority": 71,
     "messageCode": "675",
-    "rules": "required,number,maxLength25",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
@@ -161,7 +161,7 @@
     "defaultValue": "0",
     "priority": 72,
     "messageCode": "675",
-    "rules": "required,disabled,maxLength25",
+    "rules": "required,disabled,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
 ]

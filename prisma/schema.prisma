@@ -6,8 +6,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // url = env("DATABASE_URL")
-  url = "postgresql://felipegarcia:@localhost:5432/rules"
+  url = env("DATABASE_URL")
+  // url = "postgresql://felipegarcia:@localhost:5432/rules"
 }
 
 model Schema {
