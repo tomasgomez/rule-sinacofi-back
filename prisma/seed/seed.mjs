@@ -46,7 +46,7 @@ async function main() {
     // await seedOptionValues(prisma, typeOfObligations);
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason, messageRejectionReason, typeOfCurrency, typeOfDebts, typeOfObligations}
 
-    seed675(prisma, rules, options);
+    seed679(prisma, rules, options);
 }
 
 main()

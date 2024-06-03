@@ -930,8 +930,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "loanNumber_3",
-    "type": "loanNumber_3",
+    "name": "loanNumber",
+    "type": "loanNumber",
     "fieldtype": "number",
     "label": "CV8: N° de Préstamo",
     "placeholder": "Número de Préstamo",
@@ -945,8 +945,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "typeOfObligation_3",
-    "type": "typeOfObligation_3",
+    "name": "typeOfObligation",
+    "type": "typeOfObligation",
     "fieldtype": "select",
     "label": "CV8: Tipo de Obligación",
     "placeholder": "Selecciona el tipo de obligación",
@@ -1035,8 +1035,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "typeOfCurrency_2",
-    "type": "typeOfCurrency_2",
+    "name": "typeOfCurrency",
+    "type": "typeOfCurrency",
     "fieldtype": "select",
     "label": "CV9: Moneda(s)",
     "placeholder": "Selecciona el tipo de moneda",
@@ -1060,13 +1060,13 @@
     "row": 1,
     "defaultValue": "",
     "priority": 70,
-    "messageCode": "675,accordionExtraCredits",
-    "rules": "required,number,maxLength25",
+    "messageCode": "675",
+    "rules": "required,number,maxLength25,accordionExtraCredits",
     "parameterOptions": ""
   },
   {
-    "name": "judicial2",
-    "type": "judicial2",
+    "name": "judicial",
+    "type": "amount",
     "fieldtype": "amount",
     "label": "CVB: G. Judiciales",
     "placeholder": "",
@@ -1080,8 +1080,8 @@
     "parameterOptions": ""
   },
   {
-    "name": "loanSubtotal2",
-    "type": "loanSubtotal2",
+    "name": "loanSubtotal",
+    "type": "amount",
     "fieldtype": "amount",
     "label": "CVB: Subtotal Préstamo",
     "placeholder": "",
