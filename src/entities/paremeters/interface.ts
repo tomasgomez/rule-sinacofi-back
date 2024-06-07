@@ -2,6 +2,7 @@
     Parameter entity interface
 */
 
+import { Action } from "../actions/interface";
 import { Rule } from "../rule/interface";
 
 export interface Parameter {
@@ -20,6 +21,7 @@ export interface Parameter {
     updatedAt: Date; // Date and time when the schema was last updated
     rules?: Rule[]; // Array of related Rule objects
     optionValues?: OptionValue[]; // Array of related ParameterOption objects
+    actions?: Action[] // array of actions
 }
 
 export interface OptionValue {
@@ -35,7 +37,7 @@ export interface OptionValue {
 // Define OptionalParameter interface
 export type OptionalParameter = Partial<Parameter>
 
-// define FilledParameter interface
-export type FilledParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules'> & {
+// Parameter Interface 
+export type MessageParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules'> & {
     value: string // message parameter value
 }

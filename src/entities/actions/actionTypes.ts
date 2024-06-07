@@ -1,9 +1,27 @@
-// action types
-export enum actionTypes {
-    createMessage = 'createMessage',
-    deleteMessage = 'deleteMessage',
-    updateMessage = 'updateMessage',
+import { ErrorCode } from "../internalError";
+import { fillParameterWithMsg } from "./actions/fillParameter";
+import { fillParameterWithUser } from "./actions/fillUser";
+import { ActionsFunctions } from "./interface";
+
+enum actionType {
+    fillParameter = 'fillParameter',
+    fillUser = 'fillUser'
 }
 
-export type ActionTypes = actionTypes; 
-  
+type ActionType = actionType;
+
+
+const actions: ActionsFunctions = {
+    fillParameter: fillParameterWithMsg,
+    fillUser: fillParameterWithUser
+}
+
+export function getActionType(value: string): actionType {
+    if (Object.values(actionType).includes(value as actionType)) {
+        return value as actionType;
+      } else {
+        throw new Error("Invalid action type");
+      }
+}
+
+export { actionType, ActionType, actions }

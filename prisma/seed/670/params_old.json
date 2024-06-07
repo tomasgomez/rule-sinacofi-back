@@ -45,7 +45,7 @@
       "messageCode": "670",
       "rules": "required,distinctIssuedBank",
       "parameterOptions": "institution",
-      "actions": "msgCode670"
+      "actions": "fillParamMsgCode670"
     },
     {
       "name": "priority",
@@ -205,7 +205,7 @@
       "messageCode": "670",
       "rules": "required,distinctIssuedBank",
       "parameterOptions": "institution",
-      "actions":"msgCode670"
+      "actions":"fillParamMsgCode670"
     },
     {
       "name": "owner",
@@ -290,32 +290,16 @@
     {
       "name": "propertyInfo",
       "type": "propertyInfo",
-      "fieldtype": "textField",
+      "fieldtype": "textArea",
       "label": "CS5: Inmueble Correspondiente a",
       "placeholder": "",
       "description": "Información del inmueble correspondiente",
       "column": 12,
-      "row": 1,
+      "row": 3,
       "defaultValue": "",
       "priority": 19,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": "",
-      "actions":""
-    },
-    {
-      "name": "E32",
-      "type": "E32",
-      "fieldtype": "textArea",
-      "label": "E32",
-      "placeholder": "",
-      "description": "Detalles adicionales sobre la propiedad",
-      "column": 12,
-      "row": 3,
-      "defaultValue": "",
-      "priority": 20,
-      "messageCode": "670",
-      "rules": "required,maxLength420",
       "parameterOptions": "",
       "actions":""
     },
@@ -397,7 +381,7 @@
       "messageCode": "670",
       "rules": "required,disabled",
       "parameterOptions": "",
-      "actions":"user"
+      "actions":"fillParamUser"
     },
     {
       "name": "linebreak",
@@ -493,7 +477,7 @@
       "messageCode": "670",
       "rules": "disabled,cuk",
       "parameterOptions": "",
-      "actions":"msgCode670"
+      "actions":"fillParamMsgCode670"
     },
     {
       "name": "linebreak",
@@ -512,8 +496,8 @@
       "actions":""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "customerBorrowerName",
+      "type": "customerBorrowerName",
       "fieldtype": "textField",
       "label": "E32",
       "placeholder": "",
@@ -523,13 +507,13 @@
       "defaultValue": "",
       "priority": 33,
       "messageCode": "670",
-      "rules": "required,maxLength25",
+      "rules": "required,maxLength25,disabled",
       "parameterOptions": "",
       "actions":""
     },
     {
-      "name": "borrowerDni",
-      "type": "borrowerDni",
+      "name": "customerBorrowerName",
+      "type": "customerBorrowerName",
       "fieldtype": "dni",
       "label": "CW3: RUT del Deudor",
       "placeholder": "",
@@ -589,7 +573,7 @@
       "messageCode": "670",
       "rules": "disabled,required,maxLength25",
       "parameterOptions": "",
-      "actions":"user"
+      "actions":"fillParamUser"
     },
     {
       "name": "amountHeldByTheBank",
@@ -656,22 +640,6 @@
       "actions":""
     },
     {
-      "name": "E32",
-      "type": "E32",
-      "fieldtype": "textField",
-      "label": "E32",
-      "placeholder": "",
-      "description": "",
-      "column": 12,
-      "row": 1,
-      "defaultValue": "",
-      "priority": 42,
-      "messageCode": "670",
-      "rules": "disabled",
-      "parameterOptions": "",
-      "actions":""
-    },
-    {
       "name": "observations",
       "type": "observations",
       "fieldtype": "textArea",
@@ -679,7 +647,7 @@
       "placeholder": "",
       "description": "",
       "column": 12,
-      "row": 4,
+      "row": 5,
       "defaultValue": "",
       "priority": 43,
       "messageCode": "670",

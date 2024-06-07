@@ -2,6 +2,7 @@
     {
       "name": "disabled",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Campo desactivado",
       "condition": "disabled",
       "value": "true",
@@ -10,6 +11,7 @@
     {
       "name": "required",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Campo requerido",
       "condition": "required",
       "value": "true",
@@ -18,6 +20,7 @@
     {
       "name": "maxLength3",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Largo max 3",
       "condition": "maxLength",
       "value": "3",
@@ -26,6 +29,7 @@
     {
       "name": "maxLength45",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Largo max 45",
       "condition": "maxLength",
       "value": "45",
@@ -34,6 +38,7 @@
     {
       "name": "maxLength25",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Largo max 50",
       "condition": "maxLength",
       "value": "25",
@@ -42,6 +47,7 @@
     {
       "name": "maxLength420",
       "type": "paremeter",
+      "category": "VALIDATION",
       "description": "Largo max 420",
       "condition": "maxLength",
       "value": "420",
@@ -50,6 +56,7 @@
     {
       "name": "distinctIssuedBank",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "El banco receptor debe ser diferente al banco emisor",
       "condition": "distinctToIssuedBank",
       "value": "true",
@@ -58,6 +65,7 @@
     {
       "name": "currentDate",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Fecha actual",
       "condition": "currentDate",
       "value": "true",
@@ -66,6 +74,7 @@
     {
       "name": "dateFormat",
       "type": "paremeter",
+      "category": "FORMAT",
       "description": "formato de fecha",
       "condition": "regex",
       "value": "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$",
@@ -74,6 +83,7 @@
     {
       "name": "checkUserChannel",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Valida el canal del tipo de usuario",
       "condition": "checkUserChannel",
       "value": "",
@@ -82,6 +92,7 @@
     {
       "name": "dniFormat",
       "type": "parameter",
+      "category": "FORMAT",
       "description": "formato rut",
       "condition": "regex",
       "value": "^[0-9]{1,2}\\.[0-9]{3}\\.[0-9]{3}-[0-9kK]$",
@@ -90,6 +101,7 @@
     {
       "name": "checkDigitDni",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Valida digito verificador",
       "condition": "dni",
       "value": "true",
@@ -98,6 +110,7 @@
     {
       "name": "ufFormat",
       "type": "parameter",
+      "category": "FORMAT",
       "description": "formato de la UF (6 decimales)",
       "condition": "regex",
       "value": "^\\d+\\.\\d{6}$",
@@ -106,6 +119,7 @@
     {
       "name": "pesosFormat",
       "type": "parameter",
+      "category": "FORMAT",
       "description": "Formato de pesos",
       "condition": "regex",
       "value": "^\\$\\d{1,3}(\\.\\d{3})*$",
@@ -114,6 +128,7 @@
     {
       "name": "cuk",
       "type": "parameter",
+      "category": "FORMAT",
       "description": "Formato del CUK (AH + institutionCode + corr)",
       "condition": "CUK",
       "value": "true",
@@ -122,6 +137,7 @@
     {
       "name": "string",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Valida si es string",
       "condition": "isString",
       "value": "true",
@@ -130,6 +146,7 @@
     {
       "name": "number",
       "type": "parameter",
+      "category": "VALIDATION",
       "description": "Valida si es número",
       "condition": "isNumber",
       "value": "true",
@@ -138,6 +155,7 @@
     {
       "name": "accordionMortageData",
       "type": "parameter",
+      "category": "GROUP",
       "description": "Panel de formulario Datos de hipoteca",
       "condition": "accordion",
       "value": "mortageData",
@@ -146,6 +164,7 @@
     {
       "name": "accordionMortageDetails",
       "type": "parameter",
+      "category": "GROUP",
       "description": "Panel de detalles de hipoteca",
       "condition": "accordion",
       "value": "mortageDetails",
@@ -154,6 +173,7 @@
     {
       "name": "accordionresumeTotalAmount",
       "type": "parameter",
+      "category": "GROUP",
       "description": "Panel de Total a pagar",
       "condition": "accordion",
       "value": "resumeTotalAmount",
@@ -162,6 +182,7 @@
     {
       "name": "accordionExtraCredits",
       "type": "parameter",
+      "category": "GROUP",
       "description": "Panel de otros créditos",
       "condition": "accordion",
       "value": "extraCredits",

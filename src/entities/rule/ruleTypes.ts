@@ -1,6 +1,5 @@
-import { InternalError } from "../internalError";
-import { InputValue, Validations,  } from "./interface";
-import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni } from "./ruleValidations";
+import {  Validations } from "./interface";
+import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni } from "./ruleFunctions";
 
 /* 
     This file contains the different types of rules that can be applied to a field.
@@ -22,8 +21,7 @@ enum ruleType {
     disabled             = 'disabled',
     currentDate          = 'currentDate',
     checkUserChannel     = 'checkUserChannel',
-    accordion            = 'accordion'
-
+    accordion            = 'accordion',
 }
 
 type RuleTypes = ruleType; 
@@ -45,11 +43,10 @@ const validations: Validations = {
   disabled: () => true,
   currentDate: () => true,
   checkUserChannel: () => true,
-  accordion: () => true
+  accordion: () => true,
 }
 
 function getRuleType(value: string): ruleType {
-  console.log(value);
   if (Object.values(ruleType).includes(value as ruleType)) {
     return value as ruleType;
   } else {

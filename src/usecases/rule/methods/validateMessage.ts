@@ -1,6 +1,7 @@
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { ErrorCode, InternalError, isInternalError } from "../../../entities/internalError";
-import { Message, MessageParameter } from "../../../entities/message/interface";
+import { Message } from "../../../entities/message/interface";
+import { MessageParameter } from "../../../entities/paremeters/interface";
 import { Rule } from "../../../entities/rule/interface";
 import { OptionalSchema } from "../../../entities/schema/interface";
 import { IRuleUsecase } from "../usecase";

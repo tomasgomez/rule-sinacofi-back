@@ -1,9 +1,8 @@
 import { InternalError } from "../internalError/error";
-import { IEvent } from "../event/interface";
 import { RuleTypes } from "./ruleTypes";
 import { Schema } from "../schema/interface";
-import { Action } from "../actions/interface";
 import { validate } from "./ruleValidation";
+import { RuleCategory } from "./ruleCategory";
 /** 
  * Interface representing a validation rule.
  */
@@ -11,13 +10,13 @@ type Rule = {
     id: string;               // Unique identifier for the rule
     name: string;             // Name of the rule
     type: string;             // Type of the rule
+    category: RuleCategory;   // Category of the tule
     description: string;      // Description of the rule
     condition: RuleTypes;     // Condition of the rule
     value: string;            // Value of the rule
     priority: number;         // Priority of the rule
     createdAt: Date;          // Date and time when the rule was created
     updatedAt: Date;          // Date and time when the rule was last updated
-    allowedActions?: Action[]; // Actions of the rule
 }
 
 // validate the rule based on the condition

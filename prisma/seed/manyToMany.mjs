@@ -83,3 +83,45 @@ export const seedParameterOptionTable = async (prisma, parameterOption) => {
             });
         }
 }
+
+export const seedActionParameterTable = async (prisma, actionParameter) => {
+
+    if (actionParameter.length === 0) {
+        throw new Error('actionParameter is empty');
+    }
+
+    for (let i= 0; i < actionParameter.length; i++) {
+        const rparam = actionParameter[i];
+        await prisma.actionsParameters.upsert({
+            where: { 
+                parameterMessageCode_parameterName_parameterPriority_actionName_actionType: { 
+                    actionName: rparam.actionName, 
+                    actionType: rparam.actionType,
+                    parameterName: rparam.parameterName,
+                    parameterMessageCode: rparam.parameterMessageCode,
+                    parameterPriority: rparam.parameterPriority
+                } 
+            },
+            update: {},
+            create: {
+                action: {
+                    connect: { 
+                        name_type: {
+                            name: rparam.actionName, 
+                            type: rparam.actionType
+                        } 
+                    }
+                },
+                parameter: {
+                    connect: { 
+                        name_messageCode_priority: {
+                            name: rparam.parameterName, 
+                            messageCode: rparam.parameterMessageCode,
+                            priority: rparam.parameterPriority
+                        } 
+                    }
+                }
+            }
+        });
+    }
+}

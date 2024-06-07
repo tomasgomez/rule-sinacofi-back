@@ -1,5 +1,4 @@
-
-import { ActionTypes } from "../actions/actionTypes";
+import { ActionType } from "../actions/actionTypes";
 import { IEvent } from "./interface";
 
 /*
@@ -11,7 +10,7 @@ class Event implements IEvent {
         public id: string, 
         public name: string, 
         public description: string, 
-        public actionType: ActionTypes, 
+        public actionType: ActionType, 
         public parameters: Record<string, any> | null,
         public eventChildId?: number,                 
         public childEvent?: IEvent | null,            

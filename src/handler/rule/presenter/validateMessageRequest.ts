@@ -1,6 +1,7 @@
 import express from "express";
-import { Message, MessageParameter } from "../../../entities/message/interface";
+import { Message } from "../../../entities/message/interface";
 import { ErrorCode, InternalError } from "../../../entities/internalError";
+import { MessageParameter } from "../../../entities/paremeters/interface";
 
 
 const validateMessageRequest  = (req: express.Request): Message | InternalError => {

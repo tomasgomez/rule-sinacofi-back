@@ -1,4 +1,4 @@
-import { FilledParameter, Parameter } from "../paremeters/interface";
+import { MessageParameter, Parameter } from "../paremeters/interface";
 import { Rule } from "../rule/interface";
 
 /*
@@ -11,7 +11,7 @@ type Schema = {
     name: string;                                // Name of the form
     createdAt: Date;                             // Date and time the form was created
     updatedAt: Date;                             // Date and time the form was last updated
-    parameters: Parameter[] | FilledParameter[]; // Array of related Parameter objects
+    parameters: Parameter[] | MessageParameter[]; // Array of related Parameter objects
     rules: Rule[];                               // Array of related Rule objects
 }
 

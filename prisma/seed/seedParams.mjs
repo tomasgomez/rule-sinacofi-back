@@ -1,4 +1,3 @@
-
 export const seedParams = async (prisma, params) => {
     if (params.length === 0) {
     throw new Error("schemas is empty");
@@ -78,6 +77,25 @@ export const connectParameterToRules = async (prisma, paramRules) => {
             data: {
                 rules: {
                     connect: paramRule.rules.map((rule) => ({ name_type: { name: rule.name, type: rule.type } })
+                    )
+                }
+            }
+        });
+    }
+}
+
+export const connectParameterToActions = async (prisma, paramActions) => {
+    if (paramActions.length === 0) {
+        throw new Error("paramActions is empty");
+    }
+
+    for (let i = 0; i < paramActions.length; i++) {
+        const paramAction = paramActions[i];
+        await prisma.parameter.update({
+            where: { name_messageCode_priority: { name: paramAction.name, messageCode: paramAction.messageCode, priority: paramAction.priority } },
+            data: {
+                actions: {
+                    connect: paramAction.actions.map((action) => ({ name_type: { name: action.name, type: action.type } })
                     )
                 }
             }

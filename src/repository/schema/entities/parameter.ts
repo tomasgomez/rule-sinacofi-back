@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { IParameterOptionValueSelect, IParemterRuleSelect } from "./manyToMany";
+import { IParameterOptionValueSelect, IParemterActionSelect, IParemterRuleSelect } from "./manyToMany";
 
 /*
   Parameter interface for the Prisma ORM
@@ -9,7 +9,8 @@ import { IParameterOptionValueSelect, IParemterRuleSelect } from "./manyToMany";
 // type for the parametersSelect
 type IParameterSelect = Partial<Prisma.ParameterSelect> & { 
   optionValues?: IParameterOptionValueSelect, 
-  rules?: IParemterRuleSelect 
+  rules?: IParemterRuleSelect,
+  actions?: IParemterActionSelect
 };
 type ParameterSelect<T extends ReadonlyArray<unknown>> = T[number];
 // type for the parametersArgs
