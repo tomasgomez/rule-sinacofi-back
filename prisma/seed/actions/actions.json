@@ -1,26 +1,37 @@
 [
-{
-    "name": "msgCode670",
-    "type": "parameter",
-    "description": "Llenar el parametro con el valor por defecto (defaultValue)",
-    "category": "FILL",
-    "action": "fillParameter",
-    "value":{
-        "messageCode": "670",
-        "field":"name",
-        "targeField": "defaultValue"
-    },
-    "priority": 0
+    {
+        "name": "msgCode670",
+        "type": "parameter",
+        "description": "Llenar el parametro con el valor por defecto (defaultValue)",
+        "category": "FILL",
+        "action": "fillParameter",
+        "value":{
+            "messageCode": "670",
+            "field":"name",
+            "targeField": "defaultValue"
+        },
+        "priority": 0
     },
     {
-    "name": "user",
-    "category": "FILL",
-    "type": "parameter",
-    "description": "Llenar el parametro con la información del usuario",
-    "action": "fillUser",
-    "value":{
-        "targeField": "defaultValue"
+        "name": "user",
+        "category": "FILL",
+        "type": "parameter",
+        "description": "Llenar el parametro con la información del usuario",
+        "action": "fillUser",
+        "value":{
+            "targeField": "defaultValue"
+        },
+        "priority": 0
     },
-    "priority": 0
+    {
+        "name": "currentDate",
+        "category": "FILL",
+        "type": "parameter",
+        "description": "Llenar paremetro con fecha actual",
+        "action": "fillCurrentDate",
+        "value":{
+            "targeField": "defaultValue"
+        },
+        "priority": 0
     }
 ]

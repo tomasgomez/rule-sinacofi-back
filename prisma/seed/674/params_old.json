@@ -1,4 +1,4 @@
-[    
+[
   {
     "name": "messageCode",
     "type": "messageCode",
@@ -8,12 +8,11 @@
     "description": "Código del tipo de mensaje",
     "column": 3,
     "row": 1,
-    "defaultValue": "673",
+    "defaultValue": "674",
     "priority": 1,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":""
+    "parameterOptions": ""
   },
   {
     "name": "messageDescription",
@@ -24,12 +23,11 @@
     "description": "Descripción del tipo de mensaje",
     "column": 9,
     "row": 1,
-    "defaultValue": "ALZAMIENTO HIPOTECARIO NORMALIZACIÓN",
+    "defaultValue": "SOLICITUD LIQUIDACIÓN DE PREPAGO AH",
     "priority": 2,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":""
+    "parameterOptions": ""
   },
   {
     "name": "bank",
@@ -42,15 +40,14 @@
     "row": 1,
     "defaultValue": "bank",
     "priority": 3,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "institution",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "priority",
     "type": "priority",
-    "fieldtype": "select",
+    "fieldtype": "texfield",
     "label": "Prioridad",
     "placeholder": "Selecciona la prioridad del mensaje",
     "description": "Todas las prioridades posibles para seleccionar la prioridad del mensaje",
@@ -58,15 +55,14 @@
     "row": 1,
     "defaultValue": "",
     "priority": 4,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "priority",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "auth",
     "type": "auth",
-    "fieldtype": "select",
+    "fieldtype": "textField",
     "label": "Autenticación",
     "placeholder": "Selecciona si require autenticación",
     "description": "Requiere autenticación, selecciona si require autenticación",
@@ -74,58 +70,39 @@
     "row": 1,
     "defaultValue": "",
     "priority": 5,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "condition",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "authname",
     "type": "authname",
     "fieldtype": "textField",
-    "label": "# 18:Nombre y Cargo Respons. Inform.",
+    "label": "# 18: Nombre y Cargo Respons. Inform.",
     "placeholder": "18: Nombre y Cargo Respons. Inform.",
     "description": "Informante",
     "column": 3,
     "row": 1,
-    "defaultValue": "fullName",
+    "defaultValue": "",
     "priority": 6,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "",
-    "parameterOptions": "",
-    "actions":"fillUser"
+    "parameterOptions": ""
   },
   {
-    "name": "issuedDateNorm",
-    "type": "issuedDateNorm",
+    "name": "applicationDate",
+    "type": "applicationDate",
     "fieldtype": "date",
-    "label": "*CI3: Fecha Envio de Mensaje",
+    "label": "* CV4: Fecha de Solicitud",
     "placeholder": "",
     "description": "Fecha de alzamiento hipotecario",
     "column": 3,
     "row": 1,
     "defaultValue": "",
     "priority": 7,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"currentDate"
-  },
-  {
-    "name": "channel",
-    "type": "channel",
-    "fieldtype": "select",
-    "label": "SGA: Canal",
-    "placeholder": "Selecciona el canal",
-    "description": "Canal, selecciona el canal de envío del mensaje",
-    "column": 3,
-    "row": 1,
-    "defaultValue": "",
-    "priority": 8,
-    "messageCode": "673",
-    "rules": "disabled",
-    "parameterOptions": "channel",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "operationtype",
@@ -137,11 +114,25 @@
     "column": 3,
     "row": 1,
     "defaultValue": "",
-    "priority": 9,
-    "messageCode": "673",
+    "priority": 8,
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "operationType",
-    "actions":"msgCode670"
+    "parameterOptions": "operationType"
+  },
+  {
+    "name": "channel",
+    "type": "channel",
+    "fieldtype": "select",
+    "label": "SGA: Canal",
+    "placeholder": "Selecciona el canal",
+    "description": "Canal, selecciona el canal de envío del mensaje",
+    "column": 3,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 9,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": "channel"
   },
   {
     "name": "notary",
@@ -154,10 +145,9 @@
     "row": 1,
     "defaultValue": "",
     "priority": 10,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "notary",
-    "actions":"msgCode670"
+    "parameterOptions": "notary"
   },
   {
     "name": "registrationDate",
@@ -170,10 +160,9 @@
     "row": 1,
     "defaultValue": "",
     "priority": 11,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "registrationNumber",
@@ -186,10 +175,9 @@
     "row": 1,
     "defaultValue": "",
     "priority": 12,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "CUK",
@@ -200,28 +188,11 @@
     "description": "Código interno de operación",
     "column": 6,
     "row": 1,
-    "defaultValue": "CUK",
-    "priority": 13,
-    "messageCode": "673",
-    "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
-  },
-  {
-    "name": "issuedDate",
-    "type": "issuedDate",
-    "fieldtype": "textField",
-    "label": "# SH8: Asociado a Alzamiento Hipotecario de Fecha/NSE:",
-    "placeholder": "Cliente hipoteca",
-    "description": "Fecha asociada al alzamiento hipotecario y NSE",
-    "column": 6,
-    "row": 1,
     "defaultValue": "",
-    "priority": 14,
-    "messageCode": "673",
+    "priority": 13,
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "beneficiaryBank",
@@ -230,14 +201,28 @@
     "label": "CSO: Señores Institución",
     "placeholder": "Banco receptor",
     "description": "Banco receptor del mensaje",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 14,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "label",
+    "type": "label",
+    "fieldtype": "label",
+    "label": "CSP: Solicitamos a usted liquidación de pre-pago consolidada de",
+    "placeholder": "",
+    "description": "CSP: Solicitamos a usted liquidación de pre-pago consolidada de",
     "column": 12,
     "row": 1,
     "defaultValue": "",
     "priority": 15,
-    "messageCode": "673",
-    "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "messageCode": "674",
+    "rules": "",
+    "parameterOptions": ""
   },
   {
     "name": "owner",
@@ -246,14 +231,13 @@
     "label": "# CUY: Nombre del Vendedor",
     "placeholder": "",
     "description": "Nombre del vendedor",
-    "column": 6,
+    "column": 8,
     "row": 1,
     "defaultValue": "",
     "priority": 16,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "ownerDni",
@@ -262,14 +246,13 @@
     "label": "# CUZ: RUT del Vendedor",
     "placeholder": "",
     "description": "RUT del vendedor",  
-    "column": 6,
+    "column": 4,
     "row": 1,
     "defaultValue": "",
     "priority": 17,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "buyer",
@@ -278,14 +261,13 @@
     "label": "# CW6: Nombre del Comprador",
     "placeholder": "",
     "description": "Nombre del comprador",
-    "column": 6,
+    "column": 8,
     "row": 1,
     "defaultValue": "",
     "priority": 18,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "buyerDni",
@@ -298,10 +280,9 @@
     "row": 1,
     "defaultValue": "",
     "priority": 19,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "borrower",
@@ -310,14 +291,13 @@
     "label": "# CW4: Nombre del Deudor",
     "placeholder": "",
     "description": "Nombre del deudor",
-    "column": 6,
+    "column": 8,
     "row": 1,
     "defaultValue": "",
     "priority": 20,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
     "name": "borrowerDni",
@@ -326,42 +306,131 @@
     "label": "# CW3: RUT del Deudor",
     "placeholder": "",
     "description": "RUT del deudor",
-    "column": 6,
+    "column": 4,
     "row": 1,
     "defaultValue": "",
     "priority": 21,
-    "messageCode": "673",
+    "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "",
-    "actions":"msgCode670"
+    "parameterOptions": ""
   },
   {
-    "name": "openText",
-    "type": "openText",
-    "fieldtype": "textArea",
-    "label": "79D: Texto Libre",
+    "name": "mortgageLiftingReceptionNumber",
+    "type": "mortgageLiftingReceptionNumber",
+    "fieldtype": "textField",
+    "label": "# SH7: Número Recepción de Alzamiento (OSN)",
     "placeholder": "",
-    "description": "",
-    "column": 12,
-    "row": 3,
+    "description": "Número Recepción de Alzamiento",
+    "column": 6,
+    "row": 1,
     "defaultValue": "",
     "priority": 22,
-    "messageCode": "673",
-    "rules": "maxLength420",
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "issuedDate",
+    "type": "issuedDate",
+    "fieldtype": "textField",
+    "label": "# SH8: Asociado a Alzamiento Hipotecario de Fecha/NSE:",
+    "placeholder": "Cliente hipoteca",
+    "description": "Fecha asociada al alzamiento hipotecario y NSE",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 23,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "loan",
+    "type": "loan",
+    "fieldtype": "amount",
+    "label": "# CVR: Monto del mutuo (UF)",
+    "placeholder": "",
+    "description": "Monto del mutuo en (UF)",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 24,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "addLoan",
+    "type": "addLoan",
+    "fieldtype": "amount",
+    "label": "# CSF: Un mutuo Complementario de (UF)",
+    "placeholder": "",
+    "description": "Mutuo adicional en UF",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 25,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "cashPaymentAmount",
+    "type": "cashPaymentAmount",
+    "fieldtype": "amount",
+    "label": "# CVT: Monto del Pago Efectivo (U.F.)",
+    "placeholder": "",
+    "description": "Mutuo adicional en UF",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 26,
+    "messageCode": "674",
+    "rules": "disabled",
+    "parameterOptions": ""
+  },
+  {
+    "name": "voluntaryAdditionalAmount",
+    "type": "voluntaryAdditionalAmount",
+    "fieldtype": "amount",
+    "label": "# CVU: Monto Adicional Voluntuario $",
+    "placeholder": "",
+    "description": "MMonto Adicional Voluntuario en Pesos",
+    "column": 6,
+    "row": 1,
+    "defaultValue": "",
+    "priority": 27,
+    "messageCode": "674",
+    "rules": "disabled",
     "parameterOptions": ""
   },
   {
     "name": "observations",
     "type": "observations",
     "fieldtype": "textArea",
-    "label": "75: Observaciones",
+    "label": "79: Obsevaciones",
+    "placeholder": "",
+    "description": "",
+    "column": 12,
+    "row": 3,
+    "defaultValue": "",
+    "priority": 28,
+    "messageCode": "674",
+    "rules": "maxLength420",
+    "parameterOptions": ""
+  },
+  {
+    "name": "E32",
+    "type": "E32",
+    "fieldtype": "textArea",
+    "label": "E32",
     "placeholder": "",
     "description": "",
     "column": 12,
     "row": 1,
     "defaultValue": "",
-    "priority": 23,
-    "messageCode": "673",
+    "priority": 29,
+    "messageCode": "674",
     "rules": "maxLength420",
     "parameterOptions": ""
   }

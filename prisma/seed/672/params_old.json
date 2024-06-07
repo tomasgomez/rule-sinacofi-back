@@ -8,12 +8,11 @@
       "description": "Código del tipo de mensaje",
       "column": 3,
       "row": 1,
-      "defaultValue": "671",
+      "defaultValue": "672",
       "priority": 1,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": ""
+      "parameterOptions": ""
     },
     {
       "name": "messageDescription",
@@ -24,12 +23,11 @@
       "description": "Descripción del tipo de mensaje",
       "column": 9,
       "row": 1,
-      "defaultValue": "ALZAMIENTO HIPOTECARIO ACEPTACIÓN",
+      "defaultValue": "ALZAMIENTO HIPOTECARIO RECHAZADA",
       "priority": 2,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": ""
+      "parameterOptions": ""
     },
     {
       "name": "bank",
@@ -42,10 +40,9 @@
       "row": 1,
       "defaultValue": "bank",
       "priority": 3,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "institution",
-      "actions": "msgCode670"
+      "parameterOptions": "institution"
     },
     {
       "name": "priority",
@@ -58,10 +55,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 4,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "priority",
-      "actions": "msgCode670"
+      "parameterOptions": "priority"
     },
     {
       "name": "auth",
@@ -74,10 +70,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 5,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "condition",
-      "actions": "msgCode670"
+      "parameterOptions": "condition"
     },
     {
       "name": "label",
@@ -85,15 +80,14 @@
       "fieldtype": "label",
       "label": "Datos de Hipoteca",
       "placeholder": "",
-      "description": "Título del mensaje \"Datos de Hipoteca\"",
+      "description": "Título del mensaje Datos de Hipoteca",
       "column": 12,
       "row": 1,
       "defaultValue": "Datos de Hipoteca",
       "priority": 6,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
       "name": "issuedDate",
@@ -106,10 +100,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 7,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "channel",
@@ -122,10 +115,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 8,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "channel",
-      "actions": "msgCode670"
+      "parameterOptions": "channel"
     },
     {
       "name": "operationtype",
@@ -138,10 +130,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 9,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "operationType",
-      "actions": "msgCode670"
+      "parameterOptions": "operationType"
     },
     {
       "name": "notary",
@@ -154,10 +145,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 10,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "notary",
-      "actions": "msgCode670"
+      "parameterOptions": "notary"
     },
     {
       "name": "registrationDate",
@@ -170,10 +160,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 11,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "registrationNumber",
@@ -186,10 +175,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 12,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "beneficiaryBank",
@@ -202,10 +190,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 13,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "institution",
-      "actions": "msgCode670"
+      "parameterOptions": "institution"
     },
     {
       "name": "owner",
@@ -218,10 +205,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 14,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "ownerDni",
@@ -234,10 +220,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 15,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "linebreak",
@@ -250,10 +235,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 16,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
       "name": "buyer",
@@ -266,10 +250,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 17,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "buyerDni",
@@ -282,10 +265,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 18,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "propertyInfo",
@@ -298,13 +280,12 @@
       "row": 1,
       "defaultValue": "",
       "priority": 19,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
-      "name": "addPropertyInfo",
+      "name": "E32",
       "type": "E32",
       "fieldtype": "textArea",
       "label": "E32",
@@ -314,10 +295,9 @@
       "row": 3,
       "defaultValue": "",
       "priority": 20,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "location",
@@ -330,26 +310,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 21,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
-    },
-    {
-      "name": "region",
-      "type": "region",
-      "fieldtype": "select",
-      "label": "CS8: Región de",
-      "placeholder": "Selecciona la región",
-      "description": "Región del inmueble, selecciona la región",
-      "column": 4,
-      "row": 1,
-      "defaultValue": "",
-      "priority": 23,
-      "messageCode": "671",
-      "rules": "disabled",
-      "parameterOptions": "region",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "commune",
@@ -362,10 +325,24 @@
       "row": 1,
       "defaultValue": "",
       "priority": 22,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "commune",
-      "actions": "msgCode670"
+      "parameterOptions": "commune"
+    },
+    {
+      "name": "region",
+      "type": "region",
+      "fieldtype": "select",
+      "label": "CS8: Región de",
+      "placeholder": "Selecciona la región",
+      "description": "Región del inmueble, selecciona la región",
+      "column": 4,
+      "row": 1,
+      "defaultValue": "",
+      "priority": 23,
+      "messageCode": "672",
+      "rules": "disabled",
+      "parameterOptions": "region"
     },
     {
       "name": "linebreak",
@@ -378,10 +355,9 @@
       "row": 1,
       "defaultValue": "SGJ: Para pagar parte del precio de la compraventa, si corresponde",
       "priority": 24,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
       "name": "bank",
@@ -394,10 +370,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 25,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "linebreak",
@@ -410,14 +385,13 @@
       "row": 1,
       "defaultValue": "",
       "priority": 26,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
-      "name": "mortagor",
-      "type": "mortagor",
+      "name": "borrower",
+      "type": "borrower",
       "fieldtype": "textField",
       "label": "CSC: Don-Doña-La Sociedad",
       "placeholder": "",
@@ -426,10 +400,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 27,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "loan",
@@ -442,10 +415,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 28,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "loanTerm",
@@ -453,15 +425,14 @@
       "fieldtype": "amount",
       "label": "CSE: Pagadero en Plazo de (años)",
       "placeholder": "",
-      "description": "Monto complementario del mutuo en UF",
+      "description": "Plazo de pago del mutuo en años",
       "column": 3,
       "row": 1,
       "defaultValue": "",
       "priority": 29,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "addLoan",
@@ -469,15 +440,14 @@
       "fieldtype": "amount",
       "label": "CSF: Un mutuo Complementario de (UF)",
       "placeholder": "",
-      "description": "Monto complementario del mutuo en UF",
+      "description": "Mutuo adicional en UF",
       "column": 3,
       "row": 1,
       "defaultValue": "",
       "priority": 30,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "CUK",
@@ -488,12 +458,11 @@
       "description": "Código interno de operación",
       "column": 12,
       "row": 1,
-      "defaultValue": "CUK",
+      "defaultValue": "",
       "priority": 31,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "linebreak",
@@ -501,18 +470,17 @@
       "fieldtype": "linebreak",
       "label": "SGL: Nombre del Deudor",
       "placeholder": "",
-      "description": "RUT del deudor",
+      "description": "Nombre del Deudor",
       "column": 12,
       "row": 1,
       "defaultValue": "SGL: Nombre del Deudor",
       "priority": 32,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
-      "name": "borrower",
+      "name": "E32",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
@@ -522,10 +490,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 33,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "borrowerDni",
@@ -538,10 +505,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 34,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "ufAmount",
@@ -550,14 +516,13 @@
       "label": "SGM: Monto UF",
       "placeholder": "",
       "description": "Monto retenido por el banco",
-      "column": 4,
+      "column": 3,
       "row": 1,
       "defaultValue": "-",
       "priority": 35,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "label",
@@ -570,10 +535,9 @@
       "row": 3,
       "defaultValue": "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
       "priority": 36,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
       "name": "bank",
@@ -586,10 +550,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 37,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "amountHeldByTheBank",
@@ -602,10 +565,9 @@
       "row": 1,
       "defaultValue": "",
       "priority": 38,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
       "name": "label",
@@ -618,10 +580,9 @@
       "row": 1,
       "defaultValue": "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
       "priority": 39,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
       "name": "linebreak",
@@ -634,45 +595,27 @@
       "row": 1,
       "defaultValue": "SGT: Firma Electrónica, Enviador",
       "priority": 40,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions":""
+      "parameterOptions": ""
     },
     {
-      "name": "approverName670",
+      "name": "sign",
       "type": "sign",
       "fieldtype": "textField",
-      "label": "SGU: Apoderado Nombre",
+      "label": "SGU: Apoderado Nombre, RUT",
       "placeholder": "",
       "description": "",
       "column": 3,
       "row": 1,
       "defaultValue": "",
       "priority": 41,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
-      "name": "approverDni670",
-      "type": "sign",
-      "fieldtype": "textField",
-      "label": "SGU: Apoderado Nombre",
-      "placeholder": "",
-      "description": "",
-      "column": 3,
-      "row": 1,
-      "defaultValue": "",
-      "priority": 41,
-      "messageCode": "671",
-      "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
-    },
-    {
-      "name": "extraEspace",
+      "name": "E32",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
@@ -682,43 +625,41 @@
       "row": 1,
       "defaultValue": "",
       "priority": 42,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions": "msgCode670"
+      "parameterOptions": ""
     },
     {
-      "name": "approvalDate",
-      "type": "approvalDate",
+      "name": "rejectionDate",
+      "type": "rejectionDate",
       "fieldtype": "texfield",
-      "label": "SGV: Aceptación de alzamiento hipotecario de Fecha NSE/OSN",
+      "label": "# SGX: Rechazamos Alzamiento Hipotecario De Fecha/NSE/OSN:",
       "placeholder": "",
-      "description": "SGV: Aceptación de alzamiento hipotecario de Fecha NSE/OSN",
-      "column": 6,
+      "description": "# SGX: Rechazamos Alzamiento Hipotecario De Fecha/NSE/OSN:",
+      "column": 12,
       "row": 1,
       "defaultValue": "currentDate",
       "priority": 43,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "disabled",
-      "parameterOptions": "",
-      "actions":"currentDate"
+      "parameterOptions": ""
     },
     {
-      "name": "prepaidSettlement",
-      "type": "prepaidSettlement",
-      "fieldtype": "select",
-      "label": "CUM: Requiere liquidación de Prepago Si/No",
+      "name": "rejectionReason",
+      "type": "rejectionReason",
+      "fieldtype": "checkbox",
+      "label": "SH: Motivos",
       "placeholder": "",
       "description": "",
-      "column": 6,
+      "column": 12,
       "row": 1,
-      "defaultValue": "no",
+      "defaultValue": "",
       "priority": 44,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "required",
-      "parameterOptions": "condition",
-      "actions": ""
-    },{
+      "parameterOptions": "rejectionReason"
+    },
+    {
       "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
@@ -729,13 +670,11 @@
       "row": 1,
       "defaultValue": "SGT: Firma Electrónica, Receptor",
       "priority": 45,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "",
-      "parameterOptions": "",
-      "actions": ""
-    },
-    {
-      "name": "approverName",
+      "parameterOptions": ""
+    },{
+      "name": "sign",
       "type": "sign",
       "fieldtype": "password",
       "label": "SGU: Apoderado Nombre, RUT",
@@ -743,28 +682,11 @@
       "description": "",
       "column": 3,
       "row": 1,
-      "defaultValue": "fullName",
-      "priority": 46,
-      "messageCode": "671",
-      "rules": "required",
-      "parameterOptions": "",
-      "actions": "fillUser"
-    },
-    {
-      "name": "approverSign",
-      "type": "sign",
-      "fieldtype": "password",
-      "label": "SGU: Firma Electrónica",
-      "placeholder": "",
-      "description": "",
-      "column": 3,
-      "row": 1,
       "defaultValue": "",
       "priority": 46,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "required",
-      "parameterOptions": "",
-      "actions": ""
+      "parameterOptions": ""
     },
     {
       "name": "observations",
@@ -774,12 +696,11 @@
       "placeholder": "",
       "description": "",
       "column": 12,
-      "row": 1,
+      "row": 4,
       "defaultValue": "",
       "priority": 47,
-      "messageCode": "671",
+      "messageCode": "672",
       "rules": "maxLength420",
-      "parameterOptions": "",
-      "actions": ""
+      "parameterOptions": ""
     }
 ]

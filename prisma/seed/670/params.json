@@ -109,7 +109,7 @@
       "messageCode": "670",
       "rules": "disabled, currentDate",
       "parameterOptions": "",
-      "actions":""
+      "actions":"currentDate"
     },
     {
       "name": "channel",
@@ -304,7 +304,7 @@
       "actions":""
     },
     {
-      "name": "E32",
+      "name": "addPropertyInfo",
       "type": "E32",
       "fieldtype": "textArea",
       "label": "E32",
@@ -336,22 +336,6 @@
       "actions":""
     },
     {
-      "name": "commune",
-      "type": "commune",
-      "fieldtype": "select",
-      "label": "CS7: Comuna de",
-      "placeholder": "Selecciona la comuna",
-      "description": "Comuna del inmueble, selecciona la comuna",
-      "column": 4,
-      "row": 1,
-      "defaultValue": "",
-      "priority": 23,
-      "messageCode": "670",
-      "rules": "required,maxLength25",
-      "parameterOptions": "commune",
-      "actions":""
-    },
-    {
       "name": "region",
       "type": "region",
       "fieldtype": "select",
@@ -365,6 +349,22 @@
       "messageCode": "670",
       "rules": "required,maxLength25",
       "parameterOptions": "region",
+      "actions":""
+    },
+    {
+      "name": "commune",
+      "type": "commune",
+      "fieldtype": "select",
+      "label": "CS7: Comuna de",
+      "placeholder": "Selecciona la comuna",
+      "description": "Comuna del inmueble, selecciona la comuna",
+      "column": 4,
+      "row": 1,
+      "defaultValue": "",
+      "priority": 23,
+      "messageCode": "670",
+      "rules": "required,maxLength25",
+      "parameterOptions": "commune",
       "actions":""
     },
     {
@@ -416,12 +416,12 @@
       "actions":""
     },
     {
-      "name": "borrower",
-      "type": "borrower",
+      "name": "mortagor",
+      "type": "mortagor",
       "fieldtype": "textField",
       "label": "CSC: Don-Doña-La Sociedad",
       "placeholder": "",
-      "description": "Nombre del deudor",
+      "description": "Nombre de quien recibe el mutuo",
       "column": 3,
       "row": 1,
       "defaultValue": "",
@@ -488,7 +488,7 @@
       "description": "Código interno de operación",
       "column": 12,
       "row": 1,
-      "defaultValue": "CUK",
+      "defaultValue": "",
       "priority": 31,
       "messageCode": "670",
       "rules": "disabled,cuk",
@@ -512,12 +512,12 @@
       "actions":""
     },
     {
-      "name": "E32",
+      "name": "borrower",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
       "placeholder": "",
-      "description": "Monto en UF",
+      "description": "Nombre del deudor",
       "column": 4,
       "row": 1,
       "defaultValue": "",
@@ -640,23 +640,37 @@
       "actions":""
     },
     {
-      "name": "sign",
-      "type": "sign",
+      "name": "approverDni670",
+      "type": "senderDni",
       "fieldtype": "textField",
-      "label": "SGU: Apoderado Nombre, RUT",
+      "label": "SGU: Apoderado Rut",
       "placeholder": "",
       "description": "",
       "column": 3,
       "row": 1,
       "defaultValue": "",
-      "priority": 41,
+      "priority": 42,
       "messageCode": "670",
       "rules": "disabled",
       "parameterOptions": "",
-      "actions":""
+      "actions": ""
+    },{
+      "name": "approverSign",
+      "type": "senderSign",
+      "fieldtype": "password",
+      "label": "SGT: Firma Electrónica, Enviador",
+      "placeholder": "",
+      "description": "",
+      "column": 3,
+      "row": 1,
+      "defaultValue": "",
+      "priority": 43,
+      "messageCode": "670",
+      "rules": "required",
+      "parameterOptions": ""
     },
     {
-      "name": "E32",
+      "name": "extraSpace",
       "type": "E32",
       "fieldtype": "textField",
       "label": "E32",
