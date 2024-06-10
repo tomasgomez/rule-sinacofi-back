@@ -75,7 +75,7 @@
     "parameterOptions": ""
   },
   {
-    "name": "morgageData",
+    "name": "mortageData",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Datos de Hipoteca",
