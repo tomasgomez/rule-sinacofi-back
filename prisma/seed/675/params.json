@@ -80,7 +80,7 @@
     "actions":"msgCode670"
   },
   {
-    "name": "morgageData",
+    "name": "mortgageData",
     "type": "accordion",
     "fieldtype": "accordion",
     "label": "Datos de Hipoteca",

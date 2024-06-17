@@ -171,7 +171,7 @@
       "priority": 0
     },
     {
-      "name": "accordionresumeTotalAmount",
+      "name": "accordionResumeTotalAmount",
       "type": "parameter",
       "category": "GROUP",
       "description": "Panel de Total a pagar",
