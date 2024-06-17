@@ -13,11 +13,46 @@
         "priority": 0
     },
     {
-        "name": "user",
+        "name": "msgCode674",
+        "type": "parameter",
+        "description": "Llenar el parametro con el valor por defecto (defaultValue)",
+        "category": "FILL",
+        "action": "fillParameter",
+        "value":{
+            "messageCode": "674",
+            "field":"name",
+            "targeField": "defaultValue"
+        },
+        "priority": 0
+    },
+    {
+        "name": "userName",
         "category": "FILL",
         "type": "parameter",
-        "description": "Llenar el parametro con la información del usuario",
+        "description": "Llenar el parametro con el nombre del usuario",
         "action": "fillUser",
+        "value":{
+            "targeField": "defaultValue"
+        },
+        "priority": 0
+    },
+    {
+        "name": "userName",
+        "category": "FILL",
+        "type": "parameter",
+        "description": "Llenar el parametro con el nombre del usuario",
+        "action": "fillUserName",
+        "value":{
+            "targeField": "defaultValue"
+        },
+        "priority": 0
+    },
+    {
+        "name": "userDni",
+        "category": "FILL",
+        "type": "parameter",
+        "description": "Llenar el parametro con el dni del usuario",
+        "action": "fillUserDni",
         "value":{
             "targeField": "defaultValue"
         },

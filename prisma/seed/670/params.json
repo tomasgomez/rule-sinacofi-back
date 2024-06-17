@@ -304,8 +304,8 @@
       "actions":""
     },
     {
-      "name": "addPropertyInfo",
-      "type": "E32",
+      "name": "morePropertyInfo",
+      "type": "morePropertyInfo",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -416,8 +416,8 @@
       "actions":""
     },
     {
-      "name": "mortagor",
-      "type": "mortagor",
+      "name": "receiverName",
+      "type": "receiverName",
       "fieldtype": "textField",
       "label": "CSC: Don-Doña-La Sociedad",
       "placeholder": "",
@@ -499,9 +499,9 @@
       "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
-      "label": "SGL: Nombre del Deudor",
+      "label": "SGL: Deudor",
       "placeholder": "",
-      "description": "RUT del deudor",
+      "description": "Detalles del deudor",
       "column": 12,
       "row": 1,
       "defaultValue": "SGL: Nombre del Deudor",
@@ -513,9 +513,9 @@
     },
     {
       "name": "borrower",
-      "type": "E32",
+      "type": "borrower",
       "fieldtype": "textField",
-      "label": "E32",
+      "label": "Nombre del Deudor",
       "placeholder": "",
       "description": "Nombre del deudor",
       "column": 4,
@@ -670,8 +670,8 @@
       "parameterOptions": ""
     },
     {
-      "name": "extraSpace",
-      "type": "E32",
+      "name": "disabledBlock",
+      "type": "disabledBlock",
       "fieldtype": "textField",
       "label": "E32",
       "placeholder": "",
