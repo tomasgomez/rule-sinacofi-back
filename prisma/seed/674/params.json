@@ -34,7 +34,7 @@
   {
     "name": "bank",
     "type": "bank",
-    "fieldtype": "select",
+    "fieldtype": "textField",
     "label": "Institución de destino",
     "placeholder": "Selecciona la institución de destino",
     "description": "Todas las instituciones posibles para seleccionar la institución de destino",
