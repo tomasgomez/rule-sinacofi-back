@@ -5,7 +5,9 @@ import { ActionsFunctions } from "./interface";
 
 enum actionType {
     fillParameter = 'fillParameter',
-    fillUser = 'fillUser'
+    fillUser = 'fillUser',
+    fillUserName = 'fillUserName',
+    fillUserDni = 'fillUserDni',
 }
 
 type ActionType = actionType;
@@ -13,7 +15,9 @@ type ActionType = actionType;
 
 const actions: ActionsFunctions = {
     fillParameter: fillParameterWithMsg,
-    fillUser: fillParameterWithUser
+    fillUser: fillParameterWithUser,
+    fillUserName: fillParameterWithUser,
+    fillUserDni: fillParameterWithUser,
 }
 
 export function getActionType(value: string): actionType {

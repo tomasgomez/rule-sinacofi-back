@@ -6,11 +6,14 @@ const messageDescriptionList = {
   674: "SOLICITUD LIQUIDACIÓN DE PREPAGO AH",
   675: "LIQUIDACIÓN DE PREPAGO AH",
   676: "DATOS PARA EL PAGO AH",
+  677: "AVISO DE PAGO AH",
+  678: "RECHAZO DE PAGO AH",
+  679: "CONFIRMACIÓN DE PAGO AH"
 };
 
 // common fields
 
-const getMessageCodeField = (messageCode) => ({
+const getMessageCodeField = ({ messageCode, ...rest }) => ({
   "name": "messageCode",
   "type": "messageCode",
   "fieldtype": "textField",
@@ -24,10 +27,11 @@ const getMessageCodeField = (messageCode) => ({
   "messageCode": messageCode,
   "rules": "disabled",
   "parameterOptions": "",
-  "actions": "msgCode670"
+  "actions": "msgCode670",
+  ...rest
 });
 
-const getMessageDescriptionField = (messageCode) => ({
+const getMessageDescriptionField = ({ messageCode, ...rest }) => ({
   "name": "messageDescription",
   "type": "messageDescription",
   "fieldtype": "textField",
@@ -41,31 +45,32 @@ const getMessageDescriptionField = (messageCode) => ({
   "messageCode": messageCode,
   "rules": "disabled, maxLength45",
   "parameterOptions": "",
-  "actions": "msgCode670"
+  "actions": "msgCode670",
+  ...rest
 });
 
-export const getBeneficiaryBankField = (
+export const getBeneficiaryBankField = ({
   messageCode, 
-  label,
+  label = "Institución de destino",
   column = 5,
-) => ({
+}) => ({
   "name": "beneficiaryBank",
   "type": "beneficiaryBank",
   "fieldtype": "select",
-  "label": label || "Institución de destino",
+  "label": label,
   "placeholder": "Selecciona la institución de destino",
   "description": "Todas las instituciones posibles para seleccionar la institución de destino",
   "column": column,
   "row": 1,
   "defaultValue": "receiverId",
   "priority": 3,
-  "messageCode": messageCode,
+  messageCode,
   "rules": "required,distinctIssuedBank",
   "parameterOptions": "institution",
   "actions": "msgCode670"
 });
 
-const getPriorityField = (messageCode) => ({
+const getPriorityField = ({ messageCode, ...rest }) => ({
   "name": "priority",
   "type": "priority",
   "fieldtype": "select",
@@ -79,10 +84,11 @@ const getPriorityField = (messageCode) => ({
   "messageCode": messageCode,
   "rules": "required",
   "parameterOptions": "priority",
-  "actions": "msgCode670"
+  "actions": "msgCode670",
+  ...rest
 });
 
-const getAuthenticationField = (messageCode) => ({
+const getAuthenticationField = ({ messageCode, ...rest }) => ({
   "name": "auth",
   "type": "auth",
   "fieldtype": "select",
@@ -96,17 +102,18 @@ const getAuthenticationField = (messageCode) => ({
   "messageCode": messageCode,
   "rules": "",
   "parameterOptions": "condition",
-  "actions": "msgCode670"
+  "actions": "msgCode670",
+  ...rest
 });
 
 // fields of the current schema
 
 export const formHeaderSchema = (messageCode) => [
-  getMessageCodeField(messageCode),
-  getMessageDescriptionField(messageCode),
-  getBeneficiaryBankField(messageCode),
-  getPriorityField(messageCode),
-  getAuthenticationField(messageCode),
+  getMessageCodeField({ messageCode }),
+  getMessageDescriptionField({ messageCode }),
+  getBeneficiaryBankField({ messageCode }),
+  getPriorityField({ messageCode }),
+  getAuthenticationField({ messageCode }),
 ];
 
 
@@ -165,7 +172,7 @@ export const getLabel = ({ label, messageCode, actions = "" }) => ({
   "fieldtype": "label",
   "label": label,
   "placeholder": "",
-  "description": `Salto de línea: ${label}`,
+  "description": `Label with salto de línea: ${label}`,
   "column": 12,
   "row": 1,
   "defaultValue": "",
