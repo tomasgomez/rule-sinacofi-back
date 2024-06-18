@@ -37,7 +37,7 @@ export const getPaymentDate = ({ messageCode, ...rest }) => createDateField({
   "name": "paymentDate", // before issuedDateNorm
   "label": "# D00: Fecha de Pago",
   "actions": "currentDate",
-  "column": 3,
+  "column": 6,
   ...rest
 });
 
@@ -57,9 +57,9 @@ const message676Schema = [
     getBorrowerDNIField({ messageCode, label: "# CW3: RUT del Deudor" }),
     getChannelField({ messageCode, column: 6 }),
     getOperationTypeField({ messageCode, column: 6 }),
-    getNotaryField(messageCode),
-    getRepertoireDateField(messageCode),
-    getRepertoireNumberField(messageCode),
+    getNotaryField({ messageCode }),
+    getRepertoireDateField({ messageCode }),
+    getRepertoireNumberField({ messageCode }),
     getOperationCodeField({ messageCode, column: 4 }),
     getMortgageDate({ messageCode, label: "# SH8: Fecha asociado a Alzamiento Hipotecario", column: 4 }),
     getNSEField({ messageCode, label: "# SH8: NSE Alzamiento Hipotecario", column: 4 }),
@@ -79,9 +79,9 @@ const message676Schema = [
     getTotalPrepaidToPayCLPField({ messageCode, label: "# CW1: Monto $" }),
     getPrepaymentSettlementRequestDate({ messageCode, label: "# CVZ: Fecha de Validez Liquidación de Prepago", actions: "msgCode674" }),
     getPaymentDate({ messageCode }),
-    getObservationsField({ messageCode, actions: "msgCode674" })
+    // getObservationsField({ messageCode, actions: "msgCode674" })
+    getObservationsField({ messageCode, name: "prepaymentSettlementRequestObservation", rules: "maxLength420,disabled" })
   ]),
-  getObservationsField({ messageCode, name: "prepaymentSettlementRequestObservation", rules: "maxLength420,disabled" })
 ];
 
 

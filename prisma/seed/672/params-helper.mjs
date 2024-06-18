@@ -2,7 +2,7 @@ import { mortgageRaisingDataSchema } from "../670/params-helper.mjs";
 import { addPriorityValue, disableFields } from "../commons/helpers.mjs";
 import { formHeaderSchema, getObservationsField } from "../commons/params.mjs";
 
-const getRejectionDateField = (messageCode) => ({
+const getRejectionDateField = ({ messageCode }) => ({
   "name": "mlRejectionDate",
   "type": "mlRejectionDate",
   "fieldtype": "texfield",
@@ -18,7 +18,7 @@ const getRejectionDateField = (messageCode) => ({
   messageCode
 });
 
-const getRejectionNSEField = (messageCode) => ({
+const getRejectionNSEField = ({ messageCode }) => ({
   "name": "mlRejectionNSE",
   "type": "mlRejectionNSE",
   "fieldtype": "texfield",
@@ -34,13 +34,13 @@ const getRejectionNSEField = (messageCode) => ({
   messageCode
 });
 
-const getRejectionOSNField = (messageCode) => ({
+const getRejectionOSNField = ({ messageCode }) => ({
   "name": "mlRejectionOSN",
   "type": "mlRejectionOSN",
   "fieldtype": "texfield",
-  "label": "SGX: OSN Rechazo AL",
+  "label": "SGX: OSN Rechazo AH",
   "placeholder": "",
-  "description": "SGX: OSN Rechazo AL",
+  "description": "SGX: OSN Rechazo AH",
   "column": 3,
   "row": 1,
   "defaultValue": "currentDate",
@@ -50,7 +50,7 @@ const getRejectionOSNField = (messageCode) => ({
   messageCode
 });
 
-const getRejectionReasonField = (messageCode) => ({
+const getRejectionReasonField = ({ messageCode }) => ({
   "name": "rejectionReason",
   "type": "rejectionReason",
   "fieldtype": "checkbox",
@@ -67,7 +67,7 @@ const getRejectionReasonField = (messageCode) => ({
   messageCode
 });
 
-const getReceiverNameField = (messageCode) => ({
+const getReceiverNameField = ({ messageCode }) => ({
   "name": "senderName",
   "type": "senderName",
   "fieldtype": "textField",
@@ -84,7 +84,7 @@ const getReceiverNameField = (messageCode) => ({
   messageCode
 });
 
-const getReceiverDNIField = (messageCode) => ({
+const getReceiverDNIField = ({ messageCode }) => ({
   "name": "senderDni",
   "type": "senderDni",
   "fieldtype": "textField",
@@ -101,7 +101,7 @@ const getReceiverDNIField = (messageCode) => ({
   messageCode
 });
 
-const getReceiverSignField = (messageCode) => ({
+const getReceiverSignField = ({ messageCode }) => ({
   "name": "senderSign",
   "type": "senderSign",
   "fieldtype": "password",
@@ -124,13 +124,13 @@ console.log("RUNNING:", { messageCode })
 const message672Schema = [
   ...formHeaderSchema(messageCode),
   ...disableFields(mortgageRaisingDataSchema(messageCode, true, true)),
-  getRejectionDateField(messageCode),
-  getRejectionNSEField(messageCode),
-  getRejectionOSNField(messageCode),
-  getRejectionReasonField(messageCode),
-  getReceiverNameField(messageCode),
-  getReceiverDNIField(messageCode),
-  getReceiverSignField(messageCode),
+  getRejectionDateField({ messageCode }),
+  getRejectionNSEField({ messageCode }),
+  getRejectionOSNField({ messageCode }),
+  getRejectionReasonField({ messageCode }),
+  getReceiverNameField({ messageCode }),
+  getReceiverDNIField({ messageCode }),
+  getReceiverSignField({ messageCode }),
   getObservationsField({ messageCode, name: "mlRejectionObservation" })
 ];
 

@@ -52,7 +52,7 @@ export const getOperationTypeField = ({ messageCode, ...rest }) => ({
   ...rest
 });
 
-export const getNotaryField = (messageCode) => ({
+export const getNotaryField = ({ messageCode }) => ({
   "name": "notary",
   "type": "notary",
   "fieldtype": "select",
@@ -68,7 +68,7 @@ export const getNotaryField = (messageCode) => ({
   messageCode,
 });
 
-export const getRepertoireDateField = (messageCode) => ({
+export const getRepertoireDateField = ({ messageCode }) => ({
   "name": "repertoireDate",
   "type": "repertoireDate",
   "fieldtype": "date",
@@ -84,7 +84,7 @@ export const getRepertoireDateField = (messageCode) => ({
   messageCode,
 });
 
-export const getRepertoireNumberField = (messageCode) => ({
+export const getRepertoireNumberField = ({ messageCode }) => ({
   "name": "repertoireNumber",
   "type": "repertoireNumber",
   "fieldtype": "number",
@@ -167,7 +167,7 @@ export const getBuyerDNIField = ({ messageCode, label = "SGI: RUT del Comprador 
   messageCode
 });
 
-const getPropertyInfo = (messageCode) => ({
+const getPropertyInfo = ({ messageCode }) => ({
   "name": "propertyInfo",
   "type": "propertyInfo",
   "fieldtype": "textArea",
@@ -183,7 +183,7 @@ const getPropertyInfo = (messageCode) => ({
   messageCode
 });
 
-const getLocationField = (messageCode) => ({
+const getLocationField = ({ messageCode }) => ({
   "name": "location",
   "type": "location",
   "fieldtype": "textField",
@@ -199,7 +199,7 @@ const getLocationField = (messageCode) => ({
   messageCode
 });
 
-const getRegionField = (messageCode) => ({
+const getRegionField = ({ messageCode }) => ({
   "name": "region",
   "type": "region",
   "fieldtype": "select",
@@ -215,7 +215,7 @@ const getRegionField = (messageCode) => ({
   messageCode
 });
 
-const getCommuneField = (messageCode) => ({
+const getCommuneField = ({ messageCode }) => ({
   "name": "commune",
   "type": "commune",
   "fieldtype": "select",
@@ -231,7 +231,7 @@ const getCommuneField = (messageCode) => ({
   messageCode
 });
 
-const getBankField = (messageCode, label = "SGK: El Banco", column = 12) => ({
+const getBankField = ({ messageCode, label = "SGK: El Banco", column = 12 }) => ({
   "name": "bank",
   "type": "bank",
   "fieldtype": "textField",
@@ -241,13 +241,13 @@ const getBankField = (messageCode, label = "SGK: El Banco", column = 12) => ({
   "defaultValue": "institution",
   "rules": "required,disabled",
   "parameterOptions": "",
-  "actions":"uaccordionMortageData,ser",
+  "actions":"accordionMortageData,user",
   label,
   column,
   messageCode
 });
 
-const getReceiverNameField = (messageCode) => ({
+const getReceiverNameField = ({ messageCode }) => ({
   "name": "receiverName",
   "type": "receiverName",
   "fieldtype": "textField",
@@ -283,7 +283,7 @@ export const getLoanUFField = ({
   messageCode
 });
 
-const getLoanTermField = (messageCode) => ({
+const getLoanTermField = ({ messageCode }) => ({
   "name": "loanTerm",
   "type": "loanTerm",
   "fieldtype": "amount",
@@ -313,7 +313,7 @@ export const getSupplementaryLoanUFField = ({
   "defaultValue": "",
   "rules": "required,ufFormat,number",
   "parameterOptions": "",
-  "actions": "accordionMortageData,",
+  "actions": "accordionMortageData",
   label,
   column,
   messageCode,
@@ -428,7 +428,7 @@ export const getSenderNameField = ({
   ...rest
 });
 
-const getSenderDNIField = (messageCode) => ({
+const getSenderDNIField = ({ messageCode }) => ({
   "name": "senderDni",
   "type": "senderDni",
   "fieldtype": "textField",
@@ -444,7 +444,7 @@ const getSenderDNIField = (messageCode) => ({
   messageCode
 });
 
-const getSenderSignField = (messageCode) => ({
+const getSenderSignField = ({ messageCode }) => ({
   "name": "senderSign",
   "type": "senderSign",
   "fieldtype": "password",
@@ -456,7 +456,7 @@ const getSenderSignField = (messageCode) => ({
   "defaultValue": "",
   "rules": "disabled",
   "parameterOptions": "",
-  actions: "accordionMortageData,",
+  actions: "accordionMortageData",
   messageCode
 });
 
@@ -470,25 +470,25 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
   getMortgageDate({ messageCode }),
   getChannelField({ messageCode }),
   getOperationTypeField({ messageCode }),
-  getNotaryField(messageCode),
-  getRepertoireDateField(messageCode),
-  getRepertoireNumberField(messageCode),
-  getBeneficiaryBankField(messageCode, "CSO: Señores Institución", 12),
+  getNotaryField({ messageCode }),
+  getRepertoireDateField({ messageCode }),
+  getRepertoireNumberField({ messageCode }),
+  getBeneficiaryBankField({ messageCode, label: "CSO: Señores Institución", column: 12 }),
   getSellerNameField({ messageCode }),
   getSellerDniField({ messageCode }),
   getLinebreak({ label: "Ha vendido a", messageCode }),
   getBuyerNameField({ messageCode }),
   getBuyerDNIField({ messageCode }),
-  getPropertyInfo(messageCode),
-  getLocationField(messageCode),
-  getRegionField(messageCode),
-  getCommuneField(messageCode),
+  getPropertyInfo({ messageCode }),
+  getLocationField({ messageCode }),
+  getRegionField({ messageCode }),
+  getCommuneField({ messageCode }),
   getLinebreak({ label: "SGJ: Para pagar parte del precio de la compraventa, si corresponde", messageCode }),
-  getBankField(messageCode),
+  getBankField({ messageCode }),
   getLinebreak({ label: "CSB: Ha otorgado a", messageCode }),
-  getReceiverNameField(messageCode),
+  getReceiverNameField({ messageCode }),
   getLoanUFField({ messageCode }),
-  getLoanTermField(messageCode),
+  getLoanTermField({ messageCode }),
   getSupplementaryLoanUFField({ messageCode }),
   getOperationCodeField({ messageCode }),
   getLinebreak({ label: "SGL: Deudor", messageCode }),
@@ -499,11 +499,11 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
     label: "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
     messageCode
   }),
-  getBankField(
+  getBankField({
     messageCode,
-    "SGN: Tiene con ustedes, les señalamos que el Banco",
-    6
-  ),
+    label: "SGN: Tiene con ustedes, les señalamos que el Banco",
+    column: 6
+  }),
   getAmountHeldByTheBankField({ messageCode }),
   getLabel({
     label: "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
@@ -514,8 +514,8 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
     messageCode
   }),
   getSenderNameField({ messageCode }),
-  getSenderDNIField(messageCode),
-  ...(!onlyWatch ? [getSenderSignField(messageCode)] : []),
+  getSenderDNIField({ messageCode }),
+  ...(!onlyWatch ? [getSenderSignField({ messageCode })] : []),
   ...(!noObservation ? [getObservationsField({ messageCode, name: "mlObservation", actions: "accordionMortageData,msgCode670" })] : []),
 ];
 

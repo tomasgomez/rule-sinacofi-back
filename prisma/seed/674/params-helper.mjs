@@ -50,11 +50,11 @@ const message674Schema = [
     getPrepaymentSettlementRequestDate({ messageCode }),
     getOperationTypeField({ messageCode, column: 3 }),
     getChannelField({ messageCode, column: 3 }),
-    getNotaryField(messageCode),
-    getRepertoireDateField(messageCode),
-    getRepertoireNumberField(messageCode),
+    getNotaryField({ messageCode }),
+    getRepertoireDateField({ messageCode }),
+    getRepertoireNumberField({ messageCode }),
     getOperationCodeField({ messageCode, column: 6 }),
-    getBeneficiaryBankField(messageCode, "# CSO: Señores Institución", 6),
+    getBeneficiaryBankField({ messageCode, label: "# CSO: Señores Institución", column: 6 }),
     getLabel({
       label: "CSP: Solicitamos a usted liquidación de pre-pago consolidada de",
       messageCode

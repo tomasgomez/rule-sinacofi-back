@@ -47,9 +47,9 @@ const message673Schema = [
   getNormalizationDate({ messageCode }),
   getOperationTypeField({ messageCode, column: 3 }),
   getChannelField({ messageCode, column: 3 }),
-  getNotaryField(messageCode),
-  getRepertoireDateField(messageCode),
-  getRepertoireNumberField(messageCode),
+  getNotaryField({ messageCode }),
+  getRepertoireDateField({ messageCode }),
+  getRepertoireNumberField({ messageCode }),
   getOperationCodeField({ messageCode, column: 4 }),
   getMortgageDate({ messageCode }),
   getSellerNameField({
@@ -59,7 +59,7 @@ const message673Schema = [
   getSellerDniField({ messageCode, label: "# CUZ: RUT del Vendedor" }),
   getBuyerNameField({ messageCode, label: "# CW6: Nombre del Comprador"}),
   getBuyerDNIField({ messageCode, label: "# CW5: RUT del Comprador" }),
-  getBorrowerNameField({ messageCode, label: "# CW4: Nombre del Deudor" }),
+  getBorrowerNameField({ messageCode, label: "# CW4: Nombre del Deudor", column: 8 }),
   getBorrowerDNIField({ messageCode, label: "# CW3: RUT del Deudor" }),
   getObservationsField({ messageCode, name: "mlNormalizationObservation" })
 ];

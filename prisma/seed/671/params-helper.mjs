@@ -4,7 +4,7 @@ import { getBlankSpace } from "../commons/params.mjs";
 import { getLinebreak } from "../commons/params.mjs";
 import { formHeaderSchema, getObservationsField } from "../commons/params.mjs";
 
-const getApprovalDateField = (messageCode) => ({
+const getApprovalDateField = ({ messageCode, ...rest }) => ({
   "name": "mlApprovalDate",
   "type": "mlApprovalDate",
   "fieldtype": "texfield",
@@ -17,7 +17,8 @@ const getApprovalDateField = (messageCode) => ({
   "rules": "disabled",
   "parameterOptions": "",
   "actions":"currentDate",
-  messageCode
+  messageCode,
+  ...rest
 });
 
 export const getNSEField = ({ messageCode, label = "SGV: NSE Aceptación AH", column = 3 }) => ({
@@ -52,7 +53,7 @@ export const getOSNField = ({ messageCode, label =  "SGV: OSN Aceptación AH", c
   messageCode
 });
 
-const getRequiresPrepaidSettlementField = (messageCode) => ({
+const getRequiresPrepaidSettlementField = ({ messageCode, ...rest }) => ({
   "name": "requiresPrepaidSettlement",
   "type": "requiresPrepaidSettlement",
   "fieldtype": "select",
@@ -66,10 +67,11 @@ const getRequiresPrepaidSettlementField = (messageCode) => ({
   "rules": "required",
   "parameterOptions": "condition",
   "actions": "",
-  messageCode
+  messageCode,
+  ...rest
 });
 
-const getReceiverNameField = (messageCode) => ({
+export const getReceiverNameField = ({ messageCode, ...rest }) => ({
   "name": "receiverName",
   "type": "receiverName",
   "fieldtype": "textField",
@@ -83,10 +85,11 @@ const getReceiverNameField = (messageCode) => ({
   "rules": "disabled",
   "parameterOptions": "",
   "actions": "fillUserName",
-  messageCode
+  messageCode,
+  ...rest
 });
 
-const getReceiverDNIField = (messageCode) => ({
+export const getReceiverDNIField = ({ messageCode, ...rest }) => ({
   "name": "receiverDni",
   "type": "receiverDni",
   "fieldtype": "textField",
@@ -100,12 +103,13 @@ const getReceiverDNIField = (messageCode) => ({
   "rules": "disabled",
   "parameterOptions": "",
   "actions": "fillUserDni",
-  messageCode
+  messageCode,
+  ...rest
 });
 
-const getReceiverSignField = (messageCode) => ({
-  "name": "senderSign",
-  "type": "senderSign",
+export const getReceiverSignField = ({ messageCode, ...rest}) => ({
+  "name": "sign",
+  "type": "sign",
   "fieldtype": "password",
   "label": "SGT: Firma Electrónica, Enviador",
   "placeholder": "",
@@ -116,7 +120,8 @@ const getReceiverSignField = (messageCode) => ({
   "priority": 43,
   "rules": "required",
   "parameterOptions": "",
-  messageCode
+  messageCode,
+  ...rest
 });
 
 const messageCode = "671";
@@ -127,17 +132,17 @@ const message671Schema = [
   ...formHeaderSchema(messageCode),
   ...disableFields(setOnlyWatch(mortgageRaisingDataSchema(messageCode, true, true))),
   getBlankSpace({ messageCode, column: 6 }),
-  getApprovalDateField(messageCode),
+  getApprovalDateField({ messageCode }),
   getNSEField({ messageCode }),
   getOSNField({ messageCode }),
-  getRequiresPrepaidSettlementField(messageCode),
+  getRequiresPrepaidSettlementField({ messageCode }),
   getLinebreak({
     label: "* SGW: Receptor",
     messageCode,
   }),
-  getReceiverNameField(messageCode),
-  getReceiverDNIField(messageCode),
-  getReceiverSignField(messageCode),
+  getReceiverNameField({ messageCode }),
+  getReceiverDNIField({ messageCode }),
+  getReceiverSignField({ messageCode }),
   getObservationsField({ messageCode, name: "mlApprovalObservation" })
 ];
 

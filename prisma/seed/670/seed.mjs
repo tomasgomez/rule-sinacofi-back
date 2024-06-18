@@ -54,8 +54,10 @@ export const seed670 = async (prisma, rules, options, actions) => {
         // find action that match the rulesArray
         actionsArray.forEach((action) => {
             const rFiltered = actions.find((r) => r.name === action);
-            const value = { actionName: rFiltered.name, actionType: rFiltered.type, parameterName: parameter.name, parameterMessageCode: parameter.messageCode, parameterPriority: parameter.priority };
-            actionToParameter.push(value);
+            if (rFiltered) {
+                const value = { actionName: rFiltered.name, actionType: rFiltered.type, parameterName: parameter.name, parameterMessageCode: parameter.messageCode, parameterPriority: parameter.priority };
+                actionToParameter.push(value);
+            }
         })
     });
 
