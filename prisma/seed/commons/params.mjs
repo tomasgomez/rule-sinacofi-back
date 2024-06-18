@@ -134,7 +134,7 @@ export const getAccordion = ({ label, name, messageCode, actions = "", priority 
   "actions": actions
 });
 
-export const getLinebreak = ({ label, messageCode, actions = "" }) => ({
+export const getLinebreak = ({ label, messageCode, actions = "", ...rest }) => ({
   "name": "linebreak",
   "type": "linebreak",
   "fieldtype": "linebreak",
@@ -147,7 +147,8 @@ export const getLinebreak = ({ label, messageCode, actions = "" }) => ({
   "messageCode": messageCode,
   "rules": "",
   "parameterOptions": "",
-  "actions": actions
+  "actions": actions,
+  ...rest
 });
 
 export const getBlankSpace = ({ messageCode, column, row = 1, actions = "" }) => ({
@@ -166,7 +167,7 @@ export const getBlankSpace = ({ messageCode, column, row = 1, actions = "" }) =>
   actions
 });
 
-export const getLabel = ({ label, messageCode, actions = "" }) => ({
+export const getLabel = ({ label, messageCode, actions = "", ...rest }) => ({
   "name": "label",
   "type": "label",
   "fieldtype": "label",
@@ -179,7 +180,8 @@ export const getLabel = ({ label, messageCode, actions = "" }) => ({
   "messageCode": messageCode,
   "rules": "",
   "parameterOptions": "",
-  "actions": actions
+  "actions": actions,
+  ...rest
 });
 
 export const getObservationsField = ({

@@ -153,12 +153,12 @@
       "priority": 0
     },
     {
-      "name": "accordionMortageData",
+      "name": "accordionMortgageData",
       "type": "parameter",
       "category": "GROUP",
       "description": "Panel de formulario Datos de hipoteca",
       "condition": "accordion",
-      "value": "mortageData",
+      "value": "mortgageData",
       "priority": 0
     },
     {

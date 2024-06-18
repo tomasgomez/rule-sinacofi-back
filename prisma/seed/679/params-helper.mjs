@@ -73,7 +73,7 @@ export const getPaymentMethodField = ({
   "defaultValue": "",
   "rules": "required",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "accordionMortgageData,msgCode670",
   messageCode,
   ...rest
 });

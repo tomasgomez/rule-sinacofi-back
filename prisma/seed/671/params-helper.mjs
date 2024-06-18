@@ -30,10 +30,10 @@ export const getNSEField = ({ messageCode, label = "SGV: NSE Aceptación AH", co
   "description": "SGV: NSE Aceptación AH",
   "column": column,
   "row": 1,
-  "defaultValue": "currentDate",
+  "defaultValue": "",
   "rules": "disabled",
   "parameterOptions": "",
-  "actions":"currentDate",
+  "actions":"",
   messageCode
 });
 
@@ -46,10 +46,10 @@ export const getOSNField = ({ messageCode, label =  "SGV: OSN Aceptación AH", c
   "description": "SGV: OSN Aceptación A",
   "column": column,
   "row": 1,
-  "defaultValue": "currentDate",
+  "defaultValue": "",
   "rules": "disabled",
   "parameterOptions": "",
-  "actions":"currentDate",
+  "actions":"",
   messageCode
 });
 
@@ -72,8 +72,8 @@ const getRequiresPrepaidSettlementField = ({ messageCode, ...rest }) => ({
 });
 
 export const getReceiverNameField = ({ messageCode, ...rest }) => ({
-  "name": "receiverName",
-  "type": "receiverName",
+  "name": "receiverAHName",
+  "type": "receiverAHName",
   "fieldtype": "textField",
   "label": "SGU: Apoderado Rut",
   "placeholder": "",
@@ -90,8 +90,8 @@ export const getReceiverNameField = ({ messageCode, ...rest }) => ({
 });
 
 export const getReceiverDNIField = ({ messageCode, ...rest }) => ({
-  "name": "receiverDni",
-  "type": "receiverDni",
+  "name": "receiverAHDni",
+  "type": "receiverAHDni",
   "fieldtype": "textField",
   "label": "SGU: Apoderado Rut",
   "placeholder": "",

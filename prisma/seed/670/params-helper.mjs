@@ -12,9 +12,9 @@ export const getMortgageDate = ({ messageCode, ...rest }) => ({
   "row": 1,
   "defaultValue": "Current Date",
   "messageCode": messageCode,
-  "rules": "disabled,currentDate,accordionMortageData",
+  "rules": "accordionMortgageData,disabled,currentDate",
   "parameterOptions": "",
-  "actions": `accordionMortageData,msgCode670`,
+  "actions": `msgCode670`,
   ...rest
 });
 
@@ -28,9 +28,9 @@ export const getChannelField = ({ messageCode, ...rest }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "Personas",
-  "rules": "checkUserChannel",
+  "rules": "accordionMortgageData,checkUserChannel",
   "parameterOptions": "channel",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
   ...rest
 });
@@ -45,9 +45,9 @@ export const getOperationTypeField = ({ messageCode, ...rest }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "mutuoConCompraVenta",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength45",
   "parameterOptions": "operationType",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
   ...rest
 });
@@ -62,9 +62,9 @@ export const getNotaryField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required",
+  "rules": "accordionMortgageData,required",
   "parameterOptions": "notary",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -78,9 +78,9 @@ export const getRepertoireDateField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required, dateFormat",
+  "rules": "accordionMortgageData,required,dateFormat",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -94,9 +94,9 @@ export const getRepertoireNumberField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,number,maxLength25",
+  "rules": "accordionMortgageData,required,number,maxLength25",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -113,9 +113,9 @@ export const getSellerNameField = ({
   "column": 8,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -129,9 +129,9 @@ export const getSellerDniField = ({ messageCode, label = "SGG: RUT del Vendedor 
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,dniFormat,checkDigitDni",
+  "rules": "accordionMortgageData,required,dniFormat,checkDigitDni",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -145,9 +145,9 @@ export const getBuyerNameField = ({ messageCode, label = "SGH: Don-Doña-La Soci
   "column": 8,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -161,9 +161,9 @@ export const getBuyerDNIField = ({ messageCode, label = "SGI: RUT del Comprador 
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,dniFormat,checkDigitDni",
+  "rules": "accordionMortgageData,required,dniFormat,checkDigitDni",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -177,9 +177,9 @@ const getPropertyInfo = ({ messageCode }) => ({
   "column": 12,
   "row": 4,
   "defaultValue": "",
-  "rules": "required,maxLength420",
+  "rules": "accordionMortgageData,required,maxLength420",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -193,9 +193,9 @@ const getLocationField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength45",
+  "rules": "accordionMortgageData,required,maxLength45",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -209,9 +209,9 @@ const getRegionField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "region",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -225,9 +225,9 @@ const getCommuneField = ({ messageCode }) => ({
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "commune",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -239,9 +239,9 @@ const getBankField = ({ messageCode, label = "SGK: El Banco", column = 12 }) => 
   "description": "Banco otorgante del mutuo",
   "row": 1,
   "defaultValue": "institution",
-  "rules": "required,disabled",
+  "rules": "accordionMortgageData,required,disabled",
   "parameterOptions": "",
-  "actions":"accordionMortageData,user",
+  "actions":"user",
   label,
   column,
   messageCode
@@ -257,9 +257,9 @@ const getReceiverNameField = ({ messageCode }) => ({
   "column": 3,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -277,9 +277,9 @@ export const getLoanUFField = ({
   "column": column,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,ufFormat,number",
+  "rules": "accordionMortgageData,required,ufFormat,number",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -293,9 +293,9 @@ const getLoanTermField = ({ messageCode }) => ({
   "column": 3,
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength3",
+  "rules": "accordionMortgageData,required,maxLength3",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -311,9 +311,9 @@ export const getSupplementaryLoanUFField = ({
   "description": "Monto complementario del mutuo en UF",
   "row": 1,
   "defaultValue": "",
-  "rules": "required,ufFormat,number",
+  "rules": "accordionMortgageData,required,ufFormat,number",
   "parameterOptions": "",
-  "actions": "accordionMortageData",
+  "actions": "msgCode670",
   label,
   column,
   messageCode,
@@ -328,9 +328,9 @@ export const getOperationCodeField = ({ messageCode, column = 12}) => ({
   "description": "Código interno de operación",
   "row": 1,
   "defaultValue": "",
-  "rules": "disabled,cuk",
+  "rules": "accordionMortgageData,disabled,cuk",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
   column,
 });
@@ -343,9 +343,9 @@ export const getBorrowerNameField = ({ messageCode, label = "SGL: Nombre del deu
   "description": "SGL: Nombre del deudor",
   "row": 1,
   "defaultValue": "",
-  "rules": "required,maxLength25",
+  "rules": "accordionMortgageData,required,maxLength25",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   label,
   column,
   messageCode
@@ -361,9 +361,9 @@ export const getBorrowerDNIField = ({ messageCode, label = "CW3: RUT del Deudor"
   "column": 4,
   "row": 1,
   "defaultValue": "",
-  "rules": "",
+  "rules": "accordionMortgageData",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode,
 });
 
@@ -379,9 +379,9 @@ export const getBorrowerUfAmountField = ({
   "description": "Monto retenido por el banco",
   "row": 1,
   "defaultValue": "",
-  "rules": "required,ufFormat,number",
+  "rules": "accordionMortgageData,required,ufFormat,number",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   label,
   column,
   messageCode
@@ -399,9 +399,9 @@ export const getAmountHeldByTheBankField = ({
   "description": "Observaciones adicionales",
   "row": 1,
   "defaultValue": "",
-  "rules": "pesosFormat,number,required",
+  "rules": "accordionMortgageData,pesosFormat,number,required",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   label,
   column,
   messageCode
@@ -412,25 +412,25 @@ export const getSenderNameField = ({
   label = "SGU: Apoderado Nombre",
   ...rest
 }) => ({
-  "name": "senderName",
-  "type": "senderName",
+  "name": "senderAHName",
+  "type": "senderAHName",
   "fieldtype": "textField",
   "placeholder": "",
   "description": "",
   "column": 3,
   "row": 1,
   "defaultValue": "",
-  "rules": "disabled",
+  "rules": "accordionMortgageData,disabled",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   label,
   messageCode,
   ...rest
 });
 
 const getSenderDNIField = ({ messageCode }) => ({
-  "name": "senderDni",
-  "type": "senderDni",
+  "name": "senderAHDni",
+  "type": "senderAHDni",
   "fieldtype": "textField",
   "label": "SGU: Apoderado Rut",
   "placeholder": "",
@@ -438,9 +438,9 @@ const getSenderDNIField = ({ messageCode }) => ({
   "column": 3,
   "row": 1,
   "defaultValue": "",
-  "rules": "disabled",
+  "rules": "accordionMortgageData,disabled",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "msgCode670",
   messageCode
 });
 
@@ -454,9 +454,9 @@ const getSenderSignField = ({ messageCode }) => ({
   "column": 3,
   "row": 1,
   "defaultValue": "",
-  "rules": "disabled",
+  "rules": "accordionMortgageData,disabled",
   "parameterOptions": "",
-  actions: "accordionMortageData",
+  actions: "",
   messageCode
 });
 
@@ -476,28 +476,45 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
   getBeneficiaryBankField({ messageCode, label: "CSO: Señores Institución", column: 12 }),
   getSellerNameField({ messageCode }),
   getSellerDniField({ messageCode }),
-  getLinebreak({ label: "Ha vendido a", messageCode }),
+  getLinebreak({
+    label: "Ha vendido a",
+    messageCode,
+    rules: "accordionMortgageData"
+  }),
   getBuyerNameField({ messageCode }),
   getBuyerDNIField({ messageCode }),
   getPropertyInfo({ messageCode }),
   getLocationField({ messageCode }),
   getRegionField({ messageCode }),
   getCommuneField({ messageCode }),
-  getLinebreak({ label: "SGJ: Para pagar parte del precio de la compraventa, si corresponde", messageCode }),
+  getLinebreak({
+    label: "SGJ: Para pagar parte del precio de la compraventa, si corresponde",
+    messageCode,
+    rules: "accordionMortgageData"
+  }),
   getBankField({ messageCode }),
-  getLinebreak({ label: "CSB: Ha otorgado a", messageCode }),
+  getLinebreak({
+    label: "CSB: Ha otorgado a",
+    messageCode,
+    rules: "accordionMortgageData"
+  }),
   getReceiverNameField({ messageCode }),
   getLoanUFField({ messageCode }),
   getLoanTermField({ messageCode }),
   getSupplementaryLoanUFField({ messageCode }),
   getOperationCodeField({ messageCode }),
-  getLinebreak({ label: "SGL: Deudor", messageCode }),
+  getLinebreak({
+    label: "SGL: Deudor",
+    messageCode,
+    rules: "accordionMortgageData"
+  }),
   getBorrowerNameField({ messageCode }),
   getBorrowerDNIField({ messageCode }),
   getBorrowerUfAmountField({ messageCode }),
   getLabel({
     label: "* CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\n* CSM: Las deudas que el(la) mencionado(a) Señor(A)",
-    messageCode
+    messageCode,
+    rules: "accordionMortgageData"
   }),
   getBankField({
     messageCode,
@@ -507,16 +524,19 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
   getAmountHeldByTheBankField({ messageCode }),
   getLabel({
     label: "CSL: Con objeto de cubrir eventuales diferencias que se puedan producir en\\nCSM: Las deudas que el(la) mencionado(a) Señor(A)\\nSGN: Tiene con ustedes, les señalamos que el Banco\\nCSO: Mantiene en su poder hasta la cantidad de $\\nCSP: Con el objeto de aplicarlo al pago de las obligaciones referidas, hasta\\nCSQ: El monto señalado. Este pago se realizará contra liquidaciones\\nCSR: Practicadas por Uds. Y confuntamente con la entrega del préstamo\\nCSS: indicado precedentemente en el plazo antedicho.\\nCST: Dicho compromiso lo cumpliremos dentro del plazo de 15 dias hábiles\\nCSU: bancarios, contados desde que se encuentren debidamente inscritos el\\nSGO: dominio a nombre de vendedor y comprador, si corresponde y las\\nSGP: hipotecas y prohibiciones a favor de nuestro banco y previo ALZAMIENTO\\nSGR: vuestro favor respecto del inmueble señalado en la escritura, para lo\\nSGS: cual solicitamos a ustedes comparecer en ella\\nSGT: Firma Electrónica, Enviador\\nSGU: Apoderado Nombre, RUT",
-    messageCode
+    messageCode,
+    rules: "accordionMortgageData"
+
   }),
   getLinebreak({
     label: "SGT: Enviador",
-    messageCode
+    messageCode,
+    rules: "accordionMortgageData"
   }),
   getSenderNameField({ messageCode }),
   getSenderDNIField({ messageCode }),
   ...(!onlyWatch ? [getSenderSignField({ messageCode })] : []),
-  ...(!noObservation ? [getObservationsField({ messageCode, name: "mlObservation", actions: "accordionMortageData,msgCode670" })] : []),
+  ...(!noObservation ? [getObservationsField({ messageCode, name: "mlObservation", actions: "msgCode670", rules: "accordionMortgageData,maxLength420" })] : []),
 ];
 
 const messageCode = "670";

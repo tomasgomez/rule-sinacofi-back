@@ -7,7 +7,7 @@ import { channel, commune, condition, format, institution, optType, notary, prio
 import { schema199 } from "./199/index.mjs";
 import { schema136 } from "./136/index.mjs";
 import { schema670, seed670 } from "./670/index.mjs";
-import { schema671,seed671 } from "./671/index.mjs";
+import { schema671, seed671 } from "./671/index.mjs";
 import { schema672, seed672 } from "./672/index.mjs";
 import { schema673, seed673 } from "./673/index.mjs";
 import { schema674, seed674 } from "./674/index.mjs";
@@ -50,7 +50,16 @@ async function main() {
     await seedOptionValues(prisma, typeOfObligations);
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason, messageRejectionReason, typeOfCurrency, typeOfDebts, typeOfObligations}
 
-    seed670(prisma, rules, options, actions);
+    await seed670(prisma, rules, options, actions);
+    await seed671(prisma, rules, options, actions);
+    await seed672(prisma, rules, options, actions);
+    await seed673(prisma, rules, options, actions);
+    await seed674(prisma, rules, options, actions);
+    await seed675(prisma, rules, options, actions);
+    await seed676(prisma, rules, options, actions);
+    await seed677(prisma, rules, options, actions);
+    await seed678(prisma, rules, options, actions);
+    await seed679(prisma, rules, options, actions);
 }
 
 main()

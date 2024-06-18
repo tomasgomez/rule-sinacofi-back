@@ -20,7 +20,7 @@ export const seed670 = async (prisma, rules, options, actions) => {
     // create many-to-many relationship between parameters and rules
     const ruleToParameter = [];
     params.forEach((parameter) => {
-        const rulesArray = parameter.rules ? parameter.rules.replace(" ","").split(",").map(rule => rule.trim()) : [];
+        const rulesArray = parameter.rules ? parameter.rules.replace(" ","").split(",").map(rule => rule.trim()).filter((rule) => rule !== "") : [];
         // find rules that match the rulesArray
         rulesArray.forEach((rule) => {
             const rFiltered = rules.find((r) => r.name === rule);

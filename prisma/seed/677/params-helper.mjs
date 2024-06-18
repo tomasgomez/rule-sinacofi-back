@@ -73,7 +73,7 @@ export const getPaymentMethodField = ({
   "defaultValue": "",
   "rules": "required",
   "parameterOptions": "",
-  "actions": "accordionMortageData,msgCode670",
+  "actions": "accordionMortgageData,msgCode670",
   messageCode,
   ...rest
 });
@@ -115,7 +115,7 @@ const message677Schema = [
     getTotalPrepaidToPayUFField({ messageCode, label: "# CVZ: Monto U.F." }),
     getTotalPrepaidToPayCLPField({ messageCode, label: "# CW1: Monto $" }),
     getPrepaymentSettlementRequestDate({ messageCode, label: "# CVZ: Fecha de Validez Liquidación de Prepago", actions: "msgCode674" }),
-    getPaymentDate({ messageCode, rules: "disabled,msgCode675" }),
+    getPaymentDate({ messageCode, rules: "disabled" }),
   ]),
   getLinebreak({
     label: "# CW2: Pago Efectuado",
