@@ -75,16 +75,16 @@ export const getReceiverNameField = ({ messageCode, ...rest }) => ({
   "name": "receiverAHName",
   "type": "receiverAHName",
   "fieldtype": "textField",
-  "label": "SGU: Apoderado Rut",
+  "label": "SGU: Apoderado Name",
   "placeholder": "",
   "description": "",
   "column": 3,
   "row": 1,
-  "defaultValue": "",
+  "defaultValue": "fullName",
   "priority": 42,
   "rules": "disabled",
   "parameterOptions": "",
-  "actions": "fillUserName",
+  "actions": "user",
   messageCode,
   ...rest
 });
@@ -98,11 +98,11 @@ export const getReceiverDNIField = ({ messageCode, ...rest }) => ({
   "description": "",
   "column": 3,
   "row": 1,
-  "defaultValue": "",
+  "defaultValue": "dni",
   "priority": 42,
   "rules": "disabled",
   "parameterOptions": "",
-  "actions": "fillUserDni",
+  "actions": "user",
   messageCode,
   ...rest
 });
