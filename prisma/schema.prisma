@@ -7,7 +7,8 @@ generator client {
 datasource db {
   provider = "postgresql"
   // url = env("DATABASE_URL")
-  url = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
+  // url = "e"
+  url = "postgresql://felipegarcia@localhost:5432/rules"
 }
 
 model Schema {
@@ -41,6 +42,7 @@ model Parameter {
   schema       Schema              @relation(fields: [messageCode], references: [messageCode])
   rules        RulesParameters[]
   optionValues ParametersOptions[]
+  actions      ActionsParameters[]
 
   @@unique([name, messageCode, priority])
   @@index([name, messageCode, priority])
@@ -67,6 +69,7 @@ model Rule {
   id             String            @id @default(uuid())
   name           String
   type           String
+  category       String
   description    String
   condition      String
   value          String
@@ -81,19 +84,36 @@ model Rule {
   @@index([name, type])
 }
 
-// model Action {
-//   id          String @id @default(uuid())
-//   name        String
-//   description String
-//   values      Json?
-//   createdAt   DateTime @default(now())
-//   updatedAt   DateTime @updatedAt
-//   schemas     SchemasActions[]
-//   rules       RulesActions[]
+model Action {
+  id          String @id @default(uuid())
+  name        String
+  type        String
+  category    String
+  action      String
+  description String
+  priority    Int
+  value       Json      
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  parameters  ActionsParameters[]
 
-//   @@unique([name])
-//   @@index([name])
-// }
+  @@unique([name, type])
+  @@index([name, type])
+}
+
+model ActionsParameters {
+  parameterName String
+  parameterMessageCode String
+  parameterPriority Int
+  actionName String
+  actionType String
+
+  parameter Parameter @relation(fields: [parameterMessageCode, parameterName, parameterPriority], references: [name, messageCode, priority])
+  action Action @relation(fields: [actionName, actionType], references: [name, type])
+
+  @@unique([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
+  @@index([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
+}
 
 // model RulesActions {
 //   ruleName String

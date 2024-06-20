@@ -12,7 +12,8 @@
     "priority": 1,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
     "name": "messageDescription",
@@ -27,12 +28,13 @@
     "priority": 2,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
     "name": "bank",
     "type": "bank",
-    "fieldtype": "select",
+    "fieldtype": "textField",
     "label": "Institución de destino",
     "placeholder": "Selecciona la institución de destino",
     "description": "Todas las instituciones posibles para seleccionar la institución de destino",
@@ -42,7 +44,8 @@
     "priority": 3,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "priority",
@@ -57,7 +60,8 @@
     "priority": 4,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "auth",
@@ -72,7 +76,8 @@
     "priority": 5,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "authname",
@@ -83,15 +88,16 @@
     "description": "Informante",
     "column": 3,
     "row": 1,
-    "defaultValue": "",
+    "defaultValue": "fullName",
     "priority": 6,
     "messageCode": "674",
     "rules": "",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"fillUser"
   },
   {
-    "name": "applicationDate",
-    "type": "applicationDate",
+    "name": "issuedDate",
+    "type": "issuedDate",
     "fieldtype": "date",
     "label": "* CV4: Fecha de Solicitud",
     "placeholder": "",
@@ -102,7 +108,8 @@
     "priority": 7,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "operationtype",
@@ -117,7 +124,8 @@
     "priority": 8,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "operationType"
+    "parameterOptions": "operationType",
+    "actions":"msg670"
   },
   {
     "name": "channel",
@@ -132,7 +140,8 @@
     "priority": 9,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "channel"
+    "parameterOptions": "channel",
+    "actions":"msg670"
   },
   {
     "name": "notary",
@@ -147,7 +156,8 @@
     "priority": 10,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": "notary"
+    "parameterOptions": "notary",
+    "actions":"msg670"
   },
   {
     "name": "registrationDate",
@@ -162,7 +172,8 @@
     "priority": 11,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "registrationNumber",
@@ -177,7 +188,8 @@
     "priority": 12,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "CUK",
@@ -188,11 +200,12 @@
     "description": "Código interno de operación",
     "column": 6,
     "row": 1,
-    "defaultValue": "",
+    "defaultValue": "CUK",
     "priority": 13,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "beneficiaryBank",
@@ -207,7 +220,8 @@
     "priority": 14,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "label",
@@ -222,7 +236,8 @@
     "priority": 15,
     "messageCode": "674",
     "rules": "",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
     "name": "owner",
@@ -237,7 +252,8 @@
     "priority": 16,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "ownerDni",
@@ -252,7 +268,8 @@
     "priority": 17,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "buyer",
@@ -267,7 +284,8 @@
     "priority": 18,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "buyerDni",
@@ -282,7 +300,8 @@
     "priority": 19,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "borrower",
@@ -297,7 +316,8 @@
     "priority": 20,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "borrowerDni",
@@ -312,7 +332,8 @@
     "priority": 21,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "mortgageLiftingReceptionNumber",
@@ -327,7 +348,8 @@
     "priority": 22,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "issuedDate",
@@ -342,7 +364,8 @@
     "priority": 23,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "loan",
@@ -357,7 +380,8 @@
     "priority": 24,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "addLoan",
@@ -372,7 +396,8 @@
     "priority": 25,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":"msg670"
   },
   {
     "name": "cashPaymentAmount",
@@ -387,7 +412,8 @@
     "priority": 26,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
     "name": "voluntaryAdditionalAmount",
@@ -402,7 +428,8 @@
     "priority": 27,
     "messageCode": "674",
     "rules": "disabled",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
     "name": "observations",
@@ -417,10 +444,11 @@
     "priority": 28,
     "messageCode": "674",
     "rules": "maxLength420",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   },
   {
-    "name": "E32",
+    "name": "extraEspace",
     "type": "E32",
     "fieldtype": "textArea",
     "label": "E32",
@@ -432,6 +460,7 @@
     "priority": 29,
     "messageCode": "674",
     "rules": "maxLength420",
-    "parameterOptions": ""
+    "parameterOptions": "",
+    "actions":""
   }
 ]

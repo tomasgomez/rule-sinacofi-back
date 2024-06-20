@@ -12,7 +12,7 @@ export class App implements Server {
     private _server: express.Application;
     constructor(){
         this._server = express();
-        this._server.use(bodyParser.json());
+        this._server.use(bodyParser.json()); 
     }
     // Set Routes
     setRoutes(router: express.Router) {

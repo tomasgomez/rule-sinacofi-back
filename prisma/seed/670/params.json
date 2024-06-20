@@ -12,7 +12,8 @@
       "priority": 1,
       "messageCode": "670",
       "rules": "disabled, maxLength3",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "messageDescription",
@@ -27,7 +28,8 @@
       "priority": 2,
       "messageCode": "670",
       "rules": "disabled, maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "beneficiaryBank",
@@ -38,11 +40,12 @@
       "description": "Todas las instituciones posibles para seleccionar la institución de destino",
       "column": 4,
       "row": 1,
-      "defaultValue": "receiverId",
+      "defaultValue": "beneficiaryBank",
       "priority": 3,
       "messageCode": "670",
       "rules": "required,distinctIssuedBank",
-      "parameterOptions": "institution"
+      "parameterOptions": "institution",
+      "actions": "msgCode670"
     },
     {
       "name": "priority",
@@ -57,7 +60,8 @@
       "priority": 4,
       "messageCode": "670",
       "rules": "required",
-      "parameterOptions": "priority"
+      "parameterOptions": "priority",
+      "actions":""
     },
     {
       "name": "auth",
@@ -72,7 +76,8 @@
       "priority": 5,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": "condition"
+      "parameterOptions": "condition",
+      "actions":""
     },
     {
       "name": "label",
@@ -87,7 +92,8 @@
       "priority": 6,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "issuedDate",
@@ -102,7 +108,8 @@
       "priority": 7,
       "messageCode": "670",
       "rules": "disabled, currentDate",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":"currentDate"
     },
     {
       "name": "channel",
@@ -117,7 +124,8 @@
       "priority": 8,
       "messageCode": "670",
       "rules": "checkUserChannel",
-      "parameterOptions": "channel"
+      "parameterOptions": "channel",
+      "actions":""
     },
     {
       "name": "operationtype",
@@ -132,7 +140,8 @@
       "priority": 9,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": "operationType"
+      "parameterOptions": "operationType",
+      "actions":""
     },
     {
       "name": "notary",
@@ -147,7 +156,8 @@
       "priority": 10,
       "messageCode": "670",
       "rules": "required",
-      "parameterOptions": "notary"
+      "parameterOptions": "notary",
+      "actions":""
     },
     {
       "name": "registrationDate",
@@ -162,7 +172,8 @@
       "priority": 11,
       "messageCode": "670",
       "rules": "required, dateFormat",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "registrationNumber",
@@ -177,7 +188,8 @@
       "priority": 12,
       "messageCode": "670",
       "rules": "required,number,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "beneficiaryBank",
@@ -188,11 +200,12 @@
       "description": "Banco receptor del mensaje",
       "column": 12,
       "row": 1,
-      "defaultValue": "receiverId",
+      "defaultValue": "beneficiaryBank",
       "priority": 13,
       "messageCode": "670",
       "rules": "required,distinctIssuedBank",
-      "parameterOptions": "institution"
+      "parameterOptions": "institution",
+      "actions":"msgCode670"
     },
     {
       "name": "owner",
@@ -207,7 +220,8 @@
       "priority": 14,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "ownerDni",
@@ -222,7 +236,8 @@
       "priority": 15,
       "messageCode": "670",
       "rules": "required,dniFormat,checkDigitDni",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "linebreak",
@@ -237,7 +252,8 @@
       "priority": 16,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "buyer",
@@ -252,7 +268,8 @@
       "priority": 17,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "buyerDni",
@@ -267,7 +284,8 @@
       "priority": 18,
       "messageCode": "670",
       "rules": "required,dniFormat,checkDigitDni",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "propertyInfo",
@@ -282,11 +300,12 @@
       "priority": 19,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "morePropertyInfo",
+      "type": "morePropertyInfo",
       "fieldtype": "textArea",
       "label": "E32",
       "placeholder": "",
@@ -297,7 +316,8 @@
       "priority": 20,
       "messageCode": "670",
       "rules": "required,maxLength420",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "location",
@@ -312,22 +332,8 @@
       "priority": 21,
       "messageCode": "670",
       "rules": "required,maxLength45",
-      "parameterOptions": ""
-    },
-    {
-      "name": "commune",
-      "type": "commune",
-      "fieldtype": "select",
-      "label": "CS7: Comuna de",
-      "placeholder": "Selecciona la comuna",
-      "description": "Comuna del inmueble, selecciona la comuna",
-      "column": 4,
-      "row": 1,
-      "defaultValue": "",
-      "priority": 23,
-      "messageCode": "670",
-      "rules": "required,maxLength25",
-      "parameterOptions": "commune"
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "region",
@@ -342,7 +348,24 @@
       "priority": 22,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": "region"
+      "parameterOptions": "region",
+      "actions":""
+    },
+    {
+      "name": "commune",
+      "type": "commune",
+      "fieldtype": "select",
+      "label": "CS7: Comuna de",
+      "placeholder": "Selecciona la comuna",
+      "description": "Comuna del inmueble, selecciona la comuna",
+      "column": 4,
+      "row": 1,
+      "defaultValue": "",
+      "priority": 23,
+      "messageCode": "670",
+      "rules": "required,maxLength25",
+      "parameterOptions": "commune",
+      "actions":""
     },
     {
       "name": "linebreak",
@@ -357,7 +380,8 @@
       "priority": 24,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "bank",
@@ -368,11 +392,12 @@
       "description": "Banco otorgante del mutuo",
       "column": 12,
       "row": 1,
-      "defaultValue": "userInstitution",
+      "defaultValue": "institution",
       "priority": 25,
       "messageCode": "670",
       "rules": "required,disabled",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":"user"
     },
     {
       "name": "linebreak",
@@ -387,22 +412,24 @@
       "priority": 26,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
-      "name": "borrower",
-      "type": "borrower",
+      "name": "receiverName",
+      "type": "receiverName",
       "fieldtype": "textField",
       "label": "CSC: Don-Doña-La Sociedad",
       "placeholder": "",
-      "description": "Nombre del deudor",
+      "description": "Nombre de quien recibe el mutuo",
       "column": 3,
       "row": 1,
       "defaultValue": "",
       "priority": 27,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "loan",
@@ -417,7 +444,8 @@
       "priority": 28,
       "messageCode": "670",
       "rules": "required,ufFormat,number",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "loanTerm",
@@ -432,7 +460,8 @@
       "priority": 29,
       "messageCode": "670",
       "rules": "required,maxLength3",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "addLoan",
@@ -447,7 +476,8 @@
       "priority": 30,
       "messageCode": "670",
       "rules": "required,ufFormat,number",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "CUK",
@@ -462,37 +492,40 @@
       "priority": 31,
       "messageCode": "670",
       "rules": "disabled,cuk",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":"msgCode670"
     },
     {
       "name": "linebreak",
       "type": "linebreak",
       "fieldtype": "linebreak",
-      "label": "SGL: Nombre del Deudor",
+      "label": "SGL: Deudor",
       "placeholder": "",
-      "description": "RUT del deudor",
+      "description": "Detalles del deudor",
       "column": 12,
       "row": 1,
       "defaultValue": "SGL: Nombre del Deudor",
       "priority": 32,
       "messageCode": "670",
       "rules": "required",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "borrower",
+      "type": "borrower",
       "fieldtype": "textField",
-      "label": "E32",
+      "label": "Nombre del Deudor",
       "placeholder": "",
-      "description": "Monto en UF",
+      "description": "Nombre del deudor",
       "column": 4,
       "row": 1,
       "defaultValue": "",
       "priority": 33,
       "messageCode": "670",
       "rules": "required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "borrowerDni",
@@ -507,7 +540,8 @@
       "priority": 34,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "ufAmount",
@@ -522,7 +556,8 @@
       "priority": 35,
       "messageCode": "670",
       "rules": "required,ufFormat,number",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "label",
@@ -537,7 +572,8 @@
       "priority": 36,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "bank",
@@ -548,11 +584,12 @@
       "description": "Firma electrónica del apoderado",
       "column": 6,
       "row": 1,
-      "defaultValue": "userInstitution",
+      "defaultValue": "institution",
       "priority": 37,
       "messageCode": "670",
       "rules": "disabled,required,maxLength25",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":"user"
     },
     {
       "name": "amountHeldByTheBank",
@@ -567,7 +604,8 @@
       "priority": 38,
       "messageCode": "670",
       "rules": "pesosFormat,number,required",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "label",
@@ -582,7 +620,8 @@
       "priority": 39,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "linebreak",
@@ -597,26 +636,42 @@
       "priority": 40,
       "messageCode": "670",
       "rules": "",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
-      "name": "sign",
-      "type": "sign",
+      "name": "approverDni670",
+      "type": "senderDni",
       "fieldtype": "textField",
-      "label": "SGU: Apoderado Nombre, RUT",
+      "label": "SGU: Apoderado Rut",
       "placeholder": "",
       "description": "",
       "column": 3,
       "row": 1,
       "defaultValue": "",
-      "priority": 41,
+      "priority": 42,
       "messageCode": "670",
       "rules": "disabled",
+      "parameterOptions": "",
+      "actions": ""
+    },{
+      "name": "approverSign",
+      "type": "senderSign",
+      "fieldtype": "password",
+      "label": "SGT: Firma Electrónica, Enviador",
+      "placeholder": "",
+      "description": "",
+      "column": 3,
+      "row": 1,
+      "defaultValue": "",
+      "priority": 43,
+      "messageCode": "670",
+      "rules": "required",
       "parameterOptions": ""
     },
     {
-      "name": "E32",
-      "type": "E32",
+      "name": "disabledBlock",
+      "type": "disabledBlock",
       "fieldtype": "textField",
       "label": "E32",
       "placeholder": "",
@@ -627,7 +682,8 @@
       "priority": 42,
       "messageCode": "670",
       "rules": "disabled",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     },
     {
       "name": "observations",
@@ -642,6 +698,7 @@
       "priority": 43,
       "messageCode": "670",
       "rules": "maxLength420",
-      "parameterOptions": ""
+      "parameterOptions": "",
+      "actions":""
     }
 ]

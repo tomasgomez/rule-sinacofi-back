@@ -21,6 +21,7 @@ export const seedRules = async (prismaClient, rules) => {
             name: rule.name,
             description: rule.description,
             type: rule.type,
+            category: rule.category,
             value: rule.value,
             priority: rule.priority,
             condition: rule.condition,

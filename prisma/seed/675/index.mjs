@@ -1,4 +1,4 @@
-import params675 from './params.json'assert { type: 'json' };
+import params675 from "./params-helper.mjs";
 import  schema675 from './schema.json' assert { type: 'json' };
 import { seed675 } from './seed.mjs';
 
