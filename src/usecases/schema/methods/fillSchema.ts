@@ -47,8 +47,8 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
         });
         return paramCasted
     })
-    schema.parameters = parametersFilled;
 
+    console.log(request.data.schema.parameters)
     return schema
     
 };

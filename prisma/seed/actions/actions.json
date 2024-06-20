@@ -63,28 +63,6 @@
         "priority": 0
     },
     {
-        "name": "userName",
-        "category": "FILL",
-        "type": "parameter",
-        "description": "Llenar el parametro con el nombre del usuario",
-        "action": "fillUserName",
-        "value":{
-            "targeField": "defaultValue"
-        },
-        "priority": 0
-    },
-    {
-        "name": "userDni",
-        "category": "FILL",
-        "type": "parameter",
-        "description": "Llenar el parametro con el dni del usuario",
-        "action": "fillUserDni",
-        "value":{
-            "targeField": "defaultValue"
-        },
-        "priority": 0
-    },
-    {
         "name": "currentDate",
         "category": "FILL",
         "type": "parameter",

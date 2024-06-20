@@ -2,9 +2,9 @@
 import { params671, schema671 } from "./index.mjs";
 import { connectSchemaToParameter } from "../seedSchema.mjs";
 import { seedParams, connectParamsToSchema } from "../seedParams.mjs";
-import { seedRuleParameterTable, seedParameterOptionTable } from "../manyToMany.mjs";
+import { seedRuleParameterTable, seedParameterOptionTable, seedActionParameterTable } from "../manyToMany.mjs";
 
-export const seed671 = async (prisma, rules, options) => {
+export const seed671 = async (prisma, rules, options, actions) => {
   
     // seed params
     const params = await seedParams(prisma, params671); 
@@ -45,7 +45,25 @@ export const seed671 = async (prisma, rules, options) => {
         });  
     });
 
+    
+
     await seedParameterOptionTable(prisma, parameterToOptions);
+
+        // create many-to-many relationship betweeen parameters and actions
+        const actionToParameter = [];
+        params.forEach((parameter) => {
+            const actionsArray = parameter.actions ? parameter.actions.replace(" ","").split(",").map(rule => rule.trim()) : [];
+            // find action that match the rulesArray
+            actionsArray.forEach((action) => {
+                const rFiltered = actions.find((r) => r.name === action);
+                if (rFiltered) {
+                    const value = { actionName: rFiltered.name, actionType: rFiltered.type, parameterName: parameter.name, parameterMessageCode: parameter.messageCode, parameterPriority: parameter.priority };
+                    actionToParameter.push(value);
+                }
+            })
+        });
+    
+        await seedActionParameterTable(prisma, actionToParameter)
 
 
 
