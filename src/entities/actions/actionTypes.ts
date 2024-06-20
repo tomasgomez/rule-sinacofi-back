@@ -20,7 +20,6 @@ const actions: ActionsFunctions = {
 }
 
 export function getActionType(value: string): actionType {
-  console.log(value)
     if (Object.values(actionType).includes(value as actionType)) {
         return value as actionType;
       } else {

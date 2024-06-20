@@ -24,42 +24,42 @@ async function main() {
     // // load schemas
     const schemas = [schema670, schema671,schema672, schema673, schema674,schema675,schema676,schema677,schema678, schema679];
 
-    // seed schemas (you can load all or only the ones you need)
-    await seedSchema(prisma, schemas);
+    // // seed schemas (you can load all or only the ones you need)
+    // await seedSchema(prisma, schemas);
 
-    // seed rules, if has new rules uncomment this, first delete all
-    await seedRules(prisma, rules);
+    // // seed rules, if has new rules uncomment this, first delete all
+    // await seedRules(prisma, rules);
 
-    // seed actions
-    await seedActions(prisma, actions)
+    // // seed actions
+    // await seedActions(prisma, actions)
 
-    // seed option values , add the one you need if is not loaded
-    await seedOptionValues(prisma, channel);
-    await seedOptionValues(prisma, commune);
-    await seedOptionValues(prisma, condition);
-    await seedOptionValues(prisma, format);
-    await seedOptionValues(prisma, institution);
-    await seedOptionValues(prisma, optType);
-    await seedOptionValues(prisma, notary);
-    await seedOptionValues(prisma, priority);
-    await seedOptionValues(prisma, region);
-    await seedOptionValues(prisma, rejectionReason);
-    await seedOptionValues(prisma, messageRejectionReason);
-    await seedOptionValues(prisma, typeOfCurrency);
-    await seedOptionValues(prisma, typeOfDebts);
-    await seedOptionValues(prisma, typeOfObligations);
+    // // seed option values , add the one you need if is not loaded
+    // await seedOptionValues(prisma, channel);
+    // await seedOptionValues(prisma, commune);
+    // await seedOptionValues(prisma, condition);
+    // await seedOptionValues(prisma, format);
+    // await seedOptionValues(prisma, institution);
+    // await seedOptionValues(prisma, optType);
+    // await seedOptionValues(prisma, notary);
+    // await seedOptionValues(prisma, priority);
+    // await seedOptionValues(prisma, region);
+    // await seedOptionValues(prisma, rejectionReason);
+    // await seedOptionValues(prisma, messageRejectionReason);
+    // await seedOptionValues(prisma, typeOfCurrency);
+    // await seedOptionValues(prisma, typeOfDebts);
+    // await seedOptionValues(prisma, typeOfObligations);
     const options = { channel, commune, condition, format, institution, operationType: optType, notary, priority, region, rejectionReason, messageRejectionReason, typeOfCurrency, typeOfDebts, typeOfObligations}
 
-    await seed670(prisma, rules, options, actions);
-    await seed671(prisma, rules, options, actions);
-    await seed672(prisma, rules, options, actions);
-    await seed673(prisma, rules, options, actions);
-    await seed674(prisma, rules, options, actions);
+    // await seed670(prisma, rules, options, actions);
+    // await seed671(prisma, rules, options, actions);
+    // await seed672(prisma, rules, options, actions);
+    // await seed673(prisma, rules, options, actions);
+    // await seed674(prisma, rules, options, actions);
     await seed675(prisma, rules, options, actions);
-    await seed676(prisma, rules, options, actions);
-    await seed677(prisma, rules, options, actions);
-    await seed678(prisma, rules, options, actions);
-    await seed679(prisma, rules, options, actions);
+    // await seed676(prisma, rules, options, actions);
+    // await seed677(prisma, rules, options, actions);
+    // await seed678(prisma, rules, options, actions);
+    // await seed679(prisma, rules, options, actions);
 }
 
 main()

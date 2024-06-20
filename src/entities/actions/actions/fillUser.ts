@@ -14,8 +14,6 @@ const fillParameterWithUser: ExecuteAction = (input: ActionInput, values?: Recor
     if(!user){
         return { message: "Action Failed User does not exist", code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 }
     }
-    console.log(indexOfUser)
-    console.log(user);
     input.parameter.defaultValue = user[indexOfUser]
 
     return input.parameter;

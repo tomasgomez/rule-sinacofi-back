@@ -130,7 +130,7 @@ console.log("RUNNING:", { messageCode })
 
 const message671Schema = [
   ...formHeaderSchema(messageCode),
-  ...disableFields(setOnlyWatch(mortgageRaisingDataSchema(messageCode, true, true))),
+  ...disableFields(mortgageRaisingDataSchema(messageCode, true, true)),
   getBlankSpace({ messageCode, column: 6 }),
   getApprovalDateField({ messageCode }),
   getNSEField({ messageCode }),

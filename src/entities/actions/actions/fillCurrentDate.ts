@@ -10,8 +10,9 @@ import { User } from "../../user/interface";
 const fillCurrentDate: ExecuteAction = (input: ActionInput, values?: Record<string, unknown>): ActionOuput | InternalError => {
     
     const date = new Date();
-    const formattedDate = date.toLocaleDateString('es-CL');
-    input.parameter.defaultValue = formattedDate;
+    // const formattedDate = date.toLocaleDateString('es-CL');
+    // console.log(formattedDate);
+    input.parameter.defaultValue = date.toDateString();
 
     return input.parameter;
 

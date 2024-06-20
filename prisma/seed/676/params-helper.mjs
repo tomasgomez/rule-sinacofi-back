@@ -46,7 +46,7 @@ const messageCode = "676";
 console.log("RUNNING:", { messageCode })
 
 const message676Schema = [
-  ...disableFields(setOnlyWatch(formHeaderSchema(messageCode))),
+  ...disableFields(formHeaderSchema(messageCode)),
   ...disableFields([
     getSenderNameField({ messageCode, label: "# 18: Nombre y Cargo Respons. Inform.", column: 12 }),
     getSellerNameField({ messageCode, label: "# CUY: Nombre del Vendedor" }),
