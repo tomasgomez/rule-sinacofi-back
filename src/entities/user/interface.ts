@@ -2,10 +2,13 @@
  * Interface representing the user
  */
 type User = {
-    fullName: string;   // userName         
+    name: string;   // userName         
     dni: string;        // user DNI
     area: string;       // user area 
-    institution: string // user institution
+    institutionCode: string // user institution
+    email: string // email
+    role: string // role
+    status: string // statis
 }
 
 export { User }

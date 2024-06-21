@@ -27,7 +27,6 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
     let schema = await context.findSchema(findSchemaRequest)
 
     if (isInternalError(schema)){
-        console.log(schema)
         return schema
     }
 
@@ -49,7 +48,6 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
             const parameterFilled = executeAction(action, {parameter: paramCasted, messageParameters: request.data.schema.parameters as MessageParameter[], user: request.data.user})
             
             if (isInternalError(parameterFilled)){
-                console.log(parameterFilled)
                 return parameterFilled
             }
 
@@ -57,8 +55,6 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
         });
         return paramCasted
     })
-    schema.parameters = parametersFilled;
-
 
     return schema
     

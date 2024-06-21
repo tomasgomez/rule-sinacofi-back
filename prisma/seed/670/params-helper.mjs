@@ -234,13 +234,13 @@ const getCommuneField = ({ messageCode }) => ({
 const getBankField = ({ messageCode, label = "SGK: El Banco", column = 12 }) => ({
   "name": "bank",
   "type": "bank",
-  "fieldtype": "textField",
+  "fieldtype": "select",
   "placeholder": "",
   "description": "Banco otorgante del mutuo",
   "row": 1,
-  "defaultValue": "institution",
+  "defaultValue": "institutionCode",
   "rules": "accordionMortgageData,required,disabled",
-  "parameterOptions": "",
+  "parameterOptions": "institution",
   "actions":"user",
   label,
   column,
@@ -419,16 +419,16 @@ export const getSenderNameField = ({
   "description": "",
   "column": 3,
   "row": 1,
-  "defaultValue": "",
+  "defaultValue": "name",
   "rules": "accordionMortgageData,disabled",
   "parameterOptions": "",
-  "actions": "msgCode670",
+  "actions": "user",
   label,
   messageCode,
   ...rest
 });
 
-const getSenderDNIField = ({ messageCode }) => ({
+export const getSenderDNIField = ({ messageCode, ...rest }) => ({
   "name": "senderAHDni",
   "type": "senderAHDni",
   "fieldtype": "textField",
@@ -437,11 +437,12 @@ const getSenderDNIField = ({ messageCode }) => ({
   "description": "",
   "column": 3,
   "row": 1,
-  "defaultValue": "",
+  "defaultValue": "dni",
   "rules": "accordionMortgageData,disabled",
   "parameterOptions": "",
-  "actions": "msgCode670",
-  messageCode
+  "actions": "user",
+  messageCode,
+  ...rest
 });
 
 const getSenderSignField = ({ messageCode }) => ({
@@ -533,8 +534,8 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
     messageCode,
     rules: "accordionMortgageData"
   }),
-  getSenderNameField({ messageCode }),
-  getSenderDNIField({ messageCode }),
+  getSenderNameField({ messageCode,  ...(onlyWatch ? { actions: "msgCode670", name: "senderAHName" } : {}) }),
+  getSenderDNIField({ messageCode,  ...(onlyWatch ? { actions: "msgCode670", name: "senderAHDni" } : {}) }),
   ...(!onlyWatch ? [getSenderSignField({ messageCode })] : []),
   ...(!noObservation ? [getObservationsField({ messageCode, name: "mlObservation", actions: "msgCode670", rules: "accordionMortgageData,maxLength420" })] : []),
 ];

@@ -43,7 +43,7 @@ console.log("RUNNING:", { messageCode })
 
 const message675Schema = [
   ...disableFields(formHeaderSchema(messageCode)),
-  ...disableFields(setOnlyWatch(mortgageRaisingDataSchema(messageCode, true))),
+  ...disableFields(mortgageRaisingDataSchema(messageCode, true)),
   getAccordion({
     label: "Total a Pagar",
     name: "resumeTotalAmount",
