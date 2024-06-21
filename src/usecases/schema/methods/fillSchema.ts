@@ -22,6 +22,8 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
         offset: 0,
         filter: undefined
     }
+
+    // Get schema
     let schema = await context.findSchema(findSchemaRequest)
 
     if (isInternalError(schema)){
@@ -29,15 +31,23 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
         return schema
     }
 
-    // fill values
-    /* Select all FILL actions */
     const { parameters } = schema;
+    
+    /* Select all FILL actions */
     const parametersFilled: Parameter[] = parameters.map((param: Parameter | MessageParameter) => {
+
+        /* Cast parameter to Parameter */
         let paramCasted = param as Parameter
-        // get FILL actions
+
+        /* get FILL actions */
         const fillActions = paramCasted.actions?.filter(action => action.category === actionCategory.FILL)
+
+        /* Execute all FILL actions*/
         fillActions?.forEach((action) => {
+
+            /* Execute action */
             const parameterFilled = executeAction(action, {parameter: paramCasted, messageParameters: request.data.schema.parameters as MessageParameter[], user: request.data.user})
+            
             if (isInternalError(parameterFilled)){
                 console.log(parameterFilled)
                 return parameterFilled

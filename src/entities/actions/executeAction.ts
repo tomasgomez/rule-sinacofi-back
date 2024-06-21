@@ -1,6 +1,6 @@
 import { ErrorCode, InternalError } from "../internalError";
 import { ActionType, actions } from "./actionTypes";
-import { ActionInput, ActionOuput, ExecuteAction } from "./interface";
+import { ActionInput, ActionOuput } from "./interface";
 
 
 /** Define the action function

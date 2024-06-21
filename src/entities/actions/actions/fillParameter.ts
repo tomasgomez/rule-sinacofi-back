@@ -13,17 +13,18 @@ const fillParameterWithMsg: ExecuteAction = (input: ActionInput, values?: Record
         return { message: "Action Failed MessageParameters does not exist", code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 }
     }
     const parameters = input.messageParameters;
+
     const messageParamsFiltered = parameters.filter((messageParams: MessageParameter | Parameter) =>  (messageParams.name === input.parameter.name && messageParams.messageCode === values?.messageCode) );
+    
     const messageParamsFilteredCasted = messageParamsFiltered as MessageParameter[]
+   
     // check the length of messageFiltered
     if(messageParamsFilteredCasted && messageParamsFilteredCasted.length > 0){
         // get the first value
-        const targetField = values?.targetField as keyof Parameter;
         input.parameter.defaultValue = messageParamsFilteredCasted[0].value;
     }
 
     return input.parameter;
-
 }
 
 export { fillParameterWithMsg }
