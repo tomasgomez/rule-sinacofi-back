@@ -72,5 +72,132 @@
             "targeField": "defaultValue"
         },
         "priority": 0
+    },
+    {
+        "name": "editSchema",
+        "category": "FILL",
+        "type": "schema",
+        "description": "llenar los datos para la edición",
+        "value": 
+        {
+            "parameters": [
+                {   
+                    "inputField": "name",
+                    "inputValue": ["senderAHName", "senderAHDni", "CUK"],
+                    "targetField":"defaultValue",
+                    "value":""
+                }
+            ],
+            "buttons": [
+                {
+                    "text": "enviar",
+                    "action": "",
+                    "name": "sendButton",
+                    "disabled": true
+                },
+                {
+                    "text": "Editar",
+                    "path": "edit",
+                    "name": "saveDraft",
+                    "disabled": false
+                }
+            ]
+        }
+        },
+        {
+            "name": "createSchema",
+            "category": "FILL",
+            "type": "schema",
+            "description": "llenar los datos para la edición",
+            "value": {
+                "parameters": [
+                    {   
+                        "inputField": "name",
+                        "inputValue": ["senderAHName", "senderAHDni"],
+                        "targetField":"defaultValue",
+                        "value":""
+                    }
+                ],
+                "buttons": [
+                    {
+                        "text": "enviar",
+                        "action": "",
+                        "name": "sendButton",
+                        "disabled": true
+                    },
+                    {
+                        "text": "guardar en preparados",
+                        "path": "create",
+                        "name": "saveDraft",
+                        "disabled": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "duplicateSchema",
+            "category": "FILL",
+            "type": "schema",
+            "description": "llenar los datos para la edición",
+            "value": {
+                "parameters": [
+                    {   
+                        "inputField": "name",
+                        "inputValue": ["senderAHName", "senderAHDni"],
+                        "targetField":"defaultValue",
+                        "value":""
+                    }
+                ],
+                "buttons": [
+                    {
+                        "text": "enviar",
+                        "action": "",
+                        "name": "sendButton",
+                        "disabled": true
+                    },
+                    {
+                        "text": "Duplicar",
+                        "path": "create",
+                        "name": "saveDraft",
+                        "disabled": false
+                    }
+                ]
+            }
+        },
+        {
+        "name": "signSchema",
+        "category": "FILL",
+        "type": "schema",
+        "description": "llenar los datos para la firma",
+        "value": {
+            "parameters": [
+                {   
+                    "inputField": "type",
+                    "inputValue":["password"],
+                    "targetField":"rules",
+                    "value":"disabled"
+                }
+            ],
+            "buttons": [
+                {
+                    "text": "enviar",
+                    "action": "sign",
+                    "name": "sendButton",
+                    "disabled": false
+                },
+                {
+                    "text": "guardar en preparados",
+                    "path": "",
+                    "name": "saveDraft",
+                    "disabled": true
+                }
+            ],
+            "modal":{
+                "type": "success",
+                "name": "signDocs"
+            }
+        }
+    
     }
+
 ]

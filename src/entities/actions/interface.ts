@@ -25,9 +25,10 @@ type Action  = {
 
 // Define the value which required to be execute
 type ActionInput = {
-    parameter: Parameter
+    parameter?: Parameter
     user?: User
-    messageParameters?: MessageParameter[]
+    messageParameters?: MessageParameter[],
+    schema?: Schema
 }
 
 // Define the result
@@ -44,4 +45,12 @@ type ActionsFunctions = {
 // execute the actions 
 const executeAction = (action: Action, inputAction: ActionInput): ActionOuput | InternalError => execute(action.action, inputAction, action.values)
 
-export { Action, ActionsFunctions, ExecuteAction, ActionInput, ActionOuput, executeAction };
+// actionsSchemaType
+type SchemaAction = {
+    parameters?: any[],
+    modal?: any,
+    buttons?:any []
+}
+
+
+export { Action, ActionsFunctions, ExecuteAction, ActionInput, ActionOuput, SchemaAction, executeAction };

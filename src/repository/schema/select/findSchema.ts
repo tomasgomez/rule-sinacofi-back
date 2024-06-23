@@ -5,6 +5,7 @@ import { RuleSelect, IRuleSelect, IRuleArgs } from "../entities/rule";
 import { IParameterArgs, IParameterSelect, ParameterSelect } from "../entities/parameter";
 import { ISchemaSelect, SchemaSelect } from "../entities/schema";
 import { ActionSelect, IActionArgs, IActionSelect } from "../entities/actions";
+import { IActionSchemaSelect } from "../entities/manyToMany";
 
 /*
     Find schema Select (attributes to be selected)
@@ -39,6 +40,7 @@ TActionValues extends keyof Prisma.ActionSelect,
 
 
     // OptionValues to parameter
+    const schemaActions: Prisma.Schema$allowedActionsArgs = { select: { action:  actionArgs} }
     const parameterOptionValues: Prisma.OptionValue$parametersArgs = { select: { optionValue: optionValuesArgs } };
     const paramterRules: Prisma.Parameter$rulesArgs = { select: { rule: rulesArgs } };
     const schemaRules: Prisma.Schema$rulesArgs = { select: { rule: rulesArgs } };
@@ -48,6 +50,7 @@ TActionValues extends keyof Prisma.ActionSelect,
     parametersArgs.select.rules = paramterRules;
     parametersArgs.select.actions = parameterActions;
     findSchema.rules = schemaRules;
+    findSchema.allowedActions = schemaActions;
     findSchema.parameters = parametersArgs;
 
     return findSchema;

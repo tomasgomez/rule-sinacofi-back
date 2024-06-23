@@ -9,12 +9,12 @@ import { MessageParameter, Parameter } from "../../paremeters/interface";
 
 
 const fillParameterWithMsg: ExecuteAction = (input: ActionInput, values?: Record<string, unknown>): ActionOuput | InternalError => {
-    if (!input.messageParameters){
+    if (!input.messageParameters || !input.parameter){
         return { message: "Action Failed MessageParameters does not exist", code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 }
     }
     const parameters = input.messageParameters;
 
-    const messageParamsFiltered = parameters.filter((messageParams: MessageParameter | Parameter) =>  (messageParams.name === input.parameter.name && messageParams.messageCode === values?.messageCode) );
+    const messageParamsFiltered = parameters.filter((messageParams: MessageParameter | Parameter) =>  (messageParams.name === input.parameter?.name && messageParams.messageCode === values?.messageCode) );
     
     const messageParamsFilteredCasted = messageParamsFiltered as MessageParameter[]
    
