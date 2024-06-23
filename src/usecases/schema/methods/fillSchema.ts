@@ -61,7 +61,7 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
 
     // validate the schema actions
     actionsRequired?.forEach((action) => {
-        const actionToBeApplied = schema.allowedActions?.filter(a => a.name == action.name) as Action[];
+        const actionToBeApplied = schema.allowedActions?.filter(a => a.name == action.name && a.category == actionCategory.FILL) as Action[];
         actionToBeApplied.forEach(act => {
             let schemaUpdated = executeAction(act, {schema: schema}) 
             if (isInternalError(schemaUpdated)){
@@ -76,7 +76,7 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
     schema.allowedActions.forEach((action) => {
         const actionCasted = action as Action;
         actionsRequired?.forEach(r => {
-            if (r.name == action.name) {
+            if (r.name == action.name || r.category !== actionCategory.FILL) {
                 allowedActionsFiltered.push(actionCasted)
             }
         })
