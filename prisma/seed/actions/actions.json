@@ -97,7 +97,7 @@
                 },
                 {
                     "text": "Editar",
-                    "path": "edit",
+                    "action": "edit",
                     "name": "saveDraft",
                     "disabled": false
                 }
@@ -127,7 +127,7 @@
                     },
                     {
                         "text": "guardar en preparados",
-                        "path": "create",
+                        "action": "create",
                         "name": "saveDraft",
                         "disabled": false
                     }
@@ -157,7 +157,7 @@
                     },
                     {
                         "text": "Duplicar",
-                        "path": "create",
+                        "action": "create",
                         "name": "saveDraft",
                         "disabled": false
                     }
@@ -187,7 +187,7 @@
                 },
                 {
                     "text": "guardar en preparados",
-                    "path": "",
+                    "action": "",
                     "name": "saveDraft",
                     "disabled": true
                 }
