@@ -76,7 +76,10 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
     schema.allowedActions.forEach((action) => {
         const actionCasted = action as Action;
         actionsRequired?.forEach(r => {
-            if (r.name == action.name || r.category !== actionCategory.FILL) {
+            if (actionCasted.category !== actionCategory.FILL){
+                allowedActionsFiltered.push(actionCasted)
+            }
+            if (r.name == action.name) {
                 allowedActionsFiltered.push(actionCasted)
             }
         })
