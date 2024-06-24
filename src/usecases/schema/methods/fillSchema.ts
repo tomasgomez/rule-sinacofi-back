@@ -59,6 +59,8 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
     /* Map actions from */
     const actionsRequired = request.data.schema.allowedActions;
 
+    console.log(actionsRequired);
+
     // validate the schema actions
     actionsRequired?.forEach((action) => {
         const actionToBeApplied = schema.allowedActions?.filter(a => a.name == action.name && a.category == actionCategory.FILL) as Action[];

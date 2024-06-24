@@ -190,7 +190,7 @@ function addMessageActions(message: Message, user: User): Message {
                 }
             } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
                 console.log("5");
-                if (isSender && message?.previousMessageCode == MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO) {
+                if (isReceiver && message?.previousMessageCode == MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO) {
                     console.log("6");
                     actions.push(MessageActions.SHOW_DETAIL);
                     actions.push(MessageActions.DUPLICATE);
