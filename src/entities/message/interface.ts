@@ -9,8 +9,9 @@ type Message = {
     origin?: string;
     destination?: string;
     parameters: MessageParameter[];
-    actions?: any[];
+    actions?: any;
     previousMessageCode?: string;
+    statusCode?: string;
 }
 
 

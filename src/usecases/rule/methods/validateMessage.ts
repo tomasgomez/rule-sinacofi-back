@@ -57,7 +57,7 @@ const validateMessage = async (context: IRuleUsecase, message: Message, user: Us
         message = addMessageActions(message, user);
 
         // validate parameters of the message
-        message.parameters.forEach((parameter: MessageParameter) => {
+        message?.parameters?.forEach((parameter: MessageParameter) => {
             const schemaParameter = schema.parameters.find((schemaParameter) => schemaParameter.name === parameter.name);
             if (!schemaParameter || schemaParameter === undefined) {
                 console.log(`Parameter ${parameter.name} not found in schema`);
@@ -109,7 +109,7 @@ const validateMessage = async (context: IRuleUsecase, message: Message, user: Us
         return message;
 
     } catch (error) {
-        console.log("Error message validaiton")
+        console.log("Error message validation")
         throw {
             message: "Error message validaiton",
             code: ErrorCode.INTERNAL_SERVER_ERROR,
@@ -133,151 +133,181 @@ function checkUserMessageRole(message: Message, user: User): [boolean, boolean] 
     isSender = message.origin == filterOrigin ? true : false;
     isReceiver = !isSender && message.destination == filterOrigin ? true : false;
 
+    if (!isSender && !isReceiver) {
+        let bank = message.parameters?.find((param) => param.name == 'bank');
+        if (bank) {
+            isSender = bank?.value == filterOrigin ? true : false;
+            isReceiver = !isSender ? true : false;
+        } else {
+            let beneficiaryBank = message.parameters?.find((param) => param.name == 'beneficiaryBank');
+            if (beneficiaryBank) {
+                isSender = beneficiaryBank?.value != filterOrigin ? true : false;
+                isReceiver = !isSender ? true : false;
+            }
+        }
+
+    }
     return [isSender, isReceiver];
 }
 
 function addMessageActions(message: Message, user: User): Message {
-    let status = MessageStatus.BANDEJA_DE_ENTRADA;
+    console.log("addMessageActions: ", message, user);
     let actions: MessageActions[] = [];
-    let sortedStatus = message.status?.sort((a, b) => b.id - a.id);
+    
+    let status = message.statusCode ? message.statusCode : MessageStatus.BANDEJA_DE_ENTRADA;
 
-    if (sortedStatus && sortedStatus.length > 0) {
-        status = sortedStatus[0]?.id;
-
-        if (!message || !message.messageCode || !status) {
-            return message;
-        }
-
-        let [isSender, isReceiver] = checkUserMessageRole(message, user);
-
-        if (!isSender && !isReceiver) {
-            return message;
-        }
-
-        switch (message.messageCode) {
-            case MessageCodes.ALZAMIENTO_HIPOTECARIO:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        if (isSender) {
-                            actions.push(MessageActions.SIGN);
-                            actions.push(MessageActions.EDIT);
-                            actions.push(MessageActions.DELETE);
-                        }
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        if (isSender && message?.previousMessageCode == MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO) {
-                            actions.push(MessageActions.DUPLICATE);
-                        } else if (isSender) {
-                            actions.push(MessageActions.SHOW_DETAIL);
-                            // actions.push(MessageActions.DUPLICATE);
-                            // actions.push(MessageActions.DELETE);
-                        } else if (isReceiver) {
-                            actions.push(MessageActions.SHOW_DETAIL);
-                        }
-                        break;
-                }
-                break;
-            case MessageCodes.ACEPTACION_DE_ALZAMIENTO_HIPOTECARIO:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.AVISO_DE_CLIENTE_EN_NORMALIZACION:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.SOLICITUD_DE_ALZAMIENTO_HIPOTECARIO:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.LIQUIDACION_DE_PREPAGO_DE_ALZAMIENTO_HIPOTECARIO:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.DATOS_PARA_EL_PAGO_AH:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        if (isSender) {
-                            actions.push(MessageActions.SHOW_DETAIL);
-                        } else if (isReceiver) {
-                            actions.push(MessageActions.PRINT);
-                        }
-                        break;
-                }
-                break;
-            case MessageCodes.AVISO_DE_PAGO_AH:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.RECHAZO_DE_PAGO_AH:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        actions.push(MessageActions.CHECK_OPTIONS);
-                        break;
-                    case MessageStatus.BANDEJA_DE_ENTRADA:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-            case MessageCodes.CONFIRMACION_DE_PAGO_AH:
-                switch (status) {
-                    case MessageStatus.PREPARADO:
-                        actions.push(MessageActions.SEND);
-                        actions.push(MessageActions.CHECK_OPTIONS);
-                        break;
-                    case MessageStatus.ENVIADO:
-                        actions.push(MessageActions.SHOW_DETAIL);
-                        break;
-                }
-                break;
-        }
+    if (!message || !message.messageCode || !status) {
+        console.log("Message, messageCode or status is missing");
+        return message;
     }
+
+    let [isSender, isReceiver] = checkUserMessageRole(message, user);
+
+    if (!isSender && !isReceiver) {
+        console.log("User is not sender or receiver");
+        console.log("isSender", isSender, "isReceiver", isReceiver);
+        return message;
+    }
+
+    console.log("isSender", isSender, "isReceiver", isReceiver);
+    console.log("status", status);
+    console.log("messageCode", message.messageCode);
+    console.log("previousMessageCode", message.previousMessageCode);
+    console.log("actions", message.actions);
+
+    console.log("1");
+    switch (message.messageCode) {
+        case MessageCodes.ALZAMIENTO_HIPOTECARIO:
+            console.log("2");
+            if(status == MessageStatus.PREPARADO){
+                console.log("3");
+
+                if (isSender) {
+                    console.log("4");
+                    actions.push(MessageActions.SIGN);
+                    actions.push(MessageActions.EDIT);
+                    actions.push(MessageActions.DELETE);
+                }
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("5");
+                if (isSender && message?.previousMessageCode == MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO) {
+                    console.log("6");
+                    actions.push(MessageActions.SHOW_DETAIL);
+                    actions.push(MessageActions.DUPLICATE);
+                } else if (isSender) {
+                    console.log("7");
+                    actions.push(MessageActions.SHOW_DETAIL);
+                    // actions.push(MessageActions.DUPLICATE);
+                    // actions.push(MessageActions.DELETE);
+                } else if (isReceiver) {
+                    console.log("8");
+                    actions.push(MessageActions.SHOW_DETAIL);
+                }
+            }
+            break;
+        case MessageCodes.ACEPTACION_DE_ALZAMIENTO_HIPOTECARIO:
+            console.log("9");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("10");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("11");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.RECHAZO_DE_ALZAMIENTO_HIPOTECARIO:
+            console.log("12");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("13");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("14");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.AVISO_DE_CLIENTE_EN_NORMALIZACION:
+            console.log("15");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("16");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("17");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.SOLICITUD_DE_ALZAMIENTO_HIPOTECARIO:
+            console.log("18");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("19");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("20");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.LIQUIDACION_DE_PREPAGO_DE_ALZAMIENTO_HIPOTECARIO:
+            console.log("22");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("23");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("24");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.DATOS_PARA_EL_PAGO_AH:
+            console.log("25");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("26");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                if (isSender) {
+                    console.log("27");
+                    actions.push(MessageActions.SHOW_DETAIL);
+                } else if (isReceiver) {
+                    console.log("28");
+                    actions.push(MessageActions.PRINT);
+                }
+            }
+            break;
+        case MessageCodes.AVISO_DE_PAGO_AH:
+            console.log("29");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("30");
+                actions.push(MessageActions.SIGN);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("31");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.RECHAZO_DE_PAGO_AH:
+            console.log("se me fue el internet");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("32");
+                actions.push(MessageActions.SIGN);
+                actions.push(MessageActions.CHECK_OPTIONS);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("33");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+        case MessageCodes.CONFIRMACION_DE_PAGO_AH:
+            console.log("34");
+            if (status == MessageStatus.PREPARADO) {
+                console.log("35");
+                actions.push(MessageActions.SIGN);
+                actions.push(MessageActions.CHECK_OPTIONS);
+            } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
+                console.log("36");
+                actions.push(MessageActions.SHOW_DETAIL);
+            }
+            break;
+    }
+
+    console.log("ACTIONS RESPONSE", actions.join(','));
 
     return {
         ...message,
-        actions
+        actions: actions.join(',')
     };
 }
