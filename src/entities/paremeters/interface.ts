@@ -21,6 +21,7 @@ export interface Parameter {
     updatedAt: Date; // Date and time when the schema was last updated
     rules?: Rule[]; // Array of related Rule objects
     optionValues?: OptionValue[]; // Array of related ParameterOption objects
+    displayValue?: string; // Display value for the schema
     actions?: Action[] // array of actions
 }
 
@@ -38,6 +39,6 @@ export interface OptionValue {
 export type OptionalParameter = Partial<Parameter>
 
 // Parameter Interface 
-export type MessageParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules'> & {
+export type MessageParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules' | 'defaultValue' | 'displayValue' | 'optionValues' | 'label'> & {
     value: string // message parameter value
 }

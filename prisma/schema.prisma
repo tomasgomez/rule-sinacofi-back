@@ -8,18 +8,18 @@ datasource db {
   provider = "postgresql"
   // url = env("DATABASE_URL")
   // url = "e"
-  url = "postgresql://felipegarcia@localhost:5432/rules"
+  url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
 }
 
 model Schema {
-  id             String         @id @default(uuid())
-  messageCode    String         @unique
-  description    String
-  name           String
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
-  parameters     Parameter[]
-  rules          RulesSchemas[]
+  id          String         @id @default(uuid())
+  messageCode String         @unique
+  description String
+  name        String
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  parameters  Parameter[]
+  rules       RulesSchemas[]
   // allowedActions SchemasActions[]
 
   @@index([messageCode])
@@ -66,18 +66,18 @@ model OptionValue {
 // TODO: destroy type field 
 
 model Rule {
-  id             String            @id @default(uuid())
-  name           String
-  type           String
-  category       String
-  description    String
-  condition      String
-  value          String
-  priority       Int
-  createdAt      DateTime          @default(now())
-  updatedAt      DateTime          @updatedAt
-  parameters     RulesParameters[]
-  schemas        RulesSchemas[]
+  id          String            @id @default(uuid())
+  name        String
+  type        String
+  category    String
+  description String
+  condition   String
+  value       String
+  priority    Int
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  parameters  RulesParameters[]
+  schemas     RulesSchemas[]
   // allowedActions RulesActions[]
 
   @@unique([name, type])
@@ -85,16 +85,16 @@ model Rule {
 }
 
 model Action {
-  id          String @id @default(uuid())
+  id          String              @id @default(uuid())
   name        String
   type        String
   category    String
   action      String
   description String
   priority    Int
-  value       Json      
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  value       Json
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
   parameters  ActionsParameters[]
 
   @@unique([name, type])
@@ -102,14 +102,14 @@ model Action {
 }
 
 model ActionsParameters {
-  parameterName String
+  parameterName        String
   parameterMessageCode String
-  parameterPriority Int
-  actionName String
-  actionType String
+  parameterPriority    Int
+  actionName           String
+  actionType           String
 
   parameter Parameter @relation(fields: [parameterMessageCode, parameterName, parameterPriority], references: [name, messageCode, priority])
-  action Action @relation(fields: [actionName, actionType], references: [name, type])
+  action    Action    @relation(fields: [actionName, actionType], references: [name, type])
 
   @@unique([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
   @@index([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
@@ -137,7 +137,6 @@ model ActionsParameters {
 //   @@id([schemaMessageCode, allowedActionName])
 //   @@index([schemaMessageCode, allowedActionName])
 // }
-
 
 model RulesSchemas {
   ruleName    String
