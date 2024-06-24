@@ -3,7 +3,7 @@
 * This contains the diffrent categories of rules
 */
 
-enum ruleCategory {
+export enum ruleCategory {
     VALIDATION = "VALIDATION",
     FORMAT = "FORMAT",
     GROUP = "GROUP",

@@ -7,7 +7,7 @@ import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIss
     validation method to call.
 */
 
-enum ruleType {
+export enum ruleType {
     minLegth             = 'minLegth',
     maxLength            = 'maxLength',
     emailValidation      = 'emailValidation',

@@ -9,18 +9,19 @@ datasource db {
   // url = env("DATABASE_URL")
   // url = "e"
   url      = "postgresql://sinacofi:hola123@34.135.68.241:5432/rule"
+  // url = "postgresql://felipegarcia@localhost:5432/rules"
 }
 
 model Schema {
-  id          String         @id @default(uuid())
-  messageCode String         @unique
-  description String
-  name        String
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
-  parameters  Parameter[]
-  rules       RulesSchemas[]
-  // allowedActions SchemasActions[]
+  id             String           @id @default(uuid())
+  messageCode    String           @unique
+  description    String
+  name           String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  parameters     Parameter[]
+  rules          RulesSchemas[]
+  allowedActions ActionsSchemas[]
 
   @@index([messageCode])
 }
@@ -63,8 +64,6 @@ model OptionValue {
   @@index([name, type])
 }
 
-// TODO: destroy type field 
-
 model Rule {
   id          String            @id @default(uuid())
   name        String
@@ -78,7 +77,6 @@ model Rule {
   updatedAt   DateTime          @updatedAt
   parameters  RulesParameters[]
   schemas     RulesSchemas[]
-  // allowedActions RulesActions[]
 
   @@unique([name, type])
   @@index([name, type])
@@ -96,9 +94,22 @@ model Action {
   createdAt   DateTime            @default(now())
   updatedAt   DateTime            @updatedAt
   parameters  ActionsParameters[]
+  schemas     ActionsSchemas[]
 
   @@unique([name, type])
   @@index([name, type])
+}
+
+model ActionsSchemas {
+  schemaMessageCode String
+  actionName        String
+  actionType        String
+
+  schema Schema @relation(fields: [schemaMessageCode], references: [messageCode])
+  action Action @relation(fields: [actionName, actionType], references: [name, type])
+
+  @@id([schemaMessageCode, actionName, actionType])
+  @@unique([schemaMessageCode, actionName, actionType])
 }
 
 model ActionsParameters {
@@ -114,29 +125,6 @@ model ActionsParameters {
   @@unique([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
   @@index([parameterMessageCode, parameterName, parameterPriority, actionName, actionType])
 }
-
-// model RulesActions {
-//   ruleName String
-//   ruleType String
-//   actionName String
-
-//   rule   Rule   @relation(fields: [ruleName, ruleType], references: [name, type])
-//   action Action @relation(fields: [actionName], references: [name])
-
-//   @@id([ruleName, actionName])
-//   @@index([ruleName, actionName])
-// }
-
-// model SchemasActions {
-//   schemaMessageCode String
-//   allowedActionName String
-
-//   schema       Schema         @relation(fields: [schemaMessageCode], references: [messageCode])
-//   action       Action         @relation(fields: [allowedActionName], references: [name])
-
-//   @@id([schemaMessageCode, allowedActionName])
-//   @@index([schemaMessageCode, allowedActionName])
-// }
 
 model RulesSchemas {
   ruleName    String

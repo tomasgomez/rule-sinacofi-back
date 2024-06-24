@@ -5,6 +5,8 @@ import { ISchemaRepository } from "../interface";
 import { ISchemaArgs, ISchemaResponse, ISchemaSelect } from "../entities/schema";
 import { IParameterResponse } from "../entities/parameter";
 import { parameterToEntity } from "../adapters/parameterToEntity";
+import { ISchemaActionResponse } from "../entities/manyToMany";
+import { actionsToEntity, allowedActionsToEntity } from "../adapters/actionsToEntity";
 
 const findSchema = async(context: ISchemaRepository, schema: OptionalSchema, select: ISchemaSelect): Promise < Schema | InternalError >  => {
     
@@ -15,7 +17,7 @@ const findSchema = async(context: ISchemaRepository, schema: OptionalSchema, sel
         const where: Prisma.SchemaWhereUniqueInput = { messageCode: schema.messageCode }
         
         const query: ISchemaArgs <Prisma.SchemaFindUniqueArgs>= { where, select };
-        const schemaFetched: ISchemaResponse<Prisma.SchemaFindUniqueArgs> | null = await client.schema.findUnique(query);
+        const schemaFetched = await client.schema.findUnique(query);
 
         /* If the schema is not found, return an error */
         if (!schemaFetched) {
@@ -23,7 +25,7 @@ const findSchema = async(context: ISchemaRepository, schema: OptionalSchema, sel
             return { message: 'Message not found', code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 };
         }
         
-        const { id, messageCode, description, name, parameters } = schemaFetched;
+        const { id, messageCode, description, name, parameters, allowedActions } = schemaFetched;
 
         // check values
         if (!id || !messageCode || !description || !name || !parameters) {
@@ -46,8 +48,12 @@ const findSchema = async(context: ISchemaRepository, schema: OptionalSchema, sel
         // cast parameters to IParameterResponse and check if all values are present
         const parametersCasted = parameters as IParameterResponse[];
 
+        // cast allowedActions
+        const actions = allowedActionsToEntity(allowedActions)
+
         const parametersAdapted = parameterToEntity(parametersCasted);
-        return { id, messageCode, description, name, parameters: parametersAdapted, rules: [], createdAt: new Date(), updatedAt: new Date() };
+
+        return { id, messageCode, description, name, parameters: parametersAdapted, rules: [], createdAt: new Date(), updatedAt: new Date(), allowedActions:actions };
    
 
 
