@@ -38,6 +38,6 @@ export interface OptionValue {
 export type OptionalParameter = Partial<Parameter>
 
 // Parameter Interface 
-export type MessageParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules'> & {
+export type MessageParameter = Pick<OptionalParameter, 'name' | 'messageCode' | 'priority'| 'rules' | 'type' | 'optionValues'> & {
     value: string // message parameter value
 }
