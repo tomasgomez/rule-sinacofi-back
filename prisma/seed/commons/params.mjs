@@ -117,7 +117,7 @@ export const formHeaderSchema = (messageCode) => [
 ];
 
 
-export const getAccordion = ({ label, name, messageCode, actions = "", priority }) => ({
+export const getAccordion = ({ label, name, messageCode, actions = "", priority, ...rest }) => ({
   "name": name,
   "type": name,
   "fieldtype": "accordion",
@@ -131,7 +131,8 @@ export const getAccordion = ({ label, name, messageCode, actions = "", priority 
   "messageCode": messageCode,
   "rules": "",
   "parameterOptions": "",
-  "actions": actions
+  "actions": actions,
+  ...rest
 });
 
 export const getLinebreak = ({ label, messageCode, actions = "", ...rest }) => ({

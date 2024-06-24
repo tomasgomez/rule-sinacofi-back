@@ -1,4 +1,6 @@
-import { InputValue, Validate } from "../interface";
+import { InputValue, Rule, Validate } from "../interface";
+import { ruleCategory } from "../ruleCategory";
+import { ruleType } from "../ruleTypes";
 
 /** 
 *   this function is used to check if the value is not empty
@@ -25,4 +27,19 @@ export const isRequired: Validate = (value: InputValue): boolean => {
     }
     // return false if the value is not a string, number, boolean, or object
     return false;
+}
+
+export const getRequired = (value: string): Rule => {
+    return {
+        "id": "",
+        "name": "required",
+        "type": "parameter",
+        "category": ruleCategory.VALIDATION,
+        "description": "campo requerido",
+        "condition": ruleType.required,
+        "value": value,
+        "priority": 0,
+        "createdAt": new Date(),
+        "updatedAt": new Date()
+    }
 }

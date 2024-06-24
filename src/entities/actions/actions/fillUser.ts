@@ -9,6 +9,9 @@ import { User } from "../../user/interface";
 
 
 const fillParameterWithUser: ExecuteAction = (input: ActionInput, values?: Record<string, unknown>): ActionOuput | InternalError => {
+    if (!input.parameter){
+        return { message: "Action Failed", code: ErrorCode.NOT_FOUND, data: null, statusCode: 404 }
+    }
     const indexOfUser = input.parameter.defaultValue as keyof User;
     const user = input.user
     if(!user){

@@ -5,10 +5,13 @@ import { MessageParameter } from "../paremeters/interface";
 type Message = {
     id?: string;
     messageCode: string;
-    status?: string;
+    status?: any[];
+    origin?: string;
     destination?: string;
     parameters: MessageParameter[];
-
+    actions?: any;
+    previousMessageCode?: string;
+    statusCode?: string;
 }
 
 

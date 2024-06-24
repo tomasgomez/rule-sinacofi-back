@@ -5,6 +5,7 @@ import { ErrorCode, InternalError } from "../../../entities/internalError";
 import { User } from "../../../entities/user/interface";
 import { MessageParameter } from "../../../entities/paremeters/interface";
 import { FilledParametersRequest } from "../../../entities/calls/filledSchemaRequest";
+import { Action } from "../../../entities/actions/interface";
 
 
 /*
@@ -12,7 +13,6 @@ import { FilledParametersRequest } from "../../../entities/calls/filledSchemaReq
 */
 
 const fillSchemaRequest = (req: express.Request): IRequest<FilledParametersRequest, SchemaFilter> | InternalError => {
-
     try {    
         // get params from query parameters, if messageCode is not provided set a default value
         const messageCode = req.params.messageCode ? req.params.messageCode : undefined;
@@ -25,7 +25,7 @@ const fillSchemaRequest = (req: express.Request): IRequest<FilledParametersReque
         const schema: OptionalSchema = messageCode ? { messageCode: messageCode.toString() } : {} as OptionalSchema;
 
         /* Check body */
-        let { user, parameters } = req.body;
+        let { user, parameters, actions } = req.body;
 
 
         if(!user) {
@@ -54,8 +54,18 @@ const fillSchemaRequest = (req: express.Request): IRequest<FilledParametersReque
             return acc;
         }, []);
 
+        const actionsCasted = actions as string[]
+        console.log(actionsCasted);
+        let allowedActions = actionsCasted.map((d) => {
+            const act: Partial<Action> = {
+                name: d
+            }
+            return act
+        })
+        
         // set parameters
         schema.parameters = params;
+        schema.allowedActions = allowedActions;
     }
 
     // set request

@@ -1,6 +1,10 @@
 import { Prisma } from "@prisma/client";
 import { IParameterSelect } from "./parameter";
 import { IRuleSelect } from "./rule";
+import { IActionSchemaSelect } from "./manyToMany";
+import { IActionSelect } from "./actions";
+
+
 
 /*
   Schema interface for the Prisma ORM
@@ -10,7 +14,8 @@ import { IRuleSelect } from "./rule";
 // type for the schemaSelect
 type ISchemaSelect = Partial<Prisma.SchemaSelect> & { 
   parameters?: IParameterSelect, 
-  rules?: IRuleSelect 
+  rules?: IRuleSelect,
+  allowedActions?: IActionSelect
 };
 type SchemaSelect<T extends ReadonlyArray<unknown>> = T[number];
 

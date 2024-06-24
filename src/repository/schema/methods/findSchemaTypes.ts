@@ -33,7 +33,7 @@ import { ISchemaRepository } from "../interface";
 
         // Map the fetched messages to the Message entity
         const schemas: Schema[] = schemasFetched.map((response: any) => {
-            const s: Schema = { id: response.id, messageCode: response.messageCode, description: response.description, name: response.name, createdAt: response.createdAt, updatedAt: response.updatedAt, parameters: [], rules: [] };
+            const s: Schema = { id: response.id, messageCode: response.messageCode, description: response.description, name: response.name, createdAt: response.createdAt, updatedAt: response.updatedAt, parameters: [], rules: [], allowedActions: [] };
             return s;
         });
     

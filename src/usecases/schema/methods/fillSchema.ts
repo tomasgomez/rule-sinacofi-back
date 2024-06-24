@@ -2,7 +2,7 @@ import { actionCategory, ActionCategory } from "../../../entities/actions/action
 import { actionType } from "../../../entities/actions/actionTypes";
 import { fillParameterWithMsg } from "../../../entities/actions/actions/fillParameter";
 import { fillParameterWithUser } from "../../../entities/actions/actions/fillUser";
-import { ActionInput, executeAction } from "../../../entities/actions/interface";
+import { Action, ActionInput, executeAction } from "../../../entities/actions/interface";
 import { FilledParametersRequest } from "../../../entities/calls/filledSchemaRequest";
 import { IRequest } from "../../../entities/calls/pagination/interface";
 import { InternalError, isInternalError } from "../../../entities/internalError";
@@ -33,7 +33,7 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
     const { parameters } = schema;
     
     /* Select all FILL actions */
-    const parametersFilled: Parameter[] = parameters.map((param: Parameter | MessageParameter) => {
+    parameters.forEach((param: Parameter | MessageParameter) => {
 
         /* Cast parameter to Parameter */
         let paramCasted = param as Parameter
@@ -55,6 +55,42 @@ const fillSchema = async(context: ISchemaUsecase, request: IRequest<FilledParame
         });
         return paramCasted
     })
+
+    /* Map actions from */
+    const actionsRequired = request.data.schema.allowedActions;
+
+    console.log(actionsRequired);
+
+    // validate the schema actions
+    actionsRequired?.forEach((action) => {
+        const actionToBeApplied = schema.allowedActions?.filter(a => a.name == action.name && a.category == actionCategory.FILL) as Action[];
+        actionToBeApplied.forEach(act => {
+            let schemaUpdated = executeAction(act, {schema: schema}) 
+            if (isInternalError(schemaUpdated)){
+                return schemaUpdated
+            }
+        })
+
+    });
+
+    // filter actions
+    let allowedActionsFiltered: Action[]= []
+    schema.allowedActions.forEach((action) => {
+        const actionCasted = action as Action;
+        actionsRequired?.forEach(r => {
+            if (actionCasted.category !== actionCategory.FILL){
+                allowedActionsFiltered.push(actionCasted)
+            }
+            if (r.name == action.name) {
+                allowedActionsFiltered.push(actionCasted)
+            }
+        })
+    })
+    if (allowedActionsFiltered){
+        schema.allowedActions = allowedActionsFiltered;
+    }
+
+
 
     return schema
     
