@@ -194,6 +194,10 @@ function addMessageActions(message: Message, user: User): Message {
                     console.log("6");
                     actions.push(MessageActions.SHOW_DETAIL);
                     actions.push(MessageActions.DUPLICATE);
+                } else if (isReceiver && message?.previousMessageCode == MessageCodes.RECHAZO_DE_PAGO_AH) {
+                    console.log("6.1");
+                    actions.push(MessageActions.SHOW_DETAIL);
+                    actions.push(MessageActions.DUPLICATE);
                 } else if (isSender) {
                     console.log("7");
                     actions.push(MessageActions.SHOW_DETAIL);
