@@ -307,8 +307,8 @@ export const getCollectionExpensesField = ({ messageCode, accordion = "accordion
 // });
 
 export const getTotalPrepaidToPayUFField = ({ messageCode, ...rest }) => ({
-  "name": "totalPrepaidToPayCLP",
-  "type": "totalPrepaidToPayCLP",
+  "name": "totalPrepaidToPayUF",
+  "type": "totalPrepaidToPayUF",
   "fieldtype": "amount",
   "label": "# CVH: Total a Pagar en UF",
   "placeholder": "",
@@ -318,7 +318,7 @@ export const getTotalPrepaidToPayUFField = ({ messageCode, ...rest }) => ({
   "defaultValue": "0",
   "rules": "required,disabled,maxLength25,accordionResumeTotalAmount",
   "parameterOptions": "",
-  "actions":"",
+  "actions":"msgCode675",
   messageCode,
   ...rest 
 });
@@ -335,7 +335,7 @@ export const getTotalPrepaidToPayCLPField = ({ messageCode, ...rest }) => ({
     "defaultValue": "0",
     "rules": "required,disabled,maxLength25,accordionResumeTotalAmount",
     "parameterOptions": "",
-    "actions": "",
+    "actions": "msgCode675",
     messageCode,
     ...rest
 });
