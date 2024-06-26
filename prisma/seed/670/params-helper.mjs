@@ -478,7 +478,7 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
   getSellerNameField({ messageCode }),
   getSellerDniField({ messageCode }),
   getLinebreak({
-    label: "Ha vendido a",
+    label: "CS3: Ha vendido a",
     messageCode,
     rules: "accordionMortgageData"
   }),
