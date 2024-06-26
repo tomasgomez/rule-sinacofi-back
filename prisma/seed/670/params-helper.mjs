@@ -389,7 +389,7 @@ export const getBorrowerUfAmountField = ({
 
 export const getAmountHeldByTheBankField = ({
   messageCode,
-  label = "CSO: Mantiene en su poder hasta la cantidad de $", 
+  label = "CS0: Mantiene en su poder hasta la cantidad de $", 
   column = 6
 }) => ({
   "name": "amountHeldByTheBank",
