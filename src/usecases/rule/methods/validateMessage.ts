@@ -58,6 +58,7 @@ const validateMessage = async (context: IRuleUsecase, message: Message, user: Us
 
         // validate parameters of the message
         message?.parameters?.forEach((parameter: MessageParameter) => {
+
             const schemaParameter = schema.parameters.find((schemaParameter) => schemaParameter.name === parameter.name);
             if (!schemaParameter || schemaParameter === undefined) {
                 console.log(`Parameter ${parameter.name} not found in schema`);
@@ -70,6 +71,7 @@ const validateMessage = async (context: IRuleUsecase, message: Message, user: Us
             }
 
             parameter.displayValue = parameter.value;
+            parameter.label = schemaParameter.label;
 
             if (schemaParameter.optionValues !== undefined && schemaParameter.optionValues.length > 0) {
                 let optionValue = schemaParameter.optionValues.find((option: any) => option.value === parameter.value);
@@ -90,10 +92,10 @@ const validateMessage = async (context: IRuleUsecase, message: Message, user: Us
                 }
             });
 
-            return {
-                ...parameter,
-                label: schemaParameter.label,
-            }
+            parameter.messageCode = message.messageCode;
+
+
+            return parameter
         });
 
         // check if there are any errors

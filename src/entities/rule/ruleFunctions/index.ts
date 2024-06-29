@@ -9,3 +9,4 @@ export * from './isNumber';
 export * from './cuk';
 export * from './isString';
 export * from './isString';
+export * from './dateLimit';

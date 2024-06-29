@@ -1,5 +1,5 @@
 import {  Validations } from "./interface";
-import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni } from "./ruleFunctions";
+import { minLength, maxLength, emailValidation, isRequired, regex, distinctToIssuedBank, isNumber, cuk, isString, dni, dateResponseLimit } from "./ruleFunctions";
 
 /* 
     This file contains the different types of rules that can be applied to a field.
@@ -22,6 +22,7 @@ export enum ruleType {
     currentDate          = 'currentDate',
     checkUserChannel     = 'checkUserChannel',
     accordion            = 'accordion',
+    dateResponseLimit    = 'dateResponseLimit'
 }
 
 type RuleTypes = ruleType; 
@@ -37,6 +38,7 @@ const validations: Validations = {
   regex: regex,
   dni: dni,
   distinctToIssuedBank: distinctToIssuedBank,
+  dateResponseLimit: dateResponseLimit,
   isNumber: isNumber,
   CUK: cuk,
   isString: isString,
