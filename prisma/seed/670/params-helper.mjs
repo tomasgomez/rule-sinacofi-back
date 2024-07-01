@@ -474,7 +474,7 @@ export const mortgageRaisingDataSchema = (messageCode, onlyWatch = false, noObse
   getNotaryField({ messageCode }),
   getRepertoireDateField({ messageCode }),
   getRepertoireNumberField({ messageCode }),
-  getBeneficiaryBankField({ messageCode, label: "CSO: Señores Institución", column: 12 }),
+  getBeneficiaryBankField({ messageCode, label: "CS0: Señores Institución", column: 12 }),
   getSellerNameField({ messageCode }),
   getSellerDniField({ messageCode }),
   getLinebreak({

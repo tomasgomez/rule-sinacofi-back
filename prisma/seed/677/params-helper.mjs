@@ -45,7 +45,7 @@ export const getTotalAmountPaidField = ({ messageCode, ...rest }) => ({
   "name": "totalAmountPaid",
   "type": "totalAmountPaid",
   "fieldtype": "amount",
-  "label": "* LS8: Monto Pagado Total",
+  "label": "LS8: Monto Pagado Total",
   "placeholder": "",
   "description": "Total crédito pagado",
   "column": 6,
@@ -62,7 +62,7 @@ export const getPaymentMethodField = ({
   messageCode,
   ...rest
   }) => ({
-  "label": "* CVV: Medio de Pago",
+  "label": "CVV: Medio de Pago",
   "name": "paymentMethod",
   "type": "paymentMethod",
   "fieldtype": "textField",
@@ -73,7 +73,7 @@ export const getPaymentMethodField = ({
   "defaultValue": "",
   "rules": "required",
   "parameterOptions": "",
-  "actions": "accordionMortgageData,msgCode670",
+  "actions": "",
   messageCode,
   ...rest
 });
