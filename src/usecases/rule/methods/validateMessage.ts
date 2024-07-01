@@ -196,10 +196,6 @@ function addMessageActions(message: Message, user: User): Message {
                     console.log("6");
                     actions.push(MessageActions.SHOW_DETAIL);
                     actions.push(MessageActions.DUPLICATE);
-                } else if (isReceiver && message?.previousMessageCode == MessageCodes.RECHAZO_DE_PAGO_AH) {
-                    console.log("6.1");
-                    actions.push(MessageActions.SHOW_DETAIL);
-                    actions.push(MessageActions.DUPLICATE);
                 } else if (isSender) {
                     console.log("7");
                     actions.push(MessageActions.SHOW_DETAIL);
@@ -243,7 +239,11 @@ function addMessageActions(message: Message, user: User): Message {
             break;
         case MessageCodes.SOLICITUD_DE_ALZAMIENTO_HIPOTECARIO:
             console.log("18");
-            if (status == MessageStatus.PREPARADO) {
+            if (isReceiver && message?.previousMessageCode == MessageCodes.RECHAZO_DE_PAGO_AH) {
+                console.log("6.1");
+                actions.push(MessageActions.SHOW_DETAIL);
+                actions.push(MessageActions.DUPLICATE);
+            } else if (status == MessageStatus.PREPARADO) {
                 console.log("19");
                 actions.push(MessageActions.SIGN);
             } else if (status == MessageStatus.BANDEJA_DE_ENTRADA || status == MessageStatus.ENVIADO) {
